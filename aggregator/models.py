@@ -88,6 +88,7 @@ class Brief:
     executive_summary: str = ""
     ir_framing: str = ""
     ai_enabled: bool = False
+    ai_note: str = ""  # shown in the links-only banner (why AI text is absent)
     total_articles: int = 0
     total_clusters: int = 0
 

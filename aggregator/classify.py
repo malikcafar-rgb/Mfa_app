@@ -33,6 +33,12 @@ def classify(articles: List[Article]) -> List[Article]:
             if "azerbaijan" not in matched_cats:
                 matched_cats.insert(0, "azerbaijan")
 
+        # Analysis-tier sources (Foreign Affairs, War on the Rocks, E-IR) are the
+        # backbone of the IR-theory section the user cares most about — always
+        # make them eligible, in addition to any topical keyword matches.
+        if a.tier == "analysis" and "ir_theory" not in matched_cats:
+            matched_cats.append("ir_theory")
+
         # Fall back to the source's default category hint if nothing matched.
         if not matched_cats and a.category_hint:
             matched_cats.append(a.category_hint)

@@ -33,17 +33,23 @@ sources:
   # AzerTAC — state news agency. Reliable wire fallback for MFA/president coverage.
   - name: "AzerTAC (Official Politics)"
     type: rss
-    url: "https://azertag.az/en/rss"
+    # AzerTAC's real feed index is /en/rss-all (the earlier /en/rss returned 0).
+    # This all-news English feed is the reliable backbone for MFA/President
+    # coverage; fetch.py promotes president/Aliyev/MFA items to the Official tier.
+    url: "https://azertag.az/en/rss-all"
     tier: wire
     category: azerbaijan
     enabled: true
 
+  # Trend's earlier feed URL returned 0 items and a correct one is unverified;
+  # disabled to avoid shipping a silent 0. AzerTAC above covers AZ state news.
+  # Re-enable once a working feed URL is confirmed from a runner fetch.
   - name: "Trend News (Politics)"
     type: rss
     url: "https://en.trend.az/rss/feed_politics.xml"
     tier: wire
     category: azerbaijan
-    enabled: true
+    enabled: false
 
   # ---------------------------------------------------------------------------
   # Global reliable sources — New York Times
@@ -151,9 +157,12 @@ sources:
   # ---------------------------------------------------------------------------
   # Official government sources — country watch (configurable; tune over time)
   # ---------------------------------------------------------------------------
+  # state.gov is WordPress; the press-releases feed is /press-releases/feed/
+  # (the earlier /rss-feeds/... path returned 0). If this still logs 0 on the
+  # runner, disable it — UK FCDO already provides official coverage.
   - name: "U.S. State Department"
     type: rss
-    url: "https://www.state.gov/rss-feeds/press-releases-rss-feed/feed/"
+    url: "https://www.state.gov/press-releases/feed/"
     tier: official
     category: politics
     enabled: true

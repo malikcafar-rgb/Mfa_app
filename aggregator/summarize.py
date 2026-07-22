@@ -49,6 +49,26 @@ class AISummarizer:
         return "".join(parts).strip()
 
     @staticmethod
+    def _short_error(exc: Exception) -> str:
+        """A concise, safe reason string for display (never includes the key)."""
+        msg = str(exc)
+        # Anthropic errors embed a JSON body like
+        #   {'type': 'error', 'error': {'type': '<subtype>', 'message': '<msg>'}}
+        # Prefer the nested error subtype + message.
+        m = re.search(
+            r"'error':\s*\{[^}]*?'type':\s*'([^']+)'[^}]*?'message':\s*'([^']+)'", msg
+        )
+        if m:
+            return f"{m.group(1)}: {m.group(2)}"
+        m = re.search(r"'message':\s*'([^']+)'", msg)
+        if m:
+            return m.group(1)
+        code = re.search(r"Error code:\s*(\d+)", msg)
+        if code:
+            return f"HTTP {code.group(1)}"
+        return msg[:160]
+
+    @staticmethod
     def _extract_json(text: str):
         """Pull the first JSON object/array out of a model response."""
         text = text.strip()
@@ -91,6 +111,7 @@ class AISummarizer:
         try:
             data = self._extract_json(self._complete(system, user, max_tokens=900))
         except Exception as exc:  # noqa: BLE001
+            self.error = self._short_error(exc)
             print(f"  [ai] section '{section.key}' failed: {exc}")
             return
         if not isinstance(data, dict):
@@ -136,6 +157,7 @@ class AISummarizer:
         try:
             out = self._complete(system, user, max_tokens=900)
         except Exception as exc:  # noqa: BLE001
+            self.error = self._short_error(exc)
             print(f"  [ai] overview failed: {exc}")
             return "", ""
         if "---" in out:
@@ -144,12 +166,34 @@ class AISummarizer:
         return out.strip(), ""
 
 
+def _produced_ai_text(brief: Brief) -> bool:
+    if brief.executive_summary or brief.ir_framing:
+        return True
+    for section in brief.category_sections:
+        if section.ai_brief or any(c.ai_summary for c in section.clusters):
+            return True
+    return False
+
+
 def run(brief: Brief, summarizer: AISummarizer) -> None:
     """Populate AI fields on the brief in place."""
-    brief.ai_enabled = summarizer.enabled
     if not summarizer.enabled:
+        brief.ai_enabled = False
+        brief.ai_note = summarizer.error or "AI summaries are off — showing links only."
         print(f"  [ai] {summarizer.error}")
         return
+
     for section in brief.category_sections:
         summarizer.summarize_section(section)
     brief.executive_summary, brief.ir_framing = summarizer.summarize_overview(brief)
+
+    # A key was present but every call may still have failed (bad key, quota,
+    # network). Don't leave a silent blank — surface it as links-only + reason.
+    if _produced_ai_text(brief):
+        brief.ai_enabled = True
+        brief.ai_note = ""
+    else:
+        brief.ai_enabled = False
+        reason = summarizer.error or "the AI service returned no output"
+        brief.ai_note = f"AI summaries unavailable ({reason}) — showing links only."
+        print(f"  [ai] no AI text produced; falling back to links-only ({reason})")

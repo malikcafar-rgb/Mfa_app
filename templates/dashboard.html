@@ -12,7 +12,7 @@
 
 {% block content %}
   {% if not brief.ai_enabled %}
-  <div class="banner">Links-only mode — AI summaries are off (no <code>ANTHROPIC_API_KEY</code>). Headlines below link to original sources.</div>
+  <div class="banner">{{ brief.ai_note or "Links-only mode — AI summaries are off. Headlines below link to original sources." }}</div>
   {% endif %}
 
   {% if brief.executive_summary or brief.ir_framing %}
