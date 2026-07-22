@@ -213,12 +213,14 @@ sources:
     category: international_orgs
     enabled: true
 
+  # OSCE RSS returned 0 on the runner (blocks plain feed requests, like the
+  # other org sites). Disabled; UN News + wire/MFA coverage feed the section.
   - name: "OSCE"
     type: rss
     url: "https://www.osce.org/rss"
     tier: official
     category: international_orgs
-    enabled: true
+    enabled: false
 
   - name: "NATO News (stub — verify feed)"
     type: rss
