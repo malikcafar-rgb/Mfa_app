@@ -8,6 +8,12 @@
 #
 # The special "azerbaijan" category is force-applied to items from official
 # Azerbaijani sources (see classify.py), regardless of keywords.
+#
+# The special "international_orgs" category is handled by dedicated logic in
+# classify.py: an item is tagged only when it is about an international
+# organization AND references Azerbaijan or its region (az_relevance below).
+# Its `keywords` name the organizations; `az_relevance` names the Azerbaijan/
+# regional terms that make an org story relevant.
 
 categories:
   azerbaijan:
@@ -27,9 +33,67 @@ categories:
       - "azerbaijan mfa"
       - "bayramov"          # FM Jeyhun Bayramov
 
+  international_orgs:
+    label: "International Organizations"
+    order: 2
+    # Organizations Azerbaijan belongs to / actively engages (the "is this
+    # about an org?" test). Distinctive names/acronyms only, to limit noise;
+    # the az_relevance AND-filter below keeps the section Azerbaijan-focused.
+    keywords:
+      - "united nations"
+      - "u.n. "
+      - "security council"
+      - "general assembly"
+      - "unesco"
+      - "unicef"
+      - "unhcr"
+      - "undp"
+      - "unfccc"
+      - "cop29"
+      - "cop30"
+      - "osce"
+      - "council of europe"
+      - "parliamentary assembly"
+      - "european court of human rights"
+      - "organization of islamic cooperation"
+      - " oic"
+      - "organization of turkic states"
+      - "turkic states"
+      - "turkic council"
+      - "non-aligned movement"
+      - "commonwealth of independent states"
+      - "economic cooperation organization"
+      - "black sea economic cooperation"
+      - "nato"
+      - "partnership for peace"
+      - "international monetary fund"
+      - " imf"
+      - "world bank"
+      - "islamic development bank"
+      - "world trade organization"
+      - " wto"
+      - "world health organization"
+    # Azerbaijan / regional relevance — an org story is included only if it also
+    # matches one of these (explicit reference OR significant regional impact).
+    az_relevance:
+      - "azerbaijan"
+      - "azerbaijani"
+      - "baku"
+      - "aliyev"
+      - "nagorno-karabakh"
+      - "karabakh"
+      - "armenia-azerbaijan"
+      - "armenia and azerbaijan"
+      - "south caucasus"
+      - "southern gas corridor"
+      - "middle corridor"
+      - "zangezur"
+      - "nakhchivan"
+      - "caspian"
+
   ir_theory:
     label: "International Relations — Theory & Analysis"
-    order: 2
+    order: 3
     keywords:
       - "international relations"
       - "geopolitics"
@@ -48,7 +112,7 @@ categories:
 
   conflicts:
     label: "Conflicts & Security"
-    order: 3
+    order: 4
     keywords:
       - "war"
       - "ceasefire"
@@ -67,7 +131,7 @@ categories:
 
   intelligence:
     label: "Intelligence & Espionage"
-    order: 4
+    order: 5
     keywords:
       - "intelligence"
       - "espionage"
@@ -86,7 +150,7 @@ categories:
 
   military:
     label: "Military & Defense"
-    order: 5
+    order: 6
     keywords:
       - "military"
       - "defense"
@@ -106,7 +170,7 @@ categories:
 
   technology:
     label: "Technology"
-    order: 6
+    order: 7
     keywords:
       - "artificial intelligence"
       - " ai "
@@ -124,7 +188,7 @@ categories:
 
   economy:
     label: "Economy & Trade"
-    order: 7
+    order: 8
     keywords:
       - "economy"
       - "economic"
@@ -145,7 +209,7 @@ categories:
 
   politics:
     label: "Politics & Diplomacy"
-    order: 8
+    order: 9
     keywords:
       - "election"
       - "president"

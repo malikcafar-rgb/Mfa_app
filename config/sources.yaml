@@ -198,3 +198,52 @@ sources:
     tier: official
     category: politics
     enabled: false
+
+  # ---------------------------------------------------------------------------
+  # International organizations Azerbaijan belongs to / engages.
+  # Items from these feeds surface in the "International Organizations" section
+  # ONLY when they reference Azerbaijan or its region (see classify.py), so a
+  # global org feed never floods the briefing. Enable more as feeds are verified
+  # on the runner; the section also populates from NYT/FT/analysis coverage that
+  # mentions an org together with Azerbaijan.
+  - name: "UN News"
+    type: rss
+    url: "https://news.un.org/feed/subscribe/en/news/all/rss.xml"
+    tier: official
+    category: international_orgs
+    enabled: true
+
+  - name: "OSCE"
+    type: rss
+    url: "https://www.osce.org/rss"
+    tier: official
+    category: international_orgs
+    enabled: true
+
+  - name: "NATO News (stub — verify feed)"
+    type: rss
+    url: "https://www.nato.int/cps/en/natohq/news.rss"
+    tier: official
+    category: international_orgs
+    enabled: false
+
+  - name: "Council of Europe (stub — verify feed)"
+    type: rss
+    url: "https://www.coe.int/en/web/portal/full-news/-/asset_publisher/rss"
+    tier: official
+    category: international_orgs
+    enabled: false
+
+  - name: "Organization of Turkic States (stub — verify feed)"
+    type: rss
+    url: "https://www.turkicstates.org/en/rss"
+    tier: official
+    category: international_orgs
+    enabled: false
+
+  - name: "Islamic Development Bank (stub — verify feed)"
+    type: rss
+    url: "https://www.isdb.org/rss.xml"
+    tier: official
+    category: international_orgs
+    enabled: false
