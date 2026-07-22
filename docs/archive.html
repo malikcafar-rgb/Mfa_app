@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brief Archive</title>
+<style>
+  :root {
+    --bg: #0e1116; --panel: #161b22; --panel-2: #1c232d; --border: #2a3441;
+    --text: #e6edf3; --muted: #9aa7b4; --accent: #d4af37; --accent-2: #4c8dff;
+    --official: #d4af37; --wire: #4c8dff; --analysis: #b07cff;
+    --shadow: 0 1px 3px rgba(0,0,0,.4);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f4f6f9; --panel: #ffffff; --panel-2: #f0f3f7; --border: #dce3ec;
+      --text: #1a2230; --muted: #5c6b7a; --accent: #9c7c1a; --accent-2: #2563eb;
+      --official: #9c7c1a; --wire: #2563eb; --analysis: #7c3aed;
+      --shadow: 0 1px 3px rgba(20,30,50,.08);
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f6f9; --panel: #ffffff; --panel-2: #f0f3f7; --border: #dce3ec;
+    --text: #1a2230; --muted: #5c6b7a; --accent: #9c7c1a; --accent-2: #2563eb;
+    --official: #9c7c1a; --wire: #2563eb; --analysis: #7c3aed; --shadow: 0 1px 3px rgba(20,30,50,.08);
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e1116; --panel: #161b22; --panel-2: #1c232d; --border: #2a3441;
+    --text: #e6edf3; --muted: #9aa7b4; --accent: #d4af37; --accent-2: #4c8dff;
+    --official: #d4af37; --wire: #4c8dff; --analysis: #b07cff; --shadow: 0 1px 3px rgba(0,0,0,.4);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55; -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent-2); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px 80px; }
+
+  header.masthead {
+    border-bottom: 2px solid var(--accent); background: var(--panel);
+    padding: 22px 20px; position: sticky; top: 0; z-index: 10; box-shadow: var(--shadow);
+  }
+  .masthead-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center;
+    justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .brand { display: flex; flex-direction: column; }
+  .brand .kicker { font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700; }
+  .brand h1 { margin: 2px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -.01em; }
+  .brand .date { color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .nav { display: flex; gap: 14px; align-items: center; font-size: 13px; }
+  .nav a { color: var(--muted); }
+  .theme-toggle { cursor: pointer; background: var(--panel-2); border: 1px solid var(--border);
+    color: var(--text); border-radius: 6px; padding: 5px 10px; font-size: 13px; }
+
+  .banner { background: var(--panel-2); border: 1px solid var(--border);
+    border-left: 3px solid var(--accent); border-radius: 8px; padding: 10px 14px;
+    margin: 18px 0; color: var(--muted); font-size: 13px; }
+
+  .exec { background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
+    padding: 20px 22px; margin: 22px 0; box-shadow: var(--shadow); }
+  .exec h2 { margin: 0 0 8px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--accent); }
+  .exec p { margin: 0 0 10px; }
+  .exec .ir { border-top: 1px dashed var(--border); margin-top: 14px; padding-top: 14px; }
+  .exec .ir h3 { margin: 0 0 6px; font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--analysis); }
+
+  section.topic { margin: 30px 0 0; }
+  .section-head { display: flex; align-items: baseline; gap: 10px; border-bottom: 1px solid var(--border);
+    padding-bottom: 6px; margin-bottom: 4px; }
+  .section-head h2 { margin: 0; font-size: 18px; font-weight: 800; }
+  .section-head .count { color: var(--muted); font-size: 12px; }
+  .section-brief { color: var(--text); background: var(--panel-2); border-radius: 8px;
+    padding: 10px 14px; margin: 10px 0 4px; font-size: 14px; border-left: 3px solid var(--accent-2); }
+
+  .card { padding: 14px 2px; border-bottom: 1px solid var(--border); }
+  .card:last-child { border-bottom: none; }
+  .card h3 { margin: 0 0 4px; font-size: 16px; font-weight: 600; line-height: 1.35; }
+  .card h3 a { color: var(--text); }
+  .card h3 a:hover { color: var(--accent-2); }
+  .card .ai { margin: 4px 0 6px; font-size: 14px; color: var(--text); }
+  .card .excerpt { margin: 4px 0 6px; font-size: 13.5px; color: var(--muted); }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 12px; margin-top: 4px; }
+  .badge { font-size: 10px; letter-spacing: .06em; text-transform: uppercase; font-weight: 700;
+    padding: 2px 6px; border-radius: 4px; border: 1px solid var(--border); }
+  .badge.official { color: var(--official); border-color: var(--official); }
+  .badge.wire { color: var(--wire); border-color: var(--wire); }
+  .badge.analysis { color: var(--analysis); border-color: var(--analysis); }
+  .sources { display: flex; flex-wrap: wrap; gap: 6px; }
+  .sources a { color: var(--muted); }
+  .sources a::after { content: "·"; margin-left: 6px; color: var(--border); }
+  .sources a:last-child::after { content: ""; }
+
+  .country-group { margin-top: 26px; }
+  .country-group > h2 { font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  .country-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; margin-top: 12px; }
+  .country-card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px 16px; box-shadow: var(--shadow); }
+  .country-card h3 { margin: 0 0 8px; font-size: 15px; }
+  .country-card ul { margin: 0; padding: 0; list-style: none; }
+  .country-card li { padding: 6px 0; border-top: 1px solid var(--border); font-size: 13.5px; }
+  .country-card li:first-child { border-top: none; }
+  .country-card li a { color: var(--text); }
+
+  .archive-list { list-style: none; padding: 0; margin: 20px 0; }
+  .archive-list li { padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+  .toc a { background: var(--panel-2); border: 1px solid var(--border); color: var(--muted);
+    border-radius: 20px; padding: 4px 12px; font-size: 12.5px; }
+  footer.foot { color: var(--muted); font-size: 12px; margin-top: 50px; padding-top: 16px;
+    border-top: 1px solid var(--border); }
+  @media (max-width: 640px) {
+    .brand h1 { font-size: 19px; }
+    .country-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="kicker">Diplomat Daily Briefing</span>
+      <h1>Brief Archive</h1>
+      <span class="date">Past daily briefings</span>
+    </div>
+    <nav class="nav">
+  <a href="index.html">Dashboard</a>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">◐ Theme</button>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <ul class="archive-list">
+    <li><a href="briefs/2026-07-22.html">Wednesday, 22 July 2026</a></li>
+  </ul>
+  <footer class="foot">
+    Generated 2026-07-22 15:19 UTC ·
+    Aggregated from reliable sources (NYT, Foreign Affairs, FT, official government sites).
+    Headlines &amp; excerpts link to originals; no paywalled full text is reproduced.
+  </footer>
+</main>
+<script>
+  function applyTheme(t) {
+    document.documentElement.setAttribute('data-theme', t);
+    try { localStorage.setItem('brief-theme', t); } catch (e) {}
+  }
+  function toggleTheme() {
+    var cur = document.documentElement.getAttribute('data-theme');
+    if (cur !== 'dark' && cur !== 'light') {
+      cur = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    applyTheme(cur === 'dark' ? 'light' : 'dark');
+  }
+  (function () {
+    try {
+      var saved = localStorage.getItem('brief-theme');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    } catch (e) {}
+  })();
+</script>
+</body>
+</html>

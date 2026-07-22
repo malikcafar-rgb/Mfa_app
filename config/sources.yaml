@@ -1,0 +1,187 @@
+# Source configuration for the Diplomat Daily Briefing.
+#
+# Each source has:
+#   name         : display name
+#   type         : "rss" | "scrape"      (scrape = Playwright/Chromium)
+#   url          : feed URL or page URL
+#   tier         : "official" | "wire" | "analysis"   (used for ranking/labelling)
+#   category     : default category hint applied to every item from this source
+#                  (items are still re-classified by keyword; this is a fallback)
+#   enabled      : true/false
+#
+# NOTE: Free RSS gives headlines + excerpts, not paywalled full text. The app
+# summarizes those and links out to the original article. No paywall bypass.
+
+sources:
+  # ---------------------------------------------------------------------------
+  # Azerbaijan — official (priority)
+  # ---------------------------------------------------------------------------
+  - name: "Azerbaijan MFA"
+    type: scrape
+    url: "https://www.mfa.gov.az/en/news"
+    tier: official
+    category: azerbaijan
+    enabled: true
+
+  - name: "President of Azerbaijan"
+    type: scrape
+    url: "https://president.az/en/articles/category/events"
+    tier: official
+    category: azerbaijan
+    enabled: true
+
+  # AzerTAC — state news agency. Reliable wire fallback for MFA/president coverage.
+  - name: "AzerTAC (Official Politics)"
+    type: rss
+    url: "https://azertag.az/en/rss"
+    tier: wire
+    category: azerbaijan
+    enabled: true
+
+  - name: "Trend News (Politics)"
+    type: rss
+    url: "https://en.trend.az/rss/feed_politics.xml"
+    tier: wire
+    category: azerbaijan
+    enabled: true
+
+  # ---------------------------------------------------------------------------
+  # Global reliable sources — New York Times
+  # ---------------------------------------------------------------------------
+  - name: "NYT World"
+    type: rss
+    url: "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
+    tier: wire
+    category: politics
+    enabled: true
+
+  - name: "NYT Politics"
+    type: rss
+    url: "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    tier: wire
+    category: politics
+    enabled: true
+
+  - name: "NYT Middle East"
+    type: rss
+    url: "https://rss.nytimes.com/services/xml/rss/nyt/MiddleEast.xml"
+    tier: wire
+    category: conflicts
+    enabled: true
+
+  - name: "NYT Europe"
+    type: rss
+    url: "https://rss.nytimes.com/services/xml/rss/nyt/Europe.xml"
+    tier: wire
+    category: politics
+    enabled: true
+
+  - name: "NYT Asia Pacific"
+    type: rss
+    url: "https://rss.nytimes.com/services/xml/rss/nyt/AsiaPacific.xml"
+    tier: wire
+    category: politics
+    enabled: true
+
+  - name: "NYT Technology"
+    type: rss
+    url: "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml"
+    tier: wire
+    category: technology
+    enabled: true
+
+  - name: "NYT Business"
+    type: rss
+    url: "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml"
+    tier: wire
+    category: economy
+    enabled: true
+
+  # ---------------------------------------------------------------------------
+  # Financial Times
+  # ---------------------------------------------------------------------------
+  - name: "FT World"
+    type: rss
+    url: "https://www.ft.com/world?format=rss"
+    tier: wire
+    category: politics
+    enabled: true
+
+  - name: "FT Global Economy"
+    type: rss
+    url: "https://www.ft.com/global-economy?format=rss"
+    tier: wire
+    category: economy
+    enabled: true
+
+  - name: "FT Technology"
+    type: rss
+    url: "https://www.ft.com/technology?format=rss"
+    tier: wire
+    category: technology
+    enabled: true
+
+  # ---------------------------------------------------------------------------
+  # Foreign Affairs — international relations theory / analysis (priority)
+  # ---------------------------------------------------------------------------
+  - name: "Foreign Affairs"
+    type: rss
+    url: "https://www.foreignaffairs.com/rss.xml"
+    tier: analysis
+    category: ir_theory
+    enabled: true
+
+  # ---------------------------------------------------------------------------
+  # IR theory / security analysis — configurable extras
+  # ---------------------------------------------------------------------------
+  - name: "War on the Rocks"
+    type: rss
+    url: "https://warontherocks.com/feed/"
+    tier: analysis
+    category: ir_theory
+    enabled: true
+
+  - name: "E-International Relations"
+    type: rss
+    url: "https://www.e-ir.info/feed/"
+    tier: analysis
+    category: ir_theory
+    enabled: true
+
+  # ---------------------------------------------------------------------------
+  # Official government sources — country watch (configurable; tune over time)
+  # ---------------------------------------------------------------------------
+  - name: "U.S. State Department"
+    type: rss
+    url: "https://www.state.gov/rss-feeds/press-releases-rss-feed/feed/"
+    tier: official
+    category: politics
+    enabled: true
+
+  - name: "UK FCDO (gov.uk)"
+    type: rss
+    url: "https://www.gov.uk/search/news-and-communications.atom?organisations%5B%5D=foreign-commonwealth-development-office"
+    tier: official
+    category: politics
+    enabled: true
+
+  - name: "France Diplomatie"
+    type: rss
+    url: "https://www.diplomatie.gouv.fr/spip.php?page=backend-fd&lang=en"
+    tier: official
+    category: politics
+    enabled: false
+
+  - name: "Spain MAEC (stub — verify feed)"
+    type: rss
+    url: "https://www.exteriores.gob.es/es/Comunicacion/Noticias/_layouts/15/feed.aspx"
+    tier: official
+    category: politics
+    enabled: false
+
+  - name: "Switzerland FDFA (stub — verify feed)"
+    type: rss
+    url: "https://www.eda.admin.ch/eda/en/home.rss.html"
+    tier: official
+    category: politics
+    enabled: false

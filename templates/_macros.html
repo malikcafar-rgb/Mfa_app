@@ -1,0 +1,55 @@
+{% macro tier_badge(tier) %}
+  {% if tier == 'official' %}<span class="badge official">Official</span>
+  {% elif tier == 'analysis' %}<span class="badge analysis">Analysis</span>
+  {% else %}<span class="badge wire">Wire</span>{% endif %}
+{% endmacro %}
+
+{% macro cluster_card(c) %}
+<article class="card">
+  <h3><a href="{{ c.lead.url }}" target="_blank" rel="noopener">{{ c.title }}</a></h3>
+  {% if c.ai_summary %}
+  <p class="ai">{{ c.ai_summary }}</p>
+  {% elif c.excerpt %}
+  <p class="excerpt">{{ c.excerpt }}</p>
+  {% endif %}
+  <div class="meta">
+    {{ tier_badge(c.lead.tier) }}
+    <span class="sources">
+      {% for s in c.sources %}
+      <a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.source }}</a>
+      {% endfor %}
+    </span>
+    {% if c.lead.published %}
+    <span style="color:var(--muted)">· {{ c.lead.published.strftime('%b %d, %H:%M UTC') }}</span>
+    {% endif %}
+  </div>
+</article>
+{% endmacro %}
+
+{% macro topic_section(section) %}
+<section class="topic" id="sec-{{ section.key }}">
+  <div class="section-head">
+    <h2>{{ section.label }}</h2>
+    <span class="count">{{ section.clusters | length }} stories</span>
+  </div>
+  {% if section.ai_brief %}
+  <p class="section-brief">{{ section.ai_brief }}</p>
+  {% endif %}
+  {% for c in section.clusters %}
+  {{ cluster_card(c) }}
+  {% endfor %}
+</section>
+{% endmacro %}
+
+{% macro country_card(section) %}
+<div class="country-card">
+  <h3>{{ section.label }}</h3>
+  <ul>
+    {% for c in section.clusters %}
+    <li>
+      <a href="{{ c.lead.url }}" target="_blank" rel="noopener">{{ c.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endmacro %}

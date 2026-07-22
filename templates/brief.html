@@ -1,0 +1,52 @@
+{% extends "_base.html" %}
+{% from "_macros.html" import topic_section, country_card %}
+
+{% block title %}Today's Brief — {{ brief.display_date }}{% endblock %}
+{% block heading %}Today's Brief{% endblock %}
+{% block subheading %}{{ brief.display_date }} · {{ brief.total_articles }} articles across {{ brief.total_clusters }} stories{% endblock %}
+
+{% block nav %}
+  <a href="{{ home_link }}">Dashboard</a>
+  <a href="{{ archive_link }}">Archive</a>
+{% endblock %}
+
+{% block content %}
+  {% if not brief.ai_enabled %}
+  <div class="banner">Links-only mode — AI summaries are off (no <code>ANTHROPIC_API_KEY</code>).</div>
+  {% endif %}
+
+  {% if brief.executive_summary or brief.ir_framing %}
+  <div class="exec">
+    <h2>Executive Summary</h2>
+    {% for para in brief.executive_summary.split('\n') if para.strip() %}
+    <p>{{ para.strip() }}</p>
+    {% endfor %}
+    {% if brief.ir_framing %}
+    <div class="ir">
+      <h3>International-Relations Framing</h3>
+      {% for para in brief.ir_framing.split('\n') if para.strip() %}
+      <p>{{ para.strip() }}</p>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% for section in brief.category_sections %}
+  {{ topic_section(section) }}
+  {% endfor %}
+
+  {% if brief.country_sections %}
+  <h2 id="country-watch" style="margin-top:40px;font-size:20px;border-bottom:2px solid var(--accent);padding-bottom:6px;">Country Watch</h2>
+  {% for group, sections in grouped_countries.items() %}
+  <div class="country-group">
+    <h2>{{ group }}</h2>
+    <div class="country-grid">
+      {% for section in sections %}
+      {{ country_card(section) }}
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+  {% endif %}
+{% endblock %}

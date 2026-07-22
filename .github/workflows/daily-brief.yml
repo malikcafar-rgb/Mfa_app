@@ -1,0 +1,54 @@
+name: Daily Briefing
+
+on:
+  schedule:
+    # 05:30 UTC, Monday–Friday (weekday mornings). Adjust to your timezone.
+    - cron: "30 5 * * 1-5"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-brief
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Install Chromium (for official-site scraping)
+        run: python -m playwright install --with-deps chromium
+
+      - name: Build briefing
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Optional: override the model (e.g. claude-haiku-4-5-20251001 for lower cost).
+          AGG_MODEL: ${{ vars.AGG_MODEL }}
+        run: python -m aggregator.build --lookback-hours 30
+
+      - name: Commit updated site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: daily briefing $(date -u +%Y-%m-%d)"
+            git push
+          fi

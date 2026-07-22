@@ -1,0 +1,158 @@
+# Country / region watchlist.
+#
+# Each entry has:
+#   label     : display name
+#   group     : region grouping (for the country-watch section layout)
+#   order     : display order (lower = higher up)
+#   keywords  : case-insensitive substrings that tag an article with this country
+#               (include capitals, leaders, adjectives, and common aliases)
+
+countries:
+  # --- Priority / explicitly requested ---
+  azerbaijan:
+    label: "Azerbaijan"
+    group: "Priority"
+    order: 1
+    keywords: ["azerbaijan", "azerbaijani", "baku", "aliyev", "karabakh", "nakhchivan", "zangezur"]
+
+  spain:
+    label: "Spain"
+    group: "Explicit watch"
+    order: 2
+    keywords: ["spain", "spanish", "madrid", "sanchez", "sánchez", "catalonia", "barcelona"]
+
+  switzerland:
+    label: "Switzerland"
+    group: "Explicit watch"
+    order: 3
+    keywords: ["switzerland", "swiss", "bern", "geneva", "zurich", "federal council"]
+
+  united_kingdom:
+    label: "United Kingdom"
+    group: "Explicit watch"
+    order: 4
+    keywords: ["united kingdom", "britain", "british", "uk ", "london", "downing street", "fcdo", "whitehall"]
+
+  united_states:
+    label: "United States"
+    group: "Explicit watch"
+    order: 5
+    keywords: ["united states", "u.s.", "us ", "america", "american", "washington", "white house", "pentagon", "state department"]
+
+  # --- Regional neighbors ---
+  turkey:
+    label: "Turkey"
+    group: "Regional neighbors"
+    order: 10
+    keywords: ["turkey", "turkish", "ankara", "istanbul", "erdogan", "erdoğan", "türkiye"]
+
+  russia:
+    label: "Russia"
+    group: "Regional neighbors"
+    order: 11
+    keywords: ["russia", "russian", "moscow", "kremlin", "putin", "lavrov"]
+
+  iran:
+    label: "Iran"
+    group: "Regional neighbors"
+    order: 12
+    keywords: ["iran", "iranian", "tehran", "khamenei", "revolutionary guard", "irgc"]
+
+  armenia:
+    label: "Armenia"
+    group: "Regional neighbors"
+    order: 13
+    keywords: ["armenia", "armenian", "yerevan", "pashinyan", "pashinian"]
+
+  georgia:
+    label: "Georgia"
+    group: "Regional neighbors"
+    order: 14
+    keywords: ["georgia", "georgian", "tbilisi", "georgian dream"]
+
+  # --- Great powers ---
+  china:
+    label: "China"
+    group: "Great powers"
+    order: 20
+    keywords: ["china", "chinese", "beijing", "xi jinping", "communist party", "pla ", "taiwan strait"]
+
+  european_union:
+    label: "European Union"
+    group: "Great powers"
+    order: 21
+    keywords: ["european union", "brussels", "european commission", "von der leyen", "eu ", "eurozone"]
+
+  france:
+    label: "France"
+    group: "Great powers"
+    order: 22
+    keywords: ["france", "french", "paris", "macron", "elysee", "élysée"]
+
+  germany:
+    label: "Germany"
+    group: "Great powers"
+    order: 23
+    keywords: ["germany", "german", "berlin", "bundestag", "scholz", "merz"]
+
+  # --- Middle East ---
+  israel:
+    label: "Israel"
+    group: "Middle East"
+    order: 30
+    keywords: ["israel", "israeli", "jerusalem", "tel aviv", "netanyahu", "idf", "mossad"]
+
+  saudi_arabia:
+    label: "Saudi Arabia"
+    group: "Middle East"
+    order: 31
+    keywords: ["saudi arabia", "saudi", "riyadh", "mbs", "bin salman"]
+
+  uae:
+    label: "United Arab Emirates"
+    group: "Middle East"
+    order: 32
+    keywords: ["united arab emirates", "uae", "abu dhabi", "dubai"]
+
+  qatar:
+    label: "Qatar"
+    group: "Middle East"
+    order: 33
+    keywords: ["qatar", "qatari", "doha"]
+
+  egypt:
+    label: "Egypt"
+    group: "Middle East"
+    order: 34
+    keywords: ["egypt", "egyptian", "cairo", "sisi", "el-sisi", "suez"]
+
+  # --- Central Asia ---
+  kazakhstan:
+    label: "Kazakhstan"
+    group: "Central Asia"
+    order: 40
+    keywords: ["kazakhstan", "kazakh", "astana", "almaty", "tokayev"]
+
+  uzbekistan:
+    label: "Uzbekistan"
+    group: "Central Asia"
+    order: 41
+    keywords: ["uzbekistan", "uzbek", "tashkent", "mirziyoyev"]
+
+  turkmenistan:
+    label: "Turkmenistan"
+    group: "Central Asia"
+    order: 42
+    keywords: ["turkmenistan", "turkmen", "ashgabat"]
+
+  kyrgyzstan:
+    label: "Kyrgyzstan"
+    group: "Central Asia"
+    order: 43
+    keywords: ["kyrgyzstan", "kyrgyz", "bishkek"]
+
+  tajikistan:
+    label: "Tajikistan"
+    group: "Central Asia"
+    order: 44
+    keywords: ["tajikistan", "tajik", "dushanbe"]

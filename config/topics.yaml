@@ -1,0 +1,163 @@
+# Topic/category configuration.
+#
+# Each category has:
+#   label     : human-readable section title
+#   order     : display order on the dashboard/brief (lower = higher up)
+#   keywords  : case-insensitive substrings; if any appears in an article's
+#               title or summary, the article is tagged with this category.
+#
+# The special "azerbaijan" category is force-applied to items from official
+# Azerbaijani sources (see classify.py), regardless of keywords.
+
+categories:
+  azerbaijan:
+    label: "Azerbaijan — MFA & President"
+    order: 1
+    keywords:
+      - "azerbaijan"
+      - "azerbaijani"
+      - "baku"
+      - "aliyev"
+      - "ilham aliyev"
+      - "nagorno-karabakh"
+      - "karabakh"
+      - "nakhchivan"
+      - "zangezur"
+      - "caspian"
+      - "azerbaijan mfa"
+      - "bayramov"          # FM Jeyhun Bayramov
+
+  ir_theory:
+    label: "International Relations — Theory & Analysis"
+    order: 2
+    keywords:
+      - "international relations"
+      - "geopolitics"
+      - "grand strategy"
+      - "realism"
+      - "liberalism"
+      - "constructivism"
+      - "balance of power"
+      - "deterrence"
+      - "world order"
+      - "multipolar"
+      - "hegemony"
+      - "soft power"
+      - "sphere of influence"
+      - "foreign policy doctrine"
+
+  conflicts:
+    label: "Conflicts & Security"
+    order: 3
+    keywords:
+      - "war"
+      - "ceasefire"
+      - "offensive"
+      - "airstrike"
+      - "invasion"
+      - "insurgency"
+      - "clashes"
+      - "front line"
+      - "frontline"
+      - "casualties"
+      - "conflict"
+      - "hostilities"
+      - "border clash"
+      - "peace talks"
+
+  intelligence:
+    label: "Intelligence & Espionage"
+    order: 4
+    keywords:
+      - "intelligence"
+      - "espionage"
+      - "spy"
+      - "cia"
+      - "mi6"
+      - "fsb"
+      - "mossad"
+      - "surveillance"
+      - "cyberattack"
+      - "cyber-attack"
+      - "hacking"
+      - "covert"
+      - "sabotage"
+      - "disinformation"
+
+  military:
+    label: "Military & Defense"
+    order: 5
+    keywords:
+      - "military"
+      - "defense"
+      - "defence"
+      - "nato"
+      - "missile"
+      - "drone"
+      - "troops"
+      - "weapons"
+      - "arms deal"
+      - "armament"
+      - "air force"
+      - "navy"
+      - "warship"
+      - "nuclear"
+      - "hypersonic"
+
+  technology:
+    label: "Technology"
+    order: 6
+    keywords:
+      - "artificial intelligence"
+      - " ai "
+      - "semiconductor"
+      - "chip"
+      - "quantum"
+      - "satellite"
+      - "space"
+      - "cyber"
+      - "5g"
+      - "biotech"
+      - "technology"
+      - "startup"
+      - "silicon"
+
+  economy:
+    label: "Economy & Trade"
+    order: 7
+    keywords:
+      - "economy"
+      - "economic"
+      - "inflation"
+      - "gdp"
+      - "trade"
+      - "tariff"
+      - "sanctions"
+      - "energy"
+      - "oil"
+      - "gas"
+      - "opec"
+      - "market"
+      - "central bank"
+      - "recession"
+      - "currency"
+      - "supply chain"
+
+  politics:
+    label: "Politics & Diplomacy"
+    order: 8
+    keywords:
+      - "election"
+      - "president"
+      - "parliament"
+      - "government"
+      - "summit"
+      - "diplomacy"
+      - "diplomatic"
+      - "treaty"
+      - "coalition"
+      - "prime minister"
+      - "foreign minister"
+      - "un security council"
+      - "referendum"
+      - "policy"

@@ -1,0 +1,21 @@
+{% extends "_base.html" %}
+
+{% block title %}Brief Archive{% endblock %}
+{% block heading %}Brief Archive{% endblock %}
+{% block subheading %}Past daily briefings{% endblock %}
+
+{% block nav %}
+  <a href="{{ home_link }}">Dashboard</a>
+{% endblock %}
+
+{% block content %}
+  {% if entries %}
+  <ul class="archive-list">
+    {% for e in entries %}
+    <li><a href="{{ e.file }}">{{ e.display }}</a></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <div class="banner">No archived briefs yet. They appear here after the first scheduled run.</div>
+  {% endif %}
+{% endblock %}

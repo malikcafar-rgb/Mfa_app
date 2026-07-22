@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Env / secrets
+.env
+*.local
+
+# Caches / logs
+.cache/
+*.log
+
+# OS
+.DS_Store
+
+# Raw fetch cache (generated at runtime)
+.fetch_cache/
