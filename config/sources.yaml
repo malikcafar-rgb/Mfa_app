@@ -285,9 +285,19 @@ sources:
     category: ""
     enabled: true
 
+  # swissinfo's /eng/rss returned 0 on the runner (index page, not a feed).
+  # Disabled; The Local - Switzerland (below) covers Swiss domestic news in
+  # English. Swiss stories also surface from BBC/Guardian/NYT/FT (esp. Geneva).
   - name: "SWI swissinfo (English)"
     type: rss
     url: "https://www.swissinfo.ch/eng/rss"
+    tier: wire
+    category: ""
+    enabled: false
+
+  - name: "The Local - Switzerland"
+    type: rss
+    url: "https://feeds.thelocal.com/rss/ch"
     tier: wire
     category: ""
     enabled: true
