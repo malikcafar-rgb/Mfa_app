@@ -53,3 +53,18 @@
   </ul>
 </div>
 {% endmacro %}
+
+{% macro country_feature(section) %}
+<section class="topic" id="ctry-{{ section.key }}">
+  <div class="section-head">
+    <h2>{{ section.label }}</h2>
+    <span class="count">{{ section.clusters | length }} stories</span>
+  </div>
+  {% if section.ai_brief %}
+  <p class="section-brief">{{ section.ai_brief }}</p>
+  {% endif %}
+  {% for c in section.clusters %}
+  {{ cluster_card(c) }}
+  {% endfor %}
+</section>
+{% endmacro %}

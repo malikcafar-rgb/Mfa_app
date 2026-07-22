@@ -17,7 +17,8 @@ from .summarize import AISummarizer, run as run_summaries
 from .render import render_site
 
 MAX_CLUSTERS_PER_CATEGORY = 12
-MAX_CLUSTERS_PER_COUNTRY = 6
+MAX_CLUSTERS_PER_COUNTRY = 4            # compact country cards
+MAX_CLUSTERS_PER_FEATURED_COUNTRY = 8  # UK / Spain / Switzerland / US
 
 
 def _cluster_categories(c: Cluster) -> set:
@@ -59,21 +60,35 @@ def assemble_brief(clusters: List[Cluster]) -> Brief:
             if country in countries:
                 country_map[country].append(c)
 
-    # Category sections, ordered by config 'order'.
+    # Category sections, ordered by config 'order'. Each category may cap its own
+    # length via 'max_items' (e.g. Azerbaijan is kept short and scannable).
     category_sections: List[Section] = []
     for key in sorted(cats, key=lambda k: cats[k].get("order", 99)):
-        cl = sorted(cat_map.get(key, []), key=_rank_key)[:MAX_CLUSTERS_PER_CATEGORY]
+        cap = cats[key].get("max_items", MAX_CLUSTERS_PER_CATEGORY)
+        cl = sorted(cat_map.get(key, []), key=_rank_key)[:cap]
         if cl:
             category_sections.append(Section(key=key, label=cats[key]["label"], clusters=cl))
 
-    # Country sections, ordered by config 'order'.
+    # Country sections, ordered by config 'order'. Featured countries (UK, Spain,
+    # Switzerland, US) get a larger cap and render as rich blocks; Azerbaijan is
+    # skipped here since it already has the #1 category section.
     country_sections: List[Section] = []
     for key in sorted(countries, key=lambda k: countries[k].get("order", 99)):
-        cl = sorted(country_map.get(key, []), key=_rank_key)[:MAX_CLUSTERS_PER_COUNTRY]
+        if key == "azerbaijan":
+            continue
+        spec = countries[key]
+        featured = bool(spec.get("featured", False))
+        cap = MAX_CLUSTERS_PER_FEATURED_COUNTRY if featured else MAX_CLUSTERS_PER_COUNTRY
+        cl = sorted(country_map.get(key, []), key=_rank_key)[:cap]
         if cl:
-            spec = countries[key]
             country_sections.append(
-                Section(key=key, label=spec["label"], clusters=cl, group=spec.get("group", ""))
+                Section(
+                    key=key,
+                    label=spec["label"],
+                    clusters=cl,
+                    group=spec.get("group", ""),
+                    featured=featured,
+                )
             )
 
     return Brief(

@@ -84,7 +84,7 @@ class AISummarizer:
             return None
 
     # -- per-section briefs + per-cluster summaries ---------------------------
-    def summarize_section(self, section: Section) -> None:
+    def summarize_section(self, section: Section, guidance: str = "") -> None:
         if not self.enabled or not section.clusters:
             return
         top = section.clusters[:MAX_CLUSTERS_PER_SECTION]
@@ -95,6 +95,9 @@ class AISummarizer:
             listed.append(f"[{i}] ({src}) {c.title}\n    {excerpt}")
         payload = "\n".join(listed)
 
+        brief_instruction = guidance or (
+            "<2-3 sentence what-matters synthesis for this section>"
+        )
         system = (
             "You are a senior intelligence analyst writing a concise, neutral "
             "daily brief for a diplomat. Be factual, non-sensational, and terse. "
@@ -104,7 +107,7 @@ class AISummarizer:
             f"Section: {section.label}\n\n"
             f"Stories:\n{payload}\n\n"
             "Return JSON of the form:\n"
-            '{"brief": "<2-3 sentence what-matters synthesis for this section>", '
+            '{"brief": "' + brief_instruction + '", '
             '"clusters": [{"i": <index>, "summary": "<=25 word neutral summary"}]}\n'
             "Cover every listed index in clusters."
         )
@@ -166,10 +169,20 @@ class AISummarizer:
         return out.strip(), ""
 
 
+# Country-brief guidance — highlights the diplomatically important developments,
+# including controversies/scandals, for a featured country.
+COUNTRY_BRIEF_GUIDANCE = (
+    "2-3 sentence brief on this country's most important political, economic and "
+    "security developments today, explicitly flagging any notable controversy, "
+    "scandal or leadership dispute a diplomat should track"
+)
+
+
 def _produced_ai_text(brief: Brief) -> bool:
     if brief.executive_summary or brief.ir_framing:
         return True
-    for section in brief.category_sections:
+    sections = brief.category_sections + [s for s in brief.country_sections if s.featured]
+    for section in sections:
         if section.ai_brief or any(c.ai_summary for c in section.clusters):
             return True
     return False
@@ -185,6 +198,10 @@ def run(brief: Brief, summarizer: AISummarizer) -> None:
 
     for section in brief.category_sections:
         summarizer.summarize_section(section)
+    # Per-country "what's happening" briefs for the featured countries.
+    for section in brief.country_sections:
+        if section.featured:
+            summarizer.summarize_section(section, guidance=COUNTRY_BRIEF_GUIDANCE)
     brief.executive_summary, brief.ir_framing = summarizer.summarize_overview(brief)
 
     # A key was present but every call may still have failed (bad key, quota,

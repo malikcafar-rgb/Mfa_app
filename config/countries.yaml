@@ -19,24 +19,28 @@ countries:
     label: "Spain"
     group: "Explicit watch"
     order: 2
+    featured: true
     keywords: ["spain", "spanish", "madrid", "sanchez", "sánchez", "catalonia", "barcelona"]
 
   switzerland:
     label: "Switzerland"
     group: "Explicit watch"
     order: 3
+    featured: true
     keywords: ["switzerland", "swiss", "bern", "geneva", "zurich", "federal council"]
 
   united_kingdom:
     label: "United Kingdom"
     group: "Explicit watch"
     order: 4
+    featured: true
     keywords: ["united kingdom", "britain", "british", "uk ", "london", "downing street", "fcdo", "whitehall"]
 
   united_states:
     label: "United States"
     group: "Explicit watch"
     order: 5
+    featured: true
     keywords: ["united states", "u.s.", "us ", "america", "american", "washington", "white house", "pentagon", "state department"]
 
   # --- Regional neighbors ---

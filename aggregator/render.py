@@ -59,11 +59,15 @@ def render_site(brief: Brief, output_dir: str) -> None:
     briefs_dir = os.path.join(output_dir, "briefs")
     os.makedirs(briefs_dir, exist_ok=True)
 
-    grouped = _grouped_countries(brief.country_sections)
+    # Featured countries render as rich blocks (in config order); the rest stay
+    # in the compact grouped grid.
+    featured_countries = [s for s in brief.country_sections if s.featured]
+    grouped = _grouped_countries([s for s in brief.country_sections if not s.featured])
 
     # Dashboard (index.html) — "in_page" links to same-page archive.
     dashboard_html = env.get_template("dashboard.html").render(
         brief=brief,
+        featured_countries=featured_countries,
         grouped_countries=grouped,
         archive_link="archive.html",
         brief_link=f"briefs/{brief.date_str}.html",
@@ -74,6 +78,7 @@ def render_site(brief: Brief, output_dir: str) -> None:
     # Dated brief (briefs/YYYY-MM-DD.html) — relative paths go up one level.
     brief_html = env.get_template("brief.html").render(
         brief=brief,
+        featured_countries=featured_countries,
         grouped_countries=grouped,
         home_link="../index.html",
         archive_link="../archive.html",

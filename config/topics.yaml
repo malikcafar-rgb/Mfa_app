@@ -19,6 +19,7 @@ categories:
   azerbaijan:
     label: "Azerbaijan — MFA & President"
     order: 1
+    max_items: 5          # keep the priority section short and scannable
     keywords:
       - "azerbaijan"
       - "azerbaijani"

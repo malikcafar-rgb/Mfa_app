@@ -249,3 +249,52 @@ sources:
     tier: official
     category: international_orgs
     enabled: false
+
+  # ---------------------------------------------------------------------------
+  # National outlets for the featured countries (UK, Spain, Switzerland, US).
+  # `category: ""` keeps these focused on Country Watch — they are country-tagged
+  # by keyword and only enter a topical section when they match that topic's
+  # keywords, so domestic-only stories won't clutter the topic sections.
+  # BBC/Guardian feeds are stable; El País/swissinfo/Politico are best-known URLs
+  # to validate on the runner and prune if they log 0.
+  - name: "BBC World"
+    type: rss
+    url: "http://feeds.bbci.co.uk/news/world/rss.xml"
+    tier: wire
+    category: ""
+    enabled: true
+
+  - name: "BBC UK"
+    type: rss
+    url: "http://feeds.bbci.co.uk/news/uk/rss.xml"
+    tier: wire
+    category: ""
+    enabled: true
+
+  - name: "The Guardian (World)"
+    type: rss
+    url: "https://www.theguardian.com/world/rss"
+    tier: wire
+    category: ""
+    enabled: true
+
+  - name: "El País (English)"
+    type: rss
+    url: "https://feeds.elpais.com/mrss-s/pages/ep/site/english.elpais.com/portada"
+    tier: wire
+    category: ""
+    enabled: true
+
+  - name: "SWI swissinfo (English)"
+    type: rss
+    url: "https://www.swissinfo.ch/eng/rss"
+    tier: wire
+    category: ""
+    enabled: true
+
+  - name: "Politico"
+    type: rss
+    url: "https://rss.politico.com/politics-news.xml"
+    tier: wire
+    category: ""
+    enabled: true

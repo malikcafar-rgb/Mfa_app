@@ -76,6 +76,7 @@ class Section:
     # Populated by summarize.py (empty in links-only mode):
     ai_brief: str = ""
     group: str = ""  # only used for country sections
+    featured: bool = False  # country sections rendered as rich blocks
 
 
 @dataclass
