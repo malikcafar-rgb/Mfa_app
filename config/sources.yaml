@@ -25,18 +25,21 @@ sources:
 
   - name: "President of Azerbaijan"
     type: scrape
-    url: "https://president.az/en/articles/category/events"
+    # Homepage scrape (the runner reached mfa.gov.az fine via Playwright; the
+    # deep events URL yielded no anchors). Best-effort — MFA + AzerTAC below
+    # carry official coverage if this stays empty.
+    url: "https://president.az/en"
     tier: official
     category: azerbaijan
     enabled: true
 
-  # AzerTAC — state news agency. Reliable wire fallback for MFA/president coverage.
-  - name: "AzerTAC (Official Politics)"
-    type: rss
-    # AzerTAC's real feed index is /en/rss-all (the earlier /en/rss returned 0).
-    # This all-news English feed is the reliable backbone for MFA/President
-    # coverage; fetch.py promotes president/Aliyev/MFA items to the Official tier.
-    url: "https://azertag.az/en/rss-all"
+  # AzerTAC — Azerbaijan state news agency. Its RSS endpoints block plain
+  # (feedparser) requests and returned 0 on the runner, so we SCRAPE it with
+  # Playwright/Chromium (the same path that works for the MFA site). fetch.py
+  # promotes president/Aliyev/MFA items from here to the Official tier.
+  - name: "AzerTAC (State News)"
+    type: scrape
+    url: "https://azertag.az/en"
     tier: wire
     category: azerbaijan
     enabled: true
@@ -157,15 +160,16 @@ sources:
   # ---------------------------------------------------------------------------
   # Official government sources — country watch (configurable; tune over time)
   # ---------------------------------------------------------------------------
-  # state.gov is WordPress; the press-releases feed is /press-releases/feed/
-  # (the earlier /rss-feeds/... path returned 0). If this still logs 0 on the
-  # runner, disable it — UK FCDO already provides official coverage.
+  # state.gov RSS returned 0 on the runner (both /rss-feeds/... and
+  # /press-releases/feed/ — the site appears to block plain feed requests).
+  # Disabled to avoid a silent 0; UK FCDO below provides official coverage, and
+  # U.S. developments are well covered by NYT/FT. Re-enable with a verified feed.
   - name: "U.S. State Department"
     type: rss
     url: "https://www.state.gov/press-releases/feed/"
     tier: official
     category: politics
-    enabled: true
+    enabled: false
 
   - name: "UK FCDO (gov.uk)"
     type: rss
