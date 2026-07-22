@@ -52,6 +52,32 @@ def _parse_date(entry) -> Optional[datetime]:
     return None
 
 
+# Date patterns commonly embedded in scraped official-site headlines, e.g.
+# "... Berlin 21 july 2026, 14:18" or "PRESS RELEASE 27 June 2026 18:51".
+_DATE_PATTERNS = [
+    re.compile(r"\b(\d{1,2}\s+[A-Za-z]{3,9}\s+\d{4})\b"),   # 21 July 2026
+    re.compile(r"\b([A-Za-z]{3,9}\s+\d{1,2},?\s+\d{4})\b"),  # July 21, 2026
+    re.compile(r"\b(\d{4}-\d{2}-\d{2})\b"),                  # 2026-07-21
+]
+
+
+def _extract_date_from_text(text: str) -> Optional[datetime]:
+    """Best-effort publish date parsed from a scraped headline; None if absent."""
+    for rx in _DATE_PATTERNS:
+        m = rx.search(text or "")
+        if not m:
+            continue
+        try:
+            dt = dateparser.parse(m.group(1))
+        except (ValueError, OverflowError, TypeError):
+            continue
+        if dt:
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+            return dt
+    return None
+
+
 def _fetch_rss(src: dict) -> List[Article]:
     parsed = feedparser.parse(src["url"], agent=USER_AGENT)
     articles: List[Article] = []
@@ -60,6 +86,11 @@ def _fetch_rss(src: dict) -> List[Article]:
         link = entry.get("link", "")
         if not title or not link:
             continue
+        published = _parse_date(entry)
+        # Require a real date so the recency window is strict — an undated feed
+        # item can't be verified as "today's news", so skip it.
+        if published is None:
+            continue
         summary = _clean_html(entry.get("summary", entry.get("description", "")))
         articles.append(
             Article(
@@ -67,7 +98,7 @@ def _fetch_rss(src: dict) -> List[Article]:
                 url=link,
                 source=src["name"],
                 tier=src.get("tier", "wire"),
-                published=_parse_date(entry),
+                published=published,
                 summary=summary[:600],
                 category_hint=src.get("category", ""),
             )
@@ -123,18 +154,22 @@ def _fetch_scrape(src: dict) -> List[Article]:
             if href in seen:
                 continue
             seen.add(href)
+            # Use the real date if the headline carries one; otherwise leave it
+            # unknown (None) rather than faking "now" — the page is newest-first,
+            # so the top items below are the most recent regardless.
             articles.append(
                 Article(
                     title=text,
                     url=href,
                     source=src["name"],
                     tier=src.get("tier", "official"),
-                    published=datetime.now(timezone.utc),  # site rarely exposes clean dates
+                    published=_extract_date_from_text(text),
                     summary="",
                     category_hint=src.get("category", "azerbaijan"),
                 )
             )
-            if len(articles) >= 25:
+            # Keep only the newest items on the page (it lists newest-first).
+            if len(articles) >= 12:
                 break
     except Exception as exc:  # noqa: BLE001 — robustness: never let one site break the run
         print(f"  [scrape] {src['name']} failed ({exc}); will rely on wire fallback")
