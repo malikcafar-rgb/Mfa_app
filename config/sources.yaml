@@ -33,16 +33,16 @@ sources:
     category: azerbaijan
     enabled: true
 
-  # AzerTAC — Azerbaijan state news agency. Its RSS endpoints block plain
-  # (feedparser) requests and returned 0 on the runner, so we SCRAPE it with
-  # Playwright/Chromium (the same path that works for the MFA site). fetch.py
-  # promotes president/Aliyev/MFA items from here to the Official tier.
+  # AzerTAC (state news agency): its RSS blocks feedparser, and a homepage
+  # scrape yielded no usable anchors on the runner — so it's disabled. The MFA
+  # and President scrapes above already cover official Azerbaijan news directly
+  # (priority #1). Re-enable with a working section URL or feed if desired.
   - name: "AzerTAC (State News)"
     type: scrape
     url: "https://azertag.az/en"
     tier: wire
     category: azerbaijan
-    enabled: true
+    enabled: false
 
   # Trend's earlier feed URL returned 0 items and a correct one is unverified;
   # disabled to avoid shipping a silent 0. AzerTAC above covers AZ state news.
