@@ -1,120 +1,140 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="auto">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Diplomat Daily Briefing — Wednesday, 22 July 2026</title>
 <style>
+  /* New York Times–inspired: white background, serif headlines, hairline rules,
+     sans-serif labels, minimal color. */
   :root {
-    --bg: #0e1116; --panel: #161b22; --panel-2: #1c232d; --border: #2a3441;
-    --text: #e6edf3; --muted: #9aa7b4; --accent: #d4af37; --accent-2: #4c8dff;
-    --official: #d4af37; --wire: #4c8dff; --analysis: #b07cff;
-    --shadow: 0 1px 3px rgba(0,0,0,.4);
-  }
-  @media (prefers-color-scheme: light) {
-    :root {
-      --bg: #f4f6f9; --panel: #ffffff; --panel-2: #f0f3f7; --border: #dce3ec;
-      --text: #1a2230; --muted: #5c6b7a; --accent: #9c7c1a; --accent-2: #2563eb;
-      --official: #9c7c1a; --wire: #2563eb; --analysis: #7c3aed;
-      --shadow: 0 1px 3px rgba(20,30,50,.08);
-    }
-  }
-  :root[data-theme="light"] {
-    --bg: #f4f6f9; --panel: #ffffff; --panel-2: #f0f3f7; --border: #dce3ec;
-    --text: #1a2230; --muted: #5c6b7a; --accent: #9c7c1a; --accent-2: #2563eb;
-    --official: #9c7c1a; --wire: #2563eb; --analysis: #7c3aed; --shadow: 0 1px 3px rgba(20,30,50,.08);
-  }
-  :root[data-theme="dark"] {
-    --bg: #0e1116; --panel: #161b22; --panel-2: #1c232d; --border: #2a3441;
-    --text: #e6edf3; --muted: #9aa7b4; --accent: #d4af37; --accent-2: #4c8dff;
-    --official: #d4af37; --wire: #4c8dff; --analysis: #b07cff; --shadow: 0 1px 3px rgba(0,0,0,.4);
+    --bg: #ffffff;
+    --text: #121212;        /* near-black body */
+    --muted: #666666;       /* bylines / meta */
+    --faint: #999999;
+    --rule: #e2e2e2;        /* hairline dividers */
+    --rule-strong: #121212; /* section top rules */
+    --link: #326891;        /* NYT link blue, used sparingly */
+    --official: #9a6a00;    /* restrained gold-brown */
+    --wire: #326891;
+    --analysis: #6a4c93;
+    --serif: Georgia, "Times New Roman", "Times", serif;
+    --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
   * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
     margin: 0; background: var(--bg); color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.55; -webkit-font-smoothing: antialiased;
+    font-family: var(--serif); line-height: 1.5; -webkit-font-smoothing: antialiased;
   }
-  a { color: var(--accent-2); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px 80px; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px 90px; }
 
-  header.masthead {
-    border-bottom: 2px solid var(--accent); background: var(--panel);
-    padding: 22px 20px; position: sticky; top: 0; z-index: 10; box-shadow: var(--shadow);
-  }
-  .masthead-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center;
-    justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-  .brand { display: flex; flex-direction: column; }
-  .brand .kicker { font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
-    color: var(--accent); font-weight: 700; }
-  .brand h1 { margin: 2px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -.01em; }
-  .brand .date { color: var(--muted); font-size: 13px; margin-top: 2px; }
-  .nav { display: flex; gap: 14px; align-items: center; font-size: 13px; }
-  .nav a { color: var(--muted); }
-  .theme-toggle { cursor: pointer; background: var(--panel-2); border: 1px solid var(--border);
-    color: var(--text); border-radius: 6px; padding: 5px 10px; font-size: 13px; }
+  /* Masthead — centered serif wordmark with black rules above/below. */
+  header.masthead { background: var(--bg); border-bottom: 1px solid var(--text);
+    padding: 14px 24px 0; }
+  .masthead-inner { max-width: 960px; margin: 0 auto; }
+  .brand { text-align: center; padding-bottom: 12px; border-bottom: 1px solid var(--text);
+    margin-bottom: 8px; }
+  .brand .kicker { font-family: var(--sans); font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .brand h1 { font-family: var(--serif); font-weight: 700; margin: 4px 0 2px;
+    font-size: 40px; letter-spacing: -.01em; line-height: 1.05; }
+  .brand .date { font-family: var(--sans); color: var(--muted); font-size: 12.5px;
+    letter-spacing: .02em; }
+  .nav { display: flex; gap: 20px; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 12px; text-transform: uppercase; letter-spacing: .08em;
+    padding: 8px 0 10px; }
+  .nav a { color: var(--text); font-weight: 600; }
+  .nav a:hover { color: var(--link); }
 
-  .banner { background: var(--panel-2); border: 1px solid var(--border);
-    border-left: 3px solid var(--accent); border-radius: 8px; padding: 10px 14px;
-    margin: 18px 0; color: var(--muted); font-size: 13px; }
+  /* Links-only / status banner — quiet, italic serif. */
+  .banner { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    padding: 10px 0; margin: 18px 0 6px; color: var(--muted); font-size: 14px;
+    font-style: italic; }
 
-  .exec { background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
-    padding: 20px 22px; margin: 22px 0; box-shadow: var(--shadow); }
-  .exec h2 { margin: 0 0 8px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
-    color: var(--accent); }
-  .exec p { margin: 0 0 10px; }
-  .exec .ir { border-top: 1px dashed var(--border); margin-top: 14px; padding-top: 14px; }
-  .exec .ir h3 { margin: 0 0 6px; font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
-    color: var(--analysis); }
+  /* Executive summary — a boxed "lede" with a sans label. */
+  .exec { border: 1px solid var(--text); padding: 22px 24px; margin: 24px 0 8px; }
+  .exec h2 { font-family: var(--sans); margin: 0 0 10px; font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text); font-weight: 700; }
+  .exec p { margin: 0 0 12px; font-size: 18px; line-height: 1.55; }
+  .exec p:last-child { margin-bottom: 0; }
+  .exec .ir { border-top: 1px solid var(--rule); margin-top: 16px; padding-top: 16px; }
+  .exec .ir h3 { font-family: var(--sans); margin: 0 0 6px; font-size: 11px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--analysis); font-weight: 700; }
+  .exec .ir p { font-size: 16px; }
 
-  section.topic { margin: 30px 0 0; }
-  .section-head { display: flex; align-items: baseline; gap: 10px; border-bottom: 1px solid var(--border);
-    padding-bottom: 6px; margin-bottom: 4px; }
-  .section-head h2 { margin: 0; font-size: 18px; font-weight: 800; }
-  .section-head .count { color: var(--muted); font-size: 12px; }
-  .section-brief { color: var(--text); background: var(--panel-2); border-radius: 8px;
-    padding: 10px 14px; margin: 10px 0 4px; font-size: 14px; border-left: 3px solid var(--accent-2); }
+  /* Section fronts — serif head with a strong black rule above (NYT section style). */
+  section.topic { margin: 34px 0 0; }
+  .section-head { border-top: 2px solid var(--rule-strong); padding-top: 8px; margin-bottom: 6px;
+    display: flex; align-items: baseline; gap: 10px; }
+  .section-head h2 { font-family: var(--serif); margin: 0; font-size: 22px; font-weight: 700;
+    letter-spacing: -.01em; }
+  .section-head .count { font-family: var(--sans); color: var(--faint); font-size: 11px;
+    text-transform: uppercase; letter-spacing: .08em; }
+  .section-brief { font-style: italic; color: #333; padding: 6px 0 2px; margin: 6px 0;
+    font-size: 15px; border-left: 3px solid var(--rule-strong); padding-left: 12px; }
 
-  .card { padding: 14px 2px; border-bottom: 1px solid var(--border); }
+  /* Story cards — serif headline, hairline divider, sans meta. */
+  .card { padding: 15px 0; border-bottom: 1px solid var(--rule); }
   .card:last-child { border-bottom: none; }
-  .card h3 { margin: 0 0 4px; font-size: 16px; font-weight: 600; line-height: 1.35; }
+  .card h3 { font-family: var(--serif); margin: 0 0 5px; font-size: 20px; font-weight: 700;
+    line-height: 1.25; letter-spacing: -.005em; }
   .card h3 a { color: var(--text); }
-  .card h3 a:hover { color: var(--accent-2); }
-  .card .ai { margin: 4px 0 6px; font-size: 14px; color: var(--text); }
-  .card .excerpt { margin: 4px 0 6px; font-size: 13.5px; color: var(--muted); }
-  .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 12px; margin-top: 4px; }
-  .badge { font-size: 10px; letter-spacing: .06em; text-transform: uppercase; font-weight: 700;
-    padding: 2px 6px; border-radius: 4px; border: 1px solid var(--border); }
-  .badge.official { color: var(--official); border-color: var(--official); }
-  .badge.wire { color: var(--wire); border-color: var(--wire); }
-  .badge.analysis { color: var(--analysis); border-color: var(--analysis); }
-  .sources { display: flex; flex-wrap: wrap; gap: 6px; }
+  .card h3 a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+  .card .ai { margin: 4px 0 6px; font-size: 15px; color: #333; line-height: 1.5; }
+  .card .excerpt { margin: 4px 0 6px; font-size: 15px; color: var(--muted); line-height: 1.5; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    font-family: var(--sans); font-size: 12px; margin-top: 5px; color: var(--faint); }
+
+  /* Tier labels — small uppercase sans, a dot of color, no boxes. */
+  .badge { font-family: var(--sans); font-size: 10.5px; letter-spacing: .07em;
+    text-transform: uppercase; font-weight: 700; display: inline-flex; align-items: center; }
+  .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%;
+    display: inline-block; margin-right: 5px; background: currentColor; }
+  .badge.official { color: var(--official); }
+  .badge.wire { color: var(--wire); }
+  .badge.analysis { color: var(--analysis); }
+  .sources { display: flex; flex-wrap: wrap; gap: 6px; font-family: var(--sans); }
   .sources a { color: var(--muted); }
-  .sources a::after { content: "·"; margin-left: 6px; color: var(--border); }
+  .sources a:hover { color: var(--link); text-decoration: underline; }
+  .sources a::after { content: "·"; margin-left: 6px; color: var(--faint); }
   .sources a:last-child::after { content: ""; }
 
-  .country-group { margin-top: 26px; }
-  .country-group > h2 { font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
-    color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
-  .country-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; margin-top: 12px; }
-  .country-card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px;
-    padding: 14px 16px; box-shadow: var(--shadow); }
-  .country-card h3 { margin: 0 0 8px; font-size: 15px; }
+  /* Country watch — bordered cards with serif titles. */
+  .country-group { margin-top: 30px; }
+  .country-group > h2 { font-family: var(--sans); font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text); font-weight: 700;
+    border-bottom: 1px solid var(--rule-strong); padding-bottom: 6px; }
+  .country-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 22px; margin-top: 14px; }
+  .country-card { border: 1px solid var(--rule); padding: 14px 16px; }
+  .country-card h3 { font-family: var(--serif); margin: 0 0 8px; font-size: 18px; font-weight: 700; }
   .country-card ul { margin: 0; padding: 0; list-style: none; }
-  .country-card li { padding: 6px 0; border-top: 1px solid var(--border); font-size: 13.5px; }
+  .country-card li { padding: 7px 0; border-top: 1px solid var(--rule); font-size: 15px;
+    line-height: 1.35; }
   .country-card li:first-child { border-top: none; }
   .country-card li a { color: var(--text); }
+  .country-card li a:hover { text-decoration: underline; }
 
-  .archive-list { list-style: none; padding: 0; margin: 20px 0; }
-  .archive-list li { padding: 12px 0; border-bottom: 1px solid var(--border); }
-  .toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
-  .toc a { background: var(--panel-2); border: 1px solid var(--border); color: var(--muted);
-    border-radius: 20px; padding: 4px 12px; font-size: 12.5px; }
-  footer.foot { color: var(--muted); font-size: 12px; margin-top: 50px; padding-top: 16px;
-    border-top: 1px solid var(--border); }
+  /* Archive + table of contents. */
+  .archive-list { list-style: none; padding: 0; margin: 22px 0; }
+  .archive-list li { padding: 14px 0; border-bottom: 1px solid var(--rule);
+    font-family: var(--serif); font-size: 19px; }
+  .archive-list li a:hover { text-decoration: underline; }
+  .toc { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 16px 0 4px;
+    padding-bottom: 14px; border-bottom: 1px solid var(--rule); font-family: var(--sans); }
+  .toc a { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em;
+    font-weight: 600; }
+  .toc a:hover { color: var(--link); }
+
+  footer.foot { font-family: var(--sans); color: var(--faint); font-size: 11.5px; margin-top: 56px;
+    padding-top: 18px; border-top: 1px solid var(--rule); line-height: 1.6; }
+
   @media (max-width: 640px) {
-    .brand h1 { font-size: 19px; }
+    .brand h1 { font-size: 30px; }
+    .exec p { font-size: 16px; }
+    .card h3 { font-size: 18px; }
     .country-grid { grid-template-columns: 1fr; }
   }
 </style>
@@ -125,12 +145,11 @@
     <div class="brand">
       <span class="kicker">Diplomat Daily Briefing</span>
       <h1>Global Situation Report</h1>
-      <span class="date">Wednesday, 22 July 2026 · 181 articles across 158 stories</span>
+      <span class="date">Wednesday, 22 July 2026 · 182 articles across 159 stories</span>
     </div>
     <nav class="nav">
   <a href="briefs/2026-07-22.html">Today's Brief</a>
   <a href="archive.html">Archive</a>
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">◐ Theme</button>
     </nav>
   </div>
 </header>
@@ -163,7 +182,7 @@
       <a href="https://www.mfa.gov.az/en/category/diplomatic-missions-and-consulates-of-the-republic-of-azerbaijan" target="_blank" rel="noopener">Azerbaijan MFA</a>
       <a href="https://president.az/en" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -175,7 +194,7 @@
     <span class="sources">
       <a href="https://president.az/en/articles/view/73021" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -187,7 +206,7 @@
     <span class="sources">
       <a href="https://president.az/en/articles/view/73022" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -199,7 +218,7 @@
     <span class="sources">
       <a href="https://president.az/en/articles/view/73030" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -211,7 +230,7 @@
     <span class="sources">
       <a href="https://president.az/en/articles/view/72761" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -223,7 +242,7 @@
     <span class="sources">
       <a href="https://president.az/en/articles/view/72938" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -235,7 +254,7 @@
     <span class="sources">
       <a href="https://president.az/en/articles/view/72942" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -247,7 +266,7 @@
     <span class="sources">
       <a href="https://president.az/en/articles/view/72945" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -259,7 +278,7 @@
     <span class="sources">
       <a href="https://president.az/en/articles/view/73034" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -271,7 +290,7 @@
     <span class="sources">
       <a href="https://president.az/en/articles/view/73033" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -283,7 +302,7 @@
     <span class="sources">
       <a href="https://president.az/en/pages/view/letters/schedule_for_reception" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -295,7 +314,7 @@
     <span class="sources">
       <a href="https://president.az/en/pages/view/letters/reception_days" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -438,7 +457,7 @@
     <span class="sources">
       <a href="https://www.mfa.gov.az/en/category/end-of-the-conflict-in-november-2020-and-post-conflict-situation" target="_blank" rel="noopener">Azerbaijan MFA</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:10 UTC</span>
   </div>
 </article>
 
@@ -450,7 +469,7 @@
     <span class="sources">
       <a href="https://www.mfa.gov.az/en/category/war-crimes-and-crimes-against-humanity-committed-by-armenia-against-azerbaijani-civilians" target="_blank" rel="noopener">Azerbaijan MFA</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:10 UTC</span>
   </div>
 </article>
 
@@ -462,7 +481,7 @@
     <span class="sources">
       <a href="https://www.mfa.gov.az/files/documents-of-international-organizations-on-the-armenia-azerbaijan-conflict.pdf" target="_blank" rel="noopener">Azerbaijan MFA</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:10 UTC</span>
   </div>
 </article>
 
@@ -474,7 +493,7 @@
     <span class="sources">
       <a href="https://www.mfa.gov.az/en/category/conflict-settlement-process-1991-2020" target="_blank" rel="noopener">Azerbaijan MFA</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:10 UTC</span>
   </div>
 </article>
 
@@ -525,7 +544,7 @@
     <span class="sources">
       <a href="https://www.nytimes.com/live/2026/07/22/world/iran-war-strikes-trump-hormuz" target="_blank" rel="noopener">NYT World</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 17:55 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:04 UTC</span>
   </div>
 </article>
 
@@ -592,7 +611,7 @@
     <span class="sources">
       <a href="https://president.az/en/articles/view/73021" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -604,7 +623,7 @@
     <span class="sources">
       <a href="https://president.az/en/articles/view/73034" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -616,7 +635,7 @@
     <span class="sources">
       <a href="https://www.mfa.gov.az/en/news/no30826" target="_blank" rel="noopener">Azerbaijan MFA</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:10 UTC</span>
   </div>
 </article>
 
@@ -630,6 +649,18 @@
       <a href="https://www.nytimes.com/2026/07/21/us/politics/trump-saudi-nuclear-deal.html" target="_blank" rel="noopener">NYT Politics</a>
     </span>
     <span style="color:var(--muted)">· Jul 22, 17:11 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/07/22/world/middleeast/israeli-banks-palestinian-economy.html" target="_blank" rel="noopener">Israeli Banks Threaten to Cut Off Palestinian Economy</a></h3>
+  <p class="excerpt">Two Israeli financial firms have long served as partners to Palestinian banks, handling transactions that make possible much of West Bank imports and exports.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/07/22/world/middleeast/israeli-banks-palestinian-economy.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Jul 22, 18:00 UTC</span>
   </div>
 </article>
 
@@ -717,18 +748,6 @@
   </div>
 </article>
 
-  <article class="card">
-  <h3><a href="https://www.nytimes.com/2026/07/21/us/politics/senate-panel-jay-clayton-spy-chief.html" target="_blank" rel="noopener">Senate Panel Advances Jay Clayton as Next Spy Chief on Party-Line Vote</a></h3>
-  <p class="excerpt">If the full Senate confirms him as expected, Mr. Clayton will take over the Office of the Director of National Intelligence from Bill Pulte, a housing official with little national security experience.</p>
-  <div class="meta">
-    <span class="badge wire">Wire</span>
-    <span class="sources">
-      <a href="https://www.nytimes.com/2026/07/21/us/politics/senate-panel-jay-clayton-spy-chief.html" target="_blank" rel="noopener">NYT Politics</a>
-    </span>
-    <span style="color:var(--muted)">· Jul 21, 21:38 UTC</span>
-  </div>
-</article>
-
 </section>
 
   <section class="topic" id="sec-military">
@@ -744,7 +763,7 @@
     <span class="sources">
       <a href="https://www.mfa.gov.az/en/news/no30826" target="_blank" rel="noopener">Azerbaijan MFA</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:10 UTC</span>
   </div>
 </article>
 
@@ -1050,7 +1069,7 @@
     <span class="sources">
       <a href="https://president.az/en/articles/view/73022" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -1077,6 +1096,18 @@
       <a href="https://www.ft.com/content/86e0c0df-8280-4224-8db2-81a662164554?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Global Economy</a>
     </span>
     <span style="color:var(--muted)">· Jul 22, 01:24 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/07/22/world/middleeast/israeli-banks-palestinian-economy.html" target="_blank" rel="noopener">Israeli Banks Threaten to Cut Off Palestinian Economy</a></h3>
+  <p class="excerpt">Two Israeli financial firms have long served as partners to Palestinian banks, handling transactions that make possible much of West Bank imports and exports.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/07/22/world/middleeast/israeli-banks-palestinian-economy.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Jul 22, 18:00 UTC</span>
   </div>
 </article>
 
@@ -1176,18 +1207,6 @@
   </div>
 </article>
 
-  <article class="card">
-  <h3><a href="https://www.ft.com/content/080107ca-1be0-447c-8222-e0e7328d5129?syn-25a6b1a6=1" target="_blank" rel="noopener">Germany to buy stakes in defence start-ups</a></h3>
-  <p class="excerpt">Measure is one of more than 150 designed to boost funding for start-ups in Europe’s largest economy</p>
-  <div class="meta">
-    <span class="badge wire">Wire</span>
-    <span class="sources">
-      <a href="https://www.ft.com/content/080107ca-1be0-447c-8222-e0e7328d5129?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
-    </span>
-    <span style="color:var(--muted)">· Jul 22, 13:41 UTC</span>
-  </div>
-</article>
-
 </section>
 
   <section class="topic" id="sec-politics">
@@ -1204,7 +1223,7 @@
       <a href="https://www.mfa.gov.az/en/category/diplomatic-missions-and-consulates-of-the-republic-of-azerbaijan" target="_blank" rel="noopener">Azerbaijan MFA</a>
       <a href="https://president.az/en" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -1216,7 +1235,7 @@
     <span class="sources">
       <a href="https://president.az/en/articles/view/73030" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -1228,7 +1247,7 @@
     <span class="sources">
       <a href="https://president.az/en/articles/view/72761" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -1240,7 +1259,7 @@
     <span class="sources">
       <a href="https://president.az/en/articles/view/73034" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -1252,7 +1271,7 @@
     <span class="sources">
       <a href="https://president.az/en/pages/view/letters/reception_days" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -1264,7 +1283,7 @@
     <span class="sources">
       <a href="https://president.az/en/pages/view/first-vice-president/services" target="_blank" rel="noopener">President of Azerbaijan</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:11 UTC</span>
   </div>
 </article>
 
@@ -1276,7 +1295,7 @@
     <span class="sources">
       <a href="https://www.mfa.gov.az/en/news/no29626" target="_blank" rel="noopener">Azerbaijan MFA</a>
     </span>
-    <span style="color:var(--muted)">· Jul 22, 18:01 UTC</span>
+    <span style="color:var(--muted)">· Jul 22, 18:10 UTC</span>
   </div>
 </article>
 
@@ -1610,6 +1629,9 @@
       <a href="https://www.nytimes.com/2026/07/22/world/middleeast/us-saudi-arabia-nuclear-deal-123-agreement.html" target="_blank" rel="noopener">How the Trump Administration’s Nuclear Deal With Saudi Arabia May Work</a>
     </li>
     <li>
+      <a href="https://www.nytimes.com/2026/07/22/world/middleeast/israeli-banks-palestinian-economy.html" target="_blank" rel="noopener">Israeli Banks Threaten to Cut Off Palestinian Economy</a>
+    </li>
+    <li>
       <a href="https://www.nytimes.com/2026/07/22/world/middleeast/saudi-nuclear-deal-israel.html" target="_blank" rel="noopener">U.S.-Saudi Nuclear Deal Stokes Israeli Concerns of Mideast Arms Race</a>
     </li>
     <li>
@@ -1617,9 +1639,6 @@
     </li>
     <li>
       <a href="https://www.nytimes.com/2026/07/21/world/middleeast/netanyahu-ad-gadi-eisenkot.html" target="_blank" rel="noopener">Netanyahu Ad Uses a Questionable Tactic Against Bereaved Rival</a>
-    </li>
-    <li>
-      <a href="https://www.nytimes.com/2026/07/20/world/middleeast/israel-un-mamdani-netanyahu-arrest.html" target="_blank" rel="noopener">Trump Says Netanyahu Will Not Be Arrested in the U.S.</a>
     </li>
   </ul>
 </div>
@@ -1675,29 +1694,10 @@
   </div>
 
   <footer class="foot">
-    Generated 2026-07-22 18:01 UTC ·
+    Generated 2026-07-22 18:11 UTC ·
     Aggregated from reliable sources (NYT, Foreign Affairs, FT, official government sites).
     Headlines &amp; excerpts link to originals; no paywalled full text is reproduced.
   </footer>
 </main>
-<script>
-  function applyTheme(t) {
-    document.documentElement.setAttribute('data-theme', t);
-    try { localStorage.setItem('brief-theme', t); } catch (e) {}
-  }
-  function toggleTheme() {
-    var cur = document.documentElement.getAttribute('data-theme');
-    if (cur !== 'dark' && cur !== 'light') {
-      cur = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    applyTheme(cur === 'dark' ? 'light' : 'dark');
-  }
-  (function () {
-    try {
-      var saved = localStorage.getItem('brief-theme');
-      if (saved) document.documentElement.setAttribute('data-theme', saved);
-    } catch (e) {}
-  })();
-</script>
 </body>
 </html>
