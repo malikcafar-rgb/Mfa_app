@@ -43,6 +43,13 @@ countries:
     featured: true
     keywords: ["united states", "u.s.", "us ", "america", "american", "washington", "white house", "pentagon", "state department"]
 
+  netherlands:
+    label: "Netherlands"
+    group: "Explicit watch"
+    order: 6
+    featured: true
+    keywords: ["netherlands", "dutch", "amsterdam", "the hague", "hague", "holland", "rutte", "schoof"]
+
   # --- Regional neighbors ---
   turkey:
     label: "Turkey"

@@ -307,3 +307,11 @@ sources:
     tier: wire
     category: ""
     enabled: true
+
+  # DutchNews.nl — English-language coverage of the Netherlands (featured).
+  - name: "DutchNews.nl"
+    type: rss
+    url: "https://www.dutchnews.nl/feed/"
+    tier: wire
+    category: ""
+    enabled: true
