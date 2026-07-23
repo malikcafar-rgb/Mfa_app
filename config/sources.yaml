@@ -14,24 +14,23 @@
 
 sources:
   # ---------------------------------------------------------------------------
-  # Azerbaijan — official (priority)
+  # Azerbaijan official sources — DISABLED by request. The dedicated
+  # "Azerbaijan — MFA & President" section was removed, so these scrapes are off.
+  # Re-enable (and re-add an `azerbaijan` category in topics.yaml) to restore it.
   # ---------------------------------------------------------------------------
   - name: "Azerbaijan MFA"
     type: scrape
     url: "https://www.mfa.gov.az/en/news"
     tier: official
     category: azerbaijan
-    enabled: true
+    enabled: false
 
   - name: "President of Azerbaijan"
     type: scrape
-    # Homepage scrape (the runner reached mfa.gov.az fine via Playwright; the
-    # deep events URL yielded no anchors). Best-effort — MFA + AzerTAC below
-    # carry official coverage if this stays empty.
     url: "https://president.az/en"
     tier: official
     category: azerbaijan
-    enabled: true
+    enabled: false
 
   # AzerTAC (state news agency): its RSS blocks feedparser, and a homepage
   # scrape yielded no usable anchors on the runner — so it's disabled. The MFA

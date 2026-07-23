@@ -32,21 +32,8 @@
   </div>
   {% endif %}
 
-  {% if brief.category_sections %}
-  <nav class="toc">
-    {% for s in brief.category_sections %}
-    <a href="#sec-{{ s.key }}">{{ s.label }}</a>
-    {% endfor %}
-    {% if brief.country_sections %}<a href="#country-watch">Country Watch</a>{% endif %}
-  </nav>
-  {% endif %}
-
-  {% for section in brief.category_sections %}
-  {{ topic_section(section) }}
-  {% endfor %}
-
   {% if brief.country_sections %}
-  <h2 id="country-watch" style="margin-top:40px;font-size:20px;border-bottom:2px solid var(--rule-strong);padding-bottom:6px;">Country Watch</h2>
+  <h2 id="country-watch" style="margin-top:24px;font-size:20px;border-bottom:2px solid var(--rule-strong);padding-bottom:6px;">Country Profiles</h2>
   {% for section in featured_countries %}
   {{ country_feature(section) }}
   {% endfor %}
@@ -61,6 +48,18 @@
   </div>
   {% endfor %}
   {% endif %}
+
+  {% if brief.category_sections %}
+  <nav class="toc">
+    {% for s in brief.category_sections %}
+    <a href="#sec-{{ s.key }}">{{ s.label }}</a>
+    {% endfor %}
+  </nav>
+  {% endif %}
+
+  {% for section in brief.category_sections %}
+  {{ topic_section(section) }}
+  {% endfor %}
 
   {% if not brief.category_sections and not brief.country_sections %}
   <div class="banner">No stories were retrieved in the current lookback window. Try increasing <code>--lookback-hours</code> or check source availability.</div>

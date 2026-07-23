@@ -32,12 +32,8 @@
   </div>
   {% endif %}
 
-  {% for section in brief.category_sections %}
-  {{ topic_section(section) }}
-  {% endfor %}
-
   {% if brief.country_sections %}
-  <h2 id="country-watch" style="margin-top:40px;font-size:20px;border-bottom:2px solid var(--rule-strong);padding-bottom:6px;">Country Watch</h2>
+  <h2 id="country-watch" style="margin-top:24px;font-size:20px;border-bottom:2px solid var(--rule-strong);padding-bottom:6px;">Country Profiles</h2>
   {% for section in featured_countries %}
   {{ country_feature(section) }}
   {% endfor %}
@@ -52,4 +48,8 @@
   </div>
   {% endfor %}
   {% endif %}
+
+  {% for section in brief.category_sections %}
+  {{ topic_section(section) }}
+  {% endfor %}
 {% endblock %}

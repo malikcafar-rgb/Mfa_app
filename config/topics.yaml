@@ -5,9 +5,7 @@
 #   order     : display order on the dashboard/brief (lower = higher up)
 #   keywords  : case-insensitive substrings; if any appears in an article's
 #               title or summary, the article is tagged with this category.
-#
-# The special "azerbaijan" category is force-applied to items from official
-# Azerbaijani sources (see classify.py), regardless of keywords.
+#   max_items : (optional) cap the number of stories shown in this section.
 #
 # The special "international_orgs" category is handled by dedicated logic in
 # classify.py: an item is tagged only when it is about an international
@@ -16,24 +14,6 @@
 # regional terms that make an org story relevant.
 
 categories:
-  azerbaijan:
-    label: "Azerbaijan — MFA & President"
-    order: 1
-    max_items: 5          # keep the priority section short and scannable
-    keywords:
-      - "azerbaijan"
-      - "azerbaijani"
-      - "baku"
-      - "aliyev"
-      - "ilham aliyev"
-      - "nagorno-karabakh"
-      - "karabakh"
-      - "nakhchivan"
-      - "zangezur"
-      - "caspian"
-      - "azerbaijan mfa"
-      - "bayramov"          # FM Jeyhun Bayramov
-
   international_orgs:
     label: "International Organizations"
     order: 2

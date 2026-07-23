@@ -49,11 +49,6 @@ def classify(articles: List[Article]) -> List[Article]:
                 if key != ORG_CATEGORY and _matches(text, spec.get("keywords", []))
             ]
 
-            # Force official Azerbaijani sources into the priority category.
-            if a.category_hint == "azerbaijan" and a.tier == "official":
-                if "azerbaijan" not in matched_cats:
-                    matched_cats.insert(0, "azerbaijan")
-
             # Analysis-tier sources (Foreign Affairs, War on the Rocks, E-IR) are
             # the backbone of the IR-theory section — always make them eligible.
             if a.tier == "analysis" and "ir_theory" not in matched_cats:
