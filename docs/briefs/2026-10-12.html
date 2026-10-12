@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Today's Brief — Monday, 12 October 2026</title>
+<style>
+  /* New York Times–inspired: white background, serif headlines, hairline rules,
+     sans-serif labels, minimal color. */
+  :root {
+    --bg: #ffffff;
+    --text: #121212;        /* near-black body */
+    --muted: #666666;       /* bylines / meta */
+    --faint: #999999;
+    --rule: #e2e2e2;        /* hairline dividers */
+    --rule-strong: #121212; /* section top rules */
+    --link: #326891;        /* NYT link blue, used sparingly */
+    --official: #9a6a00;    /* restrained gold-brown */
+    --wire: #326891;
+    --analysis: #6a4c93;
+    --serif: Georgia, "Times New Roman", "Times", serif;
+    --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: var(--serif); line-height: 1.5; -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px 90px; }
+
+  /* Masthead — centered serif wordmark with black rules above/below. */
+  header.masthead { background: var(--bg); border-bottom: 1px solid var(--text);
+    padding: 14px 24px 0; }
+  .masthead-inner { max-width: 960px; margin: 0 auto; }
+  .brand { text-align: center; padding-bottom: 12px; border-bottom: 1px solid var(--text);
+    margin-bottom: 8px; }
+  .brand .kicker { font-family: var(--sans); font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .brand h1 { font-family: var(--serif); font-weight: 700; margin: 4px 0 2px;
+    font-size: 40px; letter-spacing: -.01em; line-height: 1.05; }
+  .brand .date { font-family: var(--sans); color: var(--muted); font-size: 12.5px;
+    letter-spacing: .02em; }
+  .nav { display: flex; gap: 20px; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 12px; text-transform: uppercase; letter-spacing: .08em;
+    padding: 8px 0 10px; }
+  .nav a { color: var(--text); font-weight: 600; }
+  .nav a:hover { color: var(--link); }
+
+  /* Links-only / status banner — quiet, italic serif. */
+  .banner { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    padding: 10px 0; margin: 18px 0 6px; color: var(--muted); font-size: 14px;
+    font-style: italic; }
+
+  /* Executive summary — a boxed "lede" with a sans label. */
+  .exec { border: 1px solid var(--text); padding: 22px 24px; margin: 24px 0 8px; }
+  .exec h2 { font-family: var(--sans); margin: 0 0 10px; font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text); font-weight: 700; }
+  .exec p { margin: 0 0 12px; font-size: 18px; line-height: 1.55; }
+  .exec p:last-child { margin-bottom: 0; }
+  .exec .ir { border-top: 1px solid var(--rule); margin-top: 16px; padding-top: 16px; }
+  .exec .ir h3 { font-family: var(--sans); margin: 0 0 6px; font-size: 11px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--analysis); font-weight: 700; }
+  .exec .ir p { font-size: 16px; }
+
+  /* Section fronts — serif head with a strong black rule above (NYT section style). */
+  section.topic { margin: 34px 0 0; }
+  .section-head { border-top: 2px solid var(--rule-strong); padding-top: 8px; margin-bottom: 6px;
+    display: flex; align-items: baseline; gap: 10px; }
+  .section-head h2 { font-family: var(--serif); margin: 0; font-size: 22px; font-weight: 700;
+    letter-spacing: -.01em; }
+  .section-head .count { font-family: var(--sans); color: var(--faint); font-size: 11px;
+    text-transform: uppercase; letter-spacing: .08em; }
+  .section-brief { font-style: italic; color: #333; padding: 6px 0 2px; margin: 6px 0;
+    font-size: 15px; border-left: 3px solid var(--rule-strong); padding-left: 12px; }
+
+  /* Story cards — serif headline, hairline divider, sans meta. */
+  .card { padding: 15px 0; border-bottom: 1px solid var(--rule); }
+  .card:last-child { border-bottom: none; }
+  .card h3 { font-family: var(--serif); margin: 0 0 5px; font-size: 20px; font-weight: 700;
+    line-height: 1.25; letter-spacing: -.005em; }
+  .card h3 a { color: var(--text); }
+  .card h3 a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+  .card .ai { margin: 4px 0 6px; font-size: 15px; color: #333; line-height: 1.5; }
+  .card .excerpt { margin: 4px 0 6px; font-size: 15px; color: var(--muted); line-height: 1.5; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    font-family: var(--sans); font-size: 12px; margin-top: 5px; color: var(--faint); }
+
+  /* Tier labels — small uppercase sans, a dot of color, no boxes. */
+  .badge { font-family: var(--sans); font-size: 10.5px; letter-spacing: .07em;
+    text-transform: uppercase; font-weight: 700; display: inline-flex; align-items: center; }
+  .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%;
+    display: inline-block; margin-right: 5px; background: currentColor; }
+  .badge.official { color: var(--official); }
+  .badge.wire { color: var(--wire); }
+  .badge.analysis { color: var(--analysis); }
+  .sources { display: flex; flex-wrap: wrap; gap: 6px; font-family: var(--sans); }
+  .sources a { color: var(--muted); }
+  .sources a:hover { color: var(--link); text-decoration: underline; }
+  .sources a::after { content: "·"; margin-left: 6px; color: var(--faint); }
+  .sources a:last-child::after { content: ""; }
+
+  /* Country watch — bordered cards with serif titles. */
+  .country-group { margin-top: 30px; }
+  .country-group > h2 { font-family: var(--sans); font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text); font-weight: 700;
+    border-bottom: 1px solid var(--rule-strong); padding-bottom: 6px; }
+  .country-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 22px; margin-top: 14px; }
+  .country-card { border: 1px solid var(--rule); padding: 14px 16px; }
+  .country-card h3 { font-family: var(--serif); margin: 0 0 8px; font-size: 18px; font-weight: 700; }
+  .country-card ul { margin: 0; padding: 0; list-style: none; }
+  .country-card li { padding: 7px 0; border-top: 1px solid var(--rule); font-size: 15px;
+    line-height: 1.35; }
+  .country-card li:first-child { border-top: none; }
+  .country-card li a { color: var(--text); }
+  .country-card li a:hover { text-decoration: underline; }
+
+  /* Archive + table of contents. */
+  .archive-list { list-style: none; padding: 0; margin: 22px 0; }
+  .archive-list li { padding: 14px 0; border-bottom: 1px solid var(--rule);
+    font-family: var(--serif); font-size: 19px; }
+  .archive-list li a:hover { text-decoration: underline; }
+  .toc { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 16px 0 4px;
+    padding-bottom: 14px; border-bottom: 1px solid var(--rule); font-family: var(--sans); }
+  .toc a { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em;
+    font-weight: 600; }
+  .toc a:hover { color: var(--link); }
+
+  footer.foot { font-family: var(--sans); color: var(--faint); font-size: 11.5px; margin-top: 56px;
+    padding-top: 18px; border-top: 1px solid var(--rule); line-height: 1.6; }
+
+  @media (max-width: 640px) {
+    .brand h1 { font-size: 30px; }
+    .exec p { font-size: 16px; }
+    .card h3 { font-size: 18px; }
+    .country-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="kicker">Diplomat Daily Briefing</span>
+      <h1>Today's Brief</h1>
+      <span class="date">Monday, 12 October 2026 · 184 articles across 171 stories</span>
+    </div>
+    <nav class="nav">
+  <a href="../index.html">Dashboard</a>
+  <a href="../archive.html">Archive</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <div class="banner">AI summaries unavailable (authentication_error: invalid x-api-key) — showing links only.</div>
+
+
+  <h2 id="country-watch" style="margin-top:24px;font-size:20px;border-bottom:2px solid var(--rule-strong);padding-bottom:6px;">Country Profiles</h2>
+  <section class="topic" id="ctry-switzerland">
+  <div class="section-head">
+    <h2>Switzerland</h2>
+    <span class="count">5 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261012/swiss-property-agency-charges-100-francs-to-review-subletting-requests" target="_blank" rel="noopener">Swiss property agency charges 100 francs to review subletting requests</a></h3>
+  <p class="excerpt">Getting a permission to sublet a rented flat is normally free in Switzerland, but a management company is charging a fee for this service.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261012/swiss-property-agency-charges-100-francs-to-review-subletting-requests" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 14:05 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261012/how-a-severe-shortage-of-doctors-is-affecting-healthcare-in-switzerland" target="_blank" rel="noopener">How a severe shortage of doctors is hitting healthcare in Switzerland</a></h3>
+  <p class="excerpt">Switzerland&#39;s healthcare system is facing a serious problem: the scarcity of primary care physicians. How will shortfall in doctors affect the country’s population?</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261012/how-a-severe-shortage-of-doctors-is-affecting-healthcare-in-switzerland" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 13:56 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261012/traffic-lights-how-switzerland-plans-to-tackle-motorway-traffic-jams" target="_blank" rel="noopener">Traffic lights? How Switzerland plans to tackle motorway traffic jams</a></h3>
+  <p class="excerpt">The number of traffic jams in Switzerland has exploded in recent years, with decades-old motorways no longer able to accommodate the increasing number of vehicles.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261012/traffic-lights-how-switzerland-plans-to-tackle-motorway-traffic-jams" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:09 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261012/today-in-switzerland-a-roundup-of-the-latest-news-on-monday-254" target="_blank" rel="noopener">Today in Switzerland: A roundup of the latest news on Monday</a></h3>
+  <p class="excerpt">Swiss government’s plan to tackle traffic congestion stirs criticism; drought in Switzerland remains ‘severe’ despite some rain; and more news in our Monday roundup.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261012/today-in-switzerland-a-roundup-of-the-latest-news-on-monday-254" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 08:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/11/us/politics/maine-bernie-sanders-troy-jackson-seante-democrats.html" target="_blank" rel="noopener">In Maine Senate Race, Anxious Democrats Turn to Bernie Sanders for a Jolt</a></h3>
+  <p class="excerpt">Three months after a jarring summer candidate switch, some Democrats in the state are worried about the enthusiasm for their nominee, Troy Jackson, who is in a close race.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/11/us/politics/maine-bernie-sanders-troy-jackson-seante-democrats.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 11, 22:22 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-united_kingdom">
+  <div class="section-head">
+    <h2>United Kingdom</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cr78pe09y05xo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">AI minister warns &#39;likely&#39; UK&#39;s cyber defences will be breached</a></h3>
+  <p class="excerpt">Kanishka Narayan said the government will use advanced AI to strengthen the UK against cyber attacks.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cr78pe09y05xo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 13:06 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/live/2026/oct/12/uk-politics-live-tories-andy-burnham-russian-interference-brexit-eu-latest" target="_blank" rel="noopener">Burnham accepts Brexit result ‘legitimate’ despite Russian interference, says No 10 – UK politics live</a></h3>
+  <p class="excerpt">PM ‘absolutely accepts referendum result’, says spokespersonBurnham to urge MPs to embrace closer ties with EUZia Yusuf, Reform UK’s home affairs spokesperson, is speaking now. He started his speech with an account of a 73-year-old woman dying in North Wales after having to wait 23 hours for an ambulance, and he sought to link this to immigration.He said:The Royal College of Emergency Medicine estimates that 15,000 people across Britain died last year due to excess wait times for emergency treatment. That’s 300 people a week, 300 lives destroyed, 300 families devastated.And that number has inc</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/politics/live/2026/oct/12/uk-politics-live-tories-andy-burnham-russian-interference-brexit-eu-latest" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:41 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/ba28b7cd-293e-4eee-a073-ad81aaefced3?syn-25a6b1a6=1" target="_blank" rel="noopener">AI regulation must mimic Industrial Revolution laws, UK minister says</a></h3>
+  <p class="excerpt">Kanishka Narayan tells companies not to release frontier models ‘if you can’t adequately control the risks’</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/ba28b7cd-293e-4eee-a073-ad81aaefced3?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:01 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/11/theater/quentin-tarantino-sacha-baron-cohen-popinjay-cavalier.html" target="_blank" rel="noopener">Quentin Tarantino Debut Play ‘The Popinjay Cavalier’ to Star Sacha Baron Cohen</a></h3>
+  <p class="excerpt">“The Popinjay Cavalier,” directed by Tarantino, is scheduled to open for previews in London’s West End in February.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/11/theater/quentin-tarantino-sacha-baron-cohen-popinjay-cavalier.html" target="_blank" rel="noopener">NYT Europe</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 11:44 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/48b8c4ce-b2bf-44e2-badf-8159a9d664e4?syn-25a6b1a6=1" target="_blank" rel="noopener">Private equity puts string of UK high street names up for sale</a></h3>
+  <p class="excerpt">Owners of PizzaExpress, Morrisons and Third Space seeking exits as buyout groups cool on sector</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/48b8c4ce-b2bf-44e2-badf-8159a9d664e4?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/0a66d390-149d-4cdc-83b6-88015da1e835?syn-25a6b1a6=1" target="_blank" rel="noopener">Britain, Brexit and the cat-flap option</a></h3>
+  <p class="excerpt">The political, strategic and economic momentum for a reversal of Brexit is growing</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/0a66d390-149d-4cdc-83b6-88015da1e835?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 10:59 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/uk-news/2026/oct/12/mythical-roman-fort-frenni-fawr-wales-emperor" target="_blank" rel="noopener">Roman fort found in Wales could prove myth of emperor’s camp is real</a></h3>
+  <p class="excerpt">Exclusive: Finds suggest account in medieval folklore of a camp near Frenni Fawr hill was rooted in realityMagnus Maximus, the Roman emperor who ruled Britain in the fourth century, led his troops against the Picts and Scots, but a theory that he also established a military camp near Frenni Fawr hill in Wales has so far been based on folklore.Now fourth-century coins, among other finds at a newly identified Roman fort in Pembrokeshire, suggest the medieval tale was rooted in reality, to the excitement of archaeologists. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/uk-news/2026/oct/12/mythical-roman-fort-frenni-fawr-wales-emperor" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 07:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c65yn92nj423o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">UK does not support Trump&#39;s Russia diesel deal, says Streeting</a></h3>
+  <p class="excerpt">The defence secretary says the US and its allies need to increase pressure on Vladimir Putin to end the war with Ukraine.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c65yn92nj423o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 11, 11:00 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-united_states">
+  <div class="section-head">
+    <h2>United States</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/12/saudi-arabia-suspends-flights-latest-deadly-houthi-attack-airport" target="_blank" rel="noopener">Saudi Arabia further suspends flights after latest deadly Houthi attack on airport</a></h3>
+  <p class="excerpt">Energy minister says ‘fear has no place in the Saudi lexicon’ as paramilitary group again breaches stretched defencesSaudi Arabia was forced to extend the suspension of all flights to and from its main international airport in Riyadh on Monday after a further round of Houthi missile attacks caused more damage and left one dead.The Gulf nation said it was taking the step after Houthi missiles killed 13 people on Saturday and left more than 300 injured. Saudi state TV broadcast CCTV footage that showed passengers deluged in smoke and falling masonry as they queued at the airport terminal to boar</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/10/world/middleeast/riyadh-airport-attack-energy-congress.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.ft.com/content/ad0b6e93-708c-46c6-a1f2-e6248c934faf?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.theguardian.com/world/2026/oct/12/saudi-arabia-suspends-flights-latest-deadly-houthi-attack-airport" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 11:49 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/011a7926-402e-4baa-90ba-bab4a44a74de?syn-25a6b1a6=1" target="_blank" rel="noopener">Rejecting closer ties with EU would be ‘dereliction of duty’, Burnham says</a></h3>
+  <p class="excerpt">Prime minister to address Commons on Monday as he seeks to reopen debate on Brexit</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/011a7926-402e-4baa-90ba-bab4a44a74de?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c6lyk8e3lxz0o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+      <a href="https://www.theguardian.com/politics/2026/oct/12/burnham-urge-mps-embrace-closer-ties-with-eu" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 10:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/12/nobel-prize-for-economics-hall-woodford-new-keynesian-models" target="_blank" rel="noopener">Nobel Prize for economics awarded to Hall and Woodford for work on ‘smoothing’ crises</a></h3>
+  <p class="excerpt">US economists developed models that help central bankers and finance ministers to stabilise their economiesBusiness live – latest updatesTwo US economists have won the 2026 Nobel economics prize for their work developing models that help central bankers and finance ministers to stabilise their countries, avoiding long recessions and runaway inflation.Robert Hall of Stanford University, California, and Michael Woodford of Columbia University, New York, were recognised for developing the “microeconomic foundations of macroeconomic stabilisation”, giving policymakers better tools to smooth out th</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/12/business/nobel-prize-economics.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.theguardian.com/world/2026/oct/12/nobel-prize-for-economics-hall-woodford-new-keynesian-models" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:47 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/oct/12/first-thing-zelenskyy-blindsided-trump-announces-energy-ceasefire-ukraine-war-russia" target="_blank" rel="noopener">Zelenskyy blindsided after Trump announces ‘energy ceasefire’ in Ukraine war | First Thing</a></h3>
+  <p class="excerpt">Ukrainian president says the deal is ‘news to me’ and that Russia is still attacking energy infrastructure. Plus, investigation into continuing mystery of Havana syndromeDon’t already get First Thing in your inbox? Sign up hereGood morning. The Ukrainian president, Volodymyr Zelenskyy, has said it was “news to me” after Donald Trump announced a partial ceasefire deal in the Ukraine war. The US president had posted to social media to say: “Effective immediately, there is an ENERGY CEASEFIRE in the War between Russia and Ukraine. Both parties have agreed.”There was no sign that the Kremlin was o</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/a663781e-2709-41f2-99df-4fb5a6162e6b?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.theguardian.com/us-news/2026/oct/12/first-thing-zelenskyy-blindsided-trump-announces-energy-ceasefire-ukraine-war-russia" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 11:38 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/1d85912b-7a70-4ba1-87df-3b683adee91e?syn-25a6b1a6=1" target="_blank" rel="noopener">Houthis attack Riyadh airport</a></h3>
+  <p class="excerpt">Yemeni rebel group kills 12 and injures hundreds in attack on Saudi Arabian capital</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/1d85912b-7a70-4ba1-87df-3b683adee91e?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.theguardian.com/world/live/2026/oct/11/saudi-arabia-riyadh-airport-houthis-yemen-attack-blockade-trump-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/12/business/middle-east-oil-exports-houthi-saudi.html" target="_blank" rel="noopener">World’s Energy Order Tested Again as Iran War’s Reach Extends Further</a></h3>
+  <p class="excerpt">“We are entering an age of prolonged insecurity,” one former U.S. energy official said of what have become chronic threats on the Middle East’s energy core.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/12/business/middle-east-oil-exports-houthi-saudi.html" target="_blank" rel="noopener">NYT Middle East</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 13:15 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/oct/12/ukraine-russia-trump-energy-ceasefire-nato-zelenskyy-nobel-latest-news-updates" target="_blank" rel="noopener">Kremlin rejects 60-day truce offer and refuses to comment on Trump’s ‘energy ceasefire’ – Europe live</a></h3>
+  <p class="excerpt">Zelenskyy had proposed a 60-day total ceasefire to allow Ukraine to hold presidential electionsTrump announces partial ceasefire in Ukraine war as Zelenskyy says deal is ‘news to me’Addressing the conference virtually, Ukrainian president Volodymyr Zelenskyy commented on Trump’s “sudden but very important” energy ceasefire declaration over the weekend.He said it is clear that Putin “does not read Truth social”, the site that the US president posted his ceasefire declaration on.Russia wants to ruin the existing security architecture in Europe to make sure that Russian domination comes back to w</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/live/2026/oct/12/ukraine-russia-trump-energy-ceasefire-nato-zelenskyy-nobel-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 13:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/film/2026/oct/12/digger-loss-245m-box-office-collapse" target="_blank" rel="noopener">Digger on course for $245m loss after box office collapse</a></h3>
+  <p class="excerpt">Estimates suggest the eco satire starring Tom Cruise could join the list of top turkeys, including Cutthroat Island and The MarvelsDigger, the ambitious eco-fable starring Tom Cruise and directed by Alejandro G Iñárritu, is heading for an even worse financial outcome than previously thought, with reports suggesting it will lose around $245m (£185m), placing it among the biggest disasters in movie history.According to a report in Variety, Digger’s estimated second weekend revenue in North America of $3.2m is a 60% drop on its opening weekend figure of $8m, meaning its current domestic gross is </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/film/2026/oct/12/digger-loss-245m-box-office-collapse" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:51 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-netherlands">
+  <div class="section-head">
+    <h2>Netherlands</h2>
+    <span class="count">2 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/10/many-dutch-adults-can-only-swim-one-stroke/" target="_blank" rel="noopener">“Many Dutch adults can only swim one stroke”</a></h3>
+  <p class="excerpt">Former junior Romanian swimming champion Vlad Pațurcă moved to the Netherlands alone at the age of 21. Since then he’s...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/10/many-dutch-adults-can-only-swim-one-stroke/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 10:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/10/jetten-condemns-planned-us-sanctions-against-icc-urges-dialogue/" target="_blank" rel="noopener">Jetten condemns planned US sanctions against ICC, urges dialogue</a></h3>
+  <p class="excerpt">Dutch prime minister Rob Jetten has condemned the United States’ decision to impose sanctions on the International Criminal Court in...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/10/jetten-condemns-planned-us-sanctions-against-icc-urges-dialogue/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 10:41 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <div class="country-group">
+    <h2>Regional neighbors</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>Turkey</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/film/2026/oct/12/digger-loss-245m-box-office-collapse" target="_blank" rel="noopener">Digger on course for $245m loss after box office collapse</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Russia</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/us-news/2026/oct/12/first-thing-zelenskyy-blindsided-trump-announces-energy-ceasefire-ukraine-war-russia" target="_blank" rel="noopener">Zelenskyy blindsided after Trump announces ‘energy ceasefire’ in Ukraine war | First Thing</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/world/live/2026/oct/12/ukraine-russia-trump-energy-ceasefire-nato-zelenskyy-nobel-latest-news-updates" target="_blank" rel="noopener">Kremlin rejects 60-day truce offer and refuses to comment on Trump’s ‘energy ceasefire’ – Europe live</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/cq5ynr4kn3nmo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">PM believes Brexit vote was legitimate despite Russia claims, No 10 says</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/politics/live/2026/oct/12/uk-politics-live-tories-andy-burnham-russian-interference-brexit-eu-latest" target="_blank" rel="noopener">Burnham accepts Brexit result ‘legitimate’ despite Russian interference, says No 10 – UK politics live</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Iran</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/world/2026/oct/12/saudi-arabia-suspends-flights-latest-deadly-houthi-attack-airport" target="_blank" rel="noopener">Saudi Arabia further suspends flights after latest deadly Houthi attack on airport</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/1d85912b-7a70-4ba1-87df-3b683adee91e?syn-25a6b1a6=1" target="_blank" rel="noopener">Houthis attack Riyadh airport</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/12/business/middle-east-oil-exports-houthi-saudi.html" target="_blank" rel="noopener">World’s Energy Order Tested Again as Iran War’s Reach Extends Further</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/videos/cmy56nzd6y69o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Who are the Houthis, and why are they so hard to fight?</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Georgia</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/us-news/2026/oct/12/georgia-gwinnett-county-midterm-elections" target="_blank" rel="noopener">This Georgia county is one of the US’s most diverse – and that could flip multiple elections</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+  <div class="country-group">
+    <h2>Great powers</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>China</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/us-news/2026/oct/12/first-thing-zelenskyy-blindsided-trump-announces-energy-ceasefire-ukraine-war-russia" target="_blank" rel="noopener">Zelenskyy blindsided after Trump announces ‘energy ceasefire’ in Ukraine war | First Thing</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/90d5003e-dbec-4db3-88d2-d30d9c2a119d?syn-25a6b1a6=1" target="_blank" rel="noopener">The EU has more bark but lacks bite towards China</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/environment/2026/oct/12/eu-deal-china-limit-imports-hybrid-electric-vehicles" target="_blank" rel="noopener">EU to limit Chinese hybrid vehicle imports to 350,000 a year</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/7e48dd50-957c-4f45-ad24-ce628ca7e06a?syn-25a6b1a6=1" target="_blank" rel="noopener">EU ‘safeguards’ hybrid car sector from Chinese imports under new deal</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>European Union</h3>
+  <ul>
+    <li>
+      <a href="https://www.ft.com/content/011a7926-402e-4baa-90ba-bab4a44a74de?syn-25a6b1a6=1" target="_blank" rel="noopener">Rejecting closer ties with EU would be ‘dereliction of duty’, Burnham says</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/90d5003e-dbec-4db3-88d2-d30d9c2a119d?syn-25a6b1a6=1" target="_blank" rel="noopener">The EU has more bark but lacks bite towards China</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/environment/2026/oct/12/eu-deal-china-limit-imports-hybrid-electric-vehicles" target="_blank" rel="noopener">EU to limit Chinese hybrid vehicle imports to 350,000 a year</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/world/2026/oct/12/row-paris-opera-house-ceiling-lawsuit-threat-original-fresco-marc-chagall-canvases" target="_blank" rel="noopener">Chagall or Lenepveu or both? Row over Paris opera house dome enters legal arena</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>France</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/12/world/europe/france-paris-fire-market-enfants-rouges-marais.html" target="_blank" rel="noopener">Fire Devastates Paris’s Oldest Covered Food Market, Le Marché des Enfants Rouges</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/cm2keg7910gvo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Pupil arrested after two teachers shot at French school</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/c5ff7ed6-a42d-4ff3-8efa-485b1046102d" target="_blank" rel="noopener">Prune Nourry: how I resurrected Paris’s forgotten female artists</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/world/2026/oct/12/row-paris-opera-house-ceiling-lawsuit-threat-original-fresco-marc-chagall-canvases" target="_blank" rel="noopener">Chagall or Lenepveu or both? Row over Paris opera house dome enters legal arena</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Germany</h3>
+  <ul>
+    <li>
+      <a href="https://www.ft.com/content/90d5003e-dbec-4db3-88d2-d30d9c2a119d?syn-25a6b1a6=1" target="_blank" rel="noopener">The EU has more bark but lacks bite towards China</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/46b33d0d-274d-496e-9c42-1d4cf18b65cb?syn-25a6b1a6=1" target="_blank" rel="noopener">German labour minister resigns as Merz coalition strains deepen</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/258611cc-d4ec-40f7-9d3e-930991725837?syn-25a6b1a6=1" target="_blank" rel="noopener">VW chief calls for France and Germany to co-operate on China car fightback</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+  <div class="country-group">
+    <h2>Middle East</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>Israel</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/world/2026/oct/12/saudi-arabia-suspends-flights-latest-deadly-houthi-attack-airport" target="_blank" rel="noopener">Saudi Arabia further suspends flights after latest deadly Houthi attack on airport</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/film/2026/oct/12/naza-netanyahu-orders-identification-prosecution-interviewees-documentary-film" target="_blank" rel="noopener">NAZA: Netanyahu orders identification and prosecution of film’s interviewees</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/12/world/asia/flydubai-attack-suspect-melbourne-mosque.html" target="_blank" rel="noopener">Investigation Into FlyDubai Attacker Puts Spotlight on an Australian Mosque</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/11/world/israel-election-india-protests-riyadh.html" target="_blank" rel="noopener">An Israeli Election Like No Other</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Saudi Arabia</h3>
+  <ul>
+    <li>
+      <a href="https://news.un.org/feed/view/en/story/2026/10/1168572" target="_blank" rel="noopener">‘These attacks must cease immediately’: Guterres condemns deadly Houthi strike on Riyadh airport</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/world/2026/oct/12/saudi-arabia-suspends-flights-latest-deadly-houthi-attack-airport" target="_blank" rel="noopener">Saudi Arabia further suspends flights after latest deadly Houthi attack on airport</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/1d85912b-7a70-4ba1-87df-3b683adee91e?syn-25a6b1a6=1" target="_blank" rel="noopener">Houthis attack Riyadh airport</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/12/business/dealbook/saudi-arabia-strikes-energy-airport.html" target="_blank" rel="noopener">Strikes Put Saudi Arabia’s Economy Under Pressure</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>United Arab Emirates</h3>
+  <ul>
+    <li>
+      <a href="https://www.ft.com/content/1d85912b-7a70-4ba1-87df-3b683adee91e?syn-25a6b1a6=1" target="_blank" rel="noopener">Houthis attack Riyadh airport</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/world/2026/oct/12/melbourne-mycentre-mosque-flydubai-hijacker-facebook-video-post-ntwnfb" target="_blank" rel="noopener">Melbourne Islamic leader rejects centre’s alleged Flydubai hijacker links after Facebook video</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/12/world/asia/flydubai-attack-suspect-melbourne-mosque.html" target="_blank" rel="noopener">Investigation Into FlyDubai Attacker Puts Spotlight on an Australian Mosque</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+
+  <section class="topic" id="sec-ir_theory">
+  <div class="section-head">
+    <h2>International Relations — Theory &amp; Analysis</h2>
+    <span class="count">4 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://warontherocks.com/cogs-of-war/ground-robots-are-arriving-on-the-front-lines/" target="_blank" rel="noopener">Ground Robots Are Arriving on the Front Lines</a></h3>
+  <p class="excerpt">For years, ground autonomy lagged well behind its counterparts in the air. That gap is starting to close. Jonathan is joined by Ryan Hartman (Ondas Sentinel) and Scott Philips (Forterra) to examine what it takes to field autonomous ground vehicles in combat. The conversation ranges across what Ukraine and Gaza have taught them, what operating without GPS and resilient communications really looks like, air-ground teaming, and more. Image: Lance Cpl. Talan Werner via DVIDS. The post Ground Robots Are Arriving on the Front Lines appeared first on War on the Rocks.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/cogs-of-war/ground-robots-are-arriving-on-the-front-lines/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 08:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/china/chinese-robots-could-decide-ai-race" target="_blank" rel="noopener">Chinese Robots Could Decide the AI Race</a></h3>
+  <p class="excerpt">Scott Singer and Pavlo Zvenyhorodsky, researchers at Carnegie’s China AI Initiative, argue that China is betting that AI dominance will come from combining hardware and software, or AI-powered robots. By focusing only on software such as AI models, they argue, Washington and Silicon Valley risk falling behind.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/china/chinese-robots-could-decide-ai-race" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/iran/america-shouldnt-let-go-middle-east-phil-gordon" target="_blank" rel="noopener">America Shouldn’t Let Go of the Middle East</a></h3>
+  <p class="excerpt">Why disengagement is not the answer.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/iran/america-shouldnt-let-go-middle-east-phil-gordon" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/how-china-and-america-can-move-from-competition-to-stability/" target="_blank" rel="noopener">How China and America Can Move from Competition to Stability</a></h3>
+  <p class="excerpt">The American team thought it was signaling restraint. The Chinese team saw preparations for combat. In a closed-door Sino-American crisis simulation I helped organize in the 2010s &amp;#8212; which the U.S. military funded as part of a long-term project &amp;#8212; the Americans repositioned an aircraft carrier away from a maritime dispute between China and the Philippines, expecting the move to reassure Beijing. Instead, the Chinese participants became deeply alarmed. They believed the carrier was now ideally positioned to launch combat operations while remaining less vulnerable to attack. The episod</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/how-china-and-america-can-move-from-competition-to-stability/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 07:30 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-conflicts">
+  <div class="section-head">
+    <h2>Conflicts &amp; Security</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/12/saudi-arabia-suspends-flights-latest-deadly-houthi-attack-airport" target="_blank" rel="noopener">Saudi Arabia further suspends flights after latest deadly Houthi attack on airport</a></h3>
+  <p class="excerpt">Energy minister says ‘fear has no place in the Saudi lexicon’ as paramilitary group again breaches stretched defencesSaudi Arabia was forced to extend the suspension of all flights to and from its main international airport in Riyadh on Monday after a further round of Houthi missile attacks caused more damage and left one dead.The Gulf nation said it was taking the step after Houthi missiles killed 13 people on Saturday and left more than 300 injured. Saudi state TV broadcast CCTV footage that showed passengers deluged in smoke and falling masonry as they queued at the airport terminal to boar</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/10/world/middleeast/riyadh-airport-attack-energy-congress.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.ft.com/content/ad0b6e93-708c-46c6-a1f2-e6248c934faf?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.theguardian.com/world/2026/oct/12/saudi-arabia-suspends-flights-latest-deadly-houthi-attack-airport" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 11:49 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/011a7926-402e-4baa-90ba-bab4a44a74de?syn-25a6b1a6=1" target="_blank" rel="noopener">Rejecting closer ties with EU would be ‘dereliction of duty’, Burnham says</a></h3>
+  <p class="excerpt">Prime minister to address Commons on Monday as he seeks to reopen debate on Brexit</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/011a7926-402e-4baa-90ba-bab4a44a74de?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c6lyk8e3lxz0o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+      <a href="https://www.theguardian.com/politics/2026/oct/12/burnham-urge-mps-embrace-closer-ties-with-eu" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 10:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/12/nobel-prize-for-economics-hall-woodford-new-keynesian-models" target="_blank" rel="noopener">Nobel Prize for economics awarded to Hall and Woodford for work on ‘smoothing’ crises</a></h3>
+  <p class="excerpt">US economists developed models that help central bankers and finance ministers to stabilise their economiesBusiness live – latest updatesTwo US economists have won the 2026 Nobel economics prize for their work developing models that help central bankers and finance ministers to stabilise their countries, avoiding long recessions and runaway inflation.Robert Hall of Stanford University, California, and Michael Woodford of Columbia University, New York, were recognised for developing the “microeconomic foundations of macroeconomic stabilisation”, giving policymakers better tools to smooth out th</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/12/business/nobel-prize-economics.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.theguardian.com/world/2026/oct/12/nobel-prize-for-economics-hall-woodford-new-keynesian-models" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:47 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/oct/12/first-thing-zelenskyy-blindsided-trump-announces-energy-ceasefire-ukraine-war-russia" target="_blank" rel="noopener">Zelenskyy blindsided after Trump announces ‘energy ceasefire’ in Ukraine war | First Thing</a></h3>
+  <p class="excerpt">Ukrainian president says the deal is ‘news to me’ and that Russia is still attacking energy infrastructure. Plus, investigation into continuing mystery of Havana syndromeDon’t already get First Thing in your inbox? Sign up hereGood morning. The Ukrainian president, Volodymyr Zelenskyy, has said it was “news to me” after Donald Trump announced a partial ceasefire deal in the Ukraine war. The US president had posted to social media to say: “Effective immediately, there is an ENERGY CEASEFIRE in the War between Russia and Ukraine. Both parties have agreed.”There was no sign that the Kremlin was o</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/a663781e-2709-41f2-99df-4fb5a6162e6b?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.theguardian.com/us-news/2026/oct/12/first-thing-zelenskyy-blindsided-trump-announces-energy-ceasefire-ukraine-war-russia" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 11:38 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/1d85912b-7a70-4ba1-87df-3b683adee91e?syn-25a6b1a6=1" target="_blank" rel="noopener">Houthis attack Riyadh airport</a></h3>
+  <p class="excerpt">Yemeni rebel group kills 12 and injures hundreds in attack on Saudi Arabian capital</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/1d85912b-7a70-4ba1-87df-3b683adee91e?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.theguardian.com/world/live/2026/oct/11/saudi-arabia-riyadh-airport-houthis-yemen-attack-blockade-trump-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/12/business/middle-east-oil-exports-houthi-saudi.html" target="_blank" rel="noopener">World’s Energy Order Tested Again as Iran War’s Reach Extends Further</a></h3>
+  <p class="excerpt">“We are entering an age of prolonged insecurity,” one former U.S. energy official said of what have become chronic threats on the Middle East’s energy core.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/12/business/middle-east-oil-exports-houthi-saudi.html" target="_blank" rel="noopener">NYT Middle East</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 13:15 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cr78pe09y05xo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">AI minister warns &#39;likely&#39; UK&#39;s cyber defences will be breached</a></h3>
+  <p class="excerpt">Kanishka Narayan said the government will use advanced AI to strengthen the UK against cyber attacks.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cr78pe09y05xo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 13:06 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/oct/12/ukraine-russia-trump-energy-ceasefire-nato-zelenskyy-nobel-latest-news-updates" target="_blank" rel="noopener">Kremlin rejects 60-day truce offer and refuses to comment on Trump’s ‘energy ceasefire’ – Europe live</a></h3>
+  <p class="excerpt">Zelenskyy had proposed a 60-day total ceasefire to allow Ukraine to hold presidential electionsTrump announces partial ceasefire in Ukraine war as Zelenskyy says deal is ‘news to me’Addressing the conference virtually, Ukrainian president Volodymyr Zelenskyy commented on Trump’s “sudden but very important” energy ceasefire declaration over the weekend.He said it is clear that Putin “does not read Truth social”, the site that the US president posted his ceasefire declaration on.Russia wants to ruin the existing security architecture in Europe to make sure that Russian domination comes back to w</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/live/2026/oct/12/ukraine-russia-trump-energy-ceasefire-nato-zelenskyy-nobel-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 13:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/film/2026/oct/12/naza-netanyahu-orders-identification-prosecution-interviewees-documentary-film" target="_blank" rel="noopener">NAZA: Netanyahu orders identification and prosecution of film’s interviewees</a></h3>
+  <p class="excerpt">Israeli PM calls for criminal investigation into soldiers and officers interviewed in Guardian-produced documentaryThe Israeli prime minister, Benjamin Netanyahu, has ordered the country’s attorney general and the head of the Shin Bet security service to reveal the identities of soldiers and officers interviewed in the investigative documentary NAZA and prosecute them for causing “harm to Israel’s diplomatic and security interests”.The award-winning documentary, directed by the Oscar-winning film-makers Yuval Abraham and Rachel Szor and produced by the Guardian, details Israel’s mass killing o</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/film/2026/oct/12/naza-netanyahu-orders-identification-prosecution-interviewees-documentary-film" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:59 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/12/melbourne-mycentre-mosque-flydubai-hijacker-facebook-video-post-ntwnfb" target="_blank" rel="noopener">Melbourne Islamic leader rejects centre’s alleged Flydubai hijacker links after Facebook video</a></h3>
+  <p class="excerpt">MyCentre leader Samir Mohtadi, who also goes by Abu Hamza, says claims associating him with flyDubai pilot are unfoundedGet our breaking news email, free app or daily news podcastThe leader of a Melbourne Islamic centre allegedly linked to the accused Flydubai hijacker has rejected any connection with the radicalised pilot, saying he never met the suspect, and condemned “violence in all its forms”.The UAE government has alleged that investigators had traced the ideological and professional background of the 29-year-old suspect, Omani national Hammam al-Hammami, and that his “drift towards extr</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/oct/12/melbourne-mycentre-mosque-flydubai-hijacker-facebook-video-post-ntwnfb" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:27 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/90d5003e-dbec-4db3-88d2-d30d9c2a119d?syn-25a6b1a6=1" target="_blank" rel="noopener">The EU has more bark but lacks bite towards China</a></h3>
+  <p class="excerpt">Germany’s apparent shift towards trade belligerence is unfocused and unproven</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/90d5003e-dbec-4db3-88d2-d30d9c2a119d?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 11:31 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/australia-news/2026/oct/12/elizabeth-struhs-death-inquest-doctor-home-warning-queensland-coroner-ntwnfb" target="_blank" rel="noopener">Doctor warned Elizabeth Struhs would not be safe years before sect killed her by withdrawing medicine</a></h3>
+  <p class="excerpt">Inquest hears paediatricians pleaded with child safety for action to protect the eight-year-old from her parents and other Toowoomba sect membersGet our breaking news email, free app or daily news podcastA specialist child safety doctor was “stonewalled” by a child safety officer after repeatedly warning that Elizabeth Struhs would not be safe living with her mother, years before her parents allowed her to die by withdrawing lifesaving medicine, a coronial inquest has heard.Elizabeth returned to live with her parents at her family home in Toowoomba in 2019, after both of them were convicted of</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/australia-news/2026/oct/12/elizabeth-struhs-death-inquest-doctor-home-warning-queensland-coroner-ntwnfb" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 11:28 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-intelligence">
+  <div class="section-head">
+    <h2>Intelligence &amp; Espionage</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/oct/12/first-thing-zelenskyy-blindsided-trump-announces-energy-ceasefire-ukraine-war-russia" target="_blank" rel="noopener">Zelenskyy blindsided after Trump announces ‘energy ceasefire’ in Ukraine war | First Thing</a></h3>
+  <p class="excerpt">Ukrainian president says the deal is ‘news to me’ and that Russia is still attacking energy infrastructure. Plus, investigation into continuing mystery of Havana syndromeDon’t already get First Thing in your inbox? Sign up hereGood morning. The Ukrainian president, Volodymyr Zelenskyy, has said it was “news to me” after Donald Trump announced a partial ceasefire deal in the Ukraine war. The US president had posted to social media to say: “Effective immediately, there is an ENERGY CEASEFIRE in the War between Russia and Ukraine. Both parties have agreed.”There was no sign that the Kremlin was o</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/a663781e-2709-41f2-99df-4fb5a6162e6b?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.theguardian.com/us-news/2026/oct/12/first-thing-zelenskyy-blindsided-trump-announces-energy-ceasefire-ukraine-war-russia" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 11:38 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/12/business/middle-east-oil-exports-houthi-saudi.html" target="_blank" rel="noopener">World’s Energy Order Tested Again as Iran War’s Reach Extends Further</a></h3>
+  <p class="excerpt">“We are entering an age of prolonged insecurity,” one former U.S. energy official said of what have become chronic threats on the Middle East’s energy core.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/12/business/middle-east-oil-exports-houthi-saudi.html" target="_blank" rel="noopener">NYT Middle East</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 13:15 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/international/2026-10-12/up-to-10-years-in-prison-for-criticizing-cubas-government-on-social-media-how-the-castro-regime-punishes-dissent.html" target="_blank" rel="noopener">Up to 10 years in prison for criticizing Cuba’s government on social media: How the Castro regime punishes dissent</a></h3>
+  <p class="excerpt">EL PAÍS obtains the prosecutor’s request regarding Kamil Zayas and Ernesto Ricardo Medina, founders of the digital project El4tico. Both are accused of spreading propaganda against the constitutional order</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/international/2026-10-12/up-to-10-years-in-prison-for-criticizing-cubas-government-on-social-media-how-the-castro-regime-punishes-dissent.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 13:06 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/oct/12/ukraine-russia-trump-energy-ceasefire-nato-zelenskyy-nobel-latest-news-updates" target="_blank" rel="noopener">Kremlin rejects 60-day truce offer and refuses to comment on Trump’s ‘energy ceasefire’ – Europe live</a></h3>
+  <p class="excerpt">Zelenskyy had proposed a 60-day total ceasefire to allow Ukraine to hold presidential electionsTrump announces partial ceasefire in Ukraine war as Zelenskyy says deal is ‘news to me’Addressing the conference virtually, Ukrainian president Volodymyr Zelenskyy commented on Trump’s “sudden but very important” energy ceasefire declaration over the weekend.He said it is clear that Putin “does not read Truth social”, the site that the US president posted his ceasefire declaration on.Russia wants to ruin the existing security architecture in Europe to make sure that Russian domination comes back to w</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/live/2026/oct/12/ukraine-russia-trump-energy-ceasefire-nato-zelenskyy-nobel-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 13:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/film/2026/oct/12/digger-loss-245m-box-office-collapse" target="_blank" rel="noopener">Digger on course for $245m loss after box office collapse</a></h3>
+  <p class="excerpt">Estimates suggest the eco satire starring Tom Cruise could join the list of top turkeys, including Cutthroat Island and The MarvelsDigger, the ambitious eco-fable starring Tom Cruise and directed by Alejandro G Iñárritu, is heading for an even worse financial outcome than previously thought, with reports suggesting it will lose around $245m (£185m), placing it among the biggest disasters in movie history.According to a report in Variety, Digger’s estimated second weekend revenue in North America of $3.2m is a 60% drop on its opening weekend figure of $8m, meaning its current domestic gross is </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/film/2026/oct/12/digger-loss-245m-box-office-collapse" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:51 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/oct/12/federal-agents-ilhan-omar-home-raid" target="_blank" rel="noopener">Federal agents search Ilhan Omar’s home as part of fraud investigation – reports</a></h3>
+  <p class="excerpt">Video posted by Fox showed what appears to be law enforcement in HSI jackets at Omar’s DC residenceFederal agents searched Representative Ilhan Omar’s home Monday morning as part of a criminal fraud investigation, according to reports in the Associated Press and Fox News that cited a statement from the department of justice.A video posted by Fox showed what appeared to be law enforcement in HSI jackets at what Fox News said was Omar’s Washington DC residence. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/oct/12/federal-agents-ilhan-omar-home-raid" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:50 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/12/melbourne-mycentre-mosque-flydubai-hijacker-facebook-video-post-ntwnfb" target="_blank" rel="noopener">Melbourne Islamic leader rejects centre’s alleged Flydubai hijacker links after Facebook video</a></h3>
+  <p class="excerpt">MyCentre leader Samir Mohtadi, who also goes by Abu Hamza, says claims associating him with flyDubai pilot are unfoundedGet our breaking news email, free app or daily news podcastThe leader of a Melbourne Islamic centre allegedly linked to the accused Flydubai hijacker has rejected any connection with the radicalised pilot, saying he never met the suspect, and condemned “violence in all its forms”.The UAE government has alleged that investigators had traced the ideological and professional background of the 29-year-old suspect, Omani national Hammam al-Hammami, and that his “drift towards extr</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/oct/12/melbourne-mycentre-mosque-flydubai-hijacker-facebook-video-post-ntwnfb" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:27 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261012/how-a-severe-shortage-of-doctors-is-affecting-healthcare-in-switzerland" target="_blank" rel="noopener">How a severe shortage of doctors is hitting healthcare in Switzerland</a></h3>
+  <p class="excerpt">Switzerland&#39;s healthcare system is facing a serious problem: the scarcity of primary care physicians. How will shortfall in doctors affect the country’s population?</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261012/how-a-severe-shortage-of-doctors-is-affecting-healthcare-in-switzerland" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 13:56 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/australia-news/2026/oct/12/elizabeth-struhs-death-inquest-doctor-home-warning-queensland-coroner-ntwnfb" target="_blank" rel="noopener">Doctor warned Elizabeth Struhs would not be safe years before sect killed her by withdrawing medicine</a></h3>
+  <p class="excerpt">Inquest hears paediatricians pleaded with child safety for action to protect the eight-year-old from her parents and other Toowoomba sect membersGet our breaking news email, free app or daily news podcastA specialist child safety doctor was “stonewalled” by a child safety officer after repeatedly warning that Elizabeth Struhs would not be safe living with her mother, years before her parents allowed her to die by withdrawing lifesaving medicine, a coronial inquest has heard.Elizabeth returned to live with her parents at her family home in Toowoomba in 2019, after both of them were convicted of</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/australia-news/2026/oct/12/elizabeth-struhs-death-inquest-doctor-home-warning-queensland-coroner-ntwnfb" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 11:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/international/2026-10-12/at-the-epicenter-of-the-mysterious-health-alert-in-siberia-plague-theres-no-panic-people-are-calm.html" target="_blank" rel="noopener">At the epicenter of the mysterious health alert in Siberia: ‘Plague? There’s no panic, people are calm’</a></h3>
+  <p class="excerpt">The Russian authorities’ lack of transparency is fueling rumors among the public. Health officials are inspecting veterinary clinics in response to a possible animal infection</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/international/2026-10-12/at-the-epicenter-of-the-mysterious-health-alert-in-siberia-plague-theres-no-panic-people-are-calm.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 11:06 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/12/imran-khans-party-decries-coup-after-pakistan-suspends-provincial-government" target="_blank" rel="noopener">Pakistan detains hundreds of politicians from Imran Khan’s PTI party</a></h3>
+  <p class="excerpt">President Zardari suspends provincial government in escalation of tensions as Khan supporters march to IslamabadPoliticians from ⁠the party of the former Pakistani ​prime minister Imran Khan have been detained after the suspension of a provincial government now under emergency rule.Pakistan’s president declared a state of emergency and suspended the ⁠government in north-western Khyber Pakhtunkhwa province, led by Khan’s ally Sohail Afridi, on Sunday. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/oct/12/imran-khans-party-decries-coup-after-pakistan-suspends-provincial-government" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 10:48 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/12/zelenskyy-vows-retaliate-russia-strikes-ukraine-power-grid" target="_blank" rel="noopener">Zelenskyy vows to retaliate if Russian strikes on Ukraine’s power grid continue</a></h3>
+  <p class="excerpt">Ukrainian leader says he was surprised by Trump’s ‘energy ceasefire’ announcement, which was posted as Russian drones hit KyivEurope live – latest updatesVolodymyr Zelenskyy has vowed to respond to Russia’s continuing attacks on the Ukrainian power grid as European leaders rally around Kyiv amid a feud with Donald Trump over Ukraine’s strikes on oil refineries.Speaking to a gathering of European security officials in Warsaw on Monday, the Ukrainian president said Ukraine would retaliate if strikes on its power grid continued: “If Russia does not agree to an energy ceasefire this winter, we wil</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/oct/12/zelenskyy-vows-retaliate-russia-strikes-ukraine-power-grid" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 10:41 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-military">
+  <div class="section-head">
+    <h2>Military &amp; Defense</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/12/saudi-arabia-suspends-flights-latest-deadly-houthi-attack-airport" target="_blank" rel="noopener">Saudi Arabia further suspends flights after latest deadly Houthi attack on airport</a></h3>
+  <p class="excerpt">Energy minister says ‘fear has no place in the Saudi lexicon’ as paramilitary group again breaches stretched defencesSaudi Arabia was forced to extend the suspension of all flights to and from its main international airport in Riyadh on Monday after a further round of Houthi missile attacks caused more damage and left one dead.The Gulf nation said it was taking the step after Houthi missiles killed 13 people on Saturday and left more than 300 injured. Saudi state TV broadcast CCTV footage that showed passengers deluged in smoke and falling masonry as they queued at the airport terminal to boar</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/10/world/middleeast/riyadh-airport-attack-energy-congress.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.ft.com/content/ad0b6e93-708c-46c6-a1f2-e6248c934faf?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.theguardian.com/world/2026/oct/12/saudi-arabia-suspends-flights-latest-deadly-houthi-attack-airport" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 11:49 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/1d85912b-7a70-4ba1-87df-3b683adee91e?syn-25a6b1a6=1" target="_blank" rel="noopener">Houthis attack Riyadh airport</a></h3>
+  <p class="excerpt">Yemeni rebel group kills 12 and injures hundreds in attack on Saudi Arabian capital</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/1d85912b-7a70-4ba1-87df-3b683adee91e?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.theguardian.com/world/live/2026/oct/11/saudi-arabia-riyadh-airport-houthis-yemen-attack-blockade-trump-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cr78pe09y05xo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">AI minister warns &#39;likely&#39; UK&#39;s cyber defences will be breached</a></h3>
+  <p class="excerpt">Kanishka Narayan said the government will use advanced AI to strengthen the UK against cyber attacks.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cr78pe09y05xo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 13:06 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/12/zelenskyy-vows-retaliate-russia-strikes-ukraine-power-grid" target="_blank" rel="noopener">Zelenskyy vows to retaliate if Russian strikes on Ukraine’s power grid continue</a></h3>
+  <p class="excerpt">Ukrainian leader says he was surprised by Trump’s ‘energy ceasefire’ announcement, which was posted as Russian drones hit KyivEurope live – latest updatesVolodymyr Zelenskyy has vowed to respond to Russia’s continuing attacks on the Ukrainian power grid as European leaders rally around Kyiv amid a feud with Donald Trump over Ukraine’s strikes on oil refineries.Speaking to a gathering of European security officials in Warsaw on Monday, the Ukrainian president said Ukraine would retaliate if strikes on its power grid continued: “If Russia does not agree to an energy ceasefire this winter, we wil</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/oct/12/zelenskyy-vows-retaliate-russia-strikes-ukraine-power-grid" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 10:41 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/videos/cj4g17wz7gv0o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Watch: CCTV shows people take cover as missile hits Riyadh airport</a></h3>
+  <p class="excerpt">Footage from inside the airport shows the moment the strike hit on Saturday.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/videos/cj4g17wz7gv0o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 09:38 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/uk-news/2026/oct/12/mythical-roman-fort-frenni-fawr-wales-emperor" target="_blank" rel="noopener">Roman fort found in Wales could prove myth of emperor’s camp is real</a></h3>
+  <p class="excerpt">Exclusive: Finds suggest account in medieval folklore of a camp near Frenni Fawr hill was rooted in realityMagnus Maximus, the Roman emperor who ruled Britain in the fourth century, led his troops against the Picts and Scots, but a theory that he also established a military camp near Frenni Fawr hill in Wales has so far been based on folklore.Now fourth-century coins, among other finds at a newly identified Roman fort in Pembrokeshire, suggest the medieval tale was rooted in reality, to the excitement of archaeologists. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/uk-news/2026/oct/12/mythical-roman-fort-frenni-fawr-wales-emperor" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 07:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/0c5a10f4-5aca-456e-9c3a-4c4dc8132a63?syn-25a6b1a6=1" target="_blank" rel="noopener">Nato should prepare for deadly Russian ‘hybrid’ attack, says Poland</a></h3>
+  <p class="excerpt">Foreign minister Radosław Sikorski says risk of casualties is rising as Moscow escalates sabotage campaign on European soil</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/0c5a10f4-5aca-456e-9c3a-4c4dc8132a63?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/11/us/politics/in-the-senate-collins-often-defies-trump-but-rarely-stops-him.html" target="_blank" rel="noopener">In the Senate, Collins Often Defies Trump but Rarely Stops Him</a></h3>
+  <p class="excerpt">A New York Times analysis of Senator Susan Collins’s voting record shows that she frequently breaks with Republicans but more seldom changes an outcome.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/11/us/politics/in-the-senate-collins-often-defies-trump-but-rarely-stops-him.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 11, 18:59 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c6n9rvynl5p5o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Poland detains man suspected of planning assassination of PM Tusk</a></h3>
+  <p class="excerpt">Police received credible information about possible attacks against Donald Tusk and his defence minister.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c6n9rvynl5p5o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 11, 17:27 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/10/us/politics/marshall-kansas-baker-bill-senate-midterms.html" target="_blank" rel="noopener">Roger Marshall, a Kansas Senator Facing Re-Election, Settles a Bakery Bill 6 Years Later</a></h3>
+  <p class="excerpt">Senator Roger Marshall, a Kansas Republican in a difficult race, paid an old campaign debt for cookies, muffins and brownies after a baker’s story went viral online.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/10/us/politics/marshall-kansas-baker-bill-senate-midterms.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 11, 14:17 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c65yn92nj423o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">UK does not support Trump&#39;s Russia diesel deal, says Streeting</a></h3>
+  <p class="excerpt">The defence secretary says the US and its allies need to increase pressure on Vladimir Putin to end the war with Ukraine.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c65yn92nj423o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 11, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/how-china-and-america-can-move-from-competition-to-stability/" target="_blank" rel="noopener">How China and America Can Move from Competition to Stability</a></h3>
+  <p class="excerpt">The American team thought it was signaling restraint. The Chinese team saw preparations for combat. In a closed-door Sino-American crisis simulation I helped organize in the 2010s &amp;#8212; which the U.S. military funded as part of a long-term project &amp;#8212; the Americans repositioned an aircraft carrier away from a maritime dispute between China and the Philippines, expecting the move to reassure Beijing. Instead, the Chinese participants became deeply alarmed. They believed the carrier was now ideally positioned to launch combat operations while remaining less vulnerable to attack. The episod</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/how-china-and-america-can-move-from-competition-to-stability/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 07:30 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-technology">
+  <div class="section-head">
+    <h2>Technology</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/1d85912b-7a70-4ba1-87df-3b683adee91e?syn-25a6b1a6=1" target="_blank" rel="noopener">Houthis attack Riyadh airport</a></h3>
+  <p class="excerpt">Yemeni rebel group kills 12 and injures hundreds in attack on Saudi Arabian capital</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/1d85912b-7a70-4ba1-87df-3b683adee91e?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.theguardian.com/world/live/2026/oct/11/saudi-arabia-riyadh-airport-houthis-yemen-attack-blockade-trump-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cr78pe09y05xo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">AI minister warns &#39;likely&#39; UK&#39;s cyber defences will be breached</a></h3>
+  <p class="excerpt">Kanishka Narayan said the government will use advanced AI to strengthen the UK against cyber attacks.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cr78pe09y05xo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 13:06 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/09/business/elon-musk-delta-starlink-wifi.html" target="_blank" rel="noopener">Elon Musk, Delta Airlines and a Feud Over In-Flight Wi-Fi</a></h3>
+  <p class="excerpt">Mr. Musk, whose company SpaceX owns Starlink, has attacked the top executive of Delta Air Lines for not selecting the internet provider.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/09/business/elon-musk-delta-starlink-wifi.html" target="_blank" rel="noopener">NYT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:58 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/ba28b7cd-293e-4eee-a073-ad81aaefced3?syn-25a6b1a6=1" target="_blank" rel="noopener">AI regulation must mimic Industrial Revolution laws, UK minister says</a></h3>
+  <p class="excerpt">Kanishka Narayan tells companies not to release frontier models ‘if you can’t adequately control the risks’</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/ba28b7cd-293e-4eee-a073-ad81aaefced3?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:01 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/48b8c4ce-b2bf-44e2-badf-8159a9d664e4?syn-25a6b1a6=1" target="_blank" rel="noopener">Private equity puts string of UK high street names up for sale</a></h3>
+  <p class="excerpt">Owners of PizzaExpress, Morrisons and Third Space seeking exits as buyout groups cool on sector</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/48b8c4ce-b2bf-44e2-badf-8159a9d664e4?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/f17779e4-adcd-46af-9fe5-3ede05833058" target="_blank" rel="noopener">Why AI won’t kill the creative class</a></h3>
+  <p class="excerpt">Used right, the technology can unleash human creativity rather than destroy it</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/f17779e4-adcd-46af-9fe5-3ede05833058" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/12/technology/universal-basic-income-silicon-valley.html" target="_blank" rel="noopener">Is Universal Basic Income the Answer to A.I.-Fueled Job Losses?</a></h3>
+  <p class="excerpt">For more than a year, The New York Times followed recipients of universal basic income programs, which Elon Musk and other tech leaders have promoted as a solution to A.I.-fueled job losses.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/12/technology/universal-basic-income-silicon-valley.html" target="_blank" rel="noopener">NYT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 09:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/17a207f4-1563-48af-91e3-14bac89ab4b8?syn-25a6b1a6=1" target="_blank" rel="noopener">The huge lurking leverage of AI hyperscalers</a></h3>
+  <p class="excerpt">While equity investors look to sunny futures, creditors are scrutinising liabilities like leases on data centres</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/17a207f4-1563-48af-91e3-14bac89ab4b8?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/07/technology/personaltech/chatgpt-teens-openai.html" target="_blank" rel="noopener">Why My Conversations with OpenAI’s ‘ChatGPT for Teens’ Made Me Very Worried</a></h3>
+  <p class="excerpt">A new mode includes a study tool, but it still does a user’s homework. And a children’s safety nonprofit says the chatbot flunked its tests.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/07/technology/personaltech/chatgpt-teens-openai.html" target="_blank" rel="noopener">NYT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 03:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/11/insider/new-york-times-space-editor-victoria-jaggard.html" target="_blank" rel="noopener">The Times’s New Space Editor Has Her Eye on the Cosmos</a></h3>
+  <p class="excerpt">On the Science desk, Victoria Jaggard spends her days pondering the universe’s most pressing mysteries.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/11/insider/new-york-times-space-editor-victoria-jaggard.html" target="_blank" rel="noopener">NYT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 11, 18:14 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/5b90cdd3-b78b-44ee-8045-8a0602ac0ef4?syn-25a6b1a6=1" target="_blank" rel="noopener">IMF and World Bank to warn central bankers of a gathering storm</a></h3>
+  <p class="excerpt">Annual meetings in Bangkok, bumper bank earnings beckon, Dublin hosts AI summit</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/5b90cdd3-b78b-44ee-8045-8a0602ac0ef4?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Global Economy</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 11, 17:15 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/ae389f53-ebd4-4188-9b44-266770595158?syn-25a6b1a6=1" target="_blank" rel="noopener">The collective global duty to safeguard time</a></h3>
+  <p class="excerpt">World powers need to agree on standardisation crucial for infrastructure and space travel</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/ae389f53-ebd4-4188-9b44-266770595158?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 11, 11:00 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-economy">
+  <div class="section-head">
+    <h2>Economy &amp; Trade</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/12/saudi-arabia-suspends-flights-latest-deadly-houthi-attack-airport" target="_blank" rel="noopener">Saudi Arabia further suspends flights after latest deadly Houthi attack on airport</a></h3>
+  <p class="excerpt">Energy minister says ‘fear has no place in the Saudi lexicon’ as paramilitary group again breaches stretched defencesSaudi Arabia was forced to extend the suspension of all flights to and from its main international airport in Riyadh on Monday after a further round of Houthi missile attacks caused more damage and left one dead.The Gulf nation said it was taking the step after Houthi missiles killed 13 people on Saturday and left more than 300 injured. Saudi state TV broadcast CCTV footage that showed passengers deluged in smoke and falling masonry as they queued at the airport terminal to boar</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/10/world/middleeast/riyadh-airport-attack-energy-congress.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.ft.com/content/ad0b6e93-708c-46c6-a1f2-e6248c934faf?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.theguardian.com/world/2026/oct/12/saudi-arabia-suspends-flights-latest-deadly-houthi-attack-airport" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 11:49 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/011a7926-402e-4baa-90ba-bab4a44a74de?syn-25a6b1a6=1" target="_blank" rel="noopener">Rejecting closer ties with EU would be ‘dereliction of duty’, Burnham says</a></h3>
+  <p class="excerpt">Prime minister to address Commons on Monday as he seeks to reopen debate on Brexit</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/011a7926-402e-4baa-90ba-bab4a44a74de?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c6lyk8e3lxz0o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+      <a href="https://www.theguardian.com/politics/2026/oct/12/burnham-urge-mps-embrace-closer-ties-with-eu" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 10:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/12/nobel-prize-for-economics-hall-woodford-new-keynesian-models" target="_blank" rel="noopener">Nobel Prize for economics awarded to Hall and Woodford for work on ‘smoothing’ crises</a></h3>
+  <p class="excerpt">US economists developed models that help central bankers and finance ministers to stabilise their economiesBusiness live – latest updatesTwo US economists have won the 2026 Nobel economics prize for their work developing models that help central bankers and finance ministers to stabilise their countries, avoiding long recessions and runaway inflation.Robert Hall of Stanford University, California, and Michael Woodford of Columbia University, New York, were recognised for developing the “microeconomic foundations of macroeconomic stabilisation”, giving policymakers better tools to smooth out th</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/12/business/nobel-prize-economics.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.theguardian.com/world/2026/oct/12/nobel-prize-for-economics-hall-woodford-new-keynesian-models" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:47 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/oct/12/first-thing-zelenskyy-blindsided-trump-announces-energy-ceasefire-ukraine-war-russia" target="_blank" rel="noopener">Zelenskyy blindsided after Trump announces ‘energy ceasefire’ in Ukraine war | First Thing</a></h3>
+  <p class="excerpt">Ukrainian president says the deal is ‘news to me’ and that Russia is still attacking energy infrastructure. Plus, investigation into continuing mystery of Havana syndromeDon’t already get First Thing in your inbox? Sign up hereGood morning. The Ukrainian president, Volodymyr Zelenskyy, has said it was “news to me” after Donald Trump announced a partial ceasefire deal in the Ukraine war. The US president had posted to social media to say: “Effective immediately, there is an ENERGY CEASEFIRE in the War between Russia and Ukraine. Both parties have agreed.”There was no sign that the Kremlin was o</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/a663781e-2709-41f2-99df-4fb5a6162e6b?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.theguardian.com/us-news/2026/oct/12/first-thing-zelenskyy-blindsided-trump-announces-energy-ceasefire-ukraine-war-russia" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 11:38 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/1d85912b-7a70-4ba1-87df-3b683adee91e?syn-25a6b1a6=1" target="_blank" rel="noopener">Houthis attack Riyadh airport</a></h3>
+  <p class="excerpt">Yemeni rebel group kills 12 and injures hundreds in attack on Saudi Arabian capital</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/1d85912b-7a70-4ba1-87df-3b683adee91e?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.theguardian.com/world/live/2026/oct/11/saudi-arabia-riyadh-airport-houthis-yemen-attack-blockade-trump-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/12/business/middle-east-oil-exports-houthi-saudi.html" target="_blank" rel="noopener">World’s Energy Order Tested Again as Iran War’s Reach Extends Further</a></h3>
+  <p class="excerpt">“We are entering an age of prolonged insecurity,” one former U.S. energy official said of what have become chronic threats on the Middle East’s energy core.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/12/business/middle-east-oil-exports-houthi-saudi.html" target="_blank" rel="noopener">NYT Middle East</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 13:15 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/oct/12/ukraine-russia-trump-energy-ceasefire-nato-zelenskyy-nobel-latest-news-updates" target="_blank" rel="noopener">Kremlin rejects 60-day truce offer and refuses to comment on Trump’s ‘energy ceasefire’ – Europe live</a></h3>
+  <p class="excerpt">Zelenskyy had proposed a 60-day total ceasefire to allow Ukraine to hold presidential electionsTrump announces partial ceasefire in Ukraine war as Zelenskyy says deal is ‘news to me’Addressing the conference virtually, Ukrainian president Volodymyr Zelenskyy commented on Trump’s “sudden but very important” energy ceasefire declaration over the weekend.He said it is clear that Putin “does not read Truth social”, the site that the US president posted his ceasefire declaration on.Russia wants to ruin the existing security architecture in Europe to make sure that Russian domination comes back to w</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/live/2026/oct/12/ukraine-russia-trump-energy-ceasefire-nato-zelenskyy-nobel-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 13:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/12/business/dealbook/saudi-arabia-strikes-energy-airport.html" target="_blank" rel="noopener">Strikes Put Saudi Arabia’s Economy Under Pressure</a></h3>
+  <p class="excerpt">Deadly attacks on the main Saudi airport add to the challenges facing the country, as it seeks to maintain energy production and keep major events on track.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/12/business/dealbook/saudi-arabia-strikes-energy-airport.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:44 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/12/world/europe/france-paris-fire-market-enfants-rouges-marais.html" target="_blank" rel="noopener">Fire Devastates Paris’s Oldest Covered Food Market, Le Marché des Enfants Rouges</a></h3>
+  <p class="excerpt">Le Marché des Enfants Rouges, which opened in 1615 as a vibrant food hall, was a fixture for chefs, cooks and tourists.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/12/world/europe/france-paris-fire-market-enfants-rouges-marais.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:36 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/90d5003e-dbec-4db3-88d2-d30d9c2a119d?syn-25a6b1a6=1" target="_blank" rel="noopener">The EU has more bark but lacks bite towards China</a></h3>
+  <p class="excerpt">Germany’s apparent shift towards trade belligerence is unfocused and unproven</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/90d5003e-dbec-4db3-88d2-d30d9c2a119d?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 11:31 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/environment/2026/oct/12/eu-deal-china-limit-imports-hybrid-electric-vehicles" target="_blank" rel="noopener">EU to limit Chinese hybrid vehicle imports to 350,000 a year</a></h3>
+  <p class="excerpt">Brussels uses WTO rules to quickly impose quota, which will halve Chinese market share to 3%Business live – latest updatesVW boss backs EU plan to bolster domestic industryThe EU is to limit the number of hybrid electric vehicles imported from China to 350,000 cars a year, the European Commission has confirmed.Imports have been soaring in the past two years; about 800,000 battery and plug-in hybrids are likely to be sold this year. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/environment/2026/oct/12/eu-deal-china-limit-imports-hybrid-electric-vehicles" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 11:23 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/863619b6-c4a7-4b1a-8a53-6950d47d1833?syn-25a6b1a6=1" target="_blank" rel="noopener">Putin is breaching Trump’s ‘energy ceasefire’, Zelenskyy says</a></h3>
+  <p class="excerpt">Ukrainian president said Russia conducted strikes on power plants after US president’s announcement on Sunday</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/863619b6-c4a7-4b1a-8a53-6950d47d1833?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 11:22 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-politics">
+  <div class="section-head">
+    <h2>Politics &amp; Diplomacy</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/011a7926-402e-4baa-90ba-bab4a44a74de?syn-25a6b1a6=1" target="_blank" rel="noopener">Rejecting closer ties with EU would be ‘dereliction of duty’, Burnham says</a></h3>
+  <p class="excerpt">Prime minister to address Commons on Monday as he seeks to reopen debate on Brexit</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/011a7926-402e-4baa-90ba-bab4a44a74de?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c6lyk8e3lxz0o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+      <a href="https://www.theguardian.com/politics/2026/oct/12/burnham-urge-mps-embrace-closer-ties-with-eu" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 10:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/12/nobel-prize-for-economics-hall-woodford-new-keynesian-models" target="_blank" rel="noopener">Nobel Prize for economics awarded to Hall and Woodford for work on ‘smoothing’ crises</a></h3>
+  <p class="excerpt">US economists developed models that help central bankers and finance ministers to stabilise their economiesBusiness live – latest updatesTwo US economists have won the 2026 Nobel economics prize for their work developing models that help central bankers and finance ministers to stabilise their countries, avoiding long recessions and runaway inflation.Robert Hall of Stanford University, California, and Michael Woodford of Columbia University, New York, were recognised for developing the “microeconomic foundations of macroeconomic stabilisation”, giving policymakers better tools to smooth out th</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/12/business/nobel-prize-economics.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.theguardian.com/world/2026/oct/12/nobel-prize-for-economics-hall-woodford-new-keynesian-models" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:47 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cmqxn0lw25r3o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Russell Brand appears in court for start of rape trial</a></h3>
+  <p class="excerpt">The 51-year-old actor and comedian denies charges of rape and sexual assault against six women.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/12/arts/russell-brand-trial-what-to-know.html" target="_blank" rel="noopener">NYT Europe</a>
+      <a href="https://www.bbc.co.uk/news/articles/cmqxn0lw25r3o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:44 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/oct/12/first-thing-zelenskyy-blindsided-trump-announces-energy-ceasefire-ukraine-war-russia" target="_blank" rel="noopener">Zelenskyy blindsided after Trump announces ‘energy ceasefire’ in Ukraine war | First Thing</a></h3>
+  <p class="excerpt">Ukrainian president says the deal is ‘news to me’ and that Russia is still attacking energy infrastructure. Plus, investigation into continuing mystery of Havana syndromeDon’t already get First Thing in your inbox? Sign up hereGood morning. The Ukrainian president, Volodymyr Zelenskyy, has said it was “news to me” after Donald Trump announced a partial ceasefire deal in the Ukraine war. The US president had posted to social media to say: “Effective immediately, there is an ENERGY CEASEFIRE in the War between Russia and Ukraine. Both parties have agreed.”There was no sign that the Kremlin was o</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/a663781e-2709-41f2-99df-4fb5a6162e6b?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.theguardian.com/us-news/2026/oct/12/first-thing-zelenskyy-blindsided-trump-announces-energy-ceasefire-ukraine-war-russia" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 11:38 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/1d85912b-7a70-4ba1-87df-3b683adee91e?syn-25a6b1a6=1" target="_blank" rel="noopener">Houthis attack Riyadh airport</a></h3>
+  <p class="excerpt">Yemeni rebel group kills 12 and injures hundreds in attack on Saudi Arabian capital</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/1d85912b-7a70-4ba1-87df-3b683adee91e?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.theguardian.com/world/live/2026/oct/11/saudi-arabia-riyadh-airport-houthis-yemen-attack-blockade-trump-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/11/world/africa/migrant-boat-capsize-djibouti-dead-yemen.html" target="_blank" rel="noopener">Over 100 Migrants Are Dead After Boat Capsizes Near Djibouti</a></h3>
+  <p class="excerpt">The shipwreck is among the deadliest ever recorded on the route to Yemen, the International Organization for Migration said. Dozens remain missing, and the bodies of 15 children were recovered.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/11/world/africa/migrant-boat-capsize-djibouti-dead-yemen.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/cwy7lxx60dg5o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 11, 18:58 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/international/2026-10-12/up-to-10-years-in-prison-for-criticizing-cubas-government-on-social-media-how-the-castro-regime-punishes-dissent.html" target="_blank" rel="noopener">Up to 10 years in prison for criticizing Cuba’s government on social media: How the Castro regime punishes dissent</a></h3>
+  <p class="excerpt">EL PAÍS obtains the prosecutor’s request regarding Kamil Zayas and Ernesto Ricardo Medina, founders of the digital project El4tico. Both are accused of spreading propaganda against the constitutional order</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/international/2026-10-12/up-to-10-years-in-prison-for-criticizing-cubas-government-on-social-media-how-the-castro-regime-punishes-dissent.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 13:06 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cr78pe09y05xo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">AI minister warns &#39;likely&#39; UK&#39;s cyber defences will be breached</a></h3>
+  <p class="excerpt">Kanishka Narayan said the government will use advanced AI to strengthen the UK against cyber attacks.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cr78pe09y05xo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 13:06 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/oct/12/ukraine-russia-trump-energy-ceasefire-nato-zelenskyy-nobel-latest-news-updates" target="_blank" rel="noopener">Kremlin rejects 60-day truce offer and refuses to comment on Trump’s ‘energy ceasefire’ – Europe live</a></h3>
+  <p class="excerpt">Zelenskyy had proposed a 60-day total ceasefire to allow Ukraine to hold presidential electionsTrump announces partial ceasefire in Ukraine war as Zelenskyy says deal is ‘news to me’Addressing the conference virtually, Ukrainian president Volodymyr Zelenskyy commented on Trump’s “sudden but very important” energy ceasefire declaration over the weekend.He said it is clear that Putin “does not read Truth social”, the site that the US president posted his ceasefire declaration on.Russia wants to ruin the existing security architecture in Europe to make sure that Russian domination comes back to w</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/live/2026/oct/12/ukraine-russia-trump-energy-ceasefire-nato-zelenskyy-nobel-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 13:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/film/2026/oct/12/naza-netanyahu-orders-identification-prosecution-interviewees-documentary-film" target="_blank" rel="noopener">NAZA: Netanyahu orders identification and prosecution of film’s interviewees</a></h3>
+  <p class="excerpt">Israeli PM calls for criminal investigation into soldiers and officers interviewed in Guardian-produced documentaryThe Israeli prime minister, Benjamin Netanyahu, has ordered the country’s attorney general and the head of the Shin Bet security service to reveal the identities of soldiers and officers interviewed in the investigative documentary NAZA and prosecute them for causing “harm to Israel’s diplomatic and security interests”.The award-winning documentary, directed by the Oscar-winning film-makers Yuval Abraham and Rachel Szor and produced by the Guardian, details Israel’s mass killing o</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/film/2026/oct/12/naza-netanyahu-orders-identification-prosecution-interviewees-documentary-film" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:59 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cq5ynr4kn3nmo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">PM believes Brexit vote was legitimate despite Russia claims, No 10 says</a></h3>
+  <p class="excerpt">It is &#34;inconceivable&#34; that Russia did not try to use the referendum to its advantage, No 10 said, but the PM believed it did not succeed in influencing the result.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cq5ynr4kn3nmo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/live/2026/oct/12/uk-politics-live-tories-andy-burnham-russian-interference-brexit-eu-latest" target="_blank" rel="noopener">Burnham accepts Brexit result ‘legitimate’ despite Russian interference, says No 10 – UK politics live</a></h3>
+  <p class="excerpt">PM ‘absolutely accepts referendum result’, says spokespersonBurnham to urge MPs to embrace closer ties with EUZia Yusuf, Reform UK’s home affairs spokesperson, is speaking now. He started his speech with an account of a 73-year-old woman dying in North Wales after having to wait 23 hours for an ambulance, and he sought to link this to immigration.He said:The Royal College of Emergency Medicine estimates that 15,000 people across Britain died last year due to excess wait times for emergency treatment. That’s 300 people a week, 300 lives destroyed, 300 families devastated.And that number has inc</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/politics/live/2026/oct/12/uk-politics-live-tories-andy-burnham-russian-interference-brexit-eu-latest" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:41 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <footer class="foot">
+    Generated 2026-10-12 13:21 UTC ·
+    Aggregated from reliable sources (NYT, Foreign Affairs, FT, official government sites).
+    Headlines &amp; excerpts link to originals; no paywalled full text is reproduced.
+  </footer>
+</main>
+</body>
+</html>
