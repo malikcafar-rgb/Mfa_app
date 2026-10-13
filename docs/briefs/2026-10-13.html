@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Today's Brief — Tuesday, 13 October 2026</title>
+<style>
+  /* New York Times–inspired: white background, serif headlines, hairline rules,
+     sans-serif labels, minimal color. */
+  :root {
+    --bg: #ffffff;
+    --text: #121212;        /* near-black body */
+    --muted: #666666;       /* bylines / meta */
+    --faint: #999999;
+    --rule: #e2e2e2;        /* hairline dividers */
+    --rule-strong: #121212; /* section top rules */
+    --link: #326891;        /* NYT link blue, used sparingly */
+    --official: #9a6a00;    /* restrained gold-brown */
+    --wire: #326891;
+    --analysis: #6a4c93;
+    --serif: Georgia, "Times New Roman", "Times", serif;
+    --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: var(--serif); line-height: 1.5; -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px 90px; }
+
+  /* Masthead — centered serif wordmark with black rules above/below. */
+  header.masthead { background: var(--bg); border-bottom: 1px solid var(--text);
+    padding: 14px 24px 0; }
+  .masthead-inner { max-width: 960px; margin: 0 auto; }
+  .brand { text-align: center; padding-bottom: 12px; border-bottom: 1px solid var(--text);
+    margin-bottom: 8px; }
+  .brand .kicker { font-family: var(--sans); font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .brand h1 { font-family: var(--serif); font-weight: 700; margin: 4px 0 2px;
+    font-size: 40px; letter-spacing: -.01em; line-height: 1.05; }
+  .brand .date { font-family: var(--sans); color: var(--muted); font-size: 12.5px;
+    letter-spacing: .02em; }
+  .nav { display: flex; gap: 20px; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 12px; text-transform: uppercase; letter-spacing: .08em;
+    padding: 8px 0 10px; }
+  .nav a { color: var(--text); font-weight: 600; }
+  .nav a:hover { color: var(--link); }
+
+  /* Links-only / status banner — quiet, italic serif. */
+  .banner { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    padding: 10px 0; margin: 18px 0 6px; color: var(--muted); font-size: 14px;
+    font-style: italic; }
+
+  /* Executive summary — a boxed "lede" with a sans label. */
+  .exec { border: 1px solid var(--text); padding: 22px 24px; margin: 24px 0 8px; }
+  .exec h2 { font-family: var(--sans); margin: 0 0 10px; font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text); font-weight: 700; }
+  .exec p { margin: 0 0 12px; font-size: 18px; line-height: 1.55; }
+  .exec p:last-child { margin-bottom: 0; }
+  .exec .ir { border-top: 1px solid var(--rule); margin-top: 16px; padding-top: 16px; }
+  .exec .ir h3 { font-family: var(--sans); margin: 0 0 6px; font-size: 11px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--analysis); font-weight: 700; }
+  .exec .ir p { font-size: 16px; }
+
+  /* Section fronts — serif head with a strong black rule above (NYT section style). */
+  section.topic { margin: 34px 0 0; }
+  .section-head { border-top: 2px solid var(--rule-strong); padding-top: 8px; margin-bottom: 6px;
+    display: flex; align-items: baseline; gap: 10px; }
+  .section-head h2 { font-family: var(--serif); margin: 0; font-size: 22px; font-weight: 700;
+    letter-spacing: -.01em; }
+  .section-head .count { font-family: var(--sans); color: var(--faint); font-size: 11px;
+    text-transform: uppercase; letter-spacing: .08em; }
+  .section-brief { font-style: italic; color: #333; padding: 6px 0 2px; margin: 6px 0;
+    font-size: 15px; border-left: 3px solid var(--rule-strong); padding-left: 12px; }
+
+  /* Story cards — serif headline, hairline divider, sans meta. */
+  .card { padding: 15px 0; border-bottom: 1px solid var(--rule); }
+  .card:last-child { border-bottom: none; }
+  .card h3 { font-family: var(--serif); margin: 0 0 5px; font-size: 20px; font-weight: 700;
+    line-height: 1.25; letter-spacing: -.005em; }
+  .card h3 a { color: var(--text); }
+  .card h3 a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+  .card .ai { margin: 4px 0 6px; font-size: 15px; color: #333; line-height: 1.5; }
+  .card .excerpt { margin: 4px 0 6px; font-size: 15px; color: var(--muted); line-height: 1.5; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    font-family: var(--sans); font-size: 12px; margin-top: 5px; color: var(--faint); }
+
+  /* Tier labels — small uppercase sans, a dot of color, no boxes. */
+  .badge { font-family: var(--sans); font-size: 10.5px; letter-spacing: .07em;
+    text-transform: uppercase; font-weight: 700; display: inline-flex; align-items: center; }
+  .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%;
+    display: inline-block; margin-right: 5px; background: currentColor; }
+  .badge.official { color: var(--official); }
+  .badge.wire { color: var(--wire); }
+  .badge.analysis { color: var(--analysis); }
+  .sources { display: flex; flex-wrap: wrap; gap: 6px; font-family: var(--sans); }
+  .sources a { color: var(--muted); }
+  .sources a:hover { color: var(--link); text-decoration: underline; }
+  .sources a::after { content: "·"; margin-left: 6px; color: var(--faint); }
+  .sources a:last-child::after { content: ""; }
+
+  /* Country watch — bordered cards with serif titles. */
+  .country-group { margin-top: 30px; }
+  .country-group > h2 { font-family: var(--sans); font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text); font-weight: 700;
+    border-bottom: 1px solid var(--rule-strong); padding-bottom: 6px; }
+  .country-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 22px; margin-top: 14px; }
+  .country-card { border: 1px solid var(--rule); padding: 14px 16px; }
+  .country-card h3 { font-family: var(--serif); margin: 0 0 8px; font-size: 18px; font-weight: 700; }
+  .country-card ul { margin: 0; padding: 0; list-style: none; }
+  .country-card li { padding: 7px 0; border-top: 1px solid var(--rule); font-size: 15px;
+    line-height: 1.35; }
+  .country-card li:first-child { border-top: none; }
+  .country-card li a { color: var(--text); }
+  .country-card li a:hover { text-decoration: underline; }
+
+  /* Archive + table of contents. */
+  .archive-list { list-style: none; padding: 0; margin: 22px 0; }
+  .archive-list li { padding: 14px 0; border-bottom: 1px solid var(--rule);
+    font-family: var(--serif); font-size: 19px; }
+  .archive-list li a:hover { text-decoration: underline; }
+  .toc { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 16px 0 4px;
+    padding-bottom: 14px; border-bottom: 1px solid var(--rule); font-family: var(--sans); }
+  .toc a { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em;
+    font-weight: 600; }
+  .toc a:hover { color: var(--link); }
+
+  footer.foot { font-family: var(--sans); color: var(--faint); font-size: 11.5px; margin-top: 56px;
+    padding-top: 18px; border-top: 1px solid var(--rule); line-height: 1.6; }
+
+  @media (max-width: 640px) {
+    .brand h1 { font-size: 30px; }
+    .exec p { font-size: 16px; }
+    .card h3 { font-size: 18px; }
+    .country-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="kicker">Diplomat Daily Briefing</span>
+      <h1>Today's Brief</h1>
+      <span class="date">Tuesday, 13 October 2026 · 263 articles across 254 stories</span>
+    </div>
+    <nav class="nav">
+  <a href="../index.html">Dashboard</a>
+  <a href="../archive.html">Archive</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <div class="banner">AI summaries unavailable (authentication_error: invalid x-api-key) — showing links only.</div>
+
+
+  <h2 id="country-watch" style="margin-top:24px;font-size:20px;border-bottom:2px solid var(--rule-strong);padding-bottom:6px;">Country Profiles</h2>
+  <section class="topic" id="ctry-spain">
+  <div class="section-head">
+    <h2>Spain</h2>
+    <span class="count">4 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://english.elpais.com/technology/2026-10-13/how-much-ai-is-in-spains-bestselling-books.html" target="_blank" rel="noopener">How much AI is in Spain’s bestselling books?</a></h3>
+  <p class="excerpt">EL PAÍS analyzed 175 popular titles using the Pangram detector. There was no trace of AI in 2019, but now one in three self-published bestsellers is written mostly with artificial intelligence, including a top-charting book by Spanish politician Alvise Pérez</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/technology/2026-10-13/how-much-ai-is-in-spains-bestselling-books.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 09:46 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/oct/13/uk-holiday-demand-travel-industry-spain-deals-abta" target="_blank" rel="noopener">UK holiday demand may have peaked amid cost of living squeeze, says travel industry</a></h3>
+  <p class="excerpt">Spain remains most popular destination as Britons book later in hope of better deals, Abta report findsBusiness live – latest updatesThe UK’s cost of living squeeze means fewer people plan to ringfence money for holidays abroad next year, the travel industry has warned.Despite war, wildfires and EES border checks, the numbers of Britons taking holidays climbed back to pre-pandemic levels this year – but rising costs may mean the numbers have peaked, according to an annual travel industry report on Tuesday. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/oct/13/uk-holiday-demand-travel-industry-spain-deals-abta" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 09:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/economy-and-business/2026-10-13/more-than-70-progressive-economists-form-alliance-to-promote-a-fairer-distribution-of-wealth.html" target="_blank" rel="noopener">More than 70 progressive economists form alliance to promote a fairer distribution of wealth</a></h3>
+  <p class="excerpt">The Accelerating Shared Prosperity platform will be launched in Madrid on Tuesday with the backing of leading international economists such as Daron Acemoglu, Gabriel Zucman and Dani Rodrik</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/economy-and-business/2026-10-13/more-than-70-progressive-economists-form-alliance-to-promote-a-fairer-distribution-of-wealth.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 08:27 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/spain/2026-10-12/spains-grandchildrens-law-before-the-supreme-court-who-can-vote-on-november-29.html" target="_blank" rel="noopener">Spain’s ‘grandchildren’s law’ before the Supreme Court: Who can vote on November 29?</a></h3>
+  <p class="excerpt">The justices say the integrity of the electoral roll outweighs the voting rights of more than 160,000 naturalized citizens</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/spain/2026-10-12/spains-grandchildrens-law-before-the-supreme-court-who-can-vote-on-november-29.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 18:13 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-switzerland">
+  <div class="section-head">
+    <h2>Switzerland</h2>
+    <span class="count">5 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261013/swiss-resort-of-zermatt-set-to-open-ski-slopes-for-winter-season" target="_blank" rel="noopener">Swiss resort of Zermatt set to open ski slopes for winter season</a></h3>
+  <p class="excerpt">Despite this summer’s record-breaking heatwaves, the ski season in Zermatt, in the Swiss Alps, is set to begin on Tuesday, October 14th.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261013/swiss-resort-of-zermatt-set-to-open-ski-slopes-for-winter-season" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 13:08 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261013/today-in-switzerland-a-roundup-of-the-latest-news-on-tuesday-265" target="_blank" rel="noopener">Today in Switzerland: A roundup of the latest news on Tuesday</a></h3>
+  <p class="excerpt">Swiss petrol prices fall slightly from their record-high levels; Zurich cracks down on Airbnbs in residential areas to reclaim housing; and more news in our roundup this Tuesday.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261013/today-in-switzerland-a-roundup-of-the-latest-news-on-tuesday-265" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 08:16 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261012/swiss-property-agency-charges-100-francs-to-review-subletting-requests" target="_blank" rel="noopener">Swiss property agency charges 100 francs to review subletting requests</a></h3>
+  <p class="excerpt">Getting a permission to sublet a rented flat is normally free in Switzerland, but a management company is charging a fee for this service.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261012/swiss-property-agency-charges-100-francs-to-review-subletting-requests" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 14:05 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261012/how-a-severe-shortage-of-doctors-is-affecting-healthcare-in-switzerland" target="_blank" rel="noopener">How a severe shortage of doctors is hitting healthcare in Switzerland</a></h3>
+  <p class="excerpt">Switzerland&#39;s healthcare system is facing a serious problem: the scarcity of primary care physicians. How will shortfall in doctors affect the country’s population?</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261012/how-a-severe-shortage-of-doctors-is-affecting-healthcare-in-switzerland" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 13:56 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261012/traffic-lights-how-switzerland-plans-to-tackle-motorway-traffic-jams" target="_blank" rel="noopener">Traffic lights? How Switzerland plans to tackle motorway traffic jams</a></h3>
+  <p class="excerpt">The number of traffic jams in Switzerland has exploded in recent years, with decades-old motorways no longer able to accommodate the increasing number of vehicles.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261012/traffic-lights-how-switzerland-plans-to-tackle-motorway-traffic-jams" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:09 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-united_kingdom">
+  <div class="section-head">
+    <h2>United Kingdom</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/the-united-kingdom-will-continue-to-champion-the-colombia-peace-agreement-through-implementation-at-local-levels-uk-statement-at-the-un-security-counc" target="_blank" rel="noopener">The United Kingdom will continue to champion the Colombia Peace Agreement through implementation at local levels: UK statement at the UN Security Council</a></h3>
+  <p class="excerpt">Statement by Ambassador Sarah MacIntosh, UK Permanent Representative to the UN, at the UN Security Council meeting on Colombia.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/the-united-kingdom-will-continue-to-champion-the-colombia-peace-agreement-through-implementation-at-local-levels-uk-statement-at-the-un-security-counc" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+      <a href="https://news.un.org/feed/view/en/story/2026/10/1168580" target="_blank" rel="noopener">UN News</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 17:16 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/uk-national-intervention-on-media-freedom-in-the-osce-region-warsaw-human-dimension-conference-2026" target="_blank" rel="noopener">UK National Intervention on Media Freedom in the OSCE Region: Warsaw Human Dimension Conference 2026</a></h3>
+  <p class="excerpt">Ambassador Neil Holland calls on OSCE participating States to uphold media freedom, protect journalists and secure the release of media workers held by Russia.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/uk-national-intervention-on-media-freedom-in-the-osce-region-warsaw-human-dimension-conference-2026" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 10:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/uk-hosted-international-partners-to-work-together-in-fight-against-antisemitism" target="_blank" rel="noopener">UK hosted international partners to work together in fight against antisemitism</a></h3>
+  <p class="excerpt">UK hosts seven-country taskforce of Jewish community representatives to coordinate practical action against antisemitism.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/uk-hosted-international-partners-to-work-together-in-fight-against-antisemitism" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 14:54 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/13/world/europe/mi5-uk-threat-iran-russia.html" target="_blank" rel="noopener">MI5 Chief Warns of Growing Iranian and Russian Threats to U.K.</a></h3>
+  <p class="excerpt">The head of Britain’s domestic security agency accused Tehran and Moscow of escalating their hybrid campaigns on British soil. He called Iran-led attacks on Jewish communities “sickening.”</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/13/world/europe/mi5-uk-threat-iran-russia.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c60rl5vwpk02o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:02 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/13/business/nigel-farage-crypto-uk-politics.html" target="_blank" rel="noopener">How Two Crypto Billionaires Are Making British Politics More American</a></h3>
+  <p class="excerpt">A pair of low-profile entrepreneurs gave $100 million to Nigel Farage’s Reform U.K. Party. The system may never be the same.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/13/business/nigel-farage-crypto-uk-politics.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:44 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/d63348fb-901d-4ff3-9cdc-0d023778dbc2?syn-25a6b1a6=1" target="_blank" rel="noopener">Healey rejects calls to equalise capital gains and income tax rates</a></h3>
+  <p class="excerpt">UK proposal had been backed by senior Labour figures, triggering nervousness among entrepreneurs and investors</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/d63348fb-901d-4ff3-9cdc-0d023778dbc2?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:43 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/live/2026/oct/13/andy-burnham-brexit-eu-europe-neil-kinnock-lobby-wes-streeting-labour-prisoner-early-release-uk-politics-latest-news-updates" target="_blank" rel="noopener">MI5 chief Ken McCallum confirms Russia did interfere in Brexit referendum but says it had little impact – UK politics live</a></h3>
+  <p class="excerpt">He argued there was no evidence to suggest the result of the Brexit vote had been swayed as a result of the effortAndy Burnham promises ‘serious dialogue’ over UK’s relationship with EUZia Yusuf, Reform UK’s home affairs spokesperson, has said he does not agree with his colleague Suella Braverman’s assertion that black people cannot be English.Asked about her views in an interview on Sky News, Yusuf said:In my view Ashley Cole is the best English fullback in history, and I won’t take any other position. So in my view, Ashley Cole is English. I think the argument that he’s not English doesn’t h</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/politics/live/2026/oct/13/andy-burnham-brexit-eu-europe-neil-kinnock-lobby-wes-streeting-labour-prisoner-early-release-uk-politics-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/oct/13/hobbs-whistles-hack-cyber-attack-asos" target="_blank" rel="noopener">Hobbs and Whistles owner investigates hack that may have exposed customer data</a></h3>
+  <p class="excerpt">Cyber-attack on TFG London comes less than a week after online fashion seller Asos was hit by hackersBusiness live – latest updatesThe owner of Phase Eight, Hobbs and Whistles has said its websites and IT systems have been hit by a cyber-attack that may have compromised customers’ personal data.The South-African listed TFG London said it identified the “cybersecurity incident” at the three UK-based retail chains on Sunday. Its two other UK brands, Inside Story and White Stuff, are not affected. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/oct/13/hobbs-whistles-hack-cyber-attack-asos" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:02 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-united_states">
+  <div class="section-head">
+    <h2>United States</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://news.un.org/feed/view/en/story/2026/10/1168581" target="_blank" rel="noopener">General Assembly adopts pandemic declaration, but not by consensus</a></h3>
+  <p class="excerpt">The General Assembly on Monday adopted a political declaration on pandemic prevention, preparedness and response, by 153 in favour to three against (Argentina, Israel and United States) with two abstentions (New Zealand and Paraguay).</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://news.un.org/feed/view/en/story/2026/10/1168581" target="_blank" rel="noopener">UN News</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://news.un.org/feed/view/en/story/2026/10/1168578" target="_blank" rel="noopener">Security Council LIVE: Syria’s fragile transition – economic strain, Israeli incursions and progress towards elections</a></h3>
+  <p class="excerpt">The Security Council is meeting on Syria as the country’s transition faces pressure on several fronts. Economic hardship is fuelling unrest, Israeli incursions continue in the south and sectarian tensions persist in Sweida, even as Damascus reports progress on its chemical weapons programme and talks about future elections. Millions, meanwhile, remain displaced. Follow live below and go here for full meetings coverage.&amp;nbsp;</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://news.un.org/feed/view/en/story/2026/10/1168578" target="_blank" rel="noopener">UN News</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/12/us/christa-pike-medical-care-delay.html" target="_blank" rel="noopener">Calls Show How Confusion Delayed Emergency Response for Christa Pike</a></h3>
+  <p class="excerpt">The first 911 call from inside the prison was made at 8:40 p.m. It took about 30 minutes to verify its authenticity.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/12/us/christa-pike-medical-care-delay.html" target="_blank" rel="noopener">NYT Politics</a>
+      <a href="https://www.bbc.co.uk/news/articles/ck1exg6qjdz3o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 10:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/13/business/nigel-farage-crypto-uk-politics.html" target="_blank" rel="noopener">How Two Crypto Billionaires Are Making British Politics More American</a></h3>
+  <p class="excerpt">A pair of low-profile entrepreneurs gave $100 million to Nigel Farage’s Reform U.K. Party. The system may never be the same.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/13/business/nigel-farage-crypto-uk-politics.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:44 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/live/2026/oct/13/donald-trump-ilhan-omar-katie-zacharia-alaska-midterms-latest-news-updates" target="_blank" rel="noopener">Trump targets Ilhan Omar at rally after raid on progressive congresswoman’s home – live</a></h3>
+  <p class="excerpt">Minnesota Democrat says she will ‘not be silenced’ and called a search of her Washington home part of Trump’s ‘intimidation’ campaignSign up for the US Breaking News emailAt 9.30am ET we will bring you the latest from the White House, when Katie Zacharia, the new press secretary, holds her first briefing for reporters. Zacharia – who recently serves as a communications adviser to parent company of Truth Social – has replaced Karoline Leavitt. The new press secretary is also a frequent commentator on conservative talkshows, often defending the Trump administration’s policies.Here’s a bit more a</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/live/2026/oct/13/donald-trump-ilhan-omar-katie-zacharia-alaska-midterms-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:34 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/live/2026/oct/13/andy-burnham-brexit-eu-europe-neil-kinnock-lobby-wes-streeting-labour-prisoner-early-release-uk-politics-latest-news-updates" target="_blank" rel="noopener">MI5 chief Ken McCallum confirms Russia did interfere in Brexit referendum but says it had little impact – UK politics live</a></h3>
+  <p class="excerpt">He argued there was no evidence to suggest the result of the Brexit vote had been swayed as a result of the effortAndy Burnham promises ‘serious dialogue’ over UK’s relationship with EUZia Yusuf, Reform UK’s home affairs spokesperson, has said he does not agree with his colleague Suella Braverman’s assertion that black people cannot be English.Asked about her views in an interview on Sky News, Yusuf said:In my view Ashley Cole is the best English fullback in history, and I won’t take any other position. So in my view, Ashley Cole is English. I think the argument that he’s not English doesn’t h</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/politics/live/2026/oct/13/andy-burnham-brexit-eu-europe-neil-kinnock-lobby-wes-streeting-labour-prisoner-early-release-uk-politics-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/da00e3ff-4392-46d8-bab5-13b4ccc49995?syn-25a6b1a6=1" target="_blank" rel="noopener">Zelenskyy says Kyiv’s partners failed to warn of ballistic missile attack</a></h3>
+  <p class="excerpt">The Ukrainian leader stops short of linking intelligence gap to Trump administration’s threats to withdraw US support</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/da00e3ff-4392-46d8-bab5-13b4ccc49995?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:06 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/787acc7e-f0d3-4552-a369-4b4c967e4ca5?syn-25a6b1a6=1" target="_blank" rel="noopener">European gas hits Iran wartime high</a></h3>
+  <p class="excerpt">Stand-off between Washington and Kyiv over Russian diesel and approach of cold weather boost prices</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/787acc7e-f0d3-4552-a369-4b4c967e4ca5?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 11:38 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-netherlands">
+  <div class="section-head">
+    <h2>Netherlands</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/uk-national-intervention-on-media-freedom-in-the-osce-region-warsaw-human-dimension-conference-2026" target="_blank" rel="noopener">UK National Intervention on Media Freedom in the OSCE Region: Warsaw Human Dimension Conference 2026</a></h3>
+  <p class="excerpt">Ambassador Neil Holland calls on OSCE participating States to uphold media freedom, protect journalists and secure the release of media workers held by Russia.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/uk-national-intervention-on-media-freedom-in-the-osce-region-warsaw-human-dimension-conference-2026" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 10:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/10/privacy-campaigners-to-ask-court-to-ban-sale-of-meta-ai-glasses/" target="_blank" rel="noopener">Privacy campaigners to ask court to ban sale of Meta AI glasses</a></h3>
+  <p class="excerpt">Two Dutch privacy organisations are seeking an injunction against Meta to ban sales of the company’s AI glasses in the...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/10/privacy-campaigners-to-ask-court-to-ban-sale-of-meta-ai-glasses/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 11:45 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/10/biotech-industry-calls-for-e450m-investment-in-food-innovation/" target="_blank" rel="noopener">Biotech industry calls for €450m investment in food innovation</a></h3>
+  <p class="excerpt">The agriculture sector has called on the government to invest €450 million in food technology to maintain the Netherlands’ status...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/10/biotech-industry-calls-for-e450m-investment-in-food-innovation/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 08:48 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/10/albert-heijn-and-sister-chains-abroad-hit-by-likely-cyberattack/" target="_blank" rel="noopener">Albert Heijn and sister chains abroad hit by likely cyberattack</a></h3>
+  <p class="excerpt">Cybersecurity experts say it is very likely someone broke into Albert Heijn’s IT systems, as the outage at the Netherlands’...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/10/albert-heijn-and-sister-chains-abroad-hit-by-likely-cyberattack/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 07:29 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/10/dutch-economy-set-to-grow-by-1-5-in-2026-as-imf-raises-forecast/" target="_blank" rel="noopener">Dutch economy set to grow by 1.5% in 2026 as IMF raises forecast</a></h3>
+  <p class="excerpt">The International Monetary Fund (IMF) has improved its forecast for the Dutch economy, but warned that high prices will continue...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/10/dutch-economy-set-to-grow-by-1-5-in-2026-as-imf-raises-forecast/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 07:16 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/12/arts/van-gogh-museum-amsterdam-funding.html" target="_blank" rel="noopener">Amsterdam’s Van Gogh Museum Says It Reached Funding Deal and Won’t Have to Close</a></h3>
+  <p class="excerpt">In a yearslong dispute, the Amsterdam institution pressed the Dutch government for an increased annual subsidy to pay for what the museum said were vital renovations.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/12/arts/van-gogh-museum-amsterdam-funding.html" target="_blank" rel="noopener">NYT Europe</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 15:04 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/10/two-thirds-of-women-in-nl-feel-unheard-by-healthcare-workers/" target="_blank" rel="noopener">Two-thirds of women in NL feel unheard by healthcare workers</a></h3>
+  <p class="excerpt">Two-thirds of women in the Netherlands say they don&amp;#8217;t always feel heard by healthcare professionals, for example when describing symptoms,...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/10/two-thirds-of-women-in-nl-feel-unheard-by-healthcare-workers/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 14:05 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/10/many-dutch-adults-can-only-swim-one-stroke/" target="_blank" rel="noopener">“Many Dutch adults can only swim one stroke”</a></h3>
+  <p class="excerpt">Former junior Romanian swimming champion Vlad Pațurcă moved to the Netherlands alone at the age of 21. Since then he’s...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/10/many-dutch-adults-can-only-swim-one-stroke/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 10:53 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <div class="country-group">
+    <h2>Regional neighbors</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>Turkey</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/12/us/politics/a-trump-loyalist-a-turkish-investor-and-a-battle-for-wealth-and-influence.html" target="_blank" rel="noopener">A Trump Loyalist, a Turkish Investor and a Battle for Wealth and Influence</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Russia</h3>
+  <ul>
+    <li>
+      <a href="https://www.gov.uk/government/news/back-zelenskyy-and-ukraine-with-an-energy-ceasefire-foreign-secretary-tells-european-partners" target="_blank" rel="noopener">Back Zelenskyy and Ukraine with an energy ceasefire, Foreign Secretary tells European partners</a>
+    </li>
+    <li>
+      <a href="https://www.gov.uk/government/speeches/uk-national-intervention-on-media-freedom-in-the-osce-region-warsaw-human-dimension-conference-2026" target="_blank" rel="noopener">UK National Intervention on Media Freedom in the OSCE Region: Warsaw Human Dimension Conference 2026</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/cmn06w5x9g25o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Bulgaria summons Russian ambassador after ship sinks in Black Sea drone attack</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/13/world/europe/mi5-uk-threat-iran-russia.html" target="_blank" rel="noopener">MI5 Chief Warns of Growing Iranian and Russian Threats to U.K.</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Iran</h3>
+  <ul>
+    <li>
+      <a href="https://www.gov.uk/government/news/joint-statement-on-iran-12-october" target="_blank" rel="noopener">Joint Statement on Iran, 12 October</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/13/world/europe/mi5-uk-threat-iran-russia.html" target="_blank" rel="noopener">MI5 Chief Warns of Growing Iranian and Russian Threats to U.K.</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/a4ab83d4-81b5-4336-9569-a0708b41e894?syn-25a6b1a6=1" target="_blank" rel="noopener">Ships in Hormuz strait hit by worst spate of attacks since start of war</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/a0921eb6-637e-4fac-b15d-ea7aef441e6a?syn-25a6b1a6=1" target="_blank" rel="noopener">Iran has made ‘major shift’ to target UK military sites, says MI5 chief</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Georgia</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/12/us/roller-coaster-georgia-six-flags-rider-death.html" target="_blank" rel="noopener">Six Flags Closes Multiple Rides After Death on Georgia Roller Coaster</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+  <div class="country-group">
+    <h2>Great powers</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>China</h3>
+  <ul>
+    <li>
+      <a href="https://www.ft.com/content/bbe24952-d66f-480e-b0a8-94339d75bc48?syn-25a6b1a6=1" target="_blank" rel="noopener">UK chances of keeping £3.8bn bitcoin haul rise after High Court ruling</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/13/business/technology-stocks-ai-nasdaq.html" target="_blank" rel="noopener">Chip Stocks Tumble on A.I. Spending Fears and Rising Chinese Competition</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/6c5ee2f8-a26c-4655-9389-f877bb5b42db?syn-25a6b1a6=1" target="_blank" rel="noopener">Visa gets approval for China card business ahead of Trump-Xi summit</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/27be530d-2faf-43ce-874f-0e6e0802bee2?syn-25a6b1a6=1" target="_blank" rel="noopener">China gets spiky on currencies</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>European Union</h3>
+  <ul>
+    <li>
+      <a href="https://www.thelocal.ch/20261013/europes-airports-and-airlines-demand-ees-rethink-as-unacceptable-delays-continue" target="_blank" rel="noopener">Europe&#39;s airports and airlines demand EES rethink as &#39;unacceptable&#39; delays continue</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/world/2026/oct/13/same-sex-couple-sue-slovakia-refusal-register-austrian-marriage-eu" target="_blank" rel="noopener">Same-sex couple sue over Slovakia’s refusal to register marriage</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/c913d391-f4e2-439c-82d6-8f6205b31b0f?syn-25a6b1a6=1" target="_blank" rel="noopener">EU hybrid curbs to offer only ‘temporary’ respite against Chinese carmakers</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/af0a5da6-abc7-41ab-85cf-da806fc7a6e5?syn-25a6b1a6=1" target="_blank" rel="noopener">Franco-German deal on EU car policy is ‘imminent’, says Macron</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>France</h3>
+  <ul>
+    <li>
+      <a href="https://www.ft.com/content/6908a0ce-ffdd-4ea9-b376-d35d362639f3?syn-25a6b1a6=1" target="_blank" rel="noopener">Cyber attack on French supermarket fridges raises alarm over food security</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/13/world/europe/france-cyberattack-supermarkets-refrigeration.html" target="_blank" rel="noopener">Cyberattack Hits Hundreds of Supermarket Refrigeration Systems in France</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/world/2026/oct/13/greta-thunberg-student-protest-paris-france" target="_blank" rel="noopener">‘Our future is being stolen’: Greta Thunberg joins students protesting in Paris</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/13/world/europe/macron-france-protests.html" target="_blank" rel="noopener">Macron Dreamed of Reviving France, but His Term Is Ending in Crisis</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Germany</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/13/world/europe/germany-flight-nuremberg.html" target="_blank" rel="noopener">Nuremberg Airport in Germany Suspends Flights Over ‘Aviation Emergency’</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/af0a5da6-abc7-41ab-85cf-da806fc7a6e5?syn-25a6b1a6=1" target="_blank" rel="noopener">Franco-German deal on EU car policy is ‘imminent’, says Macron</a>
+    </li>
+    <li>
+      <a href="https://english.elpais.com/international/2026-10-12/august-hanning-the-german-spy-who-sold-his-services-to-the-highest-bidder.html" target="_blank" rel="noopener">August Hanning, the German spy who sold his services to the highest bidder</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/e374bc1a-bd56-40b4-98c9-d1b502ef9d47?syn-25a6b1a6=1" target="_blank" rel="noopener">Europe is finally confronting China</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+  <div class="country-group">
+    <h2>Middle East</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>Israel</h3>
+  <ul>
+    <li>
+      <a href="https://news.un.org/feed/view/en/story/2026/10/1168581" target="_blank" rel="noopener">General Assembly adopts pandemic declaration, but not by consensus</a>
+    </li>
+    <li>
+      <a href="https://news.un.org/feed/view/en/story/2026/10/1168578" target="_blank" rel="noopener">Security Council LIVE: Syria’s fragile transition – economic strain, Israeli incursions and progress towards elections</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/13/world/middleeast/israel-october-7-attacks-elections.html" target="_blank" rel="noopener">The Oct. 7 Attack Changed Israel, but Not Its Politics</a>
+    </li>
+    <li>
+      <a href="https://english.elpais.com/international/2026-10-12/israeli-families-seek-descendants-through-sperm-retrieved-from-their-dead-sons.html" target="_blank" rel="noopener">Israeli families seek descendants through sperm retrieved from their dead sons</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Saudi Arabia</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/12/world/middleeast/iran-houthis-saudi-arabia.html" target="_blank" rel="noopener">Saudi Arabia Faces More Attacks as It Reels From Airport Strikes</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/cjly0zqq27e4o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Saudi minister vows &#39;serious response&#39; to Houthi attacks on airports</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/world/2026/oct/12/saudi-arabia-suspends-flights-latest-deadly-houthi-attack-airport" target="_blank" rel="noopener">Saudi Arabia further suspends flights after latest deadly Houthi attack on airport</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/12/business/dealbook/saudi-arabia-strikes-energy-airport.html" target="_blank" rel="noopener">Strikes Put Saudi Arabia’s Economy Under Pressure</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>United Arab Emirates</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/09/world/middleeast/flydubai-pilot-attack.html" target="_blank" rel="noopener">Attacker in FlyDubai Flight Meant to Crash Into Israeli Airport, Emiratis Say</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/12/world/asia/flydubai-attack-suspect-melbourne-mosque.html" target="_blank" rel="noopener">Investigation Into FlyDubai Attacker Puts Spotlight on an Australian Mosque</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Egypt</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/12/world/africa/egypt-sudan-goldmine-strike.html" target="_blank" rel="noopener">Dozens Killed in Airstrikes Near Sudan-Egypt Border</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+
+  <section class="topic" id="sec-ir_theory">
+  <div class="section-head">
+    <h2>International Relations — Theory &amp; Analysis</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://warontherocks.com/cogs-of-war/building-an-arsenal-that-survives-the-tenth-salvo/" target="_blank" rel="noopener">Building an Arsenal That Survives the Tenth Salvo</a></h3>
+  <p class="excerpt">America faces a well-defined industrial base problem. Whether it&amp;#8217;s a hypothetical Taiwan invasion wargame run two dozen times, the current Iranian conflict, or the Russo-Ukrainian War, the same result repeats: Magazines of key weapons such as cruise missile systems and interceptors empty within days, weeks, or months, and the current industrial base takes years to replenish them. Part of that shortfall results from the analog way in which missile structures are designed, tooled, and sourced, which locks the entire supply chain into rigid, design-specific schedules.The first salvo depends</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/cogs-of-war/building-an-arsenal-that-survives-the-tenth-salvo/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 08:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/united-states/real-lesson-iran-war" target="_blank" rel="noopener">The Real Lesson of the Iran War</a></h3>
+  <p class="excerpt">When airpower wins, and when it doesn’t.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/united-states/real-lesson-iran-war" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/united-states/global-ai-bust-ruchir-sharma" target="_blank" rel="noopener">The Global AI Bust</a></h3>
+  <p class="excerpt">What will survive when the boom ends.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/united-states/global-ai-bust-ruchir-sharma" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/how-taiwan-activates-beijings-chosen-fear/" target="_blank" rel="noopener">How Taiwan Activates Beijing’s Chosen Fear</a></h3>
+  <p class="excerpt">The standard explanations for why Taiwan is so important to the Chinese Communist Party are familiar: territorial integrity, credibility of deterrence commitments, great power competition with the United States, the strategic value of the first island chain, and the semiconductor industry concentrated in TSMC&amp;#8217;s fabrication facilities. These explanations work, but they don&amp;#8217;t tell the whole story. Rational strategic calculation does not produce a posture in which a nuclear-armed state with the world&amp;#8217;s second-largest economy treats a democratic island of 23 million people as a p</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/how-taiwan-activates-beijings-chosen-fear/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 07:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/cogs-of-war/ground-robots-are-arriving-on-the-front-lines/" target="_blank" rel="noopener">Ground Robots Are Arriving on the Front Lines</a></h3>
+  <p class="excerpt">For years, ground autonomy lagged well behind its counterparts in the air. That gap is starting to close. Jonathan is joined by Ryan Hartman (Ondas Sentinel) and Scott Philips (Forterra) to examine what it takes to field autonomous ground vehicles in combat. The conversation ranges across what Ukraine and Gaza have taught them, what operating without GPS and resilient communications really looks like, air-ground teaming, and more. Image: Lance Cpl. Talan Werner via DVIDS. The post Ground Robots Are Arriving on the Front Lines appeared first on War on the Rocks.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/cogs-of-war/ground-robots-are-arriving-on-the-front-lines/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 08:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/iran/america-shouldnt-let-go-middle-east-phil-gordon" target="_blank" rel="noopener">America Shouldn’t Let Go of the Middle East</a></h3>
+  <p class="excerpt">Why disengagement is not the answer.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/iran/america-shouldnt-let-go-middle-east-phil-gordon" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/china/chinese-robots-could-decide-ai-race" target="_blank" rel="noopener">Chinese Robots Could Decide the AI Race</a></h3>
+  <p class="excerpt">Scott Singer and Pavlo Zvenyhorodsky, researchers at Carnegie’s China AI Initiative, argue that China is betting that AI dominance will come from combining hardware and software, or AI-powered robots. By focusing only on software such as AI models, they argue, Washington and Silicon Valley risk falling behind.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/china/chinese-robots-could-decide-ai-race" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/how-china-and-america-can-move-from-competition-to-stability/" target="_blank" rel="noopener">How China and America Can Move from Competition to Stability</a></h3>
+  <p class="excerpt">The American team thought it was signaling restraint. The Chinese team saw preparations for combat. In a closed-door Sino-American crisis simulation I helped organize in the 2010s &amp;#8212; which the U.S. military funded as part of a long-term project &amp;#8212; the Americans repositioned an aircraft carrier away from a maritime dispute between China and the Philippines, expecting the move to reassure Beijing. Instead, the Chinese participants became deeply alarmed. They believed the carrier was now ideally positioned to launch combat operations while remaining less vulnerable to attack. The episod</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/how-china-and-america-can-move-from-competition-to-stability/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 07:30 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-conflicts">
+  <div class="section-head">
+    <h2>Conflicts &amp; Security</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/back-zelenskyy-and-ukraine-with-an-energy-ceasefire-foreign-secretary-tells-european-partners" target="_blank" rel="noopener">Back Zelenskyy and Ukraine with an energy ceasefire, Foreign Secretary tells European partners</a></h3>
+  <p class="excerpt">The Foreign Secretary attends Warsaw Security Forum today, which takes place as Ukraine faces another freezing winter, amid escalating Russian energy strikes</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/back-zelenskyy-and-ukraine-with-an-energy-ceasefire-foreign-secretary-tells-european-partners" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 10:34 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/uk-national-intervention-on-media-freedom-in-the-osce-region-warsaw-human-dimension-conference-2026" target="_blank" rel="noopener">UK National Intervention on Media Freedom in the OSCE Region: Warsaw Human Dimension Conference 2026</a></h3>
+  <p class="excerpt">Ambassador Neil Holland calls on OSCE participating States to uphold media freedom, protect journalists and secure the release of media workers held by Russia.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/uk-national-intervention-on-media-freedom-in-the-osce-region-warsaw-human-dimension-conference-2026" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 10:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/13/world/europe/mi5-uk-threat-iran-russia.html" target="_blank" rel="noopener">MI5 Chief Warns of Growing Iranian and Russian Threats to U.K.</a></h3>
+  <p class="excerpt">The head of Britain’s domestic security agency accused Tehran and Moscow of escalating their hybrid campaigns on British soil. He called Iran-led attacks on Jewish communities “sickening.”</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/13/world/europe/mi5-uk-threat-iran-russia.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c60rl5vwpk02o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:02 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/oct/13/ai-share-crash-risk-global-imf-debt-corrowing-cyber-attacks" target="_blank" rel="noopener">Threat of AI share crash puts world financial stability at risk, says IMF</a></h3>
+  <p class="excerpt">High valuations and debt put sector in danger, while fund also warns on government borrowing and cyber-attacksIMF warns global economy ‘could soon test the limits of resilience’The threat of an AI share price crash rippling out across global markets is putting world financial stability at risk, the International Monetary fund has warned.In its twice-yearly Global Financial Stability Report, the IMF highlighted the sky-high valuations for AI companies along with their increasing debt pile as one reason that risks in the system are “elevated”. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/oct/13/ai-share-crash-risk-global-imf-debt-corrowing-cyber-attacks" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/oct/13/ships-hit-sunk-drones-bulgaria-black-sea-ukraine-russia-war-france-spains-sweden-pope-leo-europe-latest-news-updates" target="_blank" rel="noopener">Zelenskyy says Russia ‘did not heed’ Trump’s call for ceasefire and Ukraine had ‘no early warning’ before strikes on Kyiv – Europe live</a></h3>
+  <p class="excerpt">Ukraine’s president says his country has halted strikes on Russian oil refineries for two days after Trump’s energy ceasefire announcementOn frozen Russian assets, Poland’s Sikorski says the use of frozen Russian assets is “a complicated issue,” but takes a very clear stance in response to any suggestion of releasing them back to Russia.“We are working on it, but there is also some rumours that some people are expecting these assets to be released back to Russia. I don’t think I’m speaking just for myself in saying: over our dead bodies.”“Russia right now is not ready for ceasefire, but still,</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/live/2026/oct/13/ships-hit-sunk-drones-bulgaria-black-sea-ukraine-russia-war-france-spains-sweden-pope-leo-europe-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:25 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/c6bd25b8-ef9e-41a3-90d2-29c132e10ec2?syn-25a6b1a6=1" target="_blank" rel="noopener">Bulgaria suggests Russia behind ship attack that left 11 sailors missing</a></h3>
+  <p class="excerpt">Strike on cargo ship marks latest escalation in Russia-Ukraine war in the Black Sea</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/c6bd25b8-ef9e-41a3-90d2-29c132e10ec2?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:21 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/ckr5ydvvln0mo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Poundland in rescue talks as owners seek buyer</a></h3>
+  <p class="excerpt">The leadership team is attempting a buyout, but a union has warned the retailer could fall into administration instead.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/ckr5ydvvln0mo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:17 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/da00e3ff-4392-46d8-bab5-13b4ccc49995?syn-25a6b1a6=1" target="_blank" rel="noopener">Zelenskyy says Kyiv’s partners failed to warn of ballistic missile attack</a></h3>
+  <p class="excerpt">The Ukrainian leader stops short of linking intelligence gap to Trump administration’s threats to withdraw US support</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/da00e3ff-4392-46d8-bab5-13b4ccc49995?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:06 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/a4ab83d4-81b5-4336-9569-a0708b41e894?syn-25a6b1a6=1" target="_blank" rel="noopener">Ships in Hormuz strait hit by worst spate of attacks since start of war</a></h3>
+  <p class="excerpt">Twenty-four tankers and other vessels targeted by Iran in two weeks, including six on Sunday alone</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/a4ab83d4-81b5-4336-9569-a0708b41e894?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:04 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/a0921eb6-637e-4fac-b15d-ea7aef441e6a?syn-25a6b1a6=1" target="_blank" rel="noopener">Iran has made ‘major shift’ to target UK military sites, says MI5 chief</a></h3>
+  <p class="excerpt">Ken McCallum warns that both Tehran and Moscow are seeking to escalate hybrid warfare, with state threats quadrupling in a decade</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/a0921eb6-637e-4fac-b15d-ea7aef441e6a?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/uk-news/2026/oct/13/rightwing-extremists-increasingly-likely-to-consider-terrorist-attacks-mi5-chief-says" target="_blank" rel="noopener">Rightwing extremists increasingly likely to consider terrorist attacks, MI5 chief says</a></h3>
+  <p class="excerpt">Move from anti-immigration or anti-Muslim views to violence is ‘most marked trend’ in spy agency’s caseload over last yearExtremists holding anti-immigration opinions are becoming increasingly likely to consider carrying out terrorist attacks against immigration centres and asylum hotels in the UK, the head of MI5 has warned.Ken McCallum said a shift from radicalised rightwing sentiment to violence was “the most marked trend” in the spy agency’s caseload over the past year, contributing to a rise in the overall UK terror threat level.Russia remains “aggressor number one” as the Kremlin continu</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/uk-news/2026/oct/13/rightwing-extremists-increasingly-likely-to-consider-terrorist-attacks-mi5-chief-says" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/787acc7e-f0d3-4552-a369-4b4c967e4ca5?syn-25a6b1a6=1" target="_blank" rel="noopener">European gas hits Iran wartime high</a></h3>
+  <p class="excerpt">Stand-off between Washington and Kyiv over Russian diesel and approach of cold weather boost prices</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/787acc7e-f0d3-4552-a369-4b4c967e4ca5?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 11:38 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-intelligence">
+  <div class="section-head">
+    <h2>Intelligence &amp; Espionage</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cmn06w5x9g25o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Bulgaria summons Russian ambassador after ship sinks in Black Sea drone attack</a></h3>
+  <p class="excerpt">Eleven crew members are missing after a merchant ship was sunk overnight, local officials say.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/13/world/europe/black-sea-drones-russia-bulgaria-nato.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/cmn06w5x9g25o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:10 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/live/2026/oct/13/donald-trump-ilhan-omar-katie-zacharia-alaska-midterms-latest-news-updates" target="_blank" rel="noopener">Trump targets Ilhan Omar at rally after raid on progressive congresswoman’s home – live</a></h3>
+  <p class="excerpt">Minnesota Democrat says she will ‘not be silenced’ and called a search of her Washington home part of Trump’s ‘intimidation’ campaignSign up for the US Breaking News emailAt 9.30am ET we will bring you the latest from the White House, when Katie Zacharia, the new press secretary, holds her first briefing for reporters. Zacharia – who recently serves as a communications adviser to parent company of Truth Social – has replaced Karoline Leavitt. The new press secretary is also a frequent commentator on conservative talkshows, often defending the Trump administration’s policies.Here’s a bit more a</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/live/2026/oct/13/donald-trump-ilhan-omar-katie-zacharia-alaska-midterms-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:34 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/oct/13/ai-share-crash-risk-global-imf-debt-corrowing-cyber-attacks" target="_blank" rel="noopener">Threat of AI share crash puts world financial stability at risk, says IMF</a></h3>
+  <p class="excerpt">High valuations and debt put sector in danger, while fund also warns on government borrowing and cyber-attacksIMF warns global economy ‘could soon test the limits of resilience’The threat of an AI share price crash rippling out across global markets is putting world financial stability at risk, the International Monetary fund has warned.In its twice-yearly Global Financial Stability Report, the IMF highlighted the sky-high valuations for AI companies along with their increasing debt pile as one reason that risks in the system are “elevated”. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/oct/13/ai-share-crash-risk-global-imf-debt-corrowing-cyber-attacks" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/da00e3ff-4392-46d8-bab5-13b4ccc49995?syn-25a6b1a6=1" target="_blank" rel="noopener">Zelenskyy says Kyiv’s partners failed to warn of ballistic missile attack</a></h3>
+  <p class="excerpt">The Ukrainian leader stops short of linking intelligence gap to Trump administration’s threats to withdraw US support</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/da00e3ff-4392-46d8-bab5-13b4ccc49995?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:06 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/oct/13/hobbs-whistles-hack-cyber-attack-asos" target="_blank" rel="noopener">Hobbs and Whistles owner investigates hack that may have exposed customer data</a></h3>
+  <p class="excerpt">Cyber-attack on TFG London comes less than a week after online fashion seller Asos was hit by hackersBusiness live – latest updatesThe owner of Phase Eight, Hobbs and Whistles has said its websites and IT systems have been hit by a cyber-attack that may have compromised customers’ personal data.The South-African listed TFG London said it identified the “cybersecurity incident” at the three UK-based retail chains on Sunday. Its two other UK brands, Inside Story and White Stuff, are not affected. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/oct/13/hobbs-whistles-hack-cyber-attack-asos" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:02 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/uk-news/2026/oct/13/rightwing-extremists-increasingly-likely-to-consider-terrorist-attacks-mi5-chief-says" target="_blank" rel="noopener">Rightwing extremists increasingly likely to consider terrorist attacks, MI5 chief says</a></h3>
+  <p class="excerpt">Move from anti-immigration or anti-Muslim views to violence is ‘most marked trend’ in spy agency’s caseload over last yearExtremists holding anti-immigration opinions are becoming increasingly likely to consider carrying out terrorist attacks against immigration centres and asylum hotels in the UK, the head of MI5 has warned.Ken McCallum said a shift from radicalised rightwing sentiment to violence was “the most marked trend” in the spy agency’s caseload over the past year, contributing to a rise in the overall UK terror threat level.Russia remains “aggressor number one” as the Kremlin continu</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/uk-news/2026/oct/13/rightwing-extremists-increasingly-likely-to-consider-terrorist-attacks-mi5-chief-says" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/uk-news/2026/oct/13/britain-interpol-reject-argentina-falkland-islands-arrests" target="_blank" rel="noopener">UK asks Interpol to reject Argentina’s ‘politically motivated’ requests for Falklands oil arrests</a></h3>
+  <p class="excerpt">Exclusive: Caution urged over Javier Milei government’s ‘red notice’ requests for arrest of individuals linked to oil projectBritain has appealed to Interpol to reject Argentina’s requests for the arrest of individuals involved in a large oil project off the Falkland Islands.With tensions over the sovereignty of the British overseas territory reaching levels not seen since the war with Argentina in 1982, UK officials have sought urgent assurances from the international organisation. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/uk-news/2026/oct/13/britain-interpol-reject-argentina-falkland-islands-arrests" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/oct/13/first-thing-democratic-leaders-condemn-federal-raid-ilhan-omar" target="_blank" rel="noopener">Democratic leaders condemn federal raid on Ilhan Omar as she vows not to be silenced | First Thing</a></h3>
+  <p class="excerpt">Minnesota congresswoman criticized raid as attempt by Trump administration ‘to target political enemies and weaponize law enforcement’. Plus what is to be done about the world record in the women’s marathon?Don’t already get First Thing in your inbox? Sign up hereGood morning. Ilhan Omar has said she will not be silenced after federal agents raided her home. In a social media post, the Minnesota congresswoman criticized the raid as an attempt by the Trump administration “to target political enemies and weaponize law enforcement”.Donald Trump and key allies have accused Omar of fraud related to</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/oct/13/first-thing-democratic-leaders-condemn-federal-raid-ilhan-omar" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 10:55 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/13/world/europe/france-cyberattack-supermarkets-refrigeration.html" target="_blank" rel="noopener">Cyberattack Hits Hundreds of Supermarket Refrigeration Systems in France</a></h3>
+  <p class="excerpt">The attack targeted a Danish software system in at least 380 supermarkets, forcing some shops to throw out frozen produce. The attackers have not been identified.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/13/world/europe/france-cyberattack-supermarkets-refrigeration.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 10:52 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/883fc906-7ca8-4395-b68a-000b79a270ee?syn-25a6b1a6=1" target="_blank" rel="noopener">‘I think a lot of people are waking up’: Trump’s Latino vote starts to unravel</a></h3>
+  <p class="excerpt">Inflation, war and the crackdown on immigrant communities draw the crucial swing voters back to the Democrats ahead of the midterms</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/883fc906-7ca8-4395-b68a-000b79a270ee?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 10:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/technology/2026-10-13/how-much-ai-is-in-spains-bestselling-books.html" target="_blank" rel="noopener">How much AI is in Spain’s bestselling books?</a></h3>
+  <p class="excerpt">EL PAÍS analyzed 175 popular titles using the Pangram detector. There was no trace of AI in 2019, but now one in three self-published bestsellers is written mostly with artificial intelligence, including a top-charting book by Spanish politician Alvise Pérez</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/technology/2026-10-13/how-much-ai-is-in-spains-bestselling-books.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 09:46 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cq4g18prn4l4o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Cut screen time in classrooms to avoid long-term health issues, clinicians urge</a></h3>
+  <p class="excerpt">A group of clinicians warns technology use in English schools is driving a rise in health problems like short-sightedness.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cq4g18prn4l4o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 09:35 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-military">
+  <div class="section-head">
+    <h2>Military &amp; Defense</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cmn06w5x9g25o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Bulgaria summons Russian ambassador after ship sinks in Black Sea drone attack</a></h3>
+  <p class="excerpt">Eleven crew members are missing after a merchant ship was sunk overnight, local officials say.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/13/world/europe/black-sea-drones-russia-bulgaria-nato.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/cmn06w5x9g25o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:10 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/13/world/europe/mi5-uk-threat-iran-russia.html" target="_blank" rel="noopener">MI5 Chief Warns of Growing Iranian and Russian Threats to U.K.</a></h3>
+  <p class="excerpt">The head of Britain’s domestic security agency accused Tehran and Moscow of escalating their hybrid campaigns on British soil. He called Iran-led attacks on Jewish communities “sickening.”</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/13/world/europe/mi5-uk-threat-iran-russia.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c60rl5vwpk02o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:02 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/da00e3ff-4392-46d8-bab5-13b4ccc49995?syn-25a6b1a6=1" target="_blank" rel="noopener">Zelenskyy says Kyiv’s partners failed to warn of ballistic missile attack</a></h3>
+  <p class="excerpt">The Ukrainian leader stops short of linking intelligence gap to Trump administration’s threats to withdraw US support</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/da00e3ff-4392-46d8-bab5-13b4ccc49995?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:06 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/a0921eb6-637e-4fac-b15d-ea7aef441e6a?syn-25a6b1a6=1" target="_blank" rel="noopener">Iran has made ‘major shift’ to target UK military sites, says MI5 chief</a></h3>
+  <p class="excerpt">Ken McCallum warns that both Tehran and Moscow are seeking to escalate hybrid warfare, with state threats quadrupling in a decade</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/a0921eb6-637e-4fac-b15d-ea7aef441e6a?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/13/scandal-brazil-court-jair-flavio-bolsonaro-power-election-moraes-lula" target="_blank" rel="noopener">How a scandal engulfing Brazil’s top court could return the Bolsonaros to power</a></h3>
+  <p class="excerpt">The judge who helped convict Jair Bolsonaro is caught up in a crisis that could benefit his son and damage LulaMarina Silva on Flávio Bolsonaro: He will try to finish his father’s ‘perverse project’ to destroy the AmazonThundering to a crowd of thousands of far-right supporters in São Paulo on 7 September, Brazil’s Independence Day, the senator Flávio Bolsonaro focused less on his opponent in the presidential election, the leftist president Luiz Inácio Lula da Silva, than on someone who is not running at all.“Whoever votes for Lula is voting for Alexandre de Moraes,” Bolsonaro shouted, referri</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/oct/13/scandal-brazil-court-jair-flavio-bolsonaro-power-election-moraes-lula" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 10:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/12/world/middleeast/iran-houthis-saudi-arabia.html" target="_blank" rel="noopener">Saudi Arabia Faces More Attacks as It Reels From Airport Strikes</a></h3>
+  <p class="excerpt">The Saudi authorities said they were fending off drone and missile attacks after a weekend of confrontation with the Houthi militia in Yemen, whose patrons Iran offered to mediate.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/12/world/middleeast/iran-houthis-saudi-arabia.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 08:54 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/12/world/europe/nato-strategy-russia-europe.html" target="_blank" rel="noopener">NATO Details Plan to Shield Ukraine’s European Allies From Russia</a></h3>
+  <p class="excerpt">With the Russians intensifying sabotage, arson and cyberattacks against European nations supporting Ukraine, NATO divulged a blueprint, in case of war, to deter the Kremlin.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/12/world/europe/nato-strategy-russia-europe.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 20:55 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/12/saudi-arabia-suspends-flights-latest-deadly-houthi-attack-airport" target="_blank" rel="noopener">Saudi Arabia further suspends flights after latest deadly Houthi attack on airport</a></h3>
+  <p class="excerpt">Energy minister says ‘fear has no place in the Saudi lexicon’ as paramilitary group again breaches stretched defencesWhy are the Houthis attacking Saudi airports and how are the missiles getting through?Saudi Arabia has been forced to suspend all flights to and from its main international airport in Riyadh until next Saturday after a further round of Houthi missile attacks caused more damage and left one person dead. Some airlines, including Gulf Air and Bahrain Air, had already said they were cancelling flights until next Saturday. More missiles were fired at Saudi Arabian cities by the Houth</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/oct/12/saudi-arabia-suspends-flights-latest-deadly-houthi-attack-airport" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 15:42 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cr78pe09y05xo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">AI minister warns &#39;likely&#39; UK&#39;s cyber defences will be breached</a></h3>
+  <p class="excerpt">Kanishka Narayan said the government will use advanced AI to strengthen the UK against cyber attacks.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cr78pe09y05xo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 15:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/health/2026-10-12/nuclear-war-and-the-malicious-use-of-artificial-intelligence-rank-among-the-threats-to-global-health-it-would-inflict-an-apocalypse.html" target="_blank" rel="noopener">Nuclear war and the malicious use of artificial intelligence rank among the threats to global health: ‘It would inflict an apocalypse’</a></h3>
+  <p class="excerpt">A commission of experts identifies 17 major risks facing humanity through 2100 and warns that climate change could become an extinction-level danger in the centuries ahead</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/health/2026-10-12/nuclear-war-and-the-malicious-use-of-artificial-intelligence-rank-among-the-threats-to-global-health-it-would-inflict-an-apocalypse.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 14:52 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/videos/cj4g17wz7gv0o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Watch: CCTV shows people take cover as missile hits Riyadh airport</a></h3>
+  <p class="excerpt">Footage from inside the airport shows the moment the strike hit on Saturday.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/videos/cj4g17wz7gv0o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 09:38 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/cogs-of-war/building-an-arsenal-that-survives-the-tenth-salvo/" target="_blank" rel="noopener">Building an Arsenal That Survives the Tenth Salvo</a></h3>
+  <p class="excerpt">America faces a well-defined industrial base problem. Whether it&amp;#8217;s a hypothetical Taiwan invasion wargame run two dozen times, the current Iranian conflict, or the Russo-Ukrainian War, the same result repeats: Magazines of key weapons such as cruise missile systems and interceptors empty within days, weeks, or months, and the current industrial base takes years to replenish them. Part of that shortfall results from the analog way in which missile structures are designed, tooled, and sourced, which locks the entire supply chain into rigid, design-specific schedules.The first salvo depends</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/cogs-of-war/building-an-arsenal-that-survives-the-tenth-salvo/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 08:00 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-technology">
+  <div class="section-head">
+    <h2>Technology</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/13/world/europe/mi5-uk-threat-iran-russia.html" target="_blank" rel="noopener">MI5 Chief Warns of Growing Iranian and Russian Threats to U.K.</a></h3>
+  <p class="excerpt">The head of Britain’s domestic security agency accused Tehran and Moscow of escalating their hybrid campaigns on British soil. He called Iran-led attacks on Jewish communities “sickening.”</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/13/world/europe/mi5-uk-threat-iran-russia.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c60rl5vwpk02o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:02 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/6908a0ce-ffdd-4ea9-b376-d35d362639f3?syn-25a6b1a6=1" target="_blank" rel="noopener">Cyber attack on French supermarket fridges raises alarm over food security</a></h3>
+  <p class="excerpt">Some stores reported fridge temperatures as high as 80°C, melting equipment and destroying food</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/6908a0ce-ffdd-4ea9-b376-d35d362639f3?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.bbc.co.uk/news/articles/crq5nzxv9q4yo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 11:50 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/oct/13/ai-share-crash-risk-global-imf-debt-corrowing-cyber-attacks" target="_blank" rel="noopener">Threat of AI share crash puts world financial stability at risk, says IMF</a></h3>
+  <p class="excerpt">High valuations and debt put sector in danger, while fund also warns on government borrowing and cyber-attacksIMF warns global economy ‘could soon test the limits of resilience’The threat of an AI share price crash rippling out across global markets is putting world financial stability at risk, the International Monetary fund has warned.In its twice-yearly Global Financial Stability Report, the IMF highlighted the sky-high valuations for AI companies along with their increasing debt pile as one reason that risks in the system are “elevated”. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/oct/13/ai-share-crash-risk-global-imf-debt-corrowing-cyber-attacks" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/oct/13/hobbs-whistles-hack-cyber-attack-asos" target="_blank" rel="noopener">Hobbs and Whistles owner investigates hack that may have exposed customer data</a></h3>
+  <p class="excerpt">Cyber-attack on TFG London comes less than a week after online fashion seller Asos was hit by hackersBusiness live – latest updatesThe owner of Phase Eight, Hobbs and Whistles has said its websites and IT systems have been hit by a cyber-attack that may have compromised customers’ personal data.The South-African listed TFG London said it identified the “cybersecurity incident” at the three UK-based retail chains on Sunday. Its two other UK brands, Inside Story and White Stuff, are not affected. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/oct/13/hobbs-whistles-hack-cyber-attack-asos" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:02 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/e16f0422-cf75-4cc9-962d-4605e421dc63?syn-25a6b1a6=1" target="_blank" rel="noopener">Chip stocks slide in wake of ‘casino’ comment by Broadcom boss</a></h3>
+  <p class="excerpt">Declines for Samsung and SK Hynix drag Kospi sharply lower as investors fret over scale of AI investment</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/e16f0422-cf75-4cc9-962d-4605e421dc63?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 11:50 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/10/privacy-campaigners-to-ask-court-to-ban-sale-of-meta-ai-glasses/" target="_blank" rel="noopener">Privacy campaigners to ask court to ban sale of Meta AI glasses</a></h3>
+  <p class="excerpt">Two Dutch privacy organisations are seeking an injunction against Meta to ban sales of the company’s AI glasses in the...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/10/privacy-campaigners-to-ask-court-to-ban-sale-of-meta-ai-glasses/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 11:45 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/13/world/europe/france-cyberattack-supermarkets-refrigeration.html" target="_blank" rel="noopener">Cyberattack Hits Hundreds of Supermarket Refrigeration Systems in France</a></h3>
+  <p class="excerpt">The attack targeted a Danish software system in at least 380 supermarkets, forcing some shops to throw out frozen produce. The attackers have not been identified.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/13/world/europe/france-cyberattack-supermarkets-refrigeration.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 10:52 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/64aaa8d5-f26a-4b96-b8cf-0ef0c6fbe69e?syn-25a6b1a6=1" target="_blank" rel="noopener">Anthropic warns rogue AI agents may ‘self-replicate’ to hijack ovens</a></h3>
+  <p class="excerpt">Claude maker suggests models could act as ‘worms’ to spread across smart home appliances such as lawnmowers and TVs in future cyber security threat</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/64aaa8d5-f26a-4b96-b8cf-0ef0c6fbe69e?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 10:11 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/13/business/technology-stocks-ai-nasdaq.html" target="_blank" rel="noopener">Chip Stocks Tumble on A.I. Spending Fears and Rising Chinese Competition</a></h3>
+  <p class="excerpt">South Korean stocks tumbled in particular, as reports of a breakthrough by a Chinese chip rival heightened concerns about competition.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/13/business/technology-stocks-ai-nasdaq.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 09:55 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/technology/2026-10-13/how-much-ai-is-in-spains-bestselling-books.html" target="_blank" rel="noopener">How much AI is in Spain’s bestselling books?</a></h3>
+  <p class="excerpt">EL PAÍS analyzed 175 popular titles using the Pangram detector. There was no trace of AI in 2019, but now one in three self-published bestsellers is written mostly with artificial intelligence, including a top-charting book by Spanish politician Alvise Pérez</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/technology/2026-10-13/how-much-ai-is-in-spains-bestselling-books.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 09:46 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cq4g18prn4l4o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Cut screen time in classrooms to avoid long-term health issues, clinicians urge</a></h3>
+  <p class="excerpt">A group of clinicians warns technology use in English schools is driving a rise in health problems like short-sightedness.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cq4g18prn4l4o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 09:35 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/10/biotech-industry-calls-for-e450m-investment-in-food-innovation/" target="_blank" rel="noopener">Biotech industry calls for €450m investment in food innovation</a></h3>
+  <p class="excerpt">The agriculture sector has called on the government to invest €450 million in food technology to maintain the Netherlands’ status...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/10/biotech-industry-calls-for-e450m-investment-in-food-innovation/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 08:48 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-economy">
+  <div class="section-head">
+    <h2>Economy &amp; Trade</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/back-zelenskyy-and-ukraine-with-an-energy-ceasefire-foreign-secretary-tells-european-partners" target="_blank" rel="noopener">Back Zelenskyy and Ukraine with an energy ceasefire, Foreign Secretary tells European partners</a></h3>
+  <p class="excerpt">The Foreign Secretary attends Warsaw Security Forum today, which takes place as Ukraine faces another freezing winter, amid escalating Russian energy strikes</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/back-zelenskyy-and-ukraine-with-an-energy-ceasefire-foreign-secretary-tells-european-partners" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 10:34 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/13/world/europe/mi5-uk-threat-iran-russia.html" target="_blank" rel="noopener">MI5 Chief Warns of Growing Iranian and Russian Threats to U.K.</a></h3>
+  <p class="excerpt">The head of Britain’s domestic security agency accused Tehran and Moscow of escalating their hybrid campaigns on British soil. He called Iran-led attacks on Jewish communities “sickening.”</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/13/world/europe/mi5-uk-threat-iran-russia.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c60rl5vwpk02o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:02 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/6908a0ce-ffdd-4ea9-b376-d35d362639f3?syn-25a6b1a6=1" target="_blank" rel="noopener">Cyber attack on French supermarket fridges raises alarm over food security</a></h3>
+  <p class="excerpt">Some stores reported fridge temperatures as high as 80°C, melting equipment and destroying food</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/6908a0ce-ffdd-4ea9-b376-d35d362639f3?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.bbc.co.uk/news/articles/crq5nzxv9q4yo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 11:50 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/13/business/nigel-farage-crypto-uk-politics.html" target="_blank" rel="noopener">How Two Crypto Billionaires Are Making British Politics More American</a></h3>
+  <p class="excerpt">A pair of low-profile entrepreneurs gave $100 million to Nigel Farage’s Reform U.K. Party. The system may never be the same.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/13/business/nigel-farage-crypto-uk-politics.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:44 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/oct/13/ai-share-crash-risk-global-imf-debt-corrowing-cyber-attacks" target="_blank" rel="noopener">Threat of AI share crash puts world financial stability at risk, says IMF</a></h3>
+  <p class="excerpt">High valuations and debt put sector in danger, while fund also warns on government borrowing and cyber-attacksIMF warns global economy ‘could soon test the limits of resilience’The threat of an AI share price crash rippling out across global markets is putting world financial stability at risk, the International Monetary fund has warned.In its twice-yearly Global Financial Stability Report, the IMF highlighted the sky-high valuations for AI companies along with their increasing debt pile as one reason that risks in the system are “elevated”. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/oct/13/ai-share-crash-risk-global-imf-debt-corrowing-cyber-attacks" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/oct/13/ships-hit-sunk-drones-bulgaria-black-sea-ukraine-russia-war-france-spains-sweden-pope-leo-europe-latest-news-updates" target="_blank" rel="noopener">Zelenskyy says Russia ‘did not heed’ Trump’s call for ceasefire and Ukraine had ‘no early warning’ before strikes on Kyiv – Europe live</a></h3>
+  <p class="excerpt">Ukraine’s president says his country has halted strikes on Russian oil refineries for two days after Trump’s energy ceasefire announcementOn frozen Russian assets, Poland’s Sikorski says the use of frozen Russian assets is “a complicated issue,” but takes a very clear stance in response to any suggestion of releasing them back to Russia.“We are working on it, but there is also some rumours that some people are expecting these assets to be released back to Russia. I don’t think I’m speaking just for myself in saying: over our dead bodies.”“Russia right now is not ready for ceasefire, but still,</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/live/2026/oct/13/ships-hit-sunk-drones-bulgaria-black-sea-ukraine-russia-war-france-spains-sweden-pope-leo-europe-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:25 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/oct/13/jury-selection-buffalo-supermarket-shooting" target="_blank" rel="noopener">Jury selection begins in hate crimes trial for Buffalo supermarket gunman</a></h3>
+  <p class="excerpt">Trial could see white supremacist who killed 10 people in New York state store get the death penaltyJury selection is set to begin Tuesday in the trial that could see the white supremacist who killed 10 people in a 2022 Buffalo supermarket get the death penalty.The attack is believed to be the deadliest shooting targeting Black people in modern history. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/oct/13/jury-selection-buffalo-supermarket-shooting" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:14 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/oct/13/burnham-your-first-home-scheme-bellway-help-to-buy-first-time-buyers" target="_blank" rel="noopener">Burnham’s Your First Home scheme ‘could boost Bellway’s house output by 10%’</a></h3>
+  <p class="excerpt">Help-to-buy initiative for England could slow market while first-time buyers wait for launch, builder admitsBusiness live – latest updatesThe new Your First Home programme for first-time buyers could increase the number of houses British builder Bellway produces each year by 10%, its boss has said.Faced with a chronic shortage of homes, the government has made housing one of its top priorities and Andy Burnham’s surprise announcement of the YFH scheme a fortnight ago sent housebuilders’ shares soaring by more than 10%. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/oct/13/burnham-your-first-home-scheme-bellway-help-to-buy-first-time-buyers" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 11:59 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/787acc7e-f0d3-4552-a369-4b4c967e4ca5?syn-25a6b1a6=1" target="_blank" rel="noopener">European gas hits Iran wartime high</a></h3>
+  <p class="excerpt">Stand-off between Washington and Kyiv over Russian diesel and approach of cold weather boost prices</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/787acc7e-f0d3-4552-a369-4b4c967e4ca5?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 11:38 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/12/us/roller-coaster-georgia-six-flags-rider-death.html" target="_blank" rel="noopener">Six Flags Closes Multiple Rides After Death on Georgia Roller Coaster</a></h3>
+  <p class="excerpt">One rider died and several others were injured at Six Flags Over Georgia, the police said. The company said it was temporarily closing nine rides in the U.S. and Canada as a precaution.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/12/us/roller-coaster-georgia-six-flags-rider-death.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 11:38 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/183ace53-2a89-43a9-88c1-9ea1e1b4437d?syn-25a6b1a6=1" target="_blank" rel="noopener">The world economy is running hotter than expected</a></h3>
+  <p class="excerpt">A statistical history of the IMF’s forecasts reveals a picture of higher growth and worse inflation</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/183ace53-2a89-43a9-88c1-9ea1e1b4437d?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 11:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/uk-news/2026/oct/13/britain-interpol-reject-argentina-falkland-islands-arrests" target="_blank" rel="noopener">UK asks Interpol to reject Argentina’s ‘politically motivated’ requests for Falklands oil arrests</a></h3>
+  <p class="excerpt">Exclusive: Caution urged over Javier Milei government’s ‘red notice’ requests for arrest of individuals linked to oil projectBritain has appealed to Interpol to reject Argentina’s requests for the arrest of individuals involved in a large oil project off the Falkland Islands.With tensions over the sovereignty of the British overseas territory reaching levels not seen since the war with Argentina in 1982, UK officials have sought urgent assurances from the international organisation. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/uk-news/2026/oct/13/britain-interpol-reject-argentina-falkland-islands-arrests" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 11:00 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-politics">
+  <div class="section-head">
+    <h2>Politics &amp; Diplomacy</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/the-united-kingdom-will-continue-to-champion-the-colombia-peace-agreement-through-implementation-at-local-levels-uk-statement-at-the-un-security-counc" target="_blank" rel="noopener">The United Kingdom will continue to champion the Colombia Peace Agreement through implementation at local levels: UK statement at the UN Security Council</a></h3>
+  <p class="excerpt">Statement by Ambassador Sarah MacIntosh, UK Permanent Representative to the UN, at the UN Security Council meeting on Colombia.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/the-united-kingdom-will-continue-to-champion-the-colombia-peace-agreement-through-implementation-at-local-levels-uk-statement-at-the-un-security-counc" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+      <a href="https://news.un.org/feed/view/en/story/2026/10/1168580" target="_blank" rel="noopener">UN News</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 17:16 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/joint-statement-on-iran-12-october" target="_blank" rel="noopener">Joint Statement on Iran, 12 October</a></h3>
+  <p class="excerpt">Joint Statement from Foreign Ministers regarding RAF Fairford and Iran State Threats.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/joint-statement-on-iran-12-october" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 16:06 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/uk-hosted-international-partners-to-work-together-in-fight-against-antisemitism" target="_blank" rel="noopener">UK hosted international partners to work together in fight against antisemitism</a></h3>
+  <p class="excerpt">UK hosts seven-country taskforce of Jewish community representatives to coordinate practical action against antisemitism.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/uk-hosted-international-partners-to-work-together-in-fight-against-antisemitism" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 14:54 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cmn06w5x9g25o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Bulgaria summons Russian ambassador after ship sinks in Black Sea drone attack</a></h3>
+  <p class="excerpt">Eleven crew members are missing after a merchant ship was sunk overnight, local officials say.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/13/world/europe/black-sea-drones-russia-bulgaria-nato.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/cmn06w5x9g25o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:10 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cvp8glg97393o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Immigration agents search congresswoman Ilhan Omar&#39;s home</a></h3>
+  <p class="excerpt">Omar, an outspoken Trump critic, said the search was &#34;an attempt to target political enemies&#34; and she &#34;will not be silenced&#34;.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/12/us/politics/ilhan-omar-home-searched.html" target="_blank" rel="noopener">NYT Politics</a>
+      <a href="https://www.bbc.co.uk/news/articles/cvp8glg97393o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 10:37 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/12/us/christa-pike-medical-care-delay.html" target="_blank" rel="noopener">Calls Show How Confusion Delayed Emergency Response for Christa Pike</a></h3>
+  <p class="excerpt">The first 911 call from inside the prison was made at 8:40 p.m. It took about 30 minutes to verify its authenticity.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/12/us/christa-pike-medical-care-delay.html" target="_blank" rel="noopener">NYT Politics</a>
+      <a href="https://www.bbc.co.uk/news/articles/ck1exg6qjdz3o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 10:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cwr5y2lgr4gdo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Thousands march to Indian Supreme Court to demand election chief resign</a></h3>
+  <p class="excerpt">The march follows a chaotic weekend in Delhi which saw thousands of protesters detained by police.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cwr5y2lgr4gdo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/2026/oct/12/india-election-protests-delhi-police-shut-metro-stations-ahead-march" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 15:19 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/12/arts/russell-brand-trial-what-to-know.html" target="_blank" rel="noopener">Russell Brand’s Rape and Sexual Assault Trial: What to Know</a></h3>
+  <p class="excerpt">The YouTuber, comedian and actor’s trial began on Monday. He has pleaded not guilty to all of the charges.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/12/arts/russell-brand-trial-what-to-know.html" target="_blank" rel="noopener">NYT Europe</a>
+      <a href="https://www.bbc.co.uk/news/articles/cmqxn0lw25r3o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 12, 13:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/d63348fb-901d-4ff3-9cdc-0d023778dbc2?syn-25a6b1a6=1" target="_blank" rel="noopener">Healey rejects calls to equalise capital gains and income tax rates</a></h3>
+  <p class="excerpt">UK proposal had been backed by senior Labour figures, triggering nervousness among entrepreneurs and investors</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/d63348fb-901d-4ff3-9cdc-0d023778dbc2?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:43 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/live/2026/oct/13/andy-burnham-brexit-eu-europe-neil-kinnock-lobby-wes-streeting-labour-prisoner-early-release-uk-politics-latest-news-updates" target="_blank" rel="noopener">MI5 chief Ken McCallum confirms Russia did interfere in Brexit referendum but says it had little impact – UK politics live</a></h3>
+  <p class="excerpt">He argued there was no evidence to suggest the result of the Brexit vote had been swayed as a result of the effortAndy Burnham promises ‘serious dialogue’ over UK’s relationship with EUZia Yusuf, Reform UK’s home affairs spokesperson, has said he does not agree with his colleague Suella Braverman’s assertion that black people cannot be English.Asked about her views in an interview on Sky News, Yusuf said:In my view Ashley Cole is the best English fullback in history, and I won’t take any other position. So in my view, Ashley Cole is English. I think the argument that he’s not English doesn’t h</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/politics/live/2026/oct/13/andy-burnham-brexit-eu-europe-neil-kinnock-lobby-wes-streeting-labour-prisoner-early-release-uk-politics-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/oct/13/ai-share-crash-risk-global-imf-debt-corrowing-cyber-attacks" target="_blank" rel="noopener">Threat of AI share crash puts world financial stability at risk, says IMF</a></h3>
+  <p class="excerpt">High valuations and debt put sector in danger, while fund also warns on government borrowing and cyber-attacksIMF warns global economy ‘could soon test the limits of resilience’The threat of an AI share price crash rippling out across global markets is putting world financial stability at risk, the International Monetary fund has warned.In its twice-yearly Global Financial Stability Report, the IMF highlighted the sky-high valuations for AI companies along with their increasing debt pile as one reason that risks in the system are “elevated”. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/oct/13/ai-share-crash-risk-global-imf-debt-corrowing-cyber-attacks" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/oct/13/ships-hit-sunk-drones-bulgaria-black-sea-ukraine-russia-war-france-spains-sweden-pope-leo-europe-latest-news-updates" target="_blank" rel="noopener">Zelenskyy says Russia ‘did not heed’ Trump’s call for ceasefire and Ukraine had ‘no early warning’ before strikes on Kyiv – Europe live</a></h3>
+  <p class="excerpt">Ukraine’s president says his country has halted strikes on Russian oil refineries for two days after Trump’s energy ceasefire announcementOn frozen Russian assets, Poland’s Sikorski says the use of frozen Russian assets is “a complicated issue,” but takes a very clear stance in response to any suggestion of releasing them back to Russia.“We are working on it, but there is also some rumours that some people are expecting these assets to be released back to Russia. I don’t think I’m speaking just for myself in saying: over our dead bodies.”“Russia right now is not ready for ceasefire, but still,</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/live/2026/oct/13/ships-hit-sunk-drones-bulgaria-black-sea-ukraine-russia-war-france-spains-sweden-pope-leo-europe-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 13, 12:25 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <footer class="foot">
+    Generated 2026-10-13 12:49 UTC ·
+    Aggregated from reliable sources (NYT, Foreign Affairs, FT, official government sites).
+    Headlines &amp; excerpts link to originals; no paywalled full text is reproduced.
+  </footer>
+</main>
+</body>
+</html>
