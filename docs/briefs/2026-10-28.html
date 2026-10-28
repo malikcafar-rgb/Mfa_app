@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Today's Brief — Wednesday, 28 October 2026</title>
+<style>
+  /* New York Times–inspired: white background, serif headlines, hairline rules,
+     sans-serif labels, minimal color. */
+  :root {
+    --bg: #ffffff;
+    --text: #121212;        /* near-black body */
+    --muted: #666666;       /* bylines / meta */
+    --faint: #999999;
+    --rule: #e2e2e2;        /* hairline dividers */
+    --rule-strong: #121212; /* section top rules */
+    --link: #326891;        /* NYT link blue, used sparingly */
+    --official: #9a6a00;    /* restrained gold-brown */
+    --wire: #326891;
+    --analysis: #6a4c93;
+    --serif: Georgia, "Times New Roman", "Times", serif;
+    --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: var(--serif); line-height: 1.5; -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px 90px; }
+
+  /* Masthead — centered serif wordmark with black rules above/below. */
+  header.masthead { background: var(--bg); border-bottom: 1px solid var(--text);
+    padding: 14px 24px 0; }
+  .masthead-inner { max-width: 960px; margin: 0 auto; }
+  .brand { text-align: center; padding-bottom: 12px; border-bottom: 1px solid var(--text);
+    margin-bottom: 8px; }
+  .brand .kicker { font-family: var(--sans); font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .brand h1 { font-family: var(--serif); font-weight: 700; margin: 4px 0 2px;
+    font-size: 40px; letter-spacing: -.01em; line-height: 1.05; }
+  .brand .date { font-family: var(--sans); color: var(--muted); font-size: 12.5px;
+    letter-spacing: .02em; }
+  .nav { display: flex; gap: 20px; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 12px; text-transform: uppercase; letter-spacing: .08em;
+    padding: 8px 0 10px; }
+  .nav a { color: var(--text); font-weight: 600; }
+  .nav a:hover { color: var(--link); }
+
+  /* Links-only / status banner — quiet, italic serif. */
+  .banner { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    padding: 10px 0; margin: 18px 0 6px; color: var(--muted); font-size: 14px;
+    font-style: italic; }
+
+  /* Executive summary — a boxed "lede" with a sans label. */
+  .exec { border: 1px solid var(--text); padding: 22px 24px; margin: 24px 0 8px; }
+  .exec h2 { font-family: var(--sans); margin: 0 0 10px; font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text); font-weight: 700; }
+  .exec p { margin: 0 0 12px; font-size: 18px; line-height: 1.55; }
+  .exec p:last-child { margin-bottom: 0; }
+  .exec .ir { border-top: 1px solid var(--rule); margin-top: 16px; padding-top: 16px; }
+  .exec .ir h3 { font-family: var(--sans); margin: 0 0 6px; font-size: 11px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--analysis); font-weight: 700; }
+  .exec .ir p { font-size: 16px; }
+
+  /* Section fronts — serif head with a strong black rule above (NYT section style). */
+  section.topic { margin: 34px 0 0; }
+  .section-head { border-top: 2px solid var(--rule-strong); padding-top: 8px; margin-bottom: 6px;
+    display: flex; align-items: baseline; gap: 10px; }
+  .section-head h2 { font-family: var(--serif); margin: 0; font-size: 22px; font-weight: 700;
+    letter-spacing: -.01em; }
+  .section-head .count { font-family: var(--sans); color: var(--faint); font-size: 11px;
+    text-transform: uppercase; letter-spacing: .08em; }
+  .section-brief { font-style: italic; color: #333; padding: 6px 0 2px; margin: 6px 0;
+    font-size: 15px; border-left: 3px solid var(--rule-strong); padding-left: 12px; }
+
+  /* Story cards — serif headline, hairline divider, sans meta. */
+  .card { padding: 15px 0; border-bottom: 1px solid var(--rule); }
+  .card:last-child { border-bottom: none; }
+  .card h3 { font-family: var(--serif); margin: 0 0 5px; font-size: 20px; font-weight: 700;
+    line-height: 1.25; letter-spacing: -.005em; }
+  .card h3 a { color: var(--text); }
+  .card h3 a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+  .card .ai { margin: 4px 0 6px; font-size: 15px; color: #333; line-height: 1.5; }
+  .card .excerpt { margin: 4px 0 6px; font-size: 15px; color: var(--muted); line-height: 1.5; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    font-family: var(--sans); font-size: 12px; margin-top: 5px; color: var(--faint); }
+
+  /* Tier labels — small uppercase sans, a dot of color, no boxes. */
+  .badge { font-family: var(--sans); font-size: 10.5px; letter-spacing: .07em;
+    text-transform: uppercase; font-weight: 700; display: inline-flex; align-items: center; }
+  .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%;
+    display: inline-block; margin-right: 5px; background: currentColor; }
+  .badge.official { color: var(--official); }
+  .badge.wire { color: var(--wire); }
+  .badge.analysis { color: var(--analysis); }
+  .sources { display: flex; flex-wrap: wrap; gap: 6px; font-family: var(--sans); }
+  .sources a { color: var(--muted); }
+  .sources a:hover { color: var(--link); text-decoration: underline; }
+  .sources a::after { content: "·"; margin-left: 6px; color: var(--faint); }
+  .sources a:last-child::after { content: ""; }
+
+  /* Country watch — bordered cards with serif titles. */
+  .country-group { margin-top: 30px; }
+  .country-group > h2 { font-family: var(--sans); font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text); font-weight: 700;
+    border-bottom: 1px solid var(--rule-strong); padding-bottom: 6px; }
+  .country-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 22px; margin-top: 14px; }
+  .country-card { border: 1px solid var(--rule); padding: 14px 16px; }
+  .country-card h3 { font-family: var(--serif); margin: 0 0 8px; font-size: 18px; font-weight: 700; }
+  .country-card ul { margin: 0; padding: 0; list-style: none; }
+  .country-card li { padding: 7px 0; border-top: 1px solid var(--rule); font-size: 15px;
+    line-height: 1.35; }
+  .country-card li:first-child { border-top: none; }
+  .country-card li a { color: var(--text); }
+  .country-card li a:hover { text-decoration: underline; }
+
+  /* Archive + table of contents. */
+  .archive-list { list-style: none; padding: 0; margin: 22px 0; }
+  .archive-list li { padding: 14px 0; border-bottom: 1px solid var(--rule);
+    font-family: var(--serif); font-size: 19px; }
+  .archive-list li a:hover { text-decoration: underline; }
+  .toc { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 16px 0 4px;
+    padding-bottom: 14px; border-bottom: 1px solid var(--rule); font-family: var(--sans); }
+  .toc a { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em;
+    font-weight: 600; }
+  .toc a:hover { color: var(--link); }
+
+  footer.foot { font-family: var(--sans); color: var(--faint); font-size: 11.5px; margin-top: 56px;
+    padding-top: 18px; border-top: 1px solid var(--rule); line-height: 1.6; }
+
+  @media (max-width: 640px) {
+    .brand h1 { font-size: 30px; }
+    .exec p { font-size: 16px; }
+    .card h3 { font-size: 18px; }
+    .country-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="kicker">Diplomat Daily Briefing</span>
+      <h1>Today's Brief</h1>
+      <span class="date">Wednesday, 28 October 2026 · 273 articles across 262 stories</span>
+    </div>
+    <nav class="nav">
+  <a href="../index.html">Dashboard</a>
+  <a href="../archive.html">Archive</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <div class="banner">AI summaries unavailable (authentication_error: Invalid bearer token) — showing links only.</div>
+
+
+  <h2 id="country-watch" style="margin-top:24px;font-size:20px;border-bottom:2px solid var(--rule-strong);padding-bottom:6px;">Country Profiles</h2>
+  <section class="topic" id="ctry-spain">
+  <div class="section-head">
+    <h2>Spain</h2>
+    <span class="count">5 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/live/2026/10/28/world/spain-train-crash-toledo" target="_blank" rel="noopener">Live Updates: At Least 30 Killed in Train Crash in Spain, Officials Say</a></h3>
+  <p class="excerpt">One high-speed passenger train rear-ended another one near Toledo, months after a crash involving the same carriers killed dozens and stunned the country.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/live/2026/10/28/world/spain-train-crash-toledo" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.theguardian.com/world/2026/oct/28/spain-train-crash-high-speed-toledo" target="_blank" rel="noopener">The Guardian (World)</a>
+      <a href="https://english.elpais.com/spain/2026-10-28/at-least-10-people-killed-in-high-speed-rail-crash-in-spain.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:24 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/oct/28/spain-train-crash-toledo-europe-latest-news-updates" target="_blank" rel="noopener">At least 30 dead after two trains collide in Spain – latest updates</a></h3>
+  <p class="excerpt">Spain’s rail system operator ADIF said the crash occurred Wednesday morning in the province of ToledoFull report from SpainAt least 30 people are believed to have died after two high-speed trains collided in the province of Toledo in Spain, with concerns the death toll could be much higher.The number of people affected is expected to rise (10:46), local authorities said, with growing concerns about a “major tragedy” (11:03).The affected trains are understood to be Iryo 7076 with 146 passengers plus one baby on board, and AVE 2080 with 397 passengers on board, making it 544 people in total on b</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/live/2026/oct/28/spain-train-crash-toledo-europe-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:14 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/3500a00d-d676-4460-83f8-8ea2bfce1049?syn-25a6b1a6=1" target="_blank" rel="noopener">At least 10 killed in collision of high-speed trains in Spain</a></h3>
+  <p class="excerpt">Crash near Toledo south of Madrid follows death of 46 in Andalusia rail accident in January</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/3500a00d-d676-4460-83f8-8ea2bfce1049?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 10:06 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/world/europe/spain-saic-ferrol-china.html" target="_blank" rel="noopener">A Chinese Port Could Be a Lifeline for Spain, but Also a Threat</a></h3>
+  <p class="excerpt">Residents say a proposed Chinese car plant in northern Spain will create new jobs. Others say it’s a long-term risk, distilling a debate about the costs and perks of ties to China.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/world/europe/spain-saic-ferrol-china.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 04:01 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/health/2026-10-27/the-responsibility-of-democracies-toward-global-health.html" target="_blank" rel="noopener">The responsibility of democracies toward global health</a></h3>
+  <p class="excerpt">Regardless of the outcome of the U.S. midterm elections and Spain’s general elections, democracies’ responsibility toward global health must not be called into question</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/health/2026-10-27/the-responsibility-of-democracies-toward-global-health.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 14:53 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-switzerland">
+  <div class="section-head">
+    <h2>Switzerland</h2>
+    <span class="count">4 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261028/today-in-switzerland-a-roundup-of-the-latest-news-on-wednesday-264" target="_blank" rel="noopener">Today in Switzerland: A roundup of the latest news on Wednesday</a></h3>
+  <p class="excerpt">Federal austerity measures could affect Switzerland’s ability to process migrants; Swiss property prices are rising further; and more news in our Wednesday roundup.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261028/today-in-switzerland-a-roundup-of-the-latest-news-on-wednesday-264" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 09:35 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261027/listed-switzerlands-most-attractive-small-towns-for-families" target="_blank" rel="noopener">LISTED: Switzerland&#39;s most attractive small towns for families</a></h3>
+  <p class="excerpt">Large Swiss cities like Zurich and Geneva are becoming increasingly expensive to live in, with scarce affordable housing options. That&#39;s why many families move to the suburban areas – with some small municipalities offering more bang for their money.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261027/listed-switzerlands-most-attractive-small-towns-for-families" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 12:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261027/deutsche-bahn-train-denied-entry-to-zurich-due-to-a-13-minute-delay" target="_blank" rel="noopener">Deutsche Bahn train denied entry to Zurich due to a 13-minute delay</a></h3>
+  <p class="excerpt">In order to protect its own punctual timetable, Switzerland’s national rail company, SBB, has been taking a tough stance on tardy international trains – Germany’s DB foremost among them.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261027/deutsche-bahn-train-denied-entry-to-zurich-due-to-a-13-minute-delay" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 11:01 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261027/explained-what-you-should-know-about-switzerlands-minimum-wage-vote" target="_blank" rel="noopener">EXPLAINED: What you should know about Switzerland&#39;s minimum wage vote</a></h3>
+  <p class="excerpt">Only a handful of Swiss cantons have introduced minimum wage regulations as a result of public votes. A move for the collective labour agreements to override these laws will be challenged at the ballot box.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261027/explained-what-you-should-know-about-switzerlands-minimum-wage-vote" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 11:01 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-united_kingdom">
+  <div class="section-head">
+    <h2>United Kingdom</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/peace-cannot-be-sustainable-while-half-the-population-is-shut-out-of-shaping-it-uk-statement-at-the-un-security-council" target="_blank" rel="noopener">Peace cannot be sustainable while half the population is shut out of shaping it: UK statement at the UN Security Council</a></h3>
+  <p class="excerpt">Statement by Ambassador Kate Foster, UK Deputy Permanent Representative to the UN, at the UN Security Council meeting on Women, Peace and Security.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/peace-cannot-be-sustainable-while-half-the-population-is-shut-out-of-shaping-it-uk-statement-at-the-un-security-council" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 20:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/iran-must-allow-the-return-of-iaea-inspectors-to-all-nuclear-sites" target="_blank" rel="noopener">Iran must allow the return of IAEA inspectors to all nuclear sites: UK statement at the UN Security Council</a></h3>
+  <p class="excerpt">Statement by Ambassador Sarah MacIntosh, UK Permanent Representative to the UN, at the UN Security Council meeting on Iran.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/iran-must-allow-the-return-of-iaea-inspectors-to-all-nuclear-sites" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 15:51 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/uk-human-rights-ambassador-visits-tanzania-ahead-of-un-review" target="_blank" rel="noopener">UK Human Rights Ambassador visits Tanzania ahead of UN review</a></h3>
+  <p class="excerpt">The UK’s Ambassador for Human Rights, Eleanor Sanders, visits Tanzania ahead of the UN’s forthcoming review of the status of Tanzania’s human rights landscape</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/uk-human-rights-ambassador-visits-tanzania-ahead-of-un-review" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 12:15 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/arts/russell-brand-trial-rape-sexual-assault.html" target="_blank" rel="noopener">Russell Brand Tells Court Consent ‘Is More Important Than Sex’</a></h3>
+  <p class="excerpt">The popular YouTuber is giving evidence in a London trial in which he has pleaded not guilty to seven charges of rape, sexual assault or attempted indecent assault.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/arts/russell-brand-trial-rape-sexual-assault.html" target="_blank" rel="noopener">NYT Europe</a>
+      <a href="https://www.bbc.co.uk/news/articles/cmvgxl5kdgrzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:23 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/uk-news/live/2026/oct/28/budget-2026-latest-updates-john-healey-andy-burnham-labour-uk-politics" target="_blank" rel="noopener">Budget 2026 live: gas standing charges to be scrapped for millions as chancellor prepares to deliver budget</a></h3>
+  <p class="excerpt">John Healey says UK faces ‘difficult moment’ as he prepares to deliver first budget of Andy Burnham’s governmentYou be the chancellor: play our budget game to see if you can balance the booksMartin Lewis said that, when he met John Healey this morning, the chancellor said that, having removed standing charges from gas bills, he would also like to get rid of them from electricity bills. Lewis said:The chancellor said he will be talking to Ofgem about how they get rid of the charge on electricity as well, but that is ‘trickier’ apparently and will take longer. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/uk-news/live/2026/oct/28/budget-2026-latest-updates-john-healey-andy-burnham-labour-uk-politics" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:12 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c6lykg0nkll0o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Suspicious package sent to hotel contained explosive device</a></h3>
+  <p class="excerpt">Police condemn the &#34;reckless and targeted attack&#34; after the explosive was sent to a Londonderry hotel.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c6lykg0nkll0o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 10:51 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/global-development/2026/oct/28/africa-ebola-outbreak-could-reach-uk-says-top-health-official" target="_blank" rel="noopener">Africa’s ‘unprecedented’ Ebola outbreak could reach UK, says top health official</a></h3>
+  <p class="excerpt">Jean Kaseya, of the Africa CDC, warns of the illness spreading like Covid unless more funding is secured to increase preparedness and possible treatmentThe “unprecedented” spread of the Ebola outbreak means it could reach the UK and other countries, according to one of Africa’s top health officials.As the current outbreak reached 10,000 cases, with almost 5,000 deaths, Dr Jean Kaseya, director general of the Africa Centres for Disease Control and Prevention (CDC), compared the outbreak to the Covid pandemic, which first took hold in China before spreading to countries across the world, claimin</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/global-development/2026/oct/28/africa-ebola-outbreak-could-reach-uk-says-top-health-official" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 09:37 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/28/king-charles-confirms-he-will-discuss-legacy-of-slavery-at-commonwealth-summit" target="_blank" rel="noopener">King Charles to discuss legacy of slavery with Commonwealth leaders at summit</a></h3>
+  <p class="excerpt">Royal tour of Caribbean comes as poll suggests majority support among younger Britons for dialogue on slavery reparationsKing Charles has confirmed he will discuss the legacy of slavery at a summit with Commonwealth leaders as he begins his Caribbean tour.The king arrived in the Bahamas on Tuesday to a ceremonial welcome and attended a youth rally at Clifford Park, the site where the country officially gained its independence from British colonial rule in 1973. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/oct/28/king-charles-confirms-he-will-discuss-legacy-of-slavery-at-commonwealth-summit" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 06:55 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-united_states">
+  <div class="section-head">
+    <h2>United States</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/uk-human-rights-ambassador-visits-tanzania-ahead-of-un-review" target="_blank" rel="noopener">UK Human Rights Ambassador visits Tanzania ahead of UN review</a></h3>
+  <p class="excerpt">The UK’s Ambassador for Human Rights, Eleanor Sanders, visits Tanzania ahead of the UN’s forthcoming review of the status of Tanzania’s human rights landscape</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/uk-human-rights-ambassador-visits-tanzania-ahead-of-un-review" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 12:15 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://news.un.org/feed/view/en/story/2026/10/1168686" target="_blank" rel="noopener">General Assembly weighs US embargo against Cuba ahead of 34th vote</a></h3>
+  <p class="excerpt">The General Assembly opened its annual debate on the US economic embargo against Cuba on Tuesday. On Wednesday, 28 October, Member States will vote for the 34th time on a resolution calling for it to end.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://news.un.org/feed/view/en/story/2026/10/1168686" target="_blank" rel="noopener">UN News</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://news.un.org/feed/view/en/story/2026/10/1168677" target="_blank" rel="noopener">Record carbon dioxide levels will impact us for centuries, says UN weather agency</a></h3>
+  <p class="excerpt">Levels of carbon dioxide (CO2) and other major greenhouse gases in the atmosphere caused by burning fossil fuels reached record highs in 2025, locking in more long-term global warming, the World Meteorological Organization (WMO) said on Tuesday.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://news.un.org/feed/view/en/story/2026/10/1168677" target="_blank" rel="noopener">UN News</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://news.un.org/feed/view/en/story/2026/10/1168676" target="_blank" rel="noopener">Ebola: 20 contacts released from quarantine in Kenya, amid vaccine ‘hope’ in DR Congo</a></h3>
+  <p class="excerpt">Twenty people associated with Kenya’s first case of Ebola Bundibugyo virus disease have been reunited with their families after being released from quarantine following completion of a mandatory 21-day monitoring period.&amp;nbsp;</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://news.un.org/feed/view/en/story/2026/10/1168676" target="_blank" rel="noopener">UN News</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/27/world/americas/brazil-flavio-bolsonaro-flees-election.html" target="_blank" rel="noopener">Flávio Bolsonaro Leaves Brazil for the U.S. After Election Defeat</a></h3>
+  <p class="excerpt">Officials in Argentina said Mr. Bolsonaro entered the country by land then flew to Ecuador. Brazilian police had asked him to hand over his passports because of his links to an investigation.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/27/world/americas/brazil-flavio-bolsonaro-flees-election.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.ft.com/content/ec7a3e3e-21e3-44de-81ee-db2f2073bee3?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 10:43 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/oct/28/spain-train-crash-toledo-europe-latest-news-updates" target="_blank" rel="noopener">At least 30 dead after two trains collide in Spain – latest updates</a></h3>
+  <p class="excerpt">Spain’s rail system operator ADIF said the crash occurred Wednesday morning in the province of ToledoFull report from SpainAt least 30 people are believed to have died after two high-speed trains collided in the province of Toledo in Spain, with concerns the death toll could be much higher.The number of people affected is expected to rise (10:46), local authorities said, with growing concerns about a “major tragedy” (11:03).The affected trains are understood to be Iryo 7076 with 146 passengers plus one baby on board, and AVE 2080 with 397 passengers on board, making it 544 people in total on b</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/live/2026/oct/28/spain-train-crash-toledo-europe-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:14 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c6lykg0nkll0o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Suspicious package sent to hotel contained explosive device</a></h3>
+  <p class="excerpt">Police condemn the &#34;reckless and targeted attack&#34; after the explosive was sent to a Londonderry hotel.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c6lykg0nkll0o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 10:51 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/oct/28/shayna-feinman-missing-arizona-woman-mexico" target="_blank" rel="noopener">A US woman feared dead was reported alive in Mexico. But cops now say that isn’t true</a></h3>
+  <p class="excerpt">Mexican police had said they found Shayna Feinman in Tijuana, raising the hopes of missing Arizonan’s familyArizona authorities say their Mexican counterparts were resoundingly mistaken when they publicly claimed recently that they found alive a woman who was feared slain after disappearing in 2024 – a turn of events that her sister has called “turmoil” and “heartbreaking”.The case in question centers on Shayna Feinman, who was reported missing in rural Yavapai county, Arizona, in March 2024 at age 38. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/oct/28/shayna-feinman-missing-arizona-woman-mexico" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 10:00 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-netherlands">
+  <div class="section-head">
+    <h2>Netherlands</h2>
+    <span class="count">6 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/10/king-sees-challenges-and-successes-on-visit-to-asylum-centre/" target="_blank" rel="noopener">King sees challenges and successes on visit to asylum centre</a></h3>
+  <p class="excerpt">King Willem-Alexander has visited one of the Netherlands’ longest running accommodation centres for asylum seekers to talk to refugees and...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/10/king-sees-challenges-and-successes-on-visit-to-asylum-centre/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 10:16 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/10/zelenskyy-visits-the-hague-as-dutch-announce-e1-2bn-aid-package/" target="_blank" rel="noopener">Zelenskyy visits The Hague as Dutch announce €1.2bn aid package</a></h3>
+  <p class="excerpt">Ukrainian president Volodymyr Zelenskyy will meet prime minister Rob Jetten in The Hague on Wednesday on his first visit to...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/10/zelenskyy-visits-the-hague-as-dutch-announce-e1-2bn-aid-package/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 09:15 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/arts/music/the-flying-dutchman-milo-rau-deutsche-oper.html" target="_blank" rel="noopener">This ‘Flying Dutchman’ Tests the Limits on Artists Speaking Freely About Israel</a></h3>
+  <p class="excerpt">A Berlin production of “The Flying Dutchman” transforms Wagner’s opera into a provocative allegory amid fears of political interference and censorship in the arts.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/arts/music/the-flying-dutchman-milo-rau-deutsche-oper.html" target="_blank" rel="noopener">NYT Europe</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 09:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/10/dutch-population-density-keeps-rising-highest-in-mainland-eu/" target="_blank" rel="noopener">Dutch population density keeps rising, highest in mainland EU</a></h3>
+  <p class="excerpt">The Netherlands had 539 people per square metre of land at the start of this year, up 15% since 2000,...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/10/dutch-population-density-keeps-rising-highest-in-mainland-eu/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 08:23 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/crwyq90gwg8jo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Dutch zookeeper dies after being mauled by leopard</a></h3>
+  <p class="excerpt">The woman began her career at the park when she was 17 and had worked there on-and-off for four decades.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/crwyq90gwg8jo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 19:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/10/sports-club-members-becoming-less-tolerant-of-homosexuality/" target="_blank" rel="noopener">Sports club members becoming less tolerant of homosexuality</a></h3>
+  <p class="excerpt">Acceptance of homosexuality in Dutch sports clubs has declined significantly in the last generation, according to a survey of attitudes...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/10/sports-club-members-becoming-less-tolerant-of-homosexuality/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 15:44 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <div class="country-group">
+    <h2>Regional neighbors</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>Turkey</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/26/world/middleeast/iran-war-new-attacks-diplomacy.html" target="_blank" rel="noopener">Flurry of Diplomacy in Iran Amid Reports of U.S. and Israeli Plans to Renew War</a>
+    </li>
+    <li>
+      <a href="https://warontherocks.com/the-anti-taliban-resistance-has-survived-can-it-win/" target="_blank" rel="noopener">The Anti-Taliban Resistance Has Survived. Can It Win?</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Russia</h3>
+  <ul>
+    <li>
+      <a href="https://news.un.org/feed/view/en/story/2026/10/1168682" target="_blank" rel="noopener">World News in Brief: ‘No safe place in Ukraine’, IAEA calls for Iran nuclear inspections, Kenya hosts thousands of Ethiopians fleeing clashes</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/27/world/europe/norway-finland-putin-call.html" target="_blank" rel="noopener">European Leaders Split Over Phone Call to Putin</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/videos/c687z5ne1w4ro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">What we know about Ukraine-Russia truce in Oleshky, brokered by Melania Trump</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/8ec7d6f2-403a-4f80-89fc-5ed5e75fed63?syn-25a6b1a6=1" target="_blank" rel="noopener">Zelenskyy opens door to security guarantees for Russia</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Iran</h3>
+  <ul>
+    <li>
+      <a href="https://www.gov.uk/government/speeches/iran-must-allow-the-return-of-iaea-inspectors-to-all-nuclear-sites" target="_blank" rel="noopener">Iran must allow the return of IAEA inspectors to all nuclear sites: UK statement at the UN Security Council</a>
+    </li>
+    <li>
+      <a href="https://news.un.org/feed/view/en/story/2026/10/1168682" target="_blank" rel="noopener">World News in Brief: ‘No safe place in Ukraine’, IAEA calls for Iran nuclear inspections, Kenya hosts thousands of Ethiopians fleeing clashes</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/28/world/middleeast/israel-election-middle-east-relations.html" target="_blank" rel="noopener">For Israel’s Neighbors in Middle East, the Election Offers Little Hope of a Reset</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/32f2864d-c122-4d83-b0c5-8d2f1fcc63bd?syn-25a6b1a6=1" target="_blank" rel="noopener">Ambani’s $130bn Jio soars in India’s biggest listing</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+  <div class="country-group">
+    <h2>Great powers</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>China</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/global-development/2026/oct/28/africa-ebola-outbreak-could-reach-uk-says-top-health-official" target="_blank" rel="noopener">Africa’s ‘unprecedented’ Ebola outbreak could reach UK, says top health official</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/6abfda69-f4f7-45d5-922c-f4b65a72bcdc?syn-25a6b1a6=1" target="_blank" rel="noopener">The AI bubble already popped — in China</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/australia-news/2026/oct/28/backdrop-for-countless-local-love-stories-geelong-gingko-named-victorian-tree-of-the-year" target="_blank" rel="noopener">From a seed in China to the ‘backdrop for countless love stories’: a ginkgo’s 167-year journey to Victorian tree of the year</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/28/world/europe/spain-saic-ferrol-china.html" target="_blank" rel="noopener">A Chinese Port Could Be a Lifeline for Spain, but Also a Threat</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>European Union</h3>
+  <ul>
+    <li>
+      <a href="https://www.dutchnews.nl/2026/10/dutch-population-density-keeps-rising-highest-in-mainland-eu/" target="_blank" rel="noopener">Dutch population density keeps rising, highest in mainland EU</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/efbe2a33-8a12-4d71-9599-26c86b9d8a0f?syn-25a6b1a6=1" target="_blank" rel="noopener">EU spars over ‘associate member’ label for Canada on eve of Carney summit</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/52b656d0-fa0e-44b2-be1a-5f74735e90e0?syn-25a6b1a6=1" target="_blank" rel="noopener">EU countries may use UK-built migrant centres in Rwanda</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/cmqlngkz0elxo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">UK and EU officials to discuss freedom of movement</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>France</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/28/world/europe/italy-protests-students-truckers-meloni.html" target="_blank" rel="noopener">Italians Protesting High Prices Fear a Listless Future, Too</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/28/us/politics/bo-french-texas-railroad-commission-south-asian.html" target="_blank" rel="noopener">One Race in Texas Has Become a Referendum on Bigotry in the G.O.P.</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/27/business/media/candace-owens-macron-defamation-case.html" target="_blank" rel="noopener">Judge Limits Candace Owens’s Liability in Macron Defamation Case</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/27/us/politics/los-angeles-mayor-nithya-raman-democratic-socialist.html" target="_blank" rel="noopener">Nithya Raman Is Not L.A.’s Mamdani. But She Might Become Mayor, Too.</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Germany</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/28/arts/music/the-flying-dutchman-milo-rau-deutsche-oper.html" target="_blank" rel="noopener">This ‘Flying Dutchman’ Tests the Limits on Artists Speaking Freely About Israel</a>
+    </li>
+    <li>
+      <a href="https://www.thelocal.ch/20261027/deutsche-bahn-train-denied-entry-to-zurich-due-to-a-13-minute-delay" target="_blank" rel="noopener">Deutsche Bahn train denied entry to Zurich due to a 13-minute delay</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/27/business/neura-robotics-germany-china-ai.html" target="_blank" rel="noopener">In the A.I. ‘Robogym,’ Machines Train to Be More Like Humans</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+  <div class="country-group">
+    <h2>Middle East</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>Israel</h3>
+  <ul>
+    <li>
+      <a href="https://news.un.org/feed/view/en/story/2026/10/1168685" target="_blank" rel="noopener">Gaza: Families brace for fourth winter in tents as aid operations remain stymied</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/world/live/2026/oct/28/israel-election-results-live-updates-exit-polls-netanyahu-likud-eisenkot-latest-news" target="_blank" rel="noopener">Israel election results live: Netanyahu bloc and main opposition set to fall short of majority as 84% of ballots counted</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/live/2026/10/27/world/israel-elections" target="_blank" rel="noopener">Rivals in Israel Election Strike Tone of Triumph, but Outcome Is Far From Clear</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/25/world/middleeast/israel-election-guide-netanyahu-eisenkot.html" target="_blank" rel="noopener">Israel’s Election: When Will We Know Who Will Be Prime Minister?</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Saudi Arabia</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/27/us/politics/iran-war-cost-rises.html" target="_blank" rel="noopener">Iran War Cost Rises to $47.1 Billion, Pentagon Told Lawmakers</a>
+    </li>
+    <li>
+      <a href="https://english.elpais.com/international/2026-10-27/russian-bombs-bury-songs-and-the-memory-of-kyiv-when-the-dance-floor-was-packed.html" target="_blank" rel="noopener">Russian bombs bury songs and the memory of Kyiv when ‘the dance floor was packed’</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/26/world/middleeast/iran-war-new-attacks-diplomacy.html" target="_blank" rel="noopener">Flurry of Diplomacy in Iran Amid Reports of U.S. and Israeli Plans to Renew War</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>United Arab Emirates</h3>
+  <ul>
+    <li>
+      <a href="https://warontherocks.com/the-anti-taliban-resistance-has-survived-can-it-win/" target="_blank" rel="noopener">The Anti-Taliban Resistance Has Survived. Can It Win?</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Qatar</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/28/business/dealbook/kanter-mekki-ai-startup-fluxcap.html" target="_blank" rel="noopener">Biden’s Antitrust Enforcers Are Starting an A.I. Legal Company</a>
+    </li>
+    <li>
+      <a href="https://warontherocks.com/the-anti-taliban-resistance-has-survived-can-it-win/" target="_blank" rel="noopener">The Anti-Taliban Resistance Has Survived. Can It Win?</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Egypt</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/27/world/europe/egypt-press-crackdown-mada-masr-attalah.html" target="_blank" rel="noopener">Egyptian Court Orders News Site Closed as Critics Warn of a Crackdown</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+  <div class="country-group">
+    <h2>Central Asia</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>Kazakhstan</h3>
+  <ul>
+    <li>
+      <a href="https://warontherocks.com/the-anti-taliban-resistance-has-survived-can-it-win/" target="_blank" rel="noopener">The Anti-Taliban Resistance Has Survived. Can It Win?</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Uzbekistan</h3>
+  <ul>
+    <li>
+      <a href="https://warontherocks.com/the-anti-taliban-resistance-has-survived-can-it-win/" target="_blank" rel="noopener">The Anti-Taliban Resistance Has Survived. Can It Win?</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Turkmenistan</h3>
+  <ul>
+    <li>
+      <a href="https://warontherocks.com/the-anti-taliban-resistance-has-survived-can-it-win/" target="_blank" rel="noopener">The Anti-Taliban Resistance Has Survived. Can It Win?</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+
+  <section class="topic" id="sec-ir_theory">
+  <div class="section-head">
+    <h2>International Relations — Theory &amp; Analysis</h2>
+    <span class="count">5 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/united-states/backdoor-american-innovation" target="_blank" rel="noopener">The Backdoor to American Innovation</a></h3>
+  <p class="excerpt">How military partnerships make Washington vulnerable to its adversaries.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/united-states/backdoor-american-innovation" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/iran/how-secure-straits" target="_blank" rel="noopener">How to Secure the Straits</a></h3>
+  <p class="excerpt">Why Iran and the Houthis keep winning the waterways.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/iran/how-secure-straits" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/the-next-congress-needs-to-reclaim-its-oversight-of-the-department-of-defense/" target="_blank" rel="noopener">The Next Congress Needs to Reclaim Its Oversight of the Department of Defense</a></h3>
+  <p class="excerpt">Since returning to office in January 2025, the Trump administration has aggressively exercised executive authority across the federal government. Meanwhile, Congress has not adequately applied its oversight role to rein in the executive branch, particularly over the Department of Defense. We have watched these dynamics with specific interest, in discussions with congressional staff over bills and appropriations, and in conversations with our clients.Congress adjourned at the end of September until after the midterm elections following an unproductive summer legislative session, particularly on</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/the-next-congress-needs-to-reclaim-its-oversight-of-the-department-of-defense/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 07:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/cogs-of-war/the-machine-staff/" target="_blank" rel="noopener">The Machine Staff</a></h3>
+  <p class="excerpt">At Nellis Air Force Base last year, an AI system was tasked with building courses of action, a complex operational problem that military planners have spent generations learning to perform. The AI system took less than a minute to complete its task with solutions rated at 97 percent viable and tactically valid (essentially, whether the proposed plan could work given operational constraints such as fuel and force composition). By contrast, their human counterparts took roughly 19 minutes and only reached 48 percent viability.That comparison needs two qualifiers. First, the tool that hit 97 perc</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/cogs-of-war/the-machine-staff/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 08:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/the-anti-taliban-resistance-has-survived-can-it-win/" target="_blank" rel="noopener">The Anti-Taliban Resistance Has Survived. Can It Win?</a></h3>
+  <p class="excerpt">As the Taliban enters its sixth year in power, it remains more powerful than it was before the Sept. 11 attacks. The Taliban&amp;#8217;s flag flies in all of Afghanistan&amp;#8217;s 34 provinces. While only Russia has formally recognized the group as the country&amp;#8217;s government, China and the United Arab Emirates have officially accredited or accepted Taliban ambassadors and exchanged diplomatic staff, with Pakistan, Qatar, Iran, Kazakhstan, Uzbekistan, Turkmenistan, and Turkey establishing de facto working relationships with the Sunni Deobandi group. Even its archrival, the Islamic State in Afghan</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/the-anti-taliban-resistance-has-survived-can-it-win/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 07:30 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-conflicts">
+  <div class="section-head">
+    <h2>Conflicts &amp; Security</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/arts/russell-brand-trial-rape-sexual-assault.html" target="_blank" rel="noopener">Russell Brand Tells Court Consent ‘Is More Important Than Sex’</a></h3>
+  <p class="excerpt">The popular YouTuber is giving evidence in a London trial in which he has pleaded not guilty to seven charges of rape, sexual assault or attempted indecent assault.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/arts/russell-brand-trial-rape-sexual-assault.html" target="_blank" rel="noopener">NYT Europe</a>
+      <a href="https://www.bbc.co.uk/news/articles/cmvgxl5kdgrzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:23 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/27/world/europe/egypt-press-crackdown-mada-masr-attalah.html" target="_blank" rel="noopener">Egyptian Court Orders News Site Closed as Critics Warn of a Crackdown</a></h3>
+  <p class="excerpt">Mada Masr, one of Egypt’s few independent media outlets, said a judge ordered it closed for operating without a license and detained its editor in chief.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/27/world/europe/egypt-press-crackdown-mada-masr-attalah.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/cw8rz14k1jvxo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 02:38 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/27/world/europe/norway-finland-putin-call.html" target="_blank" rel="noopener">European Leaders Split Over Phone Call to Putin</a></h3>
+  <p class="excerpt">The diplomatic outreach was part of an effort to push talks to end the war in Ukraine, though it was not welcomed by all European leaders.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/27/world/europe/norway-finland-putin-call.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.theguardian.com/world/2026/oct/27/oleshky-truce-ukraine-russia-putin" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 20:49 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/world/americas/mexico-seaweed-navy.html" target="_blank" rel="noopener">Facing Waters ‘the Color of Chocolate,’ Mexico Declares War on Seaweed</a></h3>
+  <p class="excerpt">To protect Mexico’s tourism-reliant economy, the Navy is fighting a massive sargassum bloom that dumps thousands of tons of seaweed onto Caribbean beaches daily.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/world/americas/mexico-seaweed-navy.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:05 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/10/free-as-a-bird-new-law-for-freelancers-goes-into-consultation/" target="_blank" rel="noopener">Free as a bird? New law for freelancers goes into consultation</a></h3>
+  <p class="excerpt">If you work as a freelancer or have your own business, you should be aware of a new law that...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/10/free-as-a-bird-new-law-for-freelancers-goes-into-consultation/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/world/middleeast/israel-election-middle-east-relations.html" target="_blank" rel="noopener">For Israel’s Neighbors in Middle East, the Election Offers Little Hope of a Reset</a></h3>
+  <p class="excerpt">Few countries in the Middle East expect a turning point in relations with Israel. But the outcome of the vote has implications for the regional conflict with Iran.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/world/middleeast/israel-election-middle-east-relations.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 10:45 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/32f2864d-c122-4d83-b0c5-8d2f1fcc63bd?syn-25a6b1a6=1" target="_blank" rel="noopener">Ambani’s $130bn Jio soars in India’s biggest listing</a></h3>
+  <p class="excerpt">Telecoms business raises $3.2bn at $108bn valuation in relief to stock market hit by war in Iran</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/32f2864d-c122-4d83-b0c5-8d2f1fcc63bd?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 10:07 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/global-development/2026/oct/28/africa-ebola-outbreak-could-reach-uk-says-top-health-official" target="_blank" rel="noopener">Africa’s ‘unprecedented’ Ebola outbreak could reach UK, says top health official</a></h3>
+  <p class="excerpt">Jean Kaseya, of the Africa CDC, warns of the illness spreading like Covid unless more funding is secured to increase preparedness and possible treatmentThe “unprecedented” spread of the Ebola outbreak means it could reach the UK and other countries, according to one of Africa’s top health officials.As the current outbreak reached 10,000 cases, with almost 5,000 deaths, Dr Jean Kaseya, director general of the Africa Centres for Disease Control and Prevention (CDC), compared the outbreak to the Covid pandemic, which first took hold in China before spreading to countries across the world, claimin</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/global-development/2026/oct/28/africa-ebola-outbreak-could-reach-uk-says-top-health-official" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 09:37 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/7e2104c4-e962-4386-8806-84624ddd5bce?syn-25a6b1a6=1" target="_blank" rel="noopener">The FT verdict on Labour Budgets since 1924</a></h3>
+  <p class="excerpt">A trawl through the past century reveals recurring struggles as governments are buffeted by wars, high inflation and strained public finances</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/7e2104c4-e962-4386-8806-84624ddd5bce?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 09:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/world/europe/russia-shukhov-radio-tower.html" target="_blank" rel="noopener">Rare Wartime Dissent in Moscow Over Plans to Dismantle Russia’s ‘Eiffel Tower’</a></h3>
+  <p class="excerpt">A state broadcaster says it cannot afford the restoration of a 1922 steel tower, prompting rare wartime dissent and a movement to save the Modernist masterpiece.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/world/europe/russia-shukhov-radio-tower.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 09:04 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/technology/silicon-valley-bugs-ai.html" target="_blank" rel="noopener">AI Is Finding a Flood of Bugs, and Silicon Valley Is Rushing to Fix Them</a></h3>
+  <p class="excerpt">A.I. has uncovered a horde of software flaws, which engineers are racing to fix before they can be exploited and abused by hackers.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/technology/silicon-valley-bugs-ai.html" target="_blank" rel="noopener">NYT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 09:04 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/us/politics/ilhan-omar-doj-search-warrant.html" target="_blank" rel="noopener">Justice Dept. Declines to Unseal Warrant for Search of Ilhan Omar’s Home</a></h3>
+  <p class="excerpt">More than a dozen news organizations have asked a federal judge to unseal documents related to a search warrant executed at Ms. Omar’s home this month.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/us/politics/ilhan-omar-doj-search-warrant.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 08:58 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-intelligence">
+  <div class="section-head">
+    <h2>Intelligence &amp; Espionage</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/live/2026/10/28/world/spain-train-crash-toledo" target="_blank" rel="noopener">Live Updates: At Least 30 Killed in Train Crash in Spain, Officials Say</a></h3>
+  <p class="excerpt">One high-speed passenger train rear-ended another one near Toledo, months after a crash involving the same carriers killed dozens and stunned the country.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/live/2026/10/28/world/spain-train-crash-toledo" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.theguardian.com/world/2026/oct/28/spain-train-crash-high-speed-toledo" target="_blank" rel="noopener">The Guardian (World)</a>
+      <a href="https://english.elpais.com/spain/2026-10-28/at-least-10-people-killed-in-high-speed-rail-crash-in-spain.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:24 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/27/world/americas/brazil-flavio-bolsonaro-flees-election.html" target="_blank" rel="noopener">Flávio Bolsonaro Leaves Brazil for the U.S. After Election Defeat</a></h3>
+  <p class="excerpt">Officials in Argentina said Mr. Bolsonaro entered the country by land then flew to Ecuador. Brazilian police had asked him to hand over his passports because of his links to an investigation.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/27/world/americas/brazil-flavio-bolsonaro-flees-election.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.ft.com/content/ec7a3e3e-21e3-44de-81ee-db2f2073bee3?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 10:43 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/us/politics/trump-opioid-kratom.html" target="_blank" rel="noopener">Trump Administration Backs Down on an Opioid Ban After Kratom Industry Lobbying</a></h3>
+  <p class="excerpt">Health officials will now allow some levels of a powerful substance to remain in products marketed as natural. The change could help a G.O.P. donor facing wrongful death lawsuits.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/us/politics/trump-opioid-kratom.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:19 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/624f7138-96b0-4752-96f1-b54f2b18742b?syn-25a6b1a6=1" target="_blank" rel="noopener">Why even America’s ‘haves’ are feeling the squeeze</a></h3>
+  <p class="excerpt">Rising costs everywhere from insurance to lawn care mean almost half of US homeowners lack financial breathing room</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/624f7138-96b0-4752-96f1-b54f2b18742b?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 10:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/oct/28/fed-interest-rates-midterms" target="_blank" rel="noopener">Fed set to hold interest rates steady in last decision before midterms</a></h3>
+  <p class="excerpt">US central bank last month raised rates for first time since 2023, in move that infuriated Donald TrumpThe US Federal Reserve is expected to leave interest rates unchanged on Wednesday during its last rate-setting meeting before the midterm elections, keeping rates at one of the highest pre-election levels seen in over 20 years.Last month, Fed officials raised rates for the first time since 2023, citing rising inflation. Inflation has hovered for years above the Fed’s target rate of 2%, and for most of this year, the annualized inflation rate has remained above 3%. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/oct/28/fed-interest-rates-midterms" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 10:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/global-development/2026/oct/28/africa-ebola-outbreak-could-reach-uk-says-top-health-official" target="_blank" rel="noopener">Africa’s ‘unprecedented’ Ebola outbreak could reach UK, says top health official</a></h3>
+  <p class="excerpt">Jean Kaseya, of the Africa CDC, warns of the illness spreading like Covid unless more funding is secured to increase preparedness and possible treatmentThe “unprecedented” spread of the Ebola outbreak means it could reach the UK and other countries, according to one of Africa’s top health officials.As the current outbreak reached 10,000 cases, with almost 5,000 deaths, Dr Jean Kaseya, director general of the Africa Centres for Disease Control and Prevention (CDC), compared the outbreak to the Covid pandemic, which first took hold in China before spreading to countries across the world, claimin</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/global-development/2026/oct/28/africa-ebola-outbreak-could-reach-uk-says-top-health-official" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 09:37 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/arts/one-more-job-campaign-actors-health-benefits.html" target="_blank" rel="noopener">‘One Job Away’ Tries to Help Actors Keep Their Health Insurance</a></h3>
+  <p class="excerpt">The actor Cheyenne Jackson’s social media campaign highlights the increasing struggles of working actors to book enough parts to remain insured.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/arts/one-more-job-campaign-actors-health-benefits.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 09:06 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/business/uk-budget-chancellor-healey.html" target="_blank" rel="noopener">How to Tax and Spend in a ‘Turbulent Time?’ U.K. Tries a Balancing Act.</a></h3>
+  <p class="excerpt">The new government, led by Andy Burnham, will deliver its first budget on Wednesday, a plan expected to tread between wide ambition and narrow financial limits.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/business/uk-budget-chancellor-healey.html" target="_blank" rel="noopener">NYT Europe</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 09:05 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/science/2026/oct/28/ferritin-face-social-media-claims-iron-deficiency" target="_blank" rel="noopener">‘Ferritin face’: are social media claims about iron deficiency fact – or fiction?</a></h3>
+  <p class="excerpt">Experts say symptoms such as dark circles under the eyes, grey skin, cracked lips and hair loss can be a warning sign – but there are other factors tooTikTok is rife with influencers warning of “ferritin face”, a term they use to describe the pallor, dark circles, dry skin, and hair loss claimed to indicate low iron stores. But is this based on fact or fiction, and when is it time to head to the GP? Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/science/2026/oct/28/ferritin-face-social-media-claims-iron-deficiency" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 08:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/international/2026-10-27/flavio-bolsonaro-flees-to-the-united-states-after-election-defeat-to-lula.html" target="_blank" rel="noopener">Flávio Bolsonaro flees to the United States after election defeat to Lula</a></h3>
+  <p class="excerpt">Associates of the far-right leader and US officials confirm that he left Brazil after defying a judge’s order to surrender his passports. Lula jokes that Brazil is ‘Bolsonaro’s second home and the US is the first’</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/international/2026-10-27/flavio-bolsonaro-flees-to-the-united-states-after-election-defeat-to-lula.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 07:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/28/king-charles-confirms-he-will-discuss-legacy-of-slavery-at-commonwealth-summit" target="_blank" rel="noopener">King Charles to discuss legacy of slavery with Commonwealth leaders at summit</a></h3>
+  <p class="excerpt">Royal tour of Caribbean comes as poll suggests majority support among younger Britons for dialogue on slavery reparationsKing Charles has confirmed he will discuss the legacy of slavery at a summit with Commonwealth leaders as he begins his Caribbean tour.The king arrived in the Bahamas on Tuesday to a ceremonial welcome and attended a youth rally at Clifford Park, the site where the country officially gained its independence from British colonial rule in 1973. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/oct/28/king-charles-confirms-he-will-discuss-legacy-of-slavery-at-commonwealth-summit" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 06:55 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/27/flavio-bolsonaro-brazil-argentina-fled" target="_blank" rel="noopener">Flávio Bolsonaro flees Brazil after presidential election loss, reports say</a></h3>
+  <p class="excerpt">Far-right senator and his family boarded private plane to Ecuador after crossing border to Argentina, Argentina’s government confirmsThe far-right senator Flávio Bolsonaro has reportedly fled Brazil and is on his way to the United States after losing Sunday’s presidential election to the leftwing incumbent, Luiz Inácio Lula da Silva, who called the act “shameful”.A report by the news website Metrópoles, citing people close to the politician’s family, said he was en route to the US. “The plane is in flight,” Metrópoles reported, without making clear where it had departed from. Continue reading.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/oct/27/flavio-bolsonaro-brazil-argentina-fled" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 06:36 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-military">
+  <div class="section-head">
+    <h2>Military &amp; Defense</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/iran-must-allow-the-return-of-iaea-inspectors-to-all-nuclear-sites" target="_blank" rel="noopener">Iran must allow the return of IAEA inspectors to all nuclear sites: UK statement at the UN Security Council</a></h3>
+  <p class="excerpt">Statement by Ambassador Sarah MacIntosh, UK Permanent Representative to the UN, at the UN Security Council meeting on Iran.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/iran-must-allow-the-return-of-iaea-inspectors-to-all-nuclear-sites" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 15:51 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/27/world/europe/norway-finland-putin-call.html" target="_blank" rel="noopener">European Leaders Split Over Phone Call to Putin</a></h3>
+  <p class="excerpt">The diplomatic outreach was part of an effort to push talks to end the war in Ukraine, though it was not welcomed by all European leaders.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/27/world/europe/norway-finland-putin-call.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.theguardian.com/world/2026/oct/27/oleshky-truce-ukraine-russia-putin" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 20:49 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/world/americas/mexico-seaweed-navy.html" target="_blank" rel="noopener">Facing Waters ‘the Color of Chocolate,’ Mexico Declares War on Seaweed</a></h3>
+  <p class="excerpt">To protect Mexico’s tourism-reliant economy, the Navy is fighting a massive sargassum bloom that dumps thousands of tons of seaweed onto Caribbean beaches daily.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/world/americas/mexico-seaweed-navy.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:05 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/27/flavio-bolsonaro-brazil-argentina-fled" target="_blank" rel="noopener">Flávio Bolsonaro flees Brazil after presidential election loss, reports say</a></h3>
+  <p class="excerpt">Far-right senator and his family boarded private plane to Ecuador after crossing border to Argentina, Argentina’s government confirmsThe far-right senator Flávio Bolsonaro has reportedly fled Brazil and is on his way to the United States after losing Sunday’s presidential election to the leftwing incumbent, Luiz Inácio Lula da Silva, who called the act “shameful”.A report by the news website Metrópoles, citing people close to the politician’s family, said he was en route to the US. “The plane is in flight,” Metrópoles reported, without making clear where it had departed from. Continue reading.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/oct/27/flavio-bolsonaro-brazil-argentina-fled" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 06:36 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/28/gulf-states-multipart-peace-deal-avert-renewal-us-iran-war" target="_blank" rel="noopener">Gulf states working on multipart peace deal to avert renewal of US-Iran war</a></h3>
+  <p class="excerpt">Talks are aimed at reopening strait of Hormuz and lifting sanctions on Iran, and for Houthis to withdraw in YemenA multipronged peace deal to reopen the strait of Hormuz within four days of sanctions being lifted and for the Houthis to withdraw substantial forces inside Yemen are at the heart of Gulf states’ plans to avert what they regard as a disastrous renewal of war between Iran and the US.The US is aware of the talks’ progress but is holding out for a concession that European powers suggest could involve Iran allowing UN weapons inspectors back into the country. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/oct/28/gulf-states-multipart-peace-deal-avert-renewal-us-iran-war" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 05:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/4eca07ed-c30e-46fe-b780-fe0ab1ffd893?syn-25a6b1a6=1" target="_blank" rel="noopener">We are living in the age of cartoon science</a></h3>
+  <p class="excerpt">A new venture to clone military dogs seems more like entertainment than a genuine attempt to solve the many real-world problems we face</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/4eca07ed-c30e-46fe-b780-fe0ab1ffd893?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 05:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/5c237fb3-23ba-4c1a-9257-fd66b9d42d6c?syn-25a6b1a6=1" target="_blank" rel="noopener">UK defence ministry spent £186mn more on Palantir than value of public contracts</a></h3>
+  <p class="excerpt">US software group has faced criticism for its links to Donald Trump’s administration and that country’s defence sector</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/5c237fb3-23ba-4c1a-9257-fd66b9d42d6c?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 05:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/27/us/politics/us-military-cartels-caribbean.html" target="_blank" rel="noopener">U.S. Defends Military Campaign Against Cartels as Leaders Gather in Caribbean</a></h3>
+  <p class="excerpt">A regional coalition convened as part of a U.S. military effort to disrupt and combat drug traffickers that officials have compared to the campaign against the Islamic State and Al Qaeda.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/27/us/politics/us-military-cartels-caribbean.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 01:18 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/27/us/politics/iran-war-cost-rises.html" target="_blank" rel="noopener">Iran War Cost Rises to $47.1 Billion, Pentagon Told Lawmakers</a></h3>
+  <p class="excerpt">The estimate through Oct. 16 shows that bombs, missiles and other munitions accounted for more than 60 percent of expenses.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/27/us/politics/iran-war-cost-rises.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 01:09 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/27/world/middleeast/israel-election-avigdor-liberman-naftali-bennett.html" target="_blank" rel="noopener">2 Right-Wingers Who Broke With Netanyahu Could Bid to Unseat Him</a></h3>
+  <p class="excerpt">The political evolutions of Naftali Bennett, a former prime minister, and Avigdor Liberman, a former defense minister, are indicative of how Benjamin Netanyahu has polarized Israel.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/27/world/middleeast/israel-election-avigdor-liberman-naftali-bennett.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 15:46 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/international/2026-10-27/more-than-300-us-military-personnel-to-arrive-in-colombia-for-anti-drug-training.html" target="_blank" rel="noopener">More than 300 US military personnel to arrive in Colombia for anti-drug training</a></h3>
+  <p class="excerpt">Servicemembers will be stationed at the Tolemaida base in Nilo, Cundinamarca, where they will play out scenarios of maritime interdiction, ground security operations and cyber defense as part of a joint exercise called Southern Vanguard</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/international/2026-10-27/more-than-300-us-military-personnel-to-arrive-in-colombia-for-anti-drug-training.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 12:05 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/united-states/backdoor-american-innovation" target="_blank" rel="noopener">The Backdoor to American Innovation</a></h3>
+  <p class="excerpt">How military partnerships make Washington vulnerable to its adversaries.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/united-states/backdoor-american-innovation" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 04:00 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-technology">
+  <div class="section-head">
+    <h2>Technology</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/technology/silicon-valley-bugs-ai.html" target="_blank" rel="noopener">AI Is Finding a Flood of Bugs, and Silicon Valley Is Rushing to Fix Them</a></h3>
+  <p class="excerpt">A.I. has uncovered a horde of software flaws, which engineers are racing to fix before they can be exploited and abused by hackers.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/technology/silicon-valley-bugs-ai.html" target="_blank" rel="noopener">NYT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 09:04 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/australia-news/live/2026/oct/28/inflation-abs-labor-anthony-albanese-parliament-greens-david-shoebridge-one-nation-ntwnfb" target="_blank" rel="noopener">Coalition MP ejected from question time after swearing at PM – as it happened</a></h3>
+  <p class="excerpt">Get our breaking news email, free app or daily news podcastOnline hate is spilling into the real world, AFP warnsAFP Commissioner Krissy Barrett began her late-night appearance at the Senate estimates hearing noting “a heaviness that hangs across Australia” after the alleged attack on independent MP Helen Haines.Lone actors are being motivated by a convergence of personal grievances, mental health vulnerabilities and ideological concerns … What helped keep us safe in recent times, such as our geography, analogue systems and far away criminals, has been impacted by fully integrated technology, </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/australia-news/live/2026/oct/28/inflation-abs-labor-anthony-albanese-parliament-greens-david-shoebridge-one-nation-ntwnfb" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 06:35 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/6abfda69-f4f7-45d5-922c-f4b65a72bcdc?syn-25a6b1a6=1" target="_blank" rel="noopener">The AI bubble already popped — in China</a></h3>
+  <p class="excerpt">Plus, two cheers for CGBs</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/6abfda69-f4f7-45d5-922c-f4b65a72bcdc?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 06:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/australia-news/2026/oct/28/backdrop-for-countless-local-love-stories-geelong-gingko-named-victorian-tree-of-the-year" target="_blank" rel="noopener">From a seed in China to the ‘backdrop for countless love stories’: a ginkgo’s 167-year journey to Victorian tree of the year</a></h3>
+  <p class="excerpt">National trust of Victoria award celebrates much-loved arboreal icons while calling for protection of green spacesFollow our Australia politics live blog for latest updatesGet our breaking news email, free app or daily news podcastFor more than 160 years, a humble ginkgo tree raised from seed in Geelong’s botanic gardens has been the backdrop to “countless local love stories”. Standing beneath it is the most popular spot to get married at the park, its branches forming the backdrop of many wedding photos.Now, in addition to being the largest ginkgo biloba in the state – and possibly Australia </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/australia-news/2026/oct/28/backdrop-for-countless-local-love-stories-geelong-gingko-named-victorian-tree-of-the-year" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 05:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/australia-news/2026/oct/28/emotional-intimacy-ai-chatbots-ban-digital-duty-of-care-laws-australian-politics" target="_blank" rel="noopener">‘Emotional intimacy’ from AI chatbots would be banned under Australia’s digital duty of care laws</a></h3>
+  <p class="excerpt">Labor government under pressure to create social media watchdog as new online safety standards bill passes lower houseFollow our Australia politics live blog for latest updatesGet our breaking news email, free app or daily news podcastThe federal government wants to ban AI chatbots which seek to create “emotional intimacy” after prime minister Anthony Albanese raised the alarm in a heartfelt speech about children treating these agents as their “best friend”.But Labor is coming under increasing pressure to empower the telecommunications ombudsman to become a watchdog for social media and AI to </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/australia-news/2026/oct/28/emotional-intimacy-ai-chatbots-ban-digital-duty-of-care-laws-australian-politics" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 05:31 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/e2aafede-771a-4fd0-b9fb-67c0bbb828ed?syn-25a6b1a6=1" target="_blank" rel="noopener">TPG pursues $5bn acquisition of UK data centre group Ark</a></h3>
+  <p class="excerpt">US private capital group in talks with Elliott over what would be among the booming sector’s biggest deals this year</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/e2aafede-771a-4fd0-b9fb-67c0bbb828ed?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 05:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/694dbd7b-7096-47fe-b134-5275a1fb7b87?syn-25a6b1a6=1" target="_blank" rel="noopener">AI maths advances raise fears over security of global encryption</a></h3>
+  <p class="excerpt">AI’s growing mathematical prowess forces rethink of cyber security preparations long dominated by quantum threat</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/694dbd7b-7096-47fe-b134-5275a1fb7b87?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 05:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/24a35e41-2641-4cec-97f5-a974412f9952?syn-25a6b1a6=1" target="_blank" rel="noopener">Anthropic’s seven founders tighten grip ahead of blockbuster IPO</a></h3>
+  <p class="excerpt">From a rebellion at OpenAI to building the Claude-maker, the new billionaires are betting their future on staying united</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/24a35e41-2641-4cec-97f5-a974412f9952?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 05:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/02e4a585-2101-4a2c-b16c-ba719567eb51?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Weekend Fest: Tech to save democracy</a></h3>
+  <p class="excerpt">Giving citizens more power with AI and smartphones</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/02e4a585-2101-4a2c-b16c-ba719567eb51?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 05:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/44c35ed7-aa46-4d45-91f5-2773f00ae6be" target="_blank" rel="noopener">SK Hynix profits soar amid roaring AI chip demand</a></h3>
+  <p class="excerpt">South Korean group announces better than expected quarterly operating profit and will return $75bn to investors this year</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/44c35ed7-aa46-4d45-91f5-2773f00ae6be" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 03:06 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c6gelgxjwzdzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">A bust-up between mathematicians is fuelling fears that AI could undermine science</a></h3>
+  <p class="excerpt">AI has made some awesome scientific discoveries. But now, questions are being raised about its accuracy</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c6gelgxjwzdzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 01:01 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/a4f9f81e-df30-4669-9eca-865d9d14e441?syn-25a6b1a6=1" target="_blank" rel="noopener">Tech stocks gain as AI trade revives</a></h3>
+  <p class="excerpt">Wall Street rises as tech industry reports third-quarter earnings</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/a4f9f81e-df30-4669-9eca-865d9d14e441?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 21:07 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-economy">
+  <div class="section-head">
+    <h2>Economy &amp; Trade</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/videos/c687z5ne1w4ro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">What we know about Ukraine-Russia truce in Oleshky, brokered by Melania Trump</a></h3>
+  <p class="excerpt">The Russian-occupied city of Oleshky has had no electricity, gas or water for three years, as residents reported having to eat weeds to survive.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/26/world/europe/ukraine-oleshky-ceasefire-russia-war.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/videos/c687z5ne1w4ro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 20:42 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/us/politics/trump-opioid-kratom.html" target="_blank" rel="noopener">Trump Administration Backs Down on an Opioid Ban After Kratom Industry Lobbying</a></h3>
+  <p class="excerpt">Health officials will now allow some levels of a powerful substance to remain in products marketed as natural. The change could help a G.O.P. donor facing wrongful death lawsuits.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/us/politics/trump-opioid-kratom.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:19 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/uk-news/live/2026/oct/28/budget-2026-latest-updates-john-healey-andy-burnham-labour-uk-politics" target="_blank" rel="noopener">Budget 2026 live: gas standing charges to be scrapped for millions as chancellor prepares to deliver budget</a></h3>
+  <p class="excerpt">John Healey says UK faces ‘difficult moment’ as he prepares to deliver first budget of Andy Burnham’s governmentYou be the chancellor: play our budget game to see if you can balance the booksMartin Lewis said that, when he met John Healey this morning, the chancellor said that, having removed standing charges from gas bills, he would also like to get rid of them from electricity bills. Lewis said:The chancellor said he will be talking to Ofgem about how they get rid of the charge on electricity as well, but that is ‘trickier’ apparently and will take longer. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/uk-news/live/2026/oct/28/budget-2026-latest-updates-john-healey-andy-burnham-labour-uk-politics" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:12 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/uk-news/live/2026/oct/28/russell-brand-evidence-trial-latest-news-updates" target="_blank" rel="noopener">Russell Brand gives evidence in rape and sexual assault trial – latest updates</a></h3>
+  <p class="excerpt">Brand, 51, has been charged with three counts of rape, three counts of sexual assault and one count of attempted indecent assaultWinter then went on to ask Brand about the third and fourth charge of sexual assault and rape, in which a woman alleged Brand grabbed her breasts before pulling her into a toilet at a bar in Soho and orally raped her in 2004.Brand said he invited her to go into the lavatory to “fool around”. When asked by Winter whether she was happy to do so, he said “yes”. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/uk-news/live/2026/oct/28/russell-brand-evidence-trial-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:08 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/world/americas/mexico-seaweed-navy.html" target="_blank" rel="noopener">Facing Waters ‘the Color of Chocolate,’ Mexico Declares War on Seaweed</a></h3>
+  <p class="excerpt">To protect Mexico’s tourism-reliant economy, the Navy is fighting a massive sargassum bloom that dumps thousands of tons of seaweed onto Caribbean beaches daily.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/world/americas/mexico-seaweed-navy.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:05 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/32f2864d-c122-4d83-b0c5-8d2f1fcc63bd?syn-25a6b1a6=1" target="_blank" rel="noopener">Ambani’s $130bn Jio soars in India’s biggest listing</a></h3>
+  <p class="excerpt">Telecoms business raises $3.2bn at $108bn valuation in relief to stock market hit by war in Iran</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/32f2864d-c122-4d83-b0c5-8d2f1fcc63bd?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 10:07 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/oct/28/shayna-feinman-missing-arizona-woman-mexico" target="_blank" rel="noopener">A US woman feared dead was reported alive in Mexico. But cops now say that isn’t true</a></h3>
+  <p class="excerpt">Mexican police had said they found Shayna Feinman in Tijuana, raising the hopes of missing Arizonan’s familyArizona authorities say their Mexican counterparts were resoundingly mistaken when they publicly claimed recently that they found alive a woman who was feared slain after disappearing in 2024 – a turn of events that her sister has called “turmoil” and “heartbreaking”.The case in question centers on Shayna Feinman, who was reported missing in rural Yavapai county, Arizona, in March 2024 at age 38. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/oct/28/shayna-feinman-missing-arizona-woman-mexico" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 10:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/oct/28/fed-interest-rates-midterms" target="_blank" rel="noopener">Fed set to hold interest rates steady in last decision before midterms</a></h3>
+  <p class="excerpt">US central bank last month raised rates for first time since 2023, in move that infuriated Donald TrumpThe US Federal Reserve is expected to leave interest rates unchanged on Wednesday during its last rate-setting meeting before the midterm elections, keeping rates at one of the highest pre-election levels seen in over 20 years.Last month, Fed officials raised rates for the first time since 2023, citing rising inflation. Inflation has hovered for years above the Fed’s target rate of 2%, and for most of this year, the annualized inflation rate has remained above 3%. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/oct/28/fed-interest-rates-midterms" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 10:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/66bc5487-04aa-4699-a010-c446c536cf48?syn-25a6b1a6=1" target="_blank" rel="noopener">The ECB needs a smooth transmission and a smooth transition</a></h3>
+  <p class="excerpt">Central bank at a critical juncture as it prepares leadership changes at time of strains in bond markets</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/66bc5487-04aa-4699-a010-c446c536cf48?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 09:57 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/7e2104c4-e962-4386-8806-84624ddd5bce?syn-25a6b1a6=1" target="_blank" rel="noopener">The FT verdict on Labour Budgets since 1924</a></h3>
+  <p class="excerpt">A trawl through the past century reveals recurring struggles as governments are buffeted by wars, high inflation and strained public finances</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/7e2104c4-e962-4386-8806-84624ddd5bce?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 09:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/business/federal-reserve-interest-rates.html" target="_blank" rel="noopener">The Federal Reserve Will Release Its Interest Rate Decision Today. Here’s What to Watch.</a></h3>
+  <p class="excerpt">The central bank is widely expected to hold interest rates steady on Wednesday, just days before the midterm elections.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/business/federal-reserve-interest-rates.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 09:05 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/business/housing-market-rent-pressure.html" target="_blank" rel="noopener">A Punishing Housing Market Is Squeezing Renters</a></h3>
+  <p class="excerpt">Higher mortgage rates and slowing residential construction are again giving landlords the upper hand.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/business/housing-market-rent-pressure.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 09:05 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-politics">
+  <div class="section-head">
+    <h2>Politics &amp; Diplomacy</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/change-of-his-majestys-ambassador-to-seoul" target="_blank" rel="noopener">Change of His Majesty’s Ambassador to Seoul</a></h3>
+  <p class="excerpt">Dr Rachel Emma-Jane Fentem CMG has been appointed His Majesty’s Ambassador to the Republic of Korea in succession to Mr Colin James Crooks LVO, who will be leaving the Diplomatic Service.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/change-of-his-majestys-ambassador-to-seoul" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:16 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/peace-cannot-be-sustainable-while-half-the-population-is-shut-out-of-shaping-it-uk-statement-at-the-un-security-council" target="_blank" rel="noopener">Peace cannot be sustainable while half the population is shut out of shaping it: UK statement at the UN Security Council</a></h3>
+  <p class="excerpt">Statement by Ambassador Kate Foster, UK Deputy Permanent Representative to the UN, at the UN Security Council meeting on Women, Peace and Security.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/peace-cannot-be-sustainable-while-half-the-population-is-shut-out-of-shaping-it-uk-statement-at-the-un-security-council" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 20:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/iran-must-allow-the-return-of-iaea-inspectors-to-all-nuclear-sites" target="_blank" rel="noopener">Iran must allow the return of IAEA inspectors to all nuclear sites: UK statement at the UN Security Council</a></h3>
+  <p class="excerpt">Statement by Ambassador Sarah MacIntosh, UK Permanent Representative to the UN, at the UN Security Council meeting on Iran.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/iran-must-allow-the-return-of-iaea-inspectors-to-all-nuclear-sites" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 15:51 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/uk-human-rights-ambassador-visits-tanzania-ahead-of-un-review" target="_blank" rel="noopener">UK Human Rights Ambassador visits Tanzania ahead of UN review</a></h3>
+  <p class="excerpt">The UK’s Ambassador for Human Rights, Eleanor Sanders, visits Tanzania ahead of the UN’s forthcoming review of the status of Tanzania’s human rights landscape</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/uk-human-rights-ambassador-visits-tanzania-ahead-of-un-review" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 12:15 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/live/2026/10/28/world/spain-train-crash-toledo" target="_blank" rel="noopener">Live Updates: At Least 30 Killed in Train Crash in Spain, Officials Say</a></h3>
+  <p class="excerpt">One high-speed passenger train rear-ended another one near Toledo, months after a crash involving the same carriers killed dozens and stunned the country.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/live/2026/10/28/world/spain-train-crash-toledo" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.theguardian.com/world/2026/oct/28/spain-train-crash-high-speed-toledo" target="_blank" rel="noopener">The Guardian (World)</a>
+      <a href="https://english.elpais.com/spain/2026-10-28/at-least-10-people-killed-in-high-speed-rail-crash-in-spain.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:24 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/arts/russell-brand-trial-rape-sexual-assault.html" target="_blank" rel="noopener">Russell Brand Tells Court Consent ‘Is More Important Than Sex’</a></h3>
+  <p class="excerpt">The popular YouTuber is giving evidence in a London trial in which he has pleaded not guilty to seven charges of rape, sexual assault or attempted indecent assault.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/arts/russell-brand-trial-rape-sexual-assault.html" target="_blank" rel="noopener">NYT Europe</a>
+      <a href="https://www.bbc.co.uk/news/articles/cmvgxl5kdgrzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:23 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/oct/28/israel-election-results-live-updates-exit-polls-netanyahu-likud-eisenkot-latest-news" target="_blank" rel="noopener">Israel election results live: Netanyahu bloc and main opposition set to fall short of majority as 84% of ballots counted</a></h3>
+  <p class="excerpt">Opposition bloc and Netanyahu’s coalition predicted to fall short of 61 seats needed to form a government, while Palestinian parties set for big gainsFull report: Coalition talks loom as Israel exit polls suggest Netanyahu and Eisenkot blocs tiedAnalysis: Rise of Palestinian parties in Knesset will redraw Israel’s political landscapeIsrael election: what we know so farOne apparent loser from Tuesday’s election was far-right national security minister Itamar Ben-Gvir, who was expected to better his party’s result of six seats from the 2022 elections.But instead there was stunned silence at the </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/live/2026/oct/28/israel-election-results-live-updates-exit-polls-netanyahu-likud-eisenkot-latest-news" target="_blank" rel="noopener">The Guardian (World)</a>
+      <a href="https://english.elpais.com/international/2026-10-28/netanyahu-wins-israel-elections-but-his-coalition-falls-short-of-a-majority.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:15 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/27/world/americas/brazil-flavio-bolsonaro-flees-election.html" target="_blank" rel="noopener">Flávio Bolsonaro Leaves Brazil for the U.S. After Election Defeat</a></h3>
+  <p class="excerpt">Officials in Argentina said Mr. Bolsonaro entered the country by land then flew to Ecuador. Brazilian police had asked him to hand over his passports because of his links to an investigation.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/27/world/americas/brazil-flavio-bolsonaro-flees-election.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.ft.com/content/ec7a3e3e-21e3-44de-81ee-db2f2073bee3?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 10:43 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/27/world/europe/norway-finland-putin-call.html" target="_blank" rel="noopener">European Leaders Split Over Phone Call to Putin</a></h3>
+  <p class="excerpt">The diplomatic outreach was part of an effort to push talks to end the war in Ukraine, though it was not welcomed by all European leaders.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/27/world/europe/norway-finland-putin-call.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.theguardian.com/world/2026/oct/27/oleshky-truce-ukraine-russia-putin" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 20:49 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/videos/c687z5ne1w4ro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">What we know about Ukraine-Russia truce in Oleshky, brokered by Melania Trump</a></h3>
+  <p class="excerpt">The Russian-occupied city of Oleshky has had no electricity, gas or water for three years, as residents reported having to eat weeds to survive.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/26/world/europe/ukraine-oleshky-ceasefire-russia-war.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/videos/c687z5ne1w4ro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 27, 20:42 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/live/2026/10/28/world/spain-train-crash-toledo/spain-train-crash-toledo" target="_blank" rel="noopener">Here’s the latest.</a></h3>
+  <p class="excerpt">One train rear-ended another, sending two carriages down an embankment.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/live/2026/10/28/world/spain-train-crash-toledo/spain-train-crash-toledo" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:24 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/live/2026/10/27/world/israel-elections" target="_blank" rel="noopener">Rivals in Israel Election Strike Tone of Triumph, but Outcome Is Far From Clear</a></h3>
+  <p class="excerpt">Addressing supporters after midnight, Prime Minister Benjamin Netanyahu and Gadi Eisenkot, who leads a bloc of opposition parties, both expressed confidence that they will lead Israel’s next government. Vote counting could take days.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/live/2026/10/27/world/israel-elections" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:15 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <footer class="foot">
+    Generated 2026-10-28 11:27 UTC ·
+    Aggregated from reliable sources (NYT, Foreign Affairs, FT, official government sites).
+    Headlines &amp; excerpts link to originals; no paywalled full text is reproduced.
+  </footer>
+</main>
+</body>
+</html>
