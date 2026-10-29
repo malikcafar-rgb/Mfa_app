@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Today's Brief — Thursday, 29 October 2026</title>
+<style>
+  /* New York Times–inspired: white background, serif headlines, hairline rules,
+     sans-serif labels, minimal color. */
+  :root {
+    --bg: #ffffff;
+    --text: #121212;        /* near-black body */
+    --muted: #666666;       /* bylines / meta */
+    --faint: #999999;
+    --rule: #e2e2e2;        /* hairline dividers */
+    --rule-strong: #121212; /* section top rules */
+    --link: #326891;        /* NYT link blue, used sparingly */
+    --official: #9a6a00;    /* restrained gold-brown */
+    --wire: #326891;
+    --analysis: #6a4c93;
+    --serif: Georgia, "Times New Roman", "Times", serif;
+    --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: var(--serif); line-height: 1.5; -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px 90px; }
+
+  /* Masthead — centered serif wordmark with black rules above/below. */
+  header.masthead { background: var(--bg); border-bottom: 1px solid var(--text);
+    padding: 14px 24px 0; }
+  .masthead-inner { max-width: 960px; margin: 0 auto; }
+  .brand { text-align: center; padding-bottom: 12px; border-bottom: 1px solid var(--text);
+    margin-bottom: 8px; }
+  .brand .kicker { font-family: var(--sans); font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .brand h1 { font-family: var(--serif); font-weight: 700; margin: 4px 0 2px;
+    font-size: 40px; letter-spacing: -.01em; line-height: 1.05; }
+  .brand .date { font-family: var(--sans); color: var(--muted); font-size: 12.5px;
+    letter-spacing: .02em; }
+  .nav { display: flex; gap: 20px; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 12px; text-transform: uppercase; letter-spacing: .08em;
+    padding: 8px 0 10px; }
+  .nav a { color: var(--text); font-weight: 600; }
+  .nav a:hover { color: var(--link); }
+
+  /* Links-only / status banner — quiet, italic serif. */
+  .banner { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    padding: 10px 0; margin: 18px 0 6px; color: var(--muted); font-size: 14px;
+    font-style: italic; }
+
+  /* Executive summary — a boxed "lede" with a sans label. */
+  .exec { border: 1px solid var(--text); padding: 22px 24px; margin: 24px 0 8px; }
+  .exec h2 { font-family: var(--sans); margin: 0 0 10px; font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text); font-weight: 700; }
+  .exec p { margin: 0 0 12px; font-size: 18px; line-height: 1.55; }
+  .exec p:last-child { margin-bottom: 0; }
+  .exec .ir { border-top: 1px solid var(--rule); margin-top: 16px; padding-top: 16px; }
+  .exec .ir h3 { font-family: var(--sans); margin: 0 0 6px; font-size: 11px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--analysis); font-weight: 700; }
+  .exec .ir p { font-size: 16px; }
+
+  /* Section fronts — serif head with a strong black rule above (NYT section style). */
+  section.topic { margin: 34px 0 0; }
+  .section-head { border-top: 2px solid var(--rule-strong); padding-top: 8px; margin-bottom: 6px;
+    display: flex; align-items: baseline; gap: 10px; }
+  .section-head h2 { font-family: var(--serif); margin: 0; font-size: 22px; font-weight: 700;
+    letter-spacing: -.01em; }
+  .section-head .count { font-family: var(--sans); color: var(--faint); font-size: 11px;
+    text-transform: uppercase; letter-spacing: .08em; }
+  .section-brief { font-style: italic; color: #333; padding: 6px 0 2px; margin: 6px 0;
+    font-size: 15px; border-left: 3px solid var(--rule-strong); padding-left: 12px; }
+
+  /* Story cards — serif headline, hairline divider, sans meta. */
+  .card { padding: 15px 0; border-bottom: 1px solid var(--rule); }
+  .card:last-child { border-bottom: none; }
+  .card h3 { font-family: var(--serif); margin: 0 0 5px; font-size: 20px; font-weight: 700;
+    line-height: 1.25; letter-spacing: -.005em; }
+  .card h3 a { color: var(--text); }
+  .card h3 a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+  .card .ai { margin: 4px 0 6px; font-size: 15px; color: #333; line-height: 1.5; }
+  .card .excerpt { margin: 4px 0 6px; font-size: 15px; color: var(--muted); line-height: 1.5; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    font-family: var(--sans); font-size: 12px; margin-top: 5px; color: var(--faint); }
+
+  /* Tier labels — small uppercase sans, a dot of color, no boxes. */
+  .badge { font-family: var(--sans); font-size: 10.5px; letter-spacing: .07em;
+    text-transform: uppercase; font-weight: 700; display: inline-flex; align-items: center; }
+  .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%;
+    display: inline-block; margin-right: 5px; background: currentColor; }
+  .badge.official { color: var(--official); }
+  .badge.wire { color: var(--wire); }
+  .badge.analysis { color: var(--analysis); }
+  .sources { display: flex; flex-wrap: wrap; gap: 6px; font-family: var(--sans); }
+  .sources a { color: var(--muted); }
+  .sources a:hover { color: var(--link); text-decoration: underline; }
+  .sources a::after { content: "·"; margin-left: 6px; color: var(--faint); }
+  .sources a:last-child::after { content: ""; }
+
+  /* Country watch — bordered cards with serif titles. */
+  .country-group { margin-top: 30px; }
+  .country-group > h2 { font-family: var(--sans); font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text); font-weight: 700;
+    border-bottom: 1px solid var(--rule-strong); padding-bottom: 6px; }
+  .country-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 22px; margin-top: 14px; }
+  .country-card { border: 1px solid var(--rule); padding: 14px 16px; }
+  .country-card h3 { font-family: var(--serif); margin: 0 0 8px; font-size: 18px; font-weight: 700; }
+  .country-card ul { margin: 0; padding: 0; list-style: none; }
+  .country-card li { padding: 7px 0; border-top: 1px solid var(--rule); font-size: 15px;
+    line-height: 1.35; }
+  .country-card li:first-child { border-top: none; }
+  .country-card li a { color: var(--text); }
+  .country-card li a:hover { text-decoration: underline; }
+
+  /* Archive + table of contents. */
+  .archive-list { list-style: none; padding: 0; margin: 22px 0; }
+  .archive-list li { padding: 14px 0; border-bottom: 1px solid var(--rule);
+    font-family: var(--serif); font-size: 19px; }
+  .archive-list li a:hover { text-decoration: underline; }
+  .toc { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 16px 0 4px;
+    padding-bottom: 14px; border-bottom: 1px solid var(--rule); font-family: var(--sans); }
+  .toc a { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em;
+    font-weight: 600; }
+  .toc a:hover { color: var(--link); }
+
+  footer.foot { font-family: var(--sans); color: var(--faint); font-size: 11.5px; margin-top: 56px;
+    padding-top: 18px; border-top: 1px solid var(--rule); line-height: 1.6; }
+
+  @media (max-width: 640px) {
+    .brand h1 { font-size: 30px; }
+    .exec p { font-size: 16px; }
+    .card h3 { font-size: 18px; }
+    .country-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="kicker">Diplomat Daily Briefing</span>
+      <h1>Today's Brief</h1>
+      <span class="date">Thursday, 29 October 2026 · 292 articles across 270 stories</span>
+    </div>
+    <nav class="nav">
+  <a href="../index.html">Dashboard</a>
+  <a href="../archive.html">Archive</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <div class="banner">AI summaries unavailable (authentication_error: Invalid bearer token) — showing links only.</div>
+
+
+  <h2 id="country-watch" style="margin-top:24px;font-size:20px;border-bottom:2px solid var(--rule-strong);padding-bottom:6px;">Country Profiles</h2>
+  <section class="topic" id="ctry-spain">
+  <div class="section-head">
+    <h2>Spain</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cmqxnl312v34o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Audio reveals exchanges between control centre and drivers before deadly Spain train crash</a></h3>
+  <p class="excerpt">The recordings appear to show one high-speed train was given clearance to move even though another up ahead had stalled.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/world/europe/train-crash-spain.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/cmqxnl312v34o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:07 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/spain/2026-10-29/rail-workers-respond-to-transport-minister-after-spain-train-crash-human-errors-occur-when-you-dont-have-the-equipment-you-need-to-do-your-job.html" target="_blank" rel="noopener">Rail workers respond to transport minister after Spain train crash: ‘Human errors occur when you don’t have the equipment you need to do your job’</a></h3>
+  <p class="excerpt">The railroad industry is denouncing a lack of investment and staff while asking that no one be blamed until the causes of the Toledo accident are known</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/world/europe/spain-train-crash-cause.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://english.elpais.com/spain/2026-10-29/rail-workers-respond-to-transport-minister-after-spain-train-crash-human-errors-occur-when-you-dont-have-the-equipment-you-need-to-do-your-job.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:04 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/29/spain-mourning-period-deadly-train-crash" target="_blank" rel="noopener">Spain begins mourning period after train crash as search continues for victims in wreckage</a></h3>
+  <p class="excerpt">Emergency services, drones and dog unit continue to comb carriages as Civil Guard sets up clinics for relatives to provide DNA samplesSpain has begun three days of mourning to commemorate the 69 people who died in a high-speed rail collision as hospitals continue to treat dozens of injured passengers and relatives wait for news of their loved ones.The trains – one from Spain’s state-owned Renfe and the other from the private rail company Iryo – were heading from Madrid on Wednesday to the southern region of Andalucía on the same line when they collided just before 9am. After the Iryo train cam</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/oct/29/spain-mourning-period-deadly-train-crash" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:11 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/spain/2026-10-29/survivors-of-spain-train-crash-reconstruct-the-accident-your-life-flashes-before-your-eyes.html" target="_blank" rel="noopener">Survivors of Spain train crash reconstruct the accident: ‘Your life flashes before your eyes’</a></h3>
+  <p class="excerpt">The roar of the collision between the train cars remains etched in the memories of those who survived and are now trying to piece together their scattered memories of the crash, the evacuation, the help they received from neighbors, and the agonizing search for their loved ones</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/spain/2026-10-29/survivors-of-spain-train-crash-reconstruct-the-accident-your-life-flashes-before-your-eyes.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 10:58 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/29/world/europe/spain-train-crash-renfe.html" target="_blank" rel="noopener">Spain Crash Investigators Focus on Train Traffic Controllers’ Role</a></h3>
+  <p class="excerpt">After the country’s second major rail disaster in a year, Spaniards were confronting questions about the safety of their once-vaunted rail system.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/29/world/europe/spain-train-crash-renfe.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 10:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/spain/2026-10-29/audios-of-spain-rail-crash-control-center-to-ave-driver-resume-normal-speed.html" target="_blank" rel="noopener">Audios of Spain train crash| Control center to AVE driver: Resume normal speed</a></h3>
+  <p class="excerpt">The audio recordings of the tragedy show mistakes by a rail controller at Atocha station in Madrid. The driver of the Iryo train that was rear-ended had warned him several minutes earlier that they were unable to move</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/spain/2026-10-29/audios-of-spain-rail-crash-control-center-to-ave-driver-resume-normal-speed.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 07:56 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/world/europe/spain-train-crash-rail-safety.html" target="_blank" rel="noopener">Is There a ‘Safest Seat’ in a Train Crash? Experts Say It’s Not So Simple.</a></h3>
+  <p class="excerpt">After a high-speed collision near Toledo, Spain, killed at least 68 people, rail safety experts said the rough consensus that it is best to sit in the middle of a train has its limits.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/world/europe/spain-train-crash-rail-safety.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 03:16 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/world/europe/spain-train-crash-rescue-victims.html" target="_blank" rel="noopener">Spain Train Crash Kills at Least 68</a></h3>
+  <p class="excerpt">The accident, the second in less than a year on the same busy rail line, was one of the deadliest in the country’s history.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/world/europe/spain-train-crash-rescue-victims.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 20:26 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-switzerland">
+  <div class="section-head">
+    <h2>Switzerland</h2>
+    <span class="count">5 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261029/swiss-government-unveils-new-strategy-to-combat-heatwaves-and-drought" target="_blank" rel="noopener">Swiss government unveils new strategy to combat heatwaves and drought</a></h3>
+  <p class="excerpt">After record-breaking temperatures and extreme drought that hit Switzerland during the summer of 2026, the government vowed to look into measures to mitigate these effects of climate change. So what specific strategies did it decide on?</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261029/swiss-government-unveils-new-strategy-to-combat-heatwaves-and-drought" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 12:22 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261029/switzerland-sets-date-for-vote-on-bid-to-cut-wait-times-for-swiss-citizenship" target="_blank" rel="noopener">Switzerland sets date for vote on bid to cut wait times for Swiss citizenship</a></h3>
+  <p class="excerpt">Switzerland&#39;s controversial initiative to shorten residency requirements for naturalisation will be voted on in a February 28th referendum.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261029/switzerland-sets-date-for-vote-on-bid-to-cut-wait-times-for-swiss-citizenship" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 10:46 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261029/today-in-switzerland-a-roundup-of-the-latest-news-on-thursday-261" target="_blank" rel="noopener">Today in Switzerland: A roundup of the latest news on Thursday</a></h3>
+  <p class="excerpt">Proposal to shorten the wait time for Swiss citizenship is set for a February referendum; government approves new strategy to combat summer heatwaves and drought; and more news in our Thursday roundup.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261029/today-in-switzerland-a-roundup-of-the-latest-news-on-thursday-261" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 06:58 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261028/why-is-neutral-switzerland-manufacturing-and-exporting-weapons" target="_blank" rel="noopener">Why is neutral Switzerland manufacturing and exporting weapons?</a></h3>
+  <p class="excerpt">On November 29th, Swiss voters will decide whether their government should be able to supply arms to a state involved in an armed conflict. And that brings up a pertinent question of why the neutral country is involved in producing and exporting weapons in the first place?</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261028/why-is-neutral-switzerland-manufacturing-and-exporting-weapons" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 14:21 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261028/will-the-13th-pension-be-paid-if-swiss-voters-refuse-to-raise-the-value-added-tax" target="_blank" rel="noopener">Will the 13th pension be paid if Swiss voters refuse to raise the Value Added Tax?</a></h3>
+  <p class="excerpt">The first payment of the 13th monthly state pension is scheduled for December, but Swiss voters must still approve the source of the money for this expensive project - a hike in the Value Added Tax (VAT). What happens to this plan if they don&#39;t?</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261028/will-the-13th-pension-be-paid-if-swiss-voters-refuse-to-raise-the-value-added-tax" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 12:47 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-united_kingdom">
+  <div class="section-head">
+    <h2>United Kingdom</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/russias-war-against-ukraine-is-costing-more-and-achieving-less-uk-statement-to-the-fsc" target="_blank" rel="noopener">Russia&#39;s war against Ukraine is costing more and achieving less: UK statement to the FSC</a></h3>
+  <p class="excerpt">Politico-Military Counsellor Arron Newble says Russia is spending a growing share of its budget on the war for limited gains, and asks how this fits its Code of Conduct commitments.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/russias-war-against-ukraine-is-costing-more-and-achieving-less-uk-statement-to-the-fsc" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 13:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/live/2026/oct/29/budget-john-healey-labour-uk-politics-latest-news" target="_blank" rel="noopener">Treasury denies Healey plan to cut welfare bill before election, claiming his comments were misinterpreted – UK politics live</a></h3>
+  <p class="excerpt">Asked earlier if there would be a cut to the welfare bill before the next election, the chancellor said: ‘There will be a reduction in the benefits bill’ Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cm5ynwkjgpz3o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+      <a href="https://www.theguardian.com/politics/live/2026/oct/29/budget-john-healey-labour-uk-politics-latest-news" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:29 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/c09fe386-ea9d-4ee6-8f57-b5b9b7744934?syn-25a6b1a6=1" target="_blank" rel="noopener">Rosebank is needed for UK energy security</a></h3>
+  <p class="excerpt">The energy secretary Miatta Fahnbulleh should not fall for an illusion and block the oilfield</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/c09fe386-ea9d-4ee6-8f57-b5b9b7744934?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/oct/29/poundland-brink-administration-12000-jobs-at-risk" target="_blank" rel="noopener">Poundland on brink of administration, with 12,000 jobs at risk</a></h3>
+  <p class="excerpt">Owner Gordon Brothers is filing notice of intent to begin process after rejecting management-backed rescue bidBusiness live – latest updatesThe owner of Poundland has said it is preparing to appoint administrators, putting up to 12,000 jobs at risk at the retail chain across the UK and Ireland.Gordon Brothers filed a notice of intention to appoint administrators at the high court on Wednesday night, with the advisory firm Alix Partners lined up to run the process. The legal measure, which is expected to be approved by a court on Thursday, protects Poundland from the demands of creditors for 10</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/oct/29/poundland-brink-administration-12000-jobs-at-risk" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 10:56 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/oct/29/lloyds-executive-criticises-healey-for-linking-bank-tax-rises-to-energy-bill-support" target="_blank" rel="noopener">Lloyds executive criticises Healey for linking bank tax rises to energy bill support</a></h3>
+  <p class="excerpt">Chief financial officer says he hopes budget measure is temporary as sector provides loans that fuel growthBusiness live – latest updatesA senior Lloyds Banking Group executive has criticised the chancellor for linking bank tax increases to energy bill support for UK households, as he warned the government against extending the higher levy beyond March 2028.Lloyds’s chief financial officer, William Chalmers, acknowledged that the economic environment was “challenging” but said the government should not seek to ease pressure on households at the expense of the banking sector as it provides loan</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/oct/29/lloyds-executive-criticises-healey-for-linking-bank-tax-rises-to-energy-bill-support" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 10:31 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/uk-news/2026/oct/29/scattergun-budget-leave-britons-higher-energy-bills-thinktank" target="_blank" rel="noopener">‘Scattergun’ budget will still leave Britons facing higher energy bills, says thinktank</a></h3>
+  <p class="excerpt">Healey’s attempt to provide ‘breathing space’ gives rich almost as much as poor, says Resolution FoundationBusiness live – latest updatesBudget 2026: what it means for your wallet, your mortgage and your payJohn Healey delivered a “scattergun” budget that did little to boost living standards and left Britain facing “a painful second half” of the parliament, a leading economic thinktank has warned.The Resolution Foundation said on Thursday that measures to ease household gas and electricity costs would still leave energy bills higher this year than during the last energy shock. Continue reading</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/uk-news/2026/oct/29/scattergun-budget-leave-britons-higher-energy-bills-thinktank" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 09:10 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/uk-news/2026/oct/29/readers-react-to-budget-2026" target="_blank" rel="noopener">‘I earn £126,000 – but nothing’s left at the end of the month’: readers react to the budget</a></h3>
+  <p class="excerpt">From a young chef and a single father to business owners and a pensioner, Guardian readers reveal how John Healey’s measures will affect themWhat the budget means for youLouie, 24, a chef living in London, says a lot of people have “written off the idea of even considering getting a property” in their 20s. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/uk-news/2026/oct/29/readers-react-to-budget-2026" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 08:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/arts/russell-brand-trial-rape-sexual-assault.html" target="_blank" rel="noopener">Russell Brand Tells Court He ‘Misused’ His Fame, but Says Sex Was Consensual</a></h3>
+  <p class="excerpt">The popular YouTuber gave evidence in a London trial in which he has pleaded not guilty to seven charges of rape, sexual assault or attempted indecent assault.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/arts/russell-brand-trial-rape-sexual-assault.html" target="_blank" rel="noopener">NYT Europe</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 03:00 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-united_states">
+  <div class="section-head">
+    <h2>United States</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://news.un.org/feed/view/en/story/2026/10/1168694" target="_blank" rel="noopener">Backing for UN call to end Cuba embargo falls to 20-year low</a></h3>
+  <p class="excerpt">The UN General Assembly on Wednesday called for the 34th time for an end to the US economic, commercial and financial embargo on Cuba – but with the weakest backing for the resolution in two decades.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://news.un.org/feed/view/en/story/2026/10/1168694" target="_blank" rel="noopener">UN News</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/world/americas/flavio-bolsonaro-us-miami-brazil-trump.html" target="_blank" rel="noopener">Flávio Bolsonaro Lands in Miami After Fleeing Brazil</a></h3>
+  <p class="excerpt">Mr. Bolsonaro, who lost Sunday’s presidential election, fled Brazil for the United States via Argentina after the police canceled his passport in relation to an investigation.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/world/americas/flavio-bolsonaro-us-miami-brazil-trump.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.ft.com/content/0cb91253-62e1-4cdf-864e-61174b297e51?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c6kglwe4lxwzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/2026/oct/28/flavio-bolsonaro-miami-us-fleeing-brazilian-election-defeat" target="_blank" rel="noopener">The Guardian (World)</a>
+      <a href="https://english.elpais.com/international/2026-10-28/flavio-bolsonaro-lands-in-miami-after-fleeing-brazil-via-argentina.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 06:01 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/f31fccd8-e9b6-4b01-989d-790ca6bb4d29?syn-25a6b1a6=1" target="_blank" rel="noopener">Fed holds fire on interest rates despite intensifying inflation</a></h3>
+  <p class="excerpt">Central bank to vote on monetary policy seven times next year in shift from decades-old custom of having eight such meetings</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/business/economy/warsh-interest-rates-fed.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.ft.com/content/f31fccd8-e9b6-4b01-989d-790ca6bb4d29?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Global Economy</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 21:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/live/2026/oct/29/midterm-elections-politics-trump-obama-california-alaska-latest-news-updates" target="_blank" rel="noopener">Trump and Obama trade barbs on campaign trail in final days before midterm election – US politics live</a></h3>
+  <p class="excerpt">Former president says ‘these are not serious people’ in Georgia rally as Trump defended his White House decor in Ohio rally‘They mobilized a whole government response to that joke’: Obama laughs off Trump attacksSign up for the Breaking News US emailA federal judge declined to order California election officials to segregate and not count ballots from people the Trump administration claimed were non-citizens, rebuffing a legally thin request from the justice department that appeared designed to cast doubt over the results of the midterms.The ruling from US district judge David Carter, nominate</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/live/2026/oct/29/midterm-elections-politics-trump-obama-california-alaska-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/29/arts/ai-bots-jokes-theft-comedians.html" target="_blank" rel="noopener">Bodacious A.I. Bots Are Stealing Jokes From Young Female Comedians</a></h3>
+  <p class="excerpt">Swiping jokes word for word, these bodacious bots mainly lift from young female comedians. What’s so insidious is how they’re subtly changing us, the audience.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/29/arts/ai-bots-jokes-theft-comedians.html" target="_blank" rel="noopener">NYT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:15 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/2cd96df5-1725-4438-bd86-2b5c97f0f9e7?syn-25a6b1a6=1" target="_blank" rel="noopener">How corruption became a top voter issue in the US midterms</a></h3>
+  <p class="excerpt">Democrats are betting voters will connect alleged White House self-dealing with their own financial struggles</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/2cd96df5-1725-4438-bd86-2b5c97f0f9e7?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cw5ynxepy4gno?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Serious pollution by water industry remains high despite £5bn investment</a></h3>
+  <p class="excerpt">All but one of England&#39;s water companies were rated as &#34;poor&#34; or &#34;requiring improvement&#34; for environmental targets.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cw5ynxepy4gno?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 10:45 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/29/world/europe/spain-train-crash-renfe.html" target="_blank" rel="noopener">Spain Crash Investigators Focus on Train Traffic Controllers’ Role</a></h3>
+  <p class="excerpt">After the country’s second major rail disaster in a year, Spaniards were confronting questions about the safety of their once-vaunted rail system.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/29/world/europe/spain-train-crash-renfe.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 10:32 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-netherlands">
+  <div class="section-head">
+    <h2>Netherlands</h2>
+    <span class="count">4 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/10/four-women-on-trial-after-seance-at-dutch-cemetery/" target="_blank" rel="noopener">Four women on trial after séance at Dutch cemetery</a></h3>
+  <p class="excerpt">Four women went on trial in a Utrecht court earlier this week for desecrating children’s graves during a séance they...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/10/four-women-on-trial-after-seance-at-dutch-cemetery/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:36 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/10/china-controls-key-materials-for-dutch-chips-defence-and-energy/" target="_blank" rel="noopener">China controls key materials for Dutch chips, defence and energy</a></h3>
+  <p class="excerpt">The Netherlands is heavily dependent on China for seven of the eight raw materials most critical to its economy, according...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/10/china-controls-key-materials-for-dutch-chips-defence-and-energy/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 08:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/world/europe/dutch-zookeeper-dead-leopard-netherlands.html" target="_blank" rel="noopener">Dutch Zookeeper Dies After Rare Mauling by a Leopard</a></h3>
+  <p class="excerpt">A woman working with big cats was attacked on Saturday. She died from her injuries on Tuesday, the zoo said.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/world/europe/dutch-zookeeper-dead-leopard-netherlands.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 21:18 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/10/strict-dutch-border-controls-lead-to-650-refusals-in-21-months/" target="_blank" rel="noopener">“Strict” Dutch border controls lead to 650 refusals in 21 months</a></h3>
+  <p class="excerpt">Fewer than 700 people were turned away at the Dutch border in 21 months of extra border controls that were...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/10/strict-dutch-border-controls-lead-to-650-refusals-in-21-months/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 12:52 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <div class="country-group">
+    <h2>Regional neighbors</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>Russia</h3>
+  <ul>
+    <li>
+      <a href="https://www.gov.uk/government/speeches/russias-war-against-ukraine-is-costing-more-and-achieving-less-uk-statement-to-the-fsc" target="_blank" rel="noopener">Russia&#39;s war against Ukraine is costing more and achieving less: UK statement to the FSC</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/politics/live/2026/oct/29/budget-john-healey-labour-uk-politics-latest-news" target="_blank" rel="noopener">Treasury denies Healey plan to cut welfare bill before election, claiming his comments were misinterpreted – UK politics live</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/29/world/europe/ukraine-dnipro-train-russia.html" target="_blank" rel="noopener">Russian Strike on Ukrainian Train Station Kills 13</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/29/world/europe/ukraine-kherson-respite.html" target="_blank" rel="noopener">A Ukrainian City in the Kill Zone Relishes a Moment of Peace</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Iran</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/business/2026/oct/29/shell-profits-double-iran-war-pushes-up-profit-margin-on-oil" target="_blank" rel="noopener">Shell profits double to $10.8bn as Iran war pushes up margin on oil</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/53278449-6a8e-493b-8a9e-c44d2a981306?syn-25a6b1a6=1" target="_blank" rel="noopener">Israel vote leaves door open to Iran attack</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/28/us/politics/vance-peace-talks-letter-iran.html" target="_blank" rel="noopener">Vance Proposes Restarting Peace Talks in Outreach to Iranian Official</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/world/2026/oct/29/albania-protest-attendance-fine-law" target="_blank" rel="noopener">Albania imposes $6,000 fine for demonstrators present at a protest that turns violent</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Georgia</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/us-news/live/2026/oct/29/midterm-elections-politics-trump-obama-california-alaska-latest-news-updates" target="_blank" rel="noopener">Trump and Obama trade barbs on campaign trail in final days before midterm election – US politics live</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/28/us/politics/keisha-lance-bottoms-atlanta-mayor.html" target="_blank" rel="noopener">Atlanta’s Mayor Walked Away After Covid Chaos. Will Voters Make Her Georgia’s Governor?</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+  <div class="country-group">
+    <h2>Great powers</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>China</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/world/2026/oct/29/hello-kitty-japanese-spy-show-vivant-china-outcry" target="_blank" rel="noopener">Hello Kitty company cuts ties with Japanese spy show after China outcry</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/995c849c-b4db-4e24-964c-b269a3aeb741?syn-25a6b1a6=1" target="_blank" rel="noopener">China’s leaders vow tougher corruption crackdown</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/9b19295f-a16a-4bc2-8f1a-5ab6d075b8af?syn-25a6b1a6=1" target="_blank" rel="noopener">BYD’s breakneck export surge helps offset weakness in China</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/29/world/asia/china-ai-videos-sun-wukong-lin-daiyu.html" target="_blank" rel="noopener">China Is Not Happy About Fan-made A.I. Videos of Sun Wukong and Lin Daiyu</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>European Union</h3>
+  <ul>
+    <li>
+      <a href="https://www.ft.com/content/b9294b91-0eee-413b-bdde-0569f48539b9?syn-25a6b1a6=1" target="_blank" rel="noopener">Christine Lagarde to step down as ECB president in February</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/cq8ezj7jylrzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Carney to push for closer ties at Canada-EU summit in Montreal</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/5e343e5c-5e4a-41a7-87b0-4850c77d9aec?syn-25a6b1a6=1" target="_blank" rel="noopener">EU can compete with US AI giants, says Brussels’ frontier-model champion</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/world/2026/oct/28/european-union-canada" target="_blank" rel="noopener">EU backs away from offer to Canada to start ‘associate member’ talks</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>France</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/world/2026/oct/29/rare-love-letters-french-aristocrat-la-perouse-maritime-mystery" target="_blank" rel="noopener">Rare love letters to French aristocrat shed light on Louis XVI maritime mystery</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/29/world/europe/france-marseille-macron-protests.html" target="_blank" rel="noopener">In Marseille, Macron Confronts a Potent Mix of France’s Problems</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/27/business/media/candace-owens-macron-defamation-case.html" target="_blank" rel="noopener">Judge Limits Candace Owens’s Liability in Macron Defamation Case</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/28/world/europe/italy-protests-students-truckers-meloni.html" target="_blank" rel="noopener">Behind Italy’s Protests: Rising Prices and Sinking Hopes</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Germany</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/29/business/volkswagen-loss-china.html" target="_blank" rel="noopener">Volkswagen ‘Must Act Quickly’ After Largest Loss in Over a Decade</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/c678prm55gzzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Girl seriously injured in wolf attack at German wildlife park</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+  <div class="country-group">
+    <h2>Middle East</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>Israel</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/world/live/2026/oct/29/israel-election-results-live-updates-poll-netanyahu-eisenkot-bloc-coalition-latest-news" target="_blank" rel="noopener">Israel election results live: Netanyahu accused of ‘ugly delegitimisation campaign’ after his claims about Arab parties</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/cm62y46d97wwo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">How could Israel break election deadlock? Here are four scenarios</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/28/world/europe/knife-wielding-attacker-fatally-shot-outside-israeli-embassy-in-serbia.html" target="_blank" rel="noopener">Knife-Wielding Attacker Fatally Shot Outside Israeli Embassy in Serbia</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/28/world/middleeast/israel-election-arab-parties.html" target="_blank" rel="noopener">In Israel, Arab Voters Mobilize, Shifting Political landscape</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>United Arab Emirates</h3>
+  <ul>
+    <li>
+      <a href="https://www.ft.com/content/e9827543-51c9-451b-b180-e7e2276aa957?syn-25a6b1a6=1" target="_blank" rel="noopener">Mubadala Capital dealmaker to launch his own venture fund</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Qatar</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/10/28/business/dealbook/kanter-mekki-ai-startup-fluxcap.html" target="_blank" rel="noopener">Biden’s Antitrust Enforcers Are Starting an A.I. Legal Company</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Egypt</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/world/2026/oct/28/egypt-lina-attalah-mada-masr-press-freedom-clampdown" target="_blank" rel="noopener">Egypt fines prominent editor Lina Attalah and shuts independent news outlet Mada Masr</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+
+  <section class="topic" id="sec-ir_theory">
+  <div class="section-head">
+    <h2>International Relations — Theory &amp; Analysis</h2>
+    <span class="count">9 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://warontherocks.com/cogs-of-war/a-tale-of-two-markets-a-dickensian-take-on-the-coming-years-in-defense-tech/" target="_blank" rel="noopener">A Tale of Two Markets: A Dickensian Take on the Coming Years in Defense Tech</a></h3>
+  <p class="excerpt">It&amp;#8217;s a strange time for the defense technology sector. Despite the headlines of record capital, valuations, and defense budgets, there is a growing unease among investors and leadership teams. Production contracts remain as elusive as ever, and a generation of startups is struggling to extend their runways across the valley of death, risking not just those businesses but capital flight from the broader sector. There is little point in trying to decide which one of these diverging narratives is real, or if a defense technology market collapse is imminent. To understand what&amp;#8217;s really</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/cogs-of-war/a-tale-of-two-markets-a-dickensian-take-on-the-coming-years-in-defense-tech/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 08:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/united-states/dont-go-backward-china-policy" target="_blank" rel="noopener">Don&#39;t Go Backward on China Policy</a></h3>
+  <p class="excerpt">The folly of a hawkish restoration.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/united-states/dont-go-backward-china-policy" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/united-states/only-gulf-can-end-iran-war" target="_blank" rel="noopener">Only the Gulf Can End the Iran War</a></h3>
+  <p class="excerpt">The Arab monarchies must help Washington and Tehran save face.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/united-states/only-gulf-can-end-iran-war" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/sitting-ducks-or-strategic-shields-what-does-the-small-reactor-promise-mean-for-future-conflicts/" target="_blank" rel="noopener">Sitting Ducks or Strategic Shields: What Does the Small Reactor Promise Mean for Future Conflicts?</a></h3>
+  <p class="excerpt">Amid the rapid expansion of AI and data centers alongside growing climate commitments as the demand for clean energy rises, nuclear power is increasingly viewed as a reliable source to fill the gaps and complement the stochastic output of solar and hydropower. This renewed interest is also driven in part by countries&amp;#8217; pursuit of greater energy self-reliance, even as energy and nuclear infrastructure continue to become consequential targets in armed conflict &amp;#8212; to disrupt electricity supplies, undermine military capabilities, and pursue counterproliferation objectives. Small modular </p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/sitting-ducks-or-strategic-shields-what-does-the-small-reactor-promise-mean-for-future-conflicts/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 07:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/jihadisms-global-struggle-and-where-its-gaining/" target="_blank" rel="noopener">Jihadism’s Global Struggle, and Where It’s Gaining</a></h3>
+  <p class="excerpt">In 2018, Barak Mendelsohn wrote,&amp;#160;&amp;#8220;Bound to Fail: Transnational Jihadism and the Aggregation Problem,&amp;#8221;&amp;#160;where he argued that transnational jihadist groups like al-Qaeda and the Islamic State would continue failing to turn local victories into a lasting caliphate, allowing counterterrorism forces to contain them without costly U.S.-led interventions. Eight years later, we asked Barak to revisit his arguments.Image: Adam Jones/FlickrYour article opened with al-Baghdadi&amp;#8217;s 2018 call for lone-wolf attacks in the West, and you argued that Islamic State-inspired attacks at t</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/jihadisms-global-struggle-and-where-its-gaining/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 19:45 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/the-atlantic-brief-after-the-u-s-midterms-trans-atlantic-defense-cooperation/" target="_blank" rel="noopener">The Atlantic Brief: After the U.S. Midterms, Trans-Atlantic Defense Cooperation</a></h3>
+  <p class="excerpt">Date: Thursday, Nov. 12, 2026Time: &amp;#160;12:00 &amp;#8211; 1:00 p.m. ESTThe third joint webinar by RUSI and War on the Rocks: Two leading defense publications from both sides of the Atlantic present their expert panel.Overview:For this edition of The Atlantic Brief, the Royal United Services Institute and War on the Rocks present a dialogue on the future of trans-Atlantic defense cooperation following the U.S. midterm elections. Participating experts from the United Kingdom, continental Europe, and the United States bring decades of first-hand experience in the armed forces, diplomacy, and foreign</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/the-atlantic-brief-after-the-u-s-midterms-trans-atlantic-defense-cooperation/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 18:58 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/iran/how-secure-straits" target="_blank" rel="noopener">How to Secure the Straits</a></h3>
+  <p class="excerpt">Why Iran and the Houthis keep winning the waterways.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/iran/how-secure-straits" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/united-states/backdoor-american-innovation" target="_blank" rel="noopener">The Backdoor to American Innovation</a></h3>
+  <p class="excerpt">How military partnerships make Washington vulnerable to its adversaries.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/united-states/backdoor-american-innovation" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/the-next-congress-needs-to-reclaim-its-oversight-of-the-department-of-defense/" target="_blank" rel="noopener">The Next Congress Needs to Reclaim Its Oversight of the Department of Defense</a></h3>
+  <p class="excerpt">Since returning to office in January 2025, the Trump administration has aggressively exercised executive authority across the federal government. Meanwhile, Congress has not adequately applied its oversight role to rein in the executive branch, particularly over the Department of Defense. We have watched these dynamics with specific interest, in discussions with congressional staff over bills and appropriations, and in conversations with our clients.Congress adjourned at the end of September until after the midterm elections following an unproductive summer legislative session, particularly on</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/the-next-congress-needs-to-reclaim-its-oversight-of-the-department-of-defense/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 07:30 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-conflicts">
+  <div class="section-head">
+    <h2>Conflicts &amp; Security</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/russias-war-against-ukraine-is-costing-more-and-achieving-less-uk-statement-to-the-fsc" target="_blank" rel="noopener">Russia&#39;s war against Ukraine is costing more and achieving less: UK statement to the FSC</a></h3>
+  <p class="excerpt">Politico-Military Counsellor Arron Newble says Russia is spending a growing share of its budget on the war for limited gains, and asks how this fits its Code of Conduct commitments.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/russias-war-against-ukraine-is-costing-more-and-achieving-less-uk-statement-to-the-fsc" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 13:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/oct/29/israel-election-results-live-updates-poll-netanyahu-eisenkot-bloc-coalition-latest-news" target="_blank" rel="noopener">Israel election results live: Netanyahu accused of ‘ugly delegitimisation campaign’ after his claims about Arab parties</a></h3>
+  <p class="excerpt">Israeli police dismiss Likud’s claim election ‘stolen’ by parties representing Palestinians as count of absentee ballots continuesFull report: Coalition talks loom in IsraelAnalysis: Israel’s choice: Netanyahu remaining in power or a Palestinian-backed coalitionGadi Eisenkot, leader of the Yashar party and Benjamin Netanyahu’s main rival, has warned political opponents against exploiting allegations of foreign interference in Israel’s election to delay the swearing-in of the next Knesset.In remarks posted on X, Eisenkot said:Israel must safeguard the integrity of the elections against any atte</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cmdx3knq1xexo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/live/2026/oct/29/israel-election-results-live-updates-poll-netanyahu-eisenkot-bloc-coalition-latest-news" target="_blank" rel="noopener">The Guardian (World)</a>
+      <a href="https://english.elpais.com/international/2026-10-28/netanyahu-wins-israel-elections-but-his-coalition-falls-short-of-a-majority.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:35 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/spain/2026-10-29/rail-workers-respond-to-transport-minister-after-spain-train-crash-human-errors-occur-when-you-dont-have-the-equipment-you-need-to-do-your-job.html" target="_blank" rel="noopener">Rail workers respond to transport minister after Spain train crash: ‘Human errors occur when you don’t have the equipment you need to do your job’</a></h3>
+  <p class="excerpt">The railroad industry is denouncing a lack of investment and staff while asking that no one be blamed until the causes of the Toledo accident are known</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/world/europe/spain-train-crash-cause.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://english.elpais.com/spain/2026-10-29/rail-workers-respond-to-transport-minister-after-spain-train-crash-human-errors-occur-when-you-dont-have-the-equipment-you-need-to-do-your-job.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:04 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/f31fccd8-e9b6-4b01-989d-790ca6bb4d29?syn-25a6b1a6=1" target="_blank" rel="noopener">Fed holds fire on interest rates despite intensifying inflation</a></h3>
+  <p class="excerpt">Central bank to vote on monetary policy seven times next year in shift from decades-old custom of having eight such meetings</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/business/economy/warsh-interest-rates-fed.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.ft.com/content/f31fccd8-e9b6-4b01-989d-790ca6bb4d29?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Global Economy</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 21:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/29/business/volkswagen-loss-china.html" target="_blank" rel="noopener">Volkswagen ‘Must Act Quickly’ After Largest Loss in Over a Decade</a></h3>
+  <p class="excerpt">The German carmaker warned that it “must act quickly and decisively” to cut costs.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/29/business/volkswagen-loss-china.html" target="_blank" rel="noopener">NYT Europe</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:34 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cqrky1p4dlm7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Poundland&#39;s future hangs in the balance as chain edges towards collapse</a></h3>
+  <p class="excerpt">Poundland&#39;s bosses is filing a notice of intention to appoint administrators to the business.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cqrky1p4dlm7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:19 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/oct/29/lloyds-executive-criticises-healey-for-linking-bank-tax-rises-to-energy-bill-support" target="_blank" rel="noopener">Lloyds executive criticises Healey for linking bank tax rises to energy bill support</a></h3>
+  <p class="excerpt">Chief financial officer says he hopes budget measure is temporary as sector provides loans that fuel growthBusiness live – latest updatesA senior Lloyds Banking Group executive has criticised the chancellor for linking bank tax increases to energy bill support for UK households, as he warned the government against extending the higher levy beyond March 2028.Lloyds’s chief financial officer, William Chalmers, acknowledged that the economic environment was “challenging” but said the government should not seek to ease pressure on households at the expense of the banking sector as it provides loan</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/oct/29/lloyds-executive-criticises-healey-for-linking-bank-tax-rises-to-energy-bill-support" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 10:31 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/oct/29/warren-lawmakers-osha-worker-respiratory-protection" target="_blank" rel="noopener">Democratic lawmakers decry Osha’s push to roll back worker respiratory protections</a></h3>
+  <p class="excerpt">Elizabeth Warren and others joined by unions and industry experts in warning against the weakening of regulationsThe senator Elizabeth Warren, the congresswoman Ilhan Omar and several other Democratic lawmakers are calling on the Occupational Safety and Health Administration (Osha) to abandon a rollback of respirator mask regulations, a change the lawmakers say would weaken worker protections against hazardous substances.Under the proposed rules, employers would face fewer requirements to provide workers with respirators masks when working with substances including “lead, asbestos, formaldehyd</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/oct/29/warren-lawmakers-osha-worker-respiratory-protection" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 10:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/oct/29/texas-school-custodian-name" target="_blank" rel="noopener">New elementary school in Texas named after beloved longtime school custodian</a></h3>
+  <p class="excerpt">Marilyn Hampton, who regularly bought supplies for and gave rides to children, was honored at public meetingUS schools are often named after presidents, historical figures and civil rights leaders. And soon joining those ranks is a retired longtime Texas school custodian known for going above and beyond her duties by buying classroom supplies for children in need and helping students with their assignments.That heartwarming story centers on Marilyn Hampton, whose former employer of 39 years – the Aubrey independent school district (AISD) – recently moved to rename its new elementary school No </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/oct/29/texas-school-custodian-name" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 10:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/uk-news/2026/oct/29/scattergun-budget-leave-britons-higher-energy-bills-thinktank" target="_blank" rel="noopener">‘Scattergun’ budget will still leave Britons facing higher energy bills, says thinktank</a></h3>
+  <p class="excerpt">Healey’s attempt to provide ‘breathing space’ gives rich almost as much as poor, says Resolution FoundationBusiness live – latest updatesBudget 2026: what it means for your wallet, your mortgage and your payJohn Healey delivered a “scattergun” budget that did little to boost living standards and left Britain facing “a painful second half” of the parliament, a leading economic thinktank has warned.The Resolution Foundation said on Thursday that measures to ease household gas and electricity costs would still leave energy bills higher this year than during the last energy shock. Continue reading</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/uk-news/2026/oct/29/scattergun-budget-leave-britons-higher-energy-bills-thinktank" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 09:10 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cw78prj801pvo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Ethiopia acquires Russian fighter jets and air defence systems amid war in Tigray</a></h3>
+  <p class="excerpt">The acquisition of the warplanes comes amid ongoing fighting in northern Tigray region that started last month.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cw78prj801pvo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 08:23 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/oct/29/shell-profits-double-iran-war-pushes-up-profit-margin-on-oil" target="_blank" rel="noopener">Shell profits double to $10.8bn as Iran war pushes up margin on oil</a></h3>
+  <p class="excerpt">Energy firm to return $5bn to shareholders as climate campaigners criticise high profitsBusiness live – latest updatesShell has doubled its profits in the last quarter after the Middle East conflict drove up the price of oil and gas and created shortages in the global market.Shell reported on Thursday morning that it made an adjusted profit of $10.8bn (£8.1bn) in the July-September quarter, up from $5.432bn in the third quarter of 2025. The results beat analyst expectations for a rise to $10.33bn. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/oct/29/shell-profits-double-iran-war-pushes-up-profit-margin-on-oil" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 08:00 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-intelligence">
+  <div class="section-head">
+    <h2>Intelligence &amp; Espionage</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/29/hello-kitty-japanese-spy-show-vivant-china-outcry" target="_blank" rel="noopener">Hello Kitty company cuts ties with Japanese spy show after China outcry</a></h3>
+  <p class="excerpt">Sanrio ends association with TV drama Vivant after China says portrayal of ruthless Chinese agents is ‘deliberate smear’The company behind the successful Hello Kitty franchise has apologised and ended its commercial tie-up with a Japanese TV drama after Chinese state media and netizens condemned the show’s “deliberate smears” against China.Sanrio, a Japanese firm whose characters are popular around the world, said in a post on the Chinese social media site Weibo that it had decided to end its association with the TV drama Vivant after concluding that it “contained elements inconsistent with Sa</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cry4x177jlnyo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/2026/oct/29/hello-kitty-japanese-spy-show-vivant-china-outcry" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 08:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/f31fccd8-e9b6-4b01-989d-790ca6bb4d29?syn-25a6b1a6=1" target="_blank" rel="noopener">Fed holds fire on interest rates despite intensifying inflation</a></h3>
+  <p class="excerpt">Central bank to vote on monetary policy seven times next year in shift from decades-old custom of having eight such meetings</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/business/economy/warsh-interest-rates-fed.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.ft.com/content/f31fccd8-e9b6-4b01-989d-790ca6bb4d29?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Global Economy</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 21:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/live/2026/oct/29/midterm-elections-politics-trump-obama-california-alaska-latest-news-updates" target="_blank" rel="noopener">Trump and Obama trade barbs on campaign trail in final days before midterm election – US politics live</a></h3>
+  <p class="excerpt">Former president says ‘these are not serious people’ in Georgia rally as Trump defended his White House decor in Ohio rally‘They mobilized a whole government response to that joke’: Obama laughs off Trump attacksSign up for the Breaking News US emailA federal judge declined to order California election officials to segregate and not count ballots from people the Trump administration claimed were non-citizens, rebuffing a legally thin request from the justice department that appeared designed to cast doubt over the results of the midterms.The ruling from US district judge David Carter, nominate</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/live/2026/oct/29/midterm-elections-politics-trump-obama-california-alaska-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/2cd96df5-1725-4438-bd86-2b5c97f0f9e7?syn-25a6b1a6=1" target="_blank" rel="noopener">How corruption became a top voter issue in the US midterms</a></h3>
+  <p class="excerpt">Democrats are betting voters will connect alleged White House self-dealing with their own financial struggles</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/2cd96df5-1725-4438-bd86-2b5c97f0f9e7?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/oct/29/lloyds-executive-criticises-healey-for-linking-bank-tax-rises-to-energy-bill-support" target="_blank" rel="noopener">Lloyds executive criticises Healey for linking bank tax rises to energy bill support</a></h3>
+  <p class="excerpt">Chief financial officer says he hopes budget measure is temporary as sector provides loans that fuel growthBusiness live – latest updatesA senior Lloyds Banking Group executive has criticised the chancellor for linking bank tax increases to energy bill support for UK households, as he warned the government against extending the higher levy beyond March 2028.Lloyds’s chief financial officer, William Chalmers, acknowledged that the economic environment was “challenging” but said the government should not seek to ease pressure on households at the expense of the banking sector as it provides loan</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/oct/29/lloyds-executive-criticises-healey-for-linking-bank-tax-rises-to-energy-bill-support" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 10:31 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cq8ezj7jylrzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Carney to push for closer ties at Canada-EU summit in Montreal</a></h3>
+  <p class="excerpt">The term &#34;associate member&#34; is reportedly off the table as officials discuss deeper economic and defence ties.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cq8ezj7jylrzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 09:51 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c6ly3027820lo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Ofcom outlines age check methods ahead of social media ban for under-16s</a></h3>
+  <p class="excerpt">Ofcom says photo and digital ID, banking checks or facial age estimation can help prove someone is 16 or over.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c6ly3027820lo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 09:31 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/29/business/economy/federal-reserve-interest-rates.html" target="_blank" rel="noopener">In Moving Gradually, Fed Risks Having to Play Catch-Up to Quell Inflation</a></h3>
+  <p class="excerpt">Federal Reserve officials are expected to restart rate increases in December, but the cadence of additional moves will depend on the data.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/29/business/economy/federal-reserve-interest-rates.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 09:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/29/world/europe/france-marseille-macron-protests.html" target="_blank" rel="noopener">In Marseille, Macron Confronts a Potent Mix of France’s Problems</a></h3>
+  <p class="excerpt">France’s second city, five years into a presidential development plan, is grappling with the social strains that have fueled protests across the country.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/29/world/europe/france-marseille-macron-protests.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 09:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/29/technology/personaltech/apple-google-maps-features.html" target="_blank" rel="noopener">Hit the Road This Season With These Useful New Map Features</a></h3>
+  <p class="excerpt">The recent updates to Google Maps and Apple’s Maps use artificial (and human) intelligence for better navigation, planning and travel guides.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/29/technology/personaltech/apple-google-maps-features.html" target="_blank" rel="noopener">NYT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 09:02 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/29/us/politics/nvidia-china-jensen-huang-trump.html" target="_blank" rel="noopener">Nvidia Chief, Jensen Huang, Is Seen as Target of Chinese Spy Plot</a></h3>
+  <p class="excerpt">A Chinese businesswoman who had a close relationship with Jensen Huang was found to be passing intelligence to Beijing. President Trump was briefed and took no action.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/29/us/politics/nvidia-china-jensen-huang-trump.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 09:01 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/australia-news/2026/oct/29/one-nation-accuses-pm-of-trying-to-exert-undue-political-influence-by-offering-david-farley-extra-staffer-ntwnfb" target="_blank" rel="noopener">One Nation accuses PM of trying to ‘exert undue political influence’ by offering David Farley an extra staffer</a></h3>
+  <p class="excerpt">Pauline Hanson says Anthony Albanese made ‘unsolicited’ offer of adviser with $200,000 salary to one of her MPsGet our daily political email, free app or daily news podcastThe prime minister, Anthony Albanese, offered the One Nation MP David Farley an additional staff member in what the party has called an “unsolicited” move, made in an attempt to win over the new politician using taxpayer funds.In a statement posted on social media, Pauline Hanson claimed the move, which would cost taxpayers as much as $200,000 in additional salary, was an attempt to “exert undue political influence” over pol</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/australia-news/2026/oct/29/one-nation-accuses-pm-of-trying-to-exert-undue-political-influence-by-offering-david-farley-extra-staffer-ntwnfb" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 08:26 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-military">
+  <div class="section-head">
+    <h2>Military &amp; Defense</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/russias-war-against-ukraine-is-costing-more-and-achieving-less-uk-statement-to-the-fsc" target="_blank" rel="noopener">Russia&#39;s war against Ukraine is costing more and achieving less: UK statement to the FSC</a></h3>
+  <p class="excerpt">Politico-Military Counsellor Arron Newble says Russia is spending a growing share of its budget on the war for limited gains, and asks how this fits its Code of Conduct commitments.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/russias-war-against-ukraine-is-costing-more-and-achieving-less-uk-statement-to-the-fsc" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 13:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/world/americas/flavio-bolsonaro-us-miami-brazil-trump.html" target="_blank" rel="noopener">Flávio Bolsonaro Lands in Miami After Fleeing Brazil</a></h3>
+  <p class="excerpt">Mr. Bolsonaro, who lost Sunday’s presidential election, fled Brazil for the United States via Argentina after the police canceled his passport in relation to an investigation.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/world/americas/flavio-bolsonaro-us-miami-brazil-trump.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.ft.com/content/0cb91253-62e1-4cdf-864e-61174b297e51?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c6kglwe4lxwzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/2026/oct/28/flavio-bolsonaro-miami-us-fleeing-brazilian-election-defeat" target="_blank" rel="noopener">The Guardian (World)</a>
+      <a href="https://english.elpais.com/international/2026-10-28/flavio-bolsonaro-lands-in-miami-after-fleeing-brazil-via-argentina.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 06:01 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/29/spain-mourning-period-deadly-train-crash" target="_blank" rel="noopener">Spain begins mourning period after train crash as search continues for victims in wreckage</a></h3>
+  <p class="excerpt">Emergency services, drones and dog unit continue to comb carriages as Civil Guard sets up clinics for relatives to provide DNA samplesSpain has begun three days of mourning to commemorate the 69 people who died in a high-speed rail collision as hospitals continue to treat dozens of injured passengers and relatives wait for news of their loved ones.The trains – one from Spain’s state-owned Renfe and the other from the private rail company Iryo – were heading from Madrid on Wednesday to the southern region of Andalucía on the same line when they collided just before 9am. After the Iryo train cam</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/oct/29/spain-mourning-period-deadly-train-crash" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:11 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/oct/29/warren-lawmakers-osha-worker-respiratory-protection" target="_blank" rel="noopener">Democratic lawmakers decry Osha’s push to roll back worker respiratory protections</a></h3>
+  <p class="excerpt">Elizabeth Warren and others joined by unions and industry experts in warning against the weakening of regulationsThe senator Elizabeth Warren, the congresswoman Ilhan Omar and several other Democratic lawmakers are calling on the Occupational Safety and Health Administration (Osha) to abandon a rollback of respirator mask regulations, a change the lawmakers say would weaken worker protections against hazardous substances.Under the proposed rules, employers would face fewer requirements to provide workers with respirators masks when working with substances including “lead, asbestos, formaldehyd</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/oct/29/warren-lawmakers-osha-worker-respiratory-protection" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 10:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cq8ezj7jylrzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Carney to push for closer ties at Canada-EU summit in Montreal</a></h3>
+  <p class="excerpt">The term &#34;associate member&#34; is reportedly off the table as officials discuss deeper economic and defence ties.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cq8ezj7jylrzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 09:51 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/29/world/europe/ukraine-kherson-respite.html" target="_blank" rel="noopener">A Ukrainian City in the Kill Zone Relishes a Moment of Peace</a></h3>
+  <p class="excerpt">A rare localized peace deal announced by the first lady, Melania Trump, offered a brief respite for Kherson, where Russian drones and artillery have long terrorized civilians.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/29/world/europe/ukraine-kherson-respite.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 08:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cw78prj801pvo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Ethiopia acquires Russian fighter jets and air defence systems amid war in Tigray</a></h3>
+  <p class="excerpt">The acquisition of the warplanes comes amid ongoing fighting in northern Tigray region that started last month.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cw78prj801pvo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 08:23 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/10/china-controls-key-materials-for-dutch-chips-defence-and-energy/" target="_blank" rel="noopener">China controls key materials for Dutch chips, defence and energy</a></h3>
+  <p class="excerpt">The Netherlands is heavily dependent on China for seven of the eight raw materials most critical to its economy, according...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/10/china-controls-key-materials-for-dutch-chips-defence-and-energy/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 08:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/ck0e075n79j5o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">El Salvador sends 2,000 troops to Haiti to rescue four missing soldiers</a></h3>
+  <p class="excerpt">The troops are trying to recover four military personnel who went missing in an ambush on the outskirts of the Haitian capital Port-au-Prince.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/ck0e075n79j5o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 06:24 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/oct/29/cambodian-police-scam-compounds-amnesty-international" target="_blank" rel="noopener">Cambodian police and soldiers helped guard abusive scam compounds, Amnesty alleges</a></h3>
+  <p class="excerpt">Survivors tell rights group that serving officers who worked as guards administered electric shocks and beatingsCambodian police and military officers worked as private security guards in scam compounds where thousands were forced to work in the online fraud industry, according to a report by Amnesty International.The global rights group alleged they worked for security companies as part of a system that enabled slavery and rape in the compounds, with some guards using electric batons to keep people trapped. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/oct/29/cambodian-police-scam-compounds-amnesty-international" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 06:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/29/us/politics/pappas-sununu-new-hampshire-senate-debate.html" target="_blank" rel="noopener">Five Takeaways From the New Hampshire Senate Debate</a></h3>
+  <p class="excerpt">Representative Chris Pappas and former Senator John E. Sununu both stressed their willingness to buck their parties on occasion. Neither had kind words for President Trump.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/29/us/politics/pappas-sununu-new-hampshire-senate-debate.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 05:10 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/us/politics/vance-peace-talks-letter-iran.html" target="_blank" rel="noopener">Vance Proposes Restarting Peace Talks in Outreach to Iranian Official</a></h3>
+  <p class="excerpt">In his letter, the vice president suggested an immediate resumption of comprehensive talks, including about Iran’s nuclear program.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/us/politics/vance-peace-talks-letter-iran.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 02:15 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-technology">
+  <div class="section-head">
+    <h2>Technology</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/29/technology/doordash-instacart-acquisition-delivery.html" target="_blank" rel="noopener">DoorDash to Buy Instacart for $17 Billion, Uniting 2 Delivery Giants</a></h3>
+  <p class="excerpt">The deal combines the country’s largest restaurant delivery service with its biggest online grocery platform.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/29/technology/doordash-instacart-acquisition-delivery.html" target="_blank" rel="noopener">NYT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/29/arts/ai-bots-jokes-theft-comedians.html" target="_blank" rel="noopener">Bodacious A.I. Bots Are Stealing Jokes From Young Female Comedians</a></h3>
+  <p class="excerpt">Swiping jokes word for word, these bodacious bots mainly lift from young female comedians. What’s so insidious is how they’re subtly changing us, the audience.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/29/arts/ai-bots-jokes-theft-comedians.html" target="_blank" rel="noopener">NYT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:15 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/uk-news/2026/oct/29/scattergun-budget-leave-britons-higher-energy-bills-thinktank" target="_blank" rel="noopener">‘Scattergun’ budget will still leave Britons facing higher energy bills, says thinktank</a></h3>
+  <p class="excerpt">Healey’s attempt to provide ‘breathing space’ gives rich almost as much as poor, says Resolution FoundationBusiness live – latest updatesBudget 2026: what it means for your wallet, your mortgage and your payJohn Healey delivered a “scattergun” budget that did little to boost living standards and left Britain facing “a painful second half” of the parliament, a leading economic thinktank has warned.The Resolution Foundation said on Thursday that measures to ease household gas and electricity costs would still leave energy bills higher this year than during the last energy shock. Continue reading</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/uk-news/2026/oct/29/scattergun-budget-leave-britons-higher-energy-bills-thinktank" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 09:10 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/29/us/politics/campaign-websites-artificial-intelligence.html" target="_blank" rel="noopener">Candidate Websites Are Filled With A.I.-Written Text, Analysis Shows</a></h3>
+  <p class="excerpt">The use of A.I. chatbots to write candidate biographies and policy positions is another way the technology is entangled with elections.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/29/us/politics/campaign-websites-artificial-intelligence.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 09:02 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/1639620b-99e7-47ed-8484-49646816489e?syn-25a6b1a6=1" target="_blank" rel="noopener">US tech stocks set to fall after earnings fuel AI spending concerns</a></h3>
+  <p class="excerpt">Nasdaq 100 to open 1% down after Google parent Alphabet and Microsoft report lower than expected capex</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/1639620b-99e7-47ed-8484-49646816489e?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 08:37 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/10/china-controls-key-materials-for-dutch-chips-defence-and-energy/" target="_blank" rel="noopener">China controls key materials for Dutch chips, defence and energy</a></h3>
+  <p class="excerpt">The Netherlands is heavily dependent on China for seven of the eight raw materials most critical to its economy, according...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/10/china-controls-key-materials-for-dutch-chips-defence-and-energy/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 08:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/f499d3e6-dca1-4595-9fdf-8479122ca412?syn-25a6b1a6=1" target="_blank" rel="noopener">Alphabet spells out more AI capex, China+1 doesn’t add up</a></h3>
+  <p class="excerpt">The inside story on the Asia tech trends that matter, from Nikkei Asia and the Financial Times</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/f499d3e6-dca1-4595-9fdf-8479122ca412?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 07:43 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cmx28e44xxx7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">&#39;Super offensive&#39; - we love how we look but AI tried to &#39;fix&#39; our visible differences</a></h3>
+  <p class="excerpt">An AI tool edited a photo of Rhiannon Morgan in a work newsletter and she was shocked by the results.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cmx28e44xxx7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 06:13 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/5e343e5c-5e4a-41a7-87b0-4850c77d9aec?syn-25a6b1a6=1" target="_blank" rel="noopener">EU can compete with US AI giants, says Brussels’ frontier-model champion</a></h3>
+  <p class="excerpt">Also in this newsletter: Are the EU’s short seller rules fit for purpose?</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/5e343e5c-5e4a-41a7-87b0-4850c77d9aec?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 06:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/a8549f8c-7ac3-4504-b107-ca7a1498e1d9?syn-25a6b1a6=1" target="_blank" rel="noopener">Museums urged to boost sensory experiences for blind visitors</a></h3>
+  <p class="excerpt">From audio trails to AI tech, projects around the world are elevating interactivity beyond simple Braille labels</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/a8549f8c-7ac3-4504-b107-ca7a1498e1d9?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 05:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/b6bd02fe-d72f-45e4-8289-2f0539caadf0" target="_blank" rel="noopener">Why Ghana’s Ananse tales have a story for us all about AI and creativity</a></h3>
+  <p class="excerpt">The ways whole peoples argue, bargain, joke and tell stories will ultimately prove more powerful than the technology — if we interpret the African spider fables correctly</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/b6bd02fe-d72f-45e4-8289-2f0539caadf0" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 05:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/4836eaaa-dfd3-412e-a3c8-7c11b38f28e4?syn-25a6b1a6=1" target="_blank" rel="noopener">Will digital technology strike the right chord with musicians?</a></h3>
+  <p class="excerpt">Musical instruments will always benefit from technical innovations. The challenge is to do it well</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/4836eaaa-dfd3-412e-a3c8-7c11b38f28e4?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 05:00 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-economy">
+  <div class="section-head">
+    <h2>Economy &amp; Trade</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/b9294b91-0eee-413b-bdde-0569f48539b9?syn-25a6b1a6=1" target="_blank" rel="noopener">Christine Lagarde to step down as ECB president in February</a></h3>
+  <p class="excerpt">Her eight-year term at the helm of the powerful monetary authority was set to end in October 2027</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/29/business/christine-lagarde-resigns-ecb.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.ft.com/content/b9294b91-0eee-413b-bdde-0569f48539b9?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.theguardian.com/world/2026/oct/29/european-central-bank-chief-christine-lagarde-to-step-down-nine-months-early" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:36 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/business/economy/heres-the-latest.html" target="_blank" rel="noopener">Here’s the latest.</a></h3>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/live/2026/10/28/world/spain-train-crash-toledo/spain-train-crash-toledo" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.nytimes.com/2026/10/28/business/economy/heres-the-latest.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 22:42 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/f31fccd8-e9b6-4b01-989d-790ca6bb4d29?syn-25a6b1a6=1" target="_blank" rel="noopener">Fed holds fire on interest rates despite intensifying inflation</a></h3>
+  <p class="excerpt">Central bank to vote on monetary policy seven times next year in shift from decades-old custom of having eight such meetings</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/business/economy/warsh-interest-rates-fed.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.ft.com/content/f31fccd8-e9b6-4b01-989d-790ca6bb4d29?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Global Economy</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 21:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/29/world/europe/synthetic-opioids-estonia.html" target="_blank" rel="noopener">How a Self-Described ‘Junkie’ Rode Synthetic Drugs to Oblivion — and Fame</a></h3>
+  <p class="excerpt">An Estonian addict could barely keep pace with the new drugs flooding the market. His terrifying accounts of the cruel toll they took on his body held his country in its grip.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/29/world/europe/synthetic-opioids-estonia.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/live/2026/oct/29/midterm-elections-politics-trump-obama-california-alaska-latest-news-updates" target="_blank" rel="noopener">Trump and Obama trade barbs on campaign trail in final days before midterm election – US politics live</a></h3>
+  <p class="excerpt">Former president says ‘these are not serious people’ in Georgia rally as Trump defended his White House decor in Ohio rally‘They mobilized a whole government response to that joke’: Obama laughs off Trump attacksSign up for the Breaking News US emailA federal judge declined to order California election officials to segregate and not count ballots from people the Trump administration claimed were non-citizens, rebuffing a legally thin request from the justice department that appeared designed to cast doubt over the results of the midterms.The ruling from US district judge David Carter, nominate</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/live/2026/oct/29/midterm-elections-politics-trump-obama-california-alaska-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/c09fe386-ea9d-4ee6-8f57-b5b9b7744934?syn-25a6b1a6=1" target="_blank" rel="noopener">Rosebank is needed for UK energy security</a></h3>
+  <p class="excerpt">The energy secretary Miatta Fahnbulleh should not fall for an illusion and block the oilfield</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/c09fe386-ea9d-4ee6-8f57-b5b9b7744934?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/9b19295f-a16a-4bc2-8f1a-5ab6d075b8af?syn-25a6b1a6=1" target="_blank" rel="noopener">BYD’s breakneck export surge helps offset weakness in China</a></h3>
+  <p class="excerpt">Electric vehicle champion’s foreign expansion takes on rising importance amid roadblocks in domestic market</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/9b19295f-a16a-4bc2-8f1a-5ab6d075b8af?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 10:51 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/oct/29/lloyds-executive-criticises-healey-for-linking-bank-tax-rises-to-energy-bill-support" target="_blank" rel="noopener">Lloyds executive criticises Healey for linking bank tax rises to energy bill support</a></h3>
+  <p class="excerpt">Chief financial officer says he hopes budget measure is temporary as sector provides loans that fuel growthBusiness live – latest updatesA senior Lloyds Banking Group executive has criticised the chancellor for linking bank tax increases to energy bill support for UK households, as he warned the government against extending the higher levy beyond March 2028.Lloyds’s chief financial officer, William Chalmers, acknowledged that the economic environment was “challenging” but said the government should not seek to ease pressure on households at the expense of the banking sector as it provides loan</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/oct/29/lloyds-executive-criticises-healey-for-linking-bank-tax-rises-to-energy-bill-support" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 10:31 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/66bc5487-04aa-4699-a010-c446c536cf48?syn-25a6b1a6=1" target="_blank" rel="noopener">The ECB needs a smooth transmission and a smooth transition</a></h3>
+  <p class="excerpt">Central bank at a critical juncture as it prepares leadership changes at time of strains in bond markets</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/66bc5487-04aa-4699-a010-c446c536cf48?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 10:17 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/oct/29/delta-uber-ftc-pricing" target="_blank" rel="noopener">FTC orders Delta, Uber and others to hand over data on algorithmic pricing</a></h3>
+  <p class="excerpt">Regulator demands companies explain how and why they charge different prices for the same product or service The Federal Trade Commission (FTC) is demanding some of the US’s biggest airlines, ride-share companies and retailers divulge how they are using algorithms and loyalty programs to target customers and drivers with different prices and wages.Nine companies – Delta, United, JetBlue, Lyft, Uber, DoorDash, Instacart, Target and Walmart – were named in the inquiry, which comes after investigations and lawsuits alleging consumers are charged different prices based on their buying histories an</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/oct/29/delta-uber-ftc-pricing" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 10:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/e48bfc16-c7ab-4185-bb61-44491830a5cb?syn-25a6b1a6=1" target="_blank" rel="noopener">Any stock dips after the midterms are likely to be opportunities</a></h3>
+  <p class="excerpt">The US economy’s resilience is expected to continue driving US earnings and shares higher even if there is gridlock</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/e48bfc16-c7ab-4185-bb61-44491830a5cb?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 10:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cq8ezj7jylrzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Carney to push for closer ties at Canada-EU summit in Montreal</a></h3>
+  <p class="excerpt">The term &#34;associate member&#34; is reportedly off the table as officials discuss deeper economic and defence ties.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cq8ezj7jylrzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 09:51 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-politics">
+  <div class="section-head">
+    <h2>Politics &amp; Diplomacy</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/change-of-his-majestys-ambassador-to-seoul" target="_blank" rel="noopener">Change of His Majesty’s Ambassador to Seoul</a></h3>
+  <p class="excerpt">Dr Rachel Emma-Jane Fentem CMG has been appointed His Majesty’s Ambassador to the Republic of Korea in succession to Mr Colin James Crooks LVO, who will be leaving the Diplomatic Service.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/change-of-his-majestys-ambassador-to-seoul" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 11:16 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/world/americas/flavio-bolsonaro-us-miami-brazil-trump.html" target="_blank" rel="noopener">Flávio Bolsonaro Lands in Miami After Fleeing Brazil</a></h3>
+  <p class="excerpt">Mr. Bolsonaro, who lost Sunday’s presidential election, fled Brazil for the United States via Argentina after the police canceled his passport in relation to an investigation.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/world/americas/flavio-bolsonaro-us-miami-brazil-trump.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.ft.com/content/0cb91253-62e1-4cdf-864e-61174b297e51?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c6kglwe4lxwzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/2026/oct/28/flavio-bolsonaro-miami-us-fleeing-brazilian-election-defeat" target="_blank" rel="noopener">The Guardian (World)</a>
+      <a href="https://english.elpais.com/international/2026-10-28/flavio-bolsonaro-lands-in-miami-after-fleeing-brazil-via-argentina.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 06:01 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/b9294b91-0eee-413b-bdde-0569f48539b9?syn-25a6b1a6=1" target="_blank" rel="noopener">Christine Lagarde to step down as ECB president in February</a></h3>
+  <p class="excerpt">Her eight-year term at the helm of the powerful monetary authority was set to end in October 2027</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/29/business/christine-lagarde-resigns-ecb.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.ft.com/content/b9294b91-0eee-413b-bdde-0569f48539b9?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.theguardian.com/world/2026/oct/29/european-central-bank-chief-christine-lagarde-to-step-down-nine-months-early" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:36 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/oct/29/israel-election-results-live-updates-poll-netanyahu-eisenkot-bloc-coalition-latest-news" target="_blank" rel="noopener">Israel election results live: Netanyahu accused of ‘ugly delegitimisation campaign’ after his claims about Arab parties</a></h3>
+  <p class="excerpt">Israeli police dismiss Likud’s claim election ‘stolen’ by parties representing Palestinians as count of absentee ballots continuesFull report: Coalition talks loom in IsraelAnalysis: Israel’s choice: Netanyahu remaining in power or a Palestinian-backed coalitionGadi Eisenkot, leader of the Yashar party and Benjamin Netanyahu’s main rival, has warned political opponents against exploiting allegations of foreign interference in Israel’s election to delay the swearing-in of the next Knesset.In remarks posted on X, Eisenkot said:Israel must safeguard the integrity of the elections against any atte</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cmdx3knq1xexo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/live/2026/oct/29/israel-election-results-live-updates-poll-netanyahu-eisenkot-bloc-coalition-latest-news" target="_blank" rel="noopener">The Guardian (World)</a>
+      <a href="https://english.elpais.com/international/2026-10-28/netanyahu-wins-israel-elections-but-his-coalition-falls-short-of-a-majority.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:35 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/29/world/asia/hong-kong-fire-john-lee-apology.html" target="_blank" rel="noopener">Hong Kong Leader Apologizes for Deadly Apartment Building Fire</a></h3>
+  <p class="excerpt">John Lee, the city’s chief executive, said his housing secretary would step down, but he vehemently defended the government.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/29/world/asia/hong-kong-fire-john-lee-apology.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.ft.com/content/7f8eb778-80bc-446a-8e03-4c694bca2240?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:34 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/live/2026/oct/29/budget-john-healey-labour-uk-politics-latest-news" target="_blank" rel="noopener">Treasury denies Healey plan to cut welfare bill before election, claiming his comments were misinterpreted – UK politics live</a></h3>
+  <p class="excerpt">Asked earlier if there would be a cut to the welfare bill before the next election, the chancellor said: ‘There will be a reduction in the benefits bill’ Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cm5ynwkjgpz3o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+      <a href="https://www.theguardian.com/politics/live/2026/oct/29/budget-john-healey-labour-uk-politics-latest-news" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:29 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cmqxnl312v34o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Audio reveals exchanges between control centre and drivers before deadly Spain train crash</a></h3>
+  <p class="excerpt">The recordings appear to show one high-speed train was given clearance to move even though another up ahead had stalled.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/world/europe/train-crash-spain.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/cmqxnl312v34o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:07 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cm62y46d97wwo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">How could Israel break election deadlock? Here are four scenarios</a></h3>
+  <p class="excerpt">With more than 90% of votes counted, all signs point to an impasse. The most likely outcome may be new elections.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/video/world/middleeast/100000011242127/how-israels-election-could-end.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/cm62y46d97wwo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 09:06 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/business/economy/heres-the-latest.html" target="_blank" rel="noopener">Here’s the latest.</a></h3>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/live/2026/10/28/world/spain-train-crash-toledo/spain-train-crash-toledo" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.nytimes.com/2026/10/28/business/economy/heres-the-latest.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 22:42 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/f31fccd8-e9b6-4b01-989d-790ca6bb4d29?syn-25a6b1a6=1" target="_blank" rel="noopener">Fed holds fire on interest rates despite intensifying inflation</a></h3>
+  <p class="excerpt">Central bank to vote on monetary policy seven times next year in shift from decades-old custom of having eight such meetings</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/business/economy/warsh-interest-rates-fed.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.ft.com/content/f31fccd8-e9b6-4b01-989d-790ca6bb4d29?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Global Economy</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 21:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/28/world/europe/knife-wielding-attacker-fatally-shot-outside-israeli-embassy-in-serbia.html" target="_blank" rel="noopener">Knife-Wielding Attacker Fatally Shot Outside Israeli Embassy in Serbia</a></h3>
+  <p class="excerpt">The attacker, a minor, appeared to be a supporter of the Islamic State, the government said. Authorities have described it as a terrorist attack.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/28/world/europe/knife-wielding-attacker-fatally-shot-outside-israeli-embassy-in-serbia.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/ck5ynj4eeyj2o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 28, 15:26 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/10/29/world/europe/ukraine-dnipro-train-russia.html" target="_blank" rel="noopener">Russian Strike on Ukrainian Train Station Kills 13</a></h3>
+  <p class="excerpt">A deadly strike was a grim reminder that despite a rare local cease-fire around the Russian-occupied town of Oleshky, other communities remained under fire.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/10/29/world/europe/ukraine-dnipro-train-russia.html" target="_blank" rel="noopener">NYT Europe</a>
+    </span>
+    <span style="color:var(--muted)">· Oct 29, 11:35 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <footer class="foot">
+    Generated 2026-10-29 11:38 UTC ·
+    Aggregated from reliable sources (NYT, Foreign Affairs, FT, official government sites).
+    Headlines &amp; excerpts link to originals; no paywalled full text is reproduced.
+  </footer>
+</main>
+</body>
+</html>
