@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Today's Brief — Wednesday, 04 November 2026</title>
+<style>
+  /* New York Times–inspired: white background, serif headlines, hairline rules,
+     sans-serif labels, minimal color. */
+  :root {
+    --bg: #ffffff;
+    --text: #121212;        /* near-black body */
+    --muted: #666666;       /* bylines / meta */
+    --faint: #999999;
+    --rule: #e2e2e2;        /* hairline dividers */
+    --rule-strong: #121212; /* section top rules */
+    --link: #326891;        /* NYT link blue, used sparingly */
+    --official: #9a6a00;    /* restrained gold-brown */
+    --wire: #326891;
+    --analysis: #6a4c93;
+    --serif: Georgia, "Times New Roman", "Times", serif;
+    --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: var(--serif); line-height: 1.5; -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px 90px; }
+
+  /* Masthead — centered serif wordmark with black rules above/below. */
+  header.masthead { background: var(--bg); border-bottom: 1px solid var(--text);
+    padding: 14px 24px 0; }
+  .masthead-inner { max-width: 960px; margin: 0 auto; }
+  .brand { text-align: center; padding-bottom: 12px; border-bottom: 1px solid var(--text);
+    margin-bottom: 8px; }
+  .brand .kicker { font-family: var(--sans); font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .brand h1 { font-family: var(--serif); font-weight: 700; margin: 4px 0 2px;
+    font-size: 40px; letter-spacing: -.01em; line-height: 1.05; }
+  .brand .date { font-family: var(--sans); color: var(--muted); font-size: 12.5px;
+    letter-spacing: .02em; }
+  .nav { display: flex; gap: 20px; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 12px; text-transform: uppercase; letter-spacing: .08em;
+    padding: 8px 0 10px; }
+  .nav a { color: var(--text); font-weight: 600; }
+  .nav a:hover { color: var(--link); }
+
+  /* Links-only / status banner — quiet, italic serif. */
+  .banner { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    padding: 10px 0; margin: 18px 0 6px; color: var(--muted); font-size: 14px;
+    font-style: italic; }
+
+  /* Executive summary — a boxed "lede" with a sans label. */
+  .exec { border: 1px solid var(--text); padding: 22px 24px; margin: 24px 0 8px; }
+  .exec h2 { font-family: var(--sans); margin: 0 0 10px; font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text); font-weight: 700; }
+  .exec p { margin: 0 0 12px; font-size: 18px; line-height: 1.55; }
+  .exec p:last-child { margin-bottom: 0; }
+  .exec .ir { border-top: 1px solid var(--rule); margin-top: 16px; padding-top: 16px; }
+  .exec .ir h3 { font-family: var(--sans); margin: 0 0 6px; font-size: 11px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--analysis); font-weight: 700; }
+  .exec .ir p { font-size: 16px; }
+
+  /* Section fronts — serif head with a strong black rule above (NYT section style). */
+  section.topic { margin: 34px 0 0; }
+  .section-head { border-top: 2px solid var(--rule-strong); padding-top: 8px; margin-bottom: 6px;
+    display: flex; align-items: baseline; gap: 10px; }
+  .section-head h2 { font-family: var(--serif); margin: 0; font-size: 22px; font-weight: 700;
+    letter-spacing: -.01em; }
+  .section-head .count { font-family: var(--sans); color: var(--faint); font-size: 11px;
+    text-transform: uppercase; letter-spacing: .08em; }
+  .section-brief { font-style: italic; color: #333; padding: 6px 0 2px; margin: 6px 0;
+    font-size: 15px; border-left: 3px solid var(--rule-strong); padding-left: 12px; }
+
+  /* Story cards — serif headline, hairline divider, sans meta. */
+  .card { padding: 15px 0; border-bottom: 1px solid var(--rule); }
+  .card:last-child { border-bottom: none; }
+  .card h3 { font-family: var(--serif); margin: 0 0 5px; font-size: 20px; font-weight: 700;
+    line-height: 1.25; letter-spacing: -.005em; }
+  .card h3 a { color: var(--text); }
+  .card h3 a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+  .card .ai { margin: 4px 0 6px; font-size: 15px; color: #333; line-height: 1.5; }
+  .card .excerpt { margin: 4px 0 6px; font-size: 15px; color: var(--muted); line-height: 1.5; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    font-family: var(--sans); font-size: 12px; margin-top: 5px; color: var(--faint); }
+
+  /* Tier labels — small uppercase sans, a dot of color, no boxes. */
+  .badge { font-family: var(--sans); font-size: 10.5px; letter-spacing: .07em;
+    text-transform: uppercase; font-weight: 700; display: inline-flex; align-items: center; }
+  .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%;
+    display: inline-block; margin-right: 5px; background: currentColor; }
+  .badge.official { color: var(--official); }
+  .badge.wire { color: var(--wire); }
+  .badge.analysis { color: var(--analysis); }
+  .sources { display: flex; flex-wrap: wrap; gap: 6px; font-family: var(--sans); }
+  .sources a { color: var(--muted); }
+  .sources a:hover { color: var(--link); text-decoration: underline; }
+  .sources a::after { content: "·"; margin-left: 6px; color: var(--faint); }
+  .sources a:last-child::after { content: ""; }
+
+  /* Country watch — bordered cards with serif titles. */
+  .country-group { margin-top: 30px; }
+  .country-group > h2 { font-family: var(--sans); font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text); font-weight: 700;
+    border-bottom: 1px solid var(--rule-strong); padding-bottom: 6px; }
+  .country-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 22px; margin-top: 14px; }
+  .country-card { border: 1px solid var(--rule); padding: 14px 16px; }
+  .country-card h3 { font-family: var(--serif); margin: 0 0 8px; font-size: 18px; font-weight: 700; }
+  .country-card ul { margin: 0; padding: 0; list-style: none; }
+  .country-card li { padding: 7px 0; border-top: 1px solid var(--rule); font-size: 15px;
+    line-height: 1.35; }
+  .country-card li:first-child { border-top: none; }
+  .country-card li a { color: var(--text); }
+  .country-card li a:hover { text-decoration: underline; }
+
+  /* Archive + table of contents. */
+  .archive-list { list-style: none; padding: 0; margin: 22px 0; }
+  .archive-list li { padding: 14px 0; border-bottom: 1px solid var(--rule);
+    font-family: var(--serif); font-size: 19px; }
+  .archive-list li a:hover { text-decoration: underline; }
+  .toc { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 16px 0 4px;
+    padding-bottom: 14px; border-bottom: 1px solid var(--rule); font-family: var(--sans); }
+  .toc a { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em;
+    font-weight: 600; }
+  .toc a:hover { color: var(--link); }
+
+  footer.foot { font-family: var(--sans); color: var(--faint); font-size: 11.5px; margin-top: 56px;
+    padding-top: 18px; border-top: 1px solid var(--rule); line-height: 1.6; }
+
+  @media (max-width: 640px) {
+    .brand h1 { font-size: 30px; }
+    .exec p { font-size: 16px; }
+    .card h3 { font-size: 18px; }
+    .country-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="kicker">Diplomat Daily Briefing</span>
+      <h1>Today's Brief</h1>
+      <span class="date">Wednesday, 04 November 2026 · 260 articles across 248 stories</span>
+    </div>
+    <nav class="nav">
+  <a href="../index.html">Dashboard</a>
+  <a href="../archive.html">Archive</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <div class="banner">AI summaries unavailable (authentication_error: Invalid bearer token) — showing links only.</div>
+
+
+  <h2 id="country-watch" style="margin-top:24px;font-size:20px;border-bottom:2px solid var(--rule-strong);padding-bottom:6px;">Country Profiles</h2>
+  <section class="topic" id="ctry-spain">
+  <div class="section-head">
+    <h2>Spain</h2>
+    <span class="count">2 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c6wydqd4yxdyo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Spanish transport minister resigns days after deadly train crash</a></h3>
+  <p class="excerpt">At least 69 people were killed and dozens injured in the collision south of the capital, Madrid.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/03/world/europe/spain-train-crash-transport-minister-resigns-oscar-puente.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c6wydqd4yxdyo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 03, 22:45 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/spain/2026-11-04/spains-transportation-minister-steps-down-over-train-crash-to-try-to-save-the-socialist-campaign-ahead-of-elections.html" target="_blank" rel="noopener">Spain’s transportation minister steps down over train crash to try to save the Socialist campaign ahead of elections</a></h3>
+  <p class="excerpt">The accident, which came just nine months after a similar one, has eroded support for the government. The prevailing feeling is that this step could re-energize the left</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/spain/2026-11-04/spains-transportation-minister-steps-down-over-train-crash-to-try-to-save-the-socialist-campaign-ahead-of-elections.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 11:51 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-switzerland">
+  <div class="section-head">
+    <h2>Switzerland</h2>
+    <span class="count">5 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261104/how-could-the-outcome-of-us-midterm-elections-impact-switzerland" target="_blank" rel="noopener">How could the outcome of US midterm elections impact Switzerland?</a></h3>
+  <p class="excerpt">Even if you didn&#39;t stay up all night to watch the results, you know by now that Democrats have won the control of the US Congress - that is, the House of Representatives and the Senate. This development will impact Switzerland in several ways as well.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261104/how-could-the-outcome-of-us-midterm-elections-impact-switzerland" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 11:44 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261104/today-in-switzerland-a-roundup-of-the-latest-news-on-wednesday-265" target="_blank" rel="noopener">Today in Switzerland: A roundup of the latest news on Wednesday</a></h3>
+  <p class="excerpt">Switzerland may scrap permit requirements for air-conditioners; legislators approve tax relief for retirees who continue working; plus other news in our roundup this Wednesday.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261104/today-in-switzerland-a-roundup-of-the-latest-news-on-wednesday-265" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 08:26 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/badd6af9-88b7-47b7-b1c2-067814e70fb5?syn-25a6b1a6=1" target="_blank" rel="noopener">Democratic governors elected on promises to stop data centre building</a></h3>
+  <p class="excerpt">Gubernatorial wins in Texas, Georgia and Ohio and local ballot measures show depth of discontent with Trump-backed infrastructure spree</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/badd6af9-88b7-47b7-b1c2-067814e70fb5?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 06:40 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261103/explained-the-first-thing-you-need-to-do-if-you-lose-your-job-in-switzerland" target="_blank" rel="noopener">EXPLAINED: The first thing you need to do if you lose your job in Switzerland</a></h3>
+  <p class="excerpt">If you become unemployed in Switzerland, your first thought may be to hurry up and claim your unemployment benefits. But the first thing you must do is sign up for these payments.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261103/explained-the-first-thing-you-need-to-do-if-you-lose-your-job-in-switzerland" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 03, 12:58 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261103/does-the-new-eu-banking-rule-affect-switzerland" target="_blank" rel="noopener">Does the new EU banking rule affect Switzerland?</a></h3>
+  <p class="excerpt">The regulation, which will go into effect on January 11th, 2027, is set to restrict the access of European customers to Swiss banks.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261103/does-the-new-eu-banking-rule-affect-switzerland" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 03, 12:29 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-united_kingdom">
+  <div class="section-head">
+    <h2>United Kingdom</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/uk-judge-takes-on-key-role-in-upholding-international-law-at-international-court-of-justice" target="_blank" rel="noopener">UK judge takes on key role in upholding international law at International Court of Justice</a></h3>
+  <p class="excerpt">Professor Dapo Akande elected as judge to the International Court of Justice.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/uk-judge-takes-on-key-role-in-upholding-international-law-at-international-court-of-justice" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 03, 18:41 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/03/world/europe/king-charles-speech-uk-slave-trade-antigua.html" target="_blank" rel="noopener">King Charles Says U.K.’s Role in Slave Trade ‘Fills My Heart With Horror’</a></h3>
+  <p class="excerpt">The monarch called Britain’s trafficking of enslaved people from Africa a “shameful chapter of history” at a meeting of Commonwealth heads of government in Antigua.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/03/world/europe/king-charles-speech-uk-slave-trade-antigua.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/videos/cmvg9wwwq7jko?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 03, 22:19 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/nov/04/eu-ukraine-russia-france-germany-us-nato-europe-latest-news" target="_blank" rel="noopener">EU to lead talks on support for Ukraine with US, Nato, partners – Europe live</a></h3>
+  <p class="excerpt">European Commission will hold talks with the US, France, Germany, Britain, Nato, and the World BankMeanwhile, the Kremlin said that ⁠it ​hopes that the ⁠results of the US ⁠midterm ​elections ‌will not impact ‌what it ‌said were president Donald Trump’s “peacemaking efforts&#34; on Ukraine, Reuters said.In comments ‌broadcast by Russian state ​media, Kremlin spokesperson Dmitry Peskov said:“We ⁠are sincerely ​counting on [Trump] ​continuing ​his peacemaking ​efforts.““Governing in the United States will be almost impossible in the coming years given the level of internal division and polarisation. </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/live/2026/nov/04/eu-ukraine-russia-france-germany-us-nato-europe-latest-news" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:48 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/live/2026/nov/04/ed-miliband-andy-burnham-king-charles-labour-louise-haigh-alex-burghart-pmqs-conservatives-uk-politics-latest-news" target="_blank" rel="noopener">Louise Haigh and deputy Conservative leader Alex Burghart clash over welfare spending at PMQS – UK politics live</a></h3>
+  <p class="excerpt">The first secretary of state says the government will bring welfare spending downLouise Haigh starts by saying she is standing in for Andy Burnham.She says this weekend the whole country will fall silent to mark Remembrance Sunday. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/politics/live/2026/nov/04/ed-miliband-andy-burnham-king-charles-labour-louise-haigh-alex-burghart-pmqs-conservatives-uk-politics-latest-news" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:47 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/technology/2026/nov/04/uk-deploy-facial-recognition-biggest-ever-immigration-crackdown" target="_blank" rel="noopener">UK to deploy facial recognition in biggest-ever immigration crackdown</a></h3>
+  <p class="excerpt">Documents show Home Office developing programme to use technology for general immigration enforcementThe Home Office is preparing to deploy facial recognition technology at transport hubs and public events as part of the biggest immigration enforcement crackdown in British history.Policy documents show the government has been developing a programme to deploy live facial recognition (LFR) cameras for “general immigration enforcement”, including non-criminal immigration offences. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/technology/2026/nov/04/uk-deploy-facial-recognition-biggest-ever-immigration-crackdown" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:15 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/uk-news/2026/nov/04/andreas-malm-academics-letter-uk-reverse-entry-bar" target="_blank" rel="noopener">More than 900 academics urge UK to reverse decision to bar Andreas Malm</a></h3>
+  <p class="excerpt">Blocking Swedish writer’s entry for event with Palestine Action co-founder is attack on free expression, letter saysMore than 900 academics have voiced their opposition to the government’s decision to block the climate academic Andreas Malm from entering the UK, warning that the move represents “a grave violation of academic freedom and freedom of expression”.Malm, the author of How to Blow Up a Pipeline and a leading climate scholar, was prevented from entering the UK last week by the Home Office after being told that his presence in the UK “may not be considered to be conducive to the public</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/uk-news/2026/nov/04/andreas-malm-academics-letter-uk-reverse-entry-bar" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/environment/2026/nov/04/firework-noise-limit-protect-wild-animals-bonfire-night" target="_blank" rel="noopener">Firework noise limit should be drastically cut to protect wild animals, UK government told</a></h3>
+  <p class="excerpt">Ministers urged to go further than proposed cut to 110 decibels to ease acute stress on birds and others animalsCampaigners are calling on the UK government to protect the welfare of wild animals by cutting the maximum noise level of fireworks sold to the public from 120 to 90 decibels.The Center for Wild Animal Welfare (CWAW) has said lowering the limit to 90dB – which is about one-eighth of the loudness of 120dB – would help to protect millions of wild animals from acute stress by reducing the area over which a firework disturbs surrounding wildlife. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/environment/2026/nov/04/firework-noise-limit-protect-wild-animals-bonfire-night" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 11:47 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/news/2026/nov/04/london-wiener-holocaust-library-dreyfus-affair-antisemitism" target="_blank" rel="noopener">‘The point was to dehumanise’: London Holocaust archive examines world’s first ‘viral’ antisemitism scandal</a></h3>
+  <p class="excerpt">Dreyfus affair has echoes of how anti-Jewish hatred manifests itself today, say curators at Weiner LibraryIt was the world’s first experience of antisemitism “gone viral”, said Barbara Warnock, a co-director of the oldest Holocaust archive, the Wiener Holocaust Library in London.It was 1894 and printing presses were faster than ever before. France’s prohibitive censorship laws had been lifted, and then along came the Dreyfus affair: a public shouting match that followed the wrongful conviction for treason of Alfred Dreyfus, a 36-year-old French army captain. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/news/2026/nov/04/london-wiener-holocaust-library-dreyfus-affair-antisemitism" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 10:58 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-united_states">
+  <div class="section-head">
+    <h2>United States</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://news.un.org/feed/view/en/story/2026/11/1168728" target="_blank" rel="noopener">Haiti gang leader seeks UN talks as El Salvador sends 2,000 troops to hunt for missing soldiers</a></h3>
+  <p class="excerpt">A Haitian gang leader wanted by the United States has asked the UN to mediate, as El Salvador sends more than 2,000 troops into the country to search for four of its soldiers who went missing after a gang ambush.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://news.un.org/feed/view/en/story/2026/11/1168728" target="_blank" rel="noopener">UN News</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 03, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/04/us/politics/democrats-deliver-a-big-blue-bludgeoning.html" target="_blank" rel="noopener">Democrats Deliver a Big Blue Bludgeoning</a></h3>
+  <p class="excerpt">The party’s midterm victory reshapes the political landscape.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/03/world/us-midterms-trump-iran-ukraine.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.nytimes.com/2026/11/04/us/politics/democrats-deliver-a-big-blue-bludgeoning.html" target="_blank" rel="noopener">NYT Politics</a>
+      <a href="https://www.ft.com/content/77c2eaca-4fe1-4c69-b3bd-c517b045ff37?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.theguardian.com/us-news/live/2026/nov/03/midterm-election-results-live-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:52 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/a0b18705-3bd8-4886-992c-b6062fdec6ea?syn-25a6b1a6=1" target="_blank" rel="noopener">Stocks rebound after Democrats’ sweep</a></h3>
+  <p class="excerpt">US futures reverse early losses as analysts say divided government reduces policymaking risks</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/a0b18705-3bd8-4886-992c-b6062fdec6ea?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.politico.com/news/2026/11/03/democrats-sweep-texas-01147637" target="_blank" rel="noopener">Politico</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:42 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c893z55pxrewo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Left-wing Democrat Abdul El-Sayed wins in Michigan to become first Muslim senator</a></h3>
+  <p class="excerpt">El-Sayed bested Republican Mike Rogers to become the first Muslim senator in US history.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c893z55pxrewo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://english.elpais.com/usa/2026-11-04/abdul-elsayeds-victory-in-michigan-has-the-democratic-progressive-wing-dreaming-of-the-white-house.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 10:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/live/2026/nov/04/midterm-elections-results-senate-house-michigan-maine-mississippi-latest-updates" target="_blank" rel="noopener">US midterm elections 2026 live updates: Democrats take control of Congress in major setback for Trump</a></h3>
+  <p class="excerpt">Democrats flip seven Senate seats in Kansas, Iowa, Texas, Maine, Ohio, North Carolina and South Carolina; ‘blue wave’ rejects Trump’s agendaTrack live results from all 50 statesFull report: Democrats win control of Congress in ‘blue wave’Tell us: how do you feel about the US midterm election results?Tell us: what do you want to know about the midterm election results?The results of a closely-fought California ballot proposal to impose a one-time tax on billionaires remain too close to call as of Wednesday morning, the Associated Press reported.If it passes, the measure would hit the state’s ul</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/live/2026/nov/04/midterm-elections-results-senate-house-michigan-maine-mississippi-latest-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/nov/03/south-carolina-midterms-annie-andrews" target="_blank" rel="noopener">Democrat Annie Andrews flips South Carolina Senate seat held by Republicans since 1998</a></h3>
+  <p class="excerpt">Andrews ran a campaign on healthcare affordability and beat Darline Graham, sister of Lindsey Graham to winUS midterm elections – live updatesTrack live results from all 50 statesDemocrat Annie Andrews, a pediatrician who campaigned on healthcare affordability, has won the race for US Senate in South Carolina, making her the first Democrat to represent the state in the Senate for over a quarter century.Andrews had faced an uphill battle in what has been seen as a reliably Republican state against Darline Graham, the sister of the late Republican powerbroker Lindsey Graham. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/nov/03/south-carolina-midterms-annie-andrews" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:51 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/nov/04/eu-ukraine-russia-france-germany-us-nato-europe-latest-news" target="_blank" rel="noopener">EU to lead talks on support for Ukraine with US, Nato, partners – Europe live</a></h3>
+  <p class="excerpt">European Commission will hold talks with the US, France, Germany, Britain, Nato, and the World BankMeanwhile, the Kremlin said that ⁠it ​hopes that the ⁠results of the US ⁠midterm ​elections ‌will not impact ‌what it ‌said were president Donald Trump’s “peacemaking efforts&#34; on Ukraine, Reuters said.In comments ‌broadcast by Russian state ​media, Kremlin spokesperson Dmitry Peskov said:“We ⁠are sincerely ​counting on [Trump] ​continuing ​his peacemaking ​efforts.““Governing in the United States will be almost impossible in the coming years given the level of internal division and polarisation. </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/live/2026/nov/04/eu-ukraine-russia-france-germany-us-nato-europe-latest-news" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:48 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/joy-and-relief-americans-in-the-netherlands-react-to-midterms/" target="_blank" rel="noopener">“Joy and relief”: Americans in the Netherlands react to midterms</a></h3>
+  <p class="excerpt">US Democrats in the Netherlands are rejoicing at the results of the US midterm elections, which saw the party take...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/joy-and-relief-americans-in-the-netherlands-react-to-midterms/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:43 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-netherlands">
+  <div class="section-head">
+    <h2>Netherlands</h2>
+    <span class="count">5 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/joy-and-relief-americans-in-the-netherlands-react-to-midterms/" target="_blank" rel="noopener">“Joy and relief”: Americans in the Netherlands react to midterms</a></h3>
+  <p class="excerpt">US Democrats in the Netherlands are rejoicing at the results of the US midterm elections, which saw the party take...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/joy-and-relief-americans-in-the-netherlands-react-to-midterms/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:43 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/court-upholds-ban-on-heritage-groups-bid-for-former-nazi-bunker/" target="_blank" rel="noopener">Court upholds ban on heritage group’s bid for former Nazi bunker</a></h3>
+  <p class="excerpt">The Dutch state was entitled to block a heritage organisation’s attempt to buy a former wartime bunker outside The Hague...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/court-upholds-ban-on-heritage-groups-bid-for-former-nazi-bunker/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 11:40 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/c65eb5ae-0d16-4786-a8db-9db28d1791d7?syn-25a6b1a6=1" target="_blank" rel="noopener">Ahold Delhaize cuts profit forecast after cyber attack</a></h3>
+  <p class="excerpt">Dutch supermarket group says last month’s hack will hit sales and profit in the fourth quarter</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/c65eb5ae-0d16-4786-a8db-9db28d1791d7?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 09:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/dutch-inflation-hits-3-7-analysts-fear-more-after-us-midterms/" target="_blank" rel="noopener">Dutch inflation hits 3.7%, analysts fear more after US midterms</a></h3>
+  <p class="excerpt">Inflation in the Netherlands rose to 3.7% in October from 3.4% in September, mainly because of higher energy and fuel...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/dutch-inflation-hits-3-7-analysts-fear-more-after-us-midterms/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 08:12 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/dutch-consumers-warned-not-to-buy-recalled-french-condoms/" target="_blank" rel="noopener">Dutch consumers warned not to buy recalled French condoms</a></h3>
+  <p class="excerpt">Dutch health authorities have warned people not to buy French condom brands online that have been recalled because of concerns...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/dutch-consumers-warned-not-to-buy-recalled-french-condoms/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 03, 15:41 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <div class="country-group">
+    <h2>Regional neighbors</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>Russia</h3>
+  <ul>
+    <li>
+      <a href="https://news.un.org/feed/view/en/story/2026/11/1168724" target="_blank" rel="noopener">Air raid alerts and attacks on schools: the devastating face of education in Ukraine</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/world/live/2026/nov/04/eu-ukraine-russia-france-germany-us-nato-europe-latest-news" target="_blank" rel="noopener">EU to lead talks on support for Ukraine with US, Nato, partners – Europe live</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/education/2026/nov/04/ukrainian-gcse-uk-apologises-child-refugees" target="_blank" rel="noopener">UK apologises to Ukrainian child refugees who were told to study Russian</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/73c1d1cc-6bb2-43a6-8532-7823e5c1a40b?syn-25a6b1a6=1" target="_blank" rel="noopener">US, Russia and China discuss meeting between Trump, Putin and Xi</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Iran</h3>
+  <ul>
+    <li>
+      <a href="https://www.ft.com/content/6bc8be51-5bd8-468c-bd3c-82bbc2866ba1" target="_blank" rel="noopener">Trump admits Iran war hurt Republicans as blame game erupts</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/c6d934npl9y8o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Iran&#39;s chief negotiator says Americans voted &#39;no to war&#39;</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/83a46027-3cde-41fa-8c55-405f40c6fa82?syn-25a6b1a6=1" target="_blank" rel="noopener">Republicans turn on each other after disastrous midterms</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/3729c7ee-80bc-4ea5-949b-78b017f498e4?syn-25a6b1a6=1" target="_blank" rel="noopener">FirstFT: Blue wave sweeps US</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Georgia</h3>
+  <ul>
+    <li>
+      <a href="https://www.ft.com/content/b1eb9500-612a-4bb0-bdc3-0311cfc0ec99?syn-25a6b1a6=1" target="_blank" rel="noopener">Americans deliver stunning rebuke to Trump as blue wave sweeps country</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/badd6af9-88b7-47b7-b1c2-067814e70fb5?syn-25a6b1a6=1" target="_blank" rel="noopener">Democratic governors elected on promises to stop data centre building</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+  <div class="country-group">
+    <h2>Great powers</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>China</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/business/2026/nov/04/bmw-warns-on-profits-counts-cost-plan-for-8000-job-cuts" target="_blank" rel="noopener">BMW warns on profits as it counts cost of plan for 8,000 job cuts</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/04/world/europe/chinese-restaurant-edinburgh-viral-social-media.html" target="_blank" rel="noopener">Could a Viral Video Save Her Mom’s Chinese Restaurant?</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/c5a6a738-cd78-4a8e-a814-57a7473ebb9c?syn-25a6b1a6=1" target="_blank" rel="noopener">Oracle cancels $7bn Tencent AI deal under Trump pressure</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/cm0qkxzv3j99o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Weapon or wine bottle? China disputes reports of artillery shell in Papua New Guinea</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>European Union</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/world/live/2026/nov/04/eu-ukraine-russia-france-germany-us-nato-europe-latest-news" target="_blank" rel="noopener">EU to lead talks on support for Ukraine with US, Nato, partners – Europe live</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/business/2026/nov/04/m-and-s-recover-from-cyber-attack-profits-bounce-back" target="_blank" rel="noopener">M&amp;S boss bemoans last week’s budget as ‘whole lot of nothing’</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/a3da6c3a-4ab3-413c-bbeb-490d7cde34dc" target="_blank" rel="noopener">October inflation in the Eurozone keeps ECB on course for another tightening</a>
+    </li>
+    <li>
+      <a href="https://www.thelocal.ch/20261103/does-the-new-eu-banking-rule-affect-switzerland" target="_blank" rel="noopener">Does the new EU banking rule affect Switzerland?</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>France</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/world/live/2026/nov/04/eu-ukraine-russia-france-germany-us-nato-europe-latest-news" target="_blank" rel="noopener">EU to lead talks on support for Ukraine with US, Nato, partners – Europe live</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/news/2026/nov/04/london-wiener-holocaust-library-dreyfus-affair-antisemitism" target="_blank" rel="noopener">‘The point was to dehumanise’: London Holocaust archive examines world’s first ‘viral’ antisemitism scandal</a>
+    </li>
+    <li>
+      <a href="https://www.dutchnews.nl/2026/11/dutch-consumers-warned-not-to-buy-recalled-french-condoms/" target="_blank" rel="noopener">Dutch consumers warned not to buy recalled French condoms</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Germany</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/world/live/2026/nov/04/eu-ukraine-russia-france-germany-us-nato-europe-latest-news" target="_blank" rel="noopener">EU to lead talks on support for Ukraine with US, Nato, partners – Europe live</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/cvglw7x239pwo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Sharp objects found in Halloween sweets in three European nations</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/business/2026/nov/04/bmw-warns-on-profits-counts-cost-plan-for-8000-job-cuts" target="_blank" rel="noopener">BMW warns on profits as it counts cost of plan for 8,000 job cuts</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/25ce0d50-e7b6-4b14-93bb-ee5da6f747c0?syn-25a6b1a6=1" target="_blank" rel="noopener">German car parts giant Schaeffler axes 3,500 jobs</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+  <div class="country-group">
+    <h2>Middle East</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>Israel</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/04/world/middleeast/israel-herzog-netanyahu-government.html" target="_blank" rel="noopener">Israel’s President Will Start Talks on Whether Netanyahu or Eisenkot Can Form a Government</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/world/2026/nov/04/israel-election-commission-rejects-netanyahu-claims-voting-fraud" target="_blank" rel="noopener">Israel’s election commission rejects Netanyahu claims of voting fraud</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/04/world/middleeast/israel-president-herzog-election-government.html" target="_blank" rel="noopener">Israel’s President Could Play Key Role in Breaking Post-Election Deadlock</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/03/world/middleeast/israel-coalition-arab-lawmakers.html" target="_blank" rel="noopener">A Test for Israeli Democracy: Should Jews Ask Arabs to Join the Government?</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Saudi Arabia</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/03/business/saudi-aramco-q3-earnings.html" target="_blank" rel="noopener">Saudi Aramco Profit Jumps Despite Damaging Attacks on Pipelines and Refineries</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/sport/articles/ck0j0l65nzlvo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">How sporting events are being affected by Middle East conflict</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Qatar</h3>
+  <ul>
+    <li>
+      <a href="https://www.ft.com/content/3729c7ee-80bc-4ea5-949b-78b017f498e4?syn-25a6b1a6=1" target="_blank" rel="noopener">FirstFT: Blue wave sweeps US</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/88e46724-0bd4-451a-b02b-f5709c9771b7?syn-25a6b1a6=1" target="_blank" rel="noopener">Qatar set to become world’s biggest buyer of US LNG</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/02/world/middleeast/iran-deal-strait-of-hormuz.html" target="_blank" rel="noopener">Iran Says It Would Reopen Strait of Hormuz in 2 Days as Part of U.S. Deal</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/sport/articles/ck0j0l65nzlvo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">How sporting events are being affected by Middle East conflict</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+
+  <section class="topic" id="sec-ir_theory">
+  <div class="section-head">
+    <h2>International Relations — Theory &amp; Analysis</h2>
+    <span class="count">10 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/04/business/midterm-elections-stock-market.html" target="_blank" rel="noopener">How the Stock Market Is Reacting to the Midterm Elections</a></h3>
+  <p class="excerpt">Global markets fell as the first results came in, but later traded higher as investors assessed the outlook for policy as the balance of power shifted sharply in Washington.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/04/business/midterm-elections-stock-market.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:18 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/03/world/europe/iran-nuclear-weapons-war.html" target="_blank" rel="noopener">More Iranians Call for Nuclear Weapons After War With U.S.</a></h3>
+  <p class="excerpt">Some Iranian clerics and officials argue the country must rebuild deterrence by dropping its longstanding pledge not to build a nuclear bomb.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/03/world/europe/iran-nuclear-weapons-war.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 03, 23:04 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/united-states/dangers-lame-duck-trump" target="_blank" rel="noopener">The Dangers of a Lame-Duck Trump</a></h3>
+  <p class="excerpt">How far will he go to make peace—and war?</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/united-states/dangers-lame-duck-trump" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/united-states/missing-critical-minerals-investment" target="_blank" rel="noopener">The Missing Critical Minerals Investment</a></h3>
+  <p class="excerpt">To catch up to China, America and its allies must dig.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/united-states/missing-critical-minerals-investment" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/the-g-i-and-the-paperback-a-world-war-ii-love-story/" target="_blank" rel="noopener">The G.I. and the Paperback: A World War II Love Story</a></h3>
+  <p class="excerpt">On June 5, 1944, as soldiers lined British shores, preparing for their perilous journey to the beaches of Normandy, Special Services units handed out comfort items, from packs of cigarettes to candy. But one item was more sought after than any other: books. Crouched on the crowded decks awaiting Eisenhower&amp;#8217;s call to launch, the men clasped their standard-issue rifles and clutched their standard-issue paperbacks. They were armed with stories: Adventures of Huckleberry Finn, A Tree Grows in Brooklyn, The Robe, all printed to uniform-pocket size and stamped &amp;#8220;Armed Services Edition.&amp;#8</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/the-g-i-and-the-paperback-a-world-war-ii-love-story/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 08:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/the-cost-of-waiting-why-the-houthis-are-getting-more-dangerous-and-where-to-hit-them/" target="_blank" rel="noopener">The Cost of Waiting: Why the Houthis Are Getting More Dangerous and Where to Hit Them</a></h3>
+  <p class="excerpt">In 2025, Ari Heistein wrote, &amp;#8220;Defeating the Houthis Will Require More Than Killing Their Chief.&amp;#8221; A year later, we asked him to reflect on the Houthis&amp;#8217; Red Sea gains, the limits of killing leaders, and why another ceasefire would only buy them time to rearm.Image: Mehr News Agency via Wikimedia CommonsSince you wrote this piece, the Houthis have launched their most successful offensive in years, seizing much of Yemen&amp;#8217;s Red Sea coast. You described the group as a quasi-state with entrenched control over ports, the economy, and security services. How much of this recent ba</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/the-cost-of-waiting-why-the-houthis-are-getting-more-dangerous-and-where-to-hit-them/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 03, 20:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/cogs-of-war/quantums-quietest-branch-a-case-for-magnetometry/" target="_blank" rel="noopener">Quantum’s Quietest Branch: A Case for Magnetometry</a></h3>
+  <p class="excerpt">After an F-15E went down in Operation Epic Fury, the weapons systems officer landed injured, behind enemy lines, and with a bounty on his head. CIA Director John Ratcliffe analogized locating him to finding a &amp;#8220;grain of sand in the middle of a desert.&amp;#8221; When commandos pulled him out 36 hours later, one detail in news reports of the rescue captured public imagination: &amp;#8220;Ghost Murmur,&amp;#8221; an alleged CIA quantum magnetometer, was said to have detected the officer&amp;#8217;s heartbeat at long range. As one source ominously remarked, &amp;#8220;If your heart is beating, we will find you.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/cogs-of-war/quantums-quietest-branch-a-case-for-magnetometry/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 03, 09:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/united-states/fight-future-democratic-foreign-policy" target="_blank" rel="noopener">The Fight for the Future of Democratic Foreign Policy</a></h3>
+  <p class="excerpt">Which debates matter most for 2028.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/united-states/fight-future-democratic-foreign-policy" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 03, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/united-states/what-sanctions-get-right-s-c-m-paine" target="_blank" rel="noopener">What Sanctions Get Right</a></h3>
+  <p class="excerpt">A useful tool has been unjustly maligned.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/united-states/what-sanctions-get-right-s-c-m-paine" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 03, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/humanitys-promethean-gap-with-ai/" target="_blank" rel="noopener">Humanity’s Promethean Gap with AI</a></h3>
+  <p class="excerpt">Frontier AI systems are beginning to test the limits of human oversight, while the companies developing them retain considerable power to define the risks and the terms of their scrutiny. In security and defense, the stakes are particularly high. The industry&amp;#8217;s new calls to pace the frontier also risk becoming performative restraint, and defense establishments should act before agentic swarm systems enter chains of command.The OpenAI/Hugging Face incident provides a clear illustration of the emerging governance problem. Several reports in August from OpenAI, METR, and Redwood Research fo</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/humanitys-promethean-gap-with-ai/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 03, 08:30 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-conflicts">
+  <div class="section-head">
+    <h2>Conflicts &amp; Security</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/03/world/europe/bomb-threats-europe-flights-planes.html" target="_blank" rel="noopener">Bomb Threats Disrupt Several Flights Across Europe</a></h3>
+  <p class="excerpt">Officials are investigating threats against at least seven planes. The aircraft landed safely and no explosives were found, the authorities said.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/03/world/europe/bomb-threats-europe-flights-planes.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.thelocal.ch/20261103/hoax-bomb-threats-disrupt-flights-in-europe" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 07:29 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/6bc8be51-5bd8-468c-bd3c-82bbc2866ba1" target="_blank" rel="noopener">Trump admits Iran war hurt Republicans as blame game erupts</a></h3>
+  <p class="excerpt">Democrats deliver crushing defeat as voters punish administration for high cost of living</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/6bc8be51-5bd8-468c-bd3c-82bbc2866ba1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:38 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c6d934npl9y8o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Iran&#39;s chief negotiator says Americans voted &#39;no to war&#39;</a></h3>
+  <p class="excerpt">&#34;We endorse this message,&#34; Mohammed Bagher Ghalibaf says, as Donald Trump acknowledges the conflict&#39;s role in the Republican Party&#39;s defeat.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c6d934npl9y8o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:21 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/04/israel-election-commission-rejects-netanyahu-claims-voting-fraud" target="_blank" rel="noopener">Israel’s election commission rejects Netanyahu claims of voting fraud</a></h3>
+  <p class="excerpt">Move comes after attorney general blocked Shin Bet call to interrogate politicians from Palestinian-led partiesIsrael’s election commission on Wednesday confirmed the final results of the 27 October vote that stripped Benjamin Netanyahu’s far-right coalition of their governing majority, rejecting claims of mass fraud promoted by the prime minister.His main challenger, Gadi Eisenkot, warned that Netanyahu had launched a “pogrom against democracy”, attempting to hold on to power by discrediting valid votes and weaponising security forces against parties led by Palestinian citizens of Israel. Con</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/nov/04/israel-election-commission-rejects-netanyahu-claims-voting-fraud" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:19 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/uk-news/2026/nov/04/andreas-malm-academics-letter-uk-reverse-entry-bar" target="_blank" rel="noopener">More than 900 academics urge UK to reverse decision to bar Andreas Malm</a></h3>
+  <p class="excerpt">Blocking Swedish writer’s entry for event with Palestine Action co-founder is attack on free expression, letter saysMore than 900 academics have voiced their opposition to the government’s decision to block the climate academic Andreas Malm from entering the UK, warning that the move represents “a grave violation of academic freedom and freedom of expression”.Malm, the author of How to Blow Up a Pipeline and a leading climate scholar, was prevented from entering the UK last week by the Home Office after being told that his presence in the UK “may not be considered to be conducive to the public</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/uk-news/2026/nov/04/andreas-malm-academics-letter-uk-reverse-entry-bar" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/nov/04/bmw-warns-on-profits-counts-cost-plan-for-8000-job-cuts" target="_blank" rel="noopener">BMW warns on profits as it counts cost of plan for 8,000 job cuts</a></h3>
+  <p class="excerpt">German carmaker slashes profit margin to between -0.5% and 0.5% this year in face of competition from ChinaThe German carmaker BMW has issued its second profit warning in a year, blaming the costs of a restructuring programme including significant job losses in the face of continuing competition from China.The company is the latest to issue a profit downgrade in the German car sector, with Mercedes-Benz last week cutting its profit outlook. Western automakers have struggled to keep pace with lower-cost domestic rivals in China, which has led to reduced sales there and a rise in exports to Euro</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/nov/04/bmw-warns-on-profits-counts-cost-plan-for-8000-job-cuts" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 11:58 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c699zdx9knmpo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Rwanda&#39;s army team removed from Africa league after US sanctions, NBA says</a></h3>
+  <p class="excerpt">The US imposed sanctions on Rwanda&#39;s army over its role in the conflict in DR Congo.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c699zdx9knmpo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 11:46 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/court-upholds-ban-on-heritage-groups-bid-for-former-nazi-bunker/" target="_blank" rel="noopener">Court upholds ban on heritage group’s bid for former Nazi bunker</a></h3>
+  <p class="excerpt">The Dutch state was entitled to block a heritage organisation’s attempt to buy a former wartime bunker outside The Hague...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/court-upholds-ban-on-heritage-groups-bid-for-former-nazi-bunker/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 11:40 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cqvg0y44ym7vo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Uproar over missing &#39;pop&#39; as Rice Krispies changes its recipe</a></h3>
+  <p class="excerpt">The new recipes mean cereal packaging will now include a &#39;contains wheat gluten&#39; warning.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cqvg0y44ym7vo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 11:36 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/international/2026-11-04/the-us-takes-its-anti-narcotics-war-onto-venezuelan-soil-with-a-drone-strike-against-the-eln.html" target="_blank" rel="noopener">The US takes its anti-narcotics war onto Venezuelan soil with a drone strike against the ELN</a></h3>
+  <p class="excerpt">An airstrike on a guerrilla base in Apure state, which borders Colombia, has left at least 20 people dead, according to human rights organizations</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/international/2026-11-04/the-us-takes-its-anti-narcotics-war-onto-venezuelan-soil-with-a-drone-strike-against-the-eln.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 11:12 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/83a46027-3cde-41fa-8c55-405f40c6fa82?syn-25a6b1a6=1" target="_blank" rel="noopener">Republicans turn on each other after disastrous midterms</a></h3>
+  <p class="excerpt">GOP figures lash out at Donald Trump, his candidates and his staff over Iran war, cost of living and corruption allegations</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/83a46027-3cde-41fa-8c55-405f40c6fa82?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/news/2026/nov/04/london-wiener-holocaust-library-dreyfus-affair-antisemitism" target="_blank" rel="noopener">‘The point was to dehumanise’: London Holocaust archive examines world’s first ‘viral’ antisemitism scandal</a></h3>
+  <p class="excerpt">Dreyfus affair has echoes of how anti-Jewish hatred manifests itself today, say curators at Weiner LibraryIt was the world’s first experience of antisemitism “gone viral”, said Barbara Warnock, a co-director of the oldest Holocaust archive, the Wiener Holocaust Library in London.It was 1894 and printing presses were faster than ever before. France’s prohibitive censorship laws had been lifted, and then along came the Dreyfus affair: a public shouting match that followed the wrongful conviction for treason of Alfred Dreyfus, a 36-year-old French army captain. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/news/2026/nov/04/london-wiener-holocaust-library-dreyfus-affair-antisemitism" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 10:58 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-intelligence">
+  <div class="section-head">
+    <h2>Intelligence &amp; Espionage</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/03/world/europe/bomb-threats-europe-flights-planes.html" target="_blank" rel="noopener">Bomb Threats Disrupt Several Flights Across Europe</a></h3>
+  <p class="excerpt">Officials are investigating threats against at least seven planes. The aircraft landed safely and no explosives were found, the authorities said.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/03/world/europe/bomb-threats-europe-flights-planes.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.thelocal.ch/20261103/hoax-bomb-threats-disrupt-flights-in-europe" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 07:29 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/live/2026/nov/04/midterm-elections-results-senate-house-michigan-maine-mississippi-latest-updates" target="_blank" rel="noopener">US midterm elections 2026 live updates: Democrats take control of Congress in major setback for Trump</a></h3>
+  <p class="excerpt">Democrats flip seven Senate seats in Kansas, Iowa, Texas, Maine, Ohio, North Carolina and South Carolina; ‘blue wave’ rejects Trump’s agendaTrack live results from all 50 statesFull report: Democrats win control of Congress in ‘blue wave’Tell us: how do you feel about the US midterm election results?Tell us: what do you want to know about the midterm election results?The results of a closely-fought California ballot proposal to impose a one-time tax on billionaires remain too close to call as of Wednesday morning, the Associated Press reported.If it passes, the measure would hit the state’s ul</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/live/2026/nov/04/midterm-elections-results-senate-house-michigan-maine-mississippi-latest-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/nov/03/south-carolina-midterms-annie-andrews" target="_blank" rel="noopener">Democrat Annie Andrews flips South Carolina Senate seat held by Republicans since 1998</a></h3>
+  <p class="excerpt">Andrews ran a campaign on healthcare affordability and beat Darline Graham, sister of Lindsey Graham to winUS midterm elections – live updatesTrack live results from all 50 statesDemocrat Annie Andrews, a pediatrician who campaigned on healthcare affordability, has won the race for US Senate in South Carolina, making her the first Democrat to represent the state in the Senate for over a quarter century.Andrews had faced an uphill battle in what has been seen as a reliably Republican state against Darline Graham, the sister of the late Republican powerbroker Lindsey Graham. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/nov/03/south-carolina-midterms-annie-andrews" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:51 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/04/israel-election-commission-rejects-netanyahu-claims-voting-fraud" target="_blank" rel="noopener">Israel’s election commission rejects Netanyahu claims of voting fraud</a></h3>
+  <p class="excerpt">Move comes after attorney general blocked Shin Bet call to interrogate politicians from Palestinian-led partiesIsrael’s election commission on Wednesday confirmed the final results of the 27 October vote that stripped Benjamin Netanyahu’s far-right coalition of their governing majority, rejecting claims of mass fraud promoted by the prime minister.His main challenger, Gadi Eisenkot, warned that Netanyahu had launched a “pogrom against democracy”, attempting to hold on to power by discrediting valid votes and weaponising security forces against parties led by Palestinian citizens of Israel. Con</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/nov/04/israel-election-commission-rejects-netanyahu-claims-voting-fraud" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:19 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/technology/2026/nov/04/uk-deploy-facial-recognition-biggest-ever-immigration-crackdown" target="_blank" rel="noopener">UK to deploy facial recognition in biggest-ever immigration crackdown</a></h3>
+  <p class="excerpt">Documents show Home Office developing programme to use technology for general immigration enforcementThe Home Office is preparing to deploy facial recognition technology at transport hubs and public events as part of the biggest immigration enforcement crackdown in British history.Policy documents show the government has been developing a programme to deploy live facial recognition (LFR) cameras for “general immigration enforcement”, including non-criminal immigration offences. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/technology/2026/nov/04/uk-deploy-facial-recognition-biggest-ever-immigration-crackdown" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:15 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/spain/2026-11-04/spains-transportation-minister-steps-down-over-train-crash-to-try-to-save-the-socialist-campaign-ahead-of-elections.html" target="_blank" rel="noopener">Spain’s transportation minister steps down over train crash to try to save the Socialist campaign ahead of elections</a></h3>
+  <p class="excerpt">The accident, which came just nine months after a similar one, has eroded support for the government. The prevailing feeling is that this step could re-energize the left</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/spain/2026-11-04/spains-transportation-minister-steps-down-over-train-crash-to-try-to-save-the-socialist-campaign-ahead-of-elections.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 11:51 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c6y8lz73vmv7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">US contractor gave Ethiopia secrets to help kill Tigray fighters</a></h3>
+  <p class="excerpt">The Ethiopian-born American citizen admitted sharing dozens of classified documents with senior Ethiopian officials.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c6y8lz73vmv7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 10:35 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c6073l9y15xxo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Trump takes aim at Republicans but says Democrats did a &#39;good job&#39;</a></h3>
+  <p class="excerpt">He wrote on Truth Social that Republicans would have won &#34;in a landslide&#34; if his name had been on the ballot.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c6073l9y15xxo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 10:15 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/04/world/asia/thailand-kfc-curse-doctors.html" target="_blank" rel="noopener">Why Doctors in Thailand Fear KFC</a></h3>
+  <p class="excerpt">In a country where superstitions are as imaginative as they are many, physicians have come to fear a jinx involving Kentucky Fried Chicken.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/04/world/asia/thailand-kfc-curse-doctors.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 10:01 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/04/travel/patagonia-estancia-cerro-guido.html" target="_blank" rel="noopener">Under Patagonian Spires: Where Pumas, Sheep Herding and Fine Dining Collide</a></h3>
+  <p class="excerpt">Estancia Cerro Guido, a Chilean ranch that swapped puma bounties for conservation tours, offers travelers luxury experiences on the edge of the wilderness.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/04/travel/patagonia-estancia-cerro-guido.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 10:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/usa/2026-11-04/a-century-later-kansas-has-a-democratic-senator.html" target="_blank" rel="noopener">A century later, Kansas has a Democratic senator</a></h3>
+  <p class="excerpt">Pastor Adam Hamilton, founder of the largest Methodist congregation in the United States, wins the seat held by Republican Roger Marshall, an obstetrician backed by Trump</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/usa/2026-11-04/a-century-later-kansas-has-a-democratic-senator.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 09:52 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/cyberattack-to-cost-ahold-delhaize-up-to-e250m-in-lost-sales/" target="_blank" rel="noopener">Cyberattack to cost Ahold Delhaize up to €250m in lost sales</a></h3>
+  <p class="excerpt">Albert Heijn owner Ahold Delhaize says last month’s cyberattack will cut its fourth-quarter sales by €200 million to €250 million,...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/cyberattack-to-cost-ahold-delhaize-up-to-e250m-in-lost-sales/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 09:18 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-military">
+  <div class="section-head">
+    <h2>Military &amp; Defense</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/04/us/politics/democrats-deliver-a-big-blue-bludgeoning.html" target="_blank" rel="noopener">Democrats Deliver a Big Blue Bludgeoning</a></h3>
+  <p class="excerpt">The party’s midterm victory reshapes the political landscape.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/03/world/us-midterms-trump-iran-ukraine.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.nytimes.com/2026/11/04/us/politics/democrats-deliver-a-big-blue-bludgeoning.html" target="_blank" rel="noopener">NYT Politics</a>
+      <a href="https://www.ft.com/content/77c2eaca-4fe1-4c69-b3bd-c517b045ff37?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.theguardian.com/us-news/live/2026/nov/03/midterm-election-results-live-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:52 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c893z55pxrewo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Left-wing Democrat Abdul El-Sayed wins in Michigan to become first Muslim senator</a></h3>
+  <p class="excerpt">El-Sayed bested Republican Mike Rogers to become the first Muslim senator in US history.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c893z55pxrewo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://english.elpais.com/usa/2026-11-04/abdul-elsayeds-victory-in-michigan-has-the-democratic-progressive-wing-dreaming-of-the-white-house.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 10:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/03/world/europe/bomb-threats-europe-flights-planes.html" target="_blank" rel="noopener">Bomb Threats Disrupt Several Flights Across Europe</a></h3>
+  <p class="excerpt">Officials are investigating threats against at least seven planes. The aircraft landed safely and no explosives were found, the authorities said.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/03/world/europe/bomb-threats-europe-flights-planes.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.thelocal.ch/20261103/hoax-bomb-threats-disrupt-flights-in-europe" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 07:29 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/04/weapons-haul-belfast-linked-to-far-right" target="_blank" rel="noopener">Weapons haul found in Belfast is linked to the far right</a></h3>
+  <p class="excerpt">Suspect arrested after police uncover stash of 17 improvised explosive devices in search operationAn arsenal of explosive devices discovered in Northern Ireland is believed to be linked to far-right terrorism, police have said.The stash of 17 improvised explosive devices and other material was found during searches in the Shankill Road area of Belfast on 30 and 31 October. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/nov/04/weapons-haul-belfast-linked-to-far-right" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/nov/04/eu-ukraine-russia-france-germany-us-nato-europe-latest-news" target="_blank" rel="noopener">EU to lead talks on support for Ukraine with US, Nato, partners – Europe live</a></h3>
+  <p class="excerpt">European Commission will hold talks with the US, France, Germany, Britain, Nato, and the World BankMeanwhile, the Kremlin said that ⁠it ​hopes that the ⁠results of the US ⁠midterm ​elections ‌will not impact ‌what it ‌said were president Donald Trump’s “peacemaking efforts&#34; on Ukraine, Reuters said.In comments ‌broadcast by Russian state ​media, Kremlin spokesperson Dmitry Peskov said:“We ⁠are sincerely ​counting on [Trump] ​continuing ​his peacemaking ​efforts.““Governing in the United States will be almost impossible in the coming years given the level of internal division and polarisation. </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/live/2026/nov/04/eu-ukraine-russia-france-germany-us-nato-europe-latest-news" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:48 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/international/2026-11-04/the-us-takes-its-anti-narcotics-war-onto-venezuelan-soil-with-a-drone-strike-against-the-eln.html" target="_blank" rel="noopener">The US takes its anti-narcotics war onto Venezuelan soil with a drone strike against the ELN</a></h3>
+  <p class="excerpt">An airstrike on a guerrilla base in Apure state, which borders Colombia, has left at least 20 people dead, according to human rights organizations</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/international/2026-11-04/the-us-takes-its-anti-narcotics-war-onto-venezuelan-soil-with-a-drone-strike-against-the-eln.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 11:12 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/australia-news/2026/nov/04/jordon-steele-john-woman-charged-alleged-stalking-attempted-extortion-greens-senator-court-ntwnfb" target="_blank" rel="noopener">Woman charged over alleged stalking and attempted extortion of Greens senator Jordon Steele-John</a></h3>
+  <p class="excerpt">Exclusive: Police will allege the woman, 40, is the former partner of Steele-John and she is expected to face court in Perth on ThursdayA 40-year-old woman has been arrested and charged by Western Australian police for allegedly stalking and attempting to extort the Greens senator Jordon Steele-John.WA police said on Wednesday detectives from the family violence investigation squad charged the Perth woman with one count of aggravated stalking with intent to intimidate and one count of demanding property by written threats, commonly known as extortion. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/australia-news/2026/nov/04/jordon-steele-john-woman-charged-alleged-stalking-attempted-extortion-greens-senator-court-ntwnfb" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 11:07 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/usa/2026-11-04/a-century-later-kansas-has-a-democratic-senator.html" target="_blank" rel="noopener">A century later, Kansas has a Democratic senator</a></h3>
+  <p class="excerpt">Pastor Adam Hamilton, founder of the largest Methodist congregation in the United States, wins the seat held by Republican Roger Marshall, an obstetrician backed by Trump</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/usa/2026-11-04/a-century-later-kansas-has-a-democratic-senator.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 09:52 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/03/us/politics/chris-pappas-first-openly-gay-male-senator.html" target="_blank" rel="noopener">Representative Chris Pappas Will Become the Senate’s First Openly Gay Male Senator</a></h3>
+  <p class="excerpt">Chris Pappas, Democrat of New Hampshire and a congressman, will move to the upper chamber at a time when L.G.B.T.Q. rights have faced pushback in some states.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/03/us/politics/chris-pappas-first-openly-gay-male-senator.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 08:20 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/usa/2026-11-04/four-key-victories-and-two-surprises-a-review-of-the-democratic-wins-in-the-elections.html" target="_blank" rel="noopener">Four key victories (and two surprises): A review of the Democratic wins in the elections</a></h3>
+  <p class="excerpt">The defeat of Republican Senator Darline Graham in South Carolina and the victory of Gina Hinojosa, the next governor of Texas, are some of the main surprises in a dream night for the opposition</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/usa/2026-11-04/four-key-victories-and-two-surprises-a-review-of-the-democratic-wins-in-the-elections.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 07:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/australia-news/2026/nov/04/aukus-worst-australian-defence-decision-ever-public-inquiry" target="_blank" rel="noopener">Aukus is ‘worst, riskiest and most costly’ Australian defence decision ever, public inquiry into submarine deal says</a></h3>
+  <p class="excerpt">Report led by Peter Garrett and former defence chief Adm Chris Barrie says agreement should be suspended and calls for royal commissionGet our daily political email, free app or daily news podcastA public inquiry into the $368bn Aukus nuclear submarine agreement has called the plan “the worst, riskiest and most costly defence decision ever made by an Australian government”, urging its immediate termination.Former Labor MP and Midnight Oil frontman Peter Garrett, alongside former chief of defence Adm Chris Barrie, led the inquiry dominated by critics of the deal with the UK and US, recommending</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/australia-news/2026/nov/04/aukus-worst-australian-defence-decision-ever-public-inquiry" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 07:02 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/badd6af9-88b7-47b7-b1c2-067814e70fb5?syn-25a6b1a6=1" target="_blank" rel="noopener">Democratic governors elected on promises to stop data centre building</a></h3>
+  <p class="excerpt">Gubernatorial wins in Texas, Georgia and Ohio and local ballot measures show depth of discontent with Trump-backed infrastructure spree</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/badd6af9-88b7-47b7-b1c2-067814e70fb5?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 06:40 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-technology">
+  <div class="section-head">
+    <h2>Technology</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/nov/04/election-week-in-trumpland-algae-space-proclamations-and-a-deflection-of-blame" target="_blank" rel="noopener">Election week in Trumpland: algae, space proclamations and a deflection of blame</a></h3>
+  <p class="excerpt">Donald Trump’s unrelenting focus on the ‘beautification of Washington’ and Fox News ratings did not stop the Democrats’ decisive midterm election winsThis was originally published in This Week in Trumpland. Sign up to receive it in your inbox every Wednesday.Standing at the Lincoln Memorial reflecting pool on Monday afternoon, Donald Trump zeroed in on his closing message of the high-stakes midterm elections: it can take a long time to get rid of filth.Less than 24 hours before Americans headed to the polls, the US president staged a bizarre press conference in which he touted his troubled $14</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/nov/04/election-week-in-trumpland-algae-space-proclamations-and-a-deflection-of-blame" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:37 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/5e84ee60-4ccf-4b67-b2f6-d26cd2b27e7e?syn-25a6b1a6=1" target="_blank" rel="noopener">‘Population collapse’ makes AI productivity gains vital, says top Meta executive</a></h3>
+  <p class="excerpt">Alex Schultz tells FT’s Future of AI summit that falling birth rates mean AI will be needed to support dwindling numbers of people</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/5e84ee60-4ccf-4b67-b2f6-d26cd2b27e7e?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:18 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/technology/2026/nov/04/uk-deploy-facial-recognition-biggest-ever-immigration-crackdown" target="_blank" rel="noopener">UK to deploy facial recognition in biggest-ever immigration crackdown</a></h3>
+  <p class="excerpt">Documents show Home Office developing programme to use technology for general immigration enforcementThe Home Office is preparing to deploy facial recognition technology at transport hubs and public events as part of the biggest immigration enforcement crackdown in British history.Policy documents show the government has been developing a programme to deploy live facial recognition (LFR) cameras for “general immigration enforcement”, including non-criminal immigration offences. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/technology/2026/nov/04/uk-deploy-facial-recognition-biggest-ever-immigration-crackdown" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:15 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/04/business/musk-elections-spacex-tesla-stocks.html" target="_blank" rel="noopener">Musk Faces Setback as SpaceX and Tesla Stocks Tumble on Midterm Election Results</a></h3>
+  <p class="excerpt">The world’s richest person has antagonized Democrats, some of whom have signaled their intent to investigate him when they take control of Congress.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/04/business/musk-elections-spacex-tesla-stocks.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:14 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/04/us/politics/midterm-elections-remote-voting-astronauts-space-antarctica.html" target="_blank" rel="noopener">How Astronauts Voted From Space in the Midterm Elections</a></h3>
+  <p class="excerpt">Americans voted absentee from the International Space Station, Antarctica and remote Alaskan villages.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/04/us/politics/midterm-elections-remote-voting-astronauts-space-antarctica.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 11:27 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/c65eb5ae-0d16-4786-a8db-9db28d1791d7?syn-25a6b1a6=1" target="_blank" rel="noopener">Ahold Delhaize cuts profit forecast after cyber attack</a></h3>
+  <p class="excerpt">Dutch supermarket group says last month’s hack will hit sales and profit in the fourth quarter</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/c65eb5ae-0d16-4786-a8db-9db28d1791d7?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 09:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/cyberattack-to-cost-ahold-delhaize-up-to-e250m-in-lost-sales/" target="_blank" rel="noopener">Cyberattack to cost Ahold Delhaize up to €250m in lost sales</a></h3>
+  <p class="excerpt">Albert Heijn owner Ahold Delhaize says last month’s cyberattack will cut its fourth-quarter sales by €200 million to €250 million,...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/cyberattack-to-cost-ahold-delhaize-up-to-e250m-in-lost-sales/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 09:18 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/australia-news/2026/nov/04/not-been-this-excited-in-a-long-time-us-expats-ride-the-blue-wave-at-australian-midterms-watch-parties" target="_blank" rel="noopener">‘Not been this excited in a long time’: US expats ride the blue wave at Australian midterms watch parties</a></h3>
+  <p class="excerpt">US voters, their Australian partners and British spectators crowd around pub TVs to watch the historic election results roll inUS midterm elections – live updatesDemocrats’ blue wave and a bad night for Trump: key US midterms takeawaysOn the second floor of a Sydney pub, the mood shifts from nervous, browser-refreshing anxiety to champagne-popping within a matter of hours.More than 100 US expats and election enthusiasts have packed into the function space at the Keg and Brew in the inner-east suburb of Surry Hills to watch the midterm results roll in. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/australia-news/2026/nov/04/not-been-this-excited-in-a-long-time-us-expats-ride-the-blue-wave-at-australian-midterms-watch-parties" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 09:09 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/b954b99c-b71e-4334-9789-18e2b69de76d?syn-25a6b1a6=1" target="_blank" rel="noopener">Are we ready for an AI bust?</a></h3>
+  <p class="excerpt">The longer the investment surge and the associated financial engineering continue, the bigger the negative impact is likely to be when it ends</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/b954b99c-b71e-4334-9789-18e2b69de76d?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 05:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/41f0e298-42f9-4bb5-8a48-090db4d493ef?syn-25a6b1a6=1" target="_blank" rel="noopener">AI cyber breach of a bank is a matter of when, not if</a></h3>
+  <p class="excerpt">Binance hack is a warning of potentially far worse things to come</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/41f0e298-42f9-4bb5-8a48-090db4d493ef?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 05:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/874e3f05-0be3-4a2d-b2a2-7b5823441794?syn-25a6b1a6=1" target="_blank" rel="noopener">Accenture accused of publishing AI paper littered with AI hallucinations</a></h3>
+  <p class="excerpt">Consultancy says it will correct report but blames ‘human error’ for problems</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/874e3f05-0be3-4a2d-b2a2-7b5823441794?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 05:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/c5a6a738-cd78-4a8e-a814-57a7473ebb9c?syn-25a6b1a6=1" target="_blank" rel="noopener">Oracle cancels $7bn Tencent AI deal under Trump pressure</a></h3>
+  <p class="excerpt">Intervention comes amid growing tension for US AI infrastructure groups doing business with Chinese tech giants</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/c5a6a738-cd78-4a8e-a814-57a7473ebb9c?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 05:00 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-economy">
+  <div class="section-head">
+    <h2>Economy &amp; Trade</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/03/world/europe/king-charles-speech-uk-slave-trade-antigua.html" target="_blank" rel="noopener">King Charles Says U.K.’s Role in Slave Trade ‘Fills My Heart With Horror’</a></h3>
+  <p class="excerpt">The monarch called Britain’s trafficking of enslaved people from Africa a “shameful chapter of history” at a meeting of Commonwealth heads of government in Antigua.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/03/world/europe/king-charles-speech-uk-slave-trade-antigua.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/videos/cmvg9wwwq7jko?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 03, 22:19 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/04/business/cvs-health-split.html" target="_blank" rel="noopener">CVS to Split Off Pharmacy Business, Ending the Healthcare Conglomerate Era</a></h3>
+  <p class="excerpt">In a breakup planned for 2028, CVS Health intends to split off its pharmacies into a new company, while keeping together its businesses in insurance and pharmacy benefits.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/04/business/cvs-health-split.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:43 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/637bfe05-69f9-4650-b043-731c1ebb4be6?syn-25a6b1a6=1" target="_blank" rel="noopener">How the Trump era crashed</a></h3>
+  <p class="excerpt">The US president forgot the economic bit of populism</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/637bfe05-69f9-4650-b043-731c1ebb4be6?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:22 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/04/business/midterm-elections-stock-market.html" target="_blank" rel="noopener">How the Stock Market Is Reacting to the Midterm Elections</a></h3>
+  <p class="excerpt">Global markets fell as the first results came in, but later traded higher as investors assessed the outlook for policy as the balance of power shifted sharply in Washington.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/04/business/midterm-elections-stock-market.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:18 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/04/business/media/new-york-times-earnings.html" target="_blank" rel="noopener">The New York Times Adds 420,000 Digital Subscribers</a></h3>
+  <p class="excerpt">The additions in the third quarter keep the company roughly on track to meet its goal of 15 million subscribers by the end of next year, after a slower second quarter.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/04/business/media/new-york-times-earnings.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:09 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c699zdx9knmpo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Rwanda&#39;s army team removed from Africa league after US sanctions, NBA says</a></h3>
+  <p class="excerpt">The US imposed sanctions on Rwanda&#39;s army over its role in the conflict in DR Congo.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c699zdx9knmpo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 11:46 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/a3da6c3a-4ab3-413c-bbeb-490d7cde34dc" target="_blank" rel="noopener">October inflation in the Eurozone keeps ECB on course for another tightening</a></h3>
+  <p class="excerpt">Headline price pressures accelerate and core inflation remains well above the ECB’s 2% target</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/a3da6c3a-4ab3-413c-bbeb-490d7cde34dc" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 11:25 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/international/2026-11-04/the-us-takes-its-anti-narcotics-war-onto-venezuelan-soil-with-a-drone-strike-against-the-eln.html" target="_blank" rel="noopener">The US takes its anti-narcotics war onto Venezuelan soil with a drone strike against the ELN</a></h3>
+  <p class="excerpt">An airstrike on a guerrilla base in Apure state, which borders Colombia, has left at least 20 people dead, according to human rights organizations</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/international/2026-11-04/the-us-takes-its-anti-narcotics-war-onto-venezuelan-soil-with-a-drone-strike-against-the-eln.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 11:12 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/088d3368-bb8b-4ff3-9df7-a7680d4d81b2?syn-25a6b1a6=1" target="_blank" rel="noopener">Inflation and interest rates tracker: see how your country compares</a></h3>
+  <p class="excerpt">Explore the latest data through interactive charts</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/088d3368-bb8b-4ff3-9df7-a7680d4d81b2?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 10:41 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/04/world/asia/midterms-trump-foreign-policy-world.html" target="_blank" rel="noopener">Countries Weigh, and Worry About, What Trump Will Do After Midterm Defeat</a></h3>
+  <p class="excerpt">Commentators abroad wondered what the president’s electoral losses might mean for oil prices, the war on Iran and the end of the Trump era.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/04/world/asia/midterms-trump-foreign-policy-world.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 10:18 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/c65eb5ae-0d16-4786-a8db-9db28d1791d7?syn-25a6b1a6=1" target="_blank" rel="noopener">Ahold Delhaize cuts profit forecast after cyber attack</a></h3>
+  <p class="excerpt">Dutch supermarket group says last month’s hack will hit sales and profit in the fourth quarter</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/c65eb5ae-0d16-4786-a8db-9db28d1791d7?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 09:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/656f10c4-26ec-430e-adfa-dcadf0dd61ff?syn-25a6b1a6=1" target="_blank" rel="noopener">Copper and conflict trigger profit surge for Buffett-backed Japanese commodity traders</a></h3>
+  <p class="excerpt">Mitsui chief warns geopolitical risks continue to be ‘unpredictable rather than calming down’</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/656f10c4-26ec-430e-adfa-dcadf0dd61ff?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 09:42 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-politics">
+  <div class="section-head">
+    <h2>Politics &amp; Diplomacy</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/new-ukrainian-gcse-to-help-young-people-preserve-their-heritage" target="_blank" rel="noopener">New Ukrainian GCSE to help young people preserve their heritage</a></h3>
+  <p class="excerpt">Landmark qualification will help pupils preserve their language and cultural heritage while opening doors to future opportunities</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/new-ukrainian-gcse-to-help-young-people-preserve-their-heritage" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 10:57 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/case-studies/protecting-the-worlds-most-biodiverse-coral-reef-ecosystems" target="_blank" rel="noopener">Protecting the world’s most biodiverse coral reef ecosystems</a></h3>
+  <p class="excerpt">Supported by the UK’s International Climate Finance (ICF), Indonesia is scaling solutions to protect its globally significant coral reefs supporting food security, sustainable livelihoods, and greater climate resilience.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/case-studies/protecting-the-worlds-most-biodiverse-coral-reef-ecosystems" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 09:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/case-studies/bringing-clean-solar-power-to-communities-in-bangladesh" target="_blank" rel="noopener">Bringing clean solar power to communities in Bangladesh</a></h3>
+  <p class="excerpt">The UK’s International Climate Finance is helping Bangladesh sustain clean, affordable electricity for millions of people in rural and off-grid communities.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/case-studies/bringing-clean-solar-power-to-communities-in-bangladesh" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 09:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/uk-judge-takes-on-key-role-in-upholding-international-law-at-international-court-of-justice" target="_blank" rel="noopener">UK judge takes on key role in upholding international law at International Court of Justice</a></h3>
+  <p class="excerpt">Professor Dapo Akande elected as judge to the International Court of Justice.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/uk-judge-takes-on-key-role-in-upholding-international-law-at-international-court-of-justice" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 03, 18:41 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/04/us/politics/democrats-deliver-a-big-blue-bludgeoning.html" target="_blank" rel="noopener">Democrats Deliver a Big Blue Bludgeoning</a></h3>
+  <p class="excerpt">The party’s midterm victory reshapes the political landscape.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/03/world/us-midterms-trump-iran-ukraine.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.nytimes.com/2026/11/04/us/politics/democrats-deliver-a-big-blue-bludgeoning.html" target="_blank" rel="noopener">NYT Politics</a>
+      <a href="https://www.ft.com/content/77c2eaca-4fe1-4c69-b3bd-c517b045ff37?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.theguardian.com/us-news/live/2026/nov/03/midterm-election-results-live-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:52 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/a0b18705-3bd8-4886-992c-b6062fdec6ea?syn-25a6b1a6=1" target="_blank" rel="noopener">Stocks rebound after Democrats’ sweep</a></h3>
+  <p class="excerpt">US futures reverse early losses as analysts say divided government reduces policymaking risks</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/a0b18705-3bd8-4886-992c-b6062fdec6ea?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.politico.com/news/2026/11/03/democrats-sweep-texas-01147637" target="_blank" rel="noopener">Politico</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:42 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/b2d07a1f-dfa6-449b-a598-1db51951d6f6?syn-25a6b1a6=1" target="_blank" rel="noopener">James Talarico’s historic Texas Senate victory deals blow to Elon Musk</a></h3>
+  <p class="excerpt">Billionaire had ploughed $47mn into bankrolling Republican Ken Paxton’s campaign while fuelling conspiracy theories about his opponent</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/b2d07a1f-dfa6-449b-a598-1db51951d6f6?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c6n8dnn09jg7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 10:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c6wydqd4yxdyo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Spanish transport minister resigns days after deadly train crash</a></h3>
+  <p class="excerpt">At least 69 people were killed and dozens injured in the collision south of the capital, Madrid.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/03/world/europe/spain-train-crash-transport-minister-resigns-oscar-puente.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c6wydqd4yxdyo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 03, 22:45 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/03/world/europe/king-charles-speech-uk-slave-trade-antigua.html" target="_blank" rel="noopener">King Charles Says U.K.’s Role in Slave Trade ‘Fills My Heart With Horror’</a></h3>
+  <p class="excerpt">The monarch called Britain’s trafficking of enslaved people from Africa a “shameful chapter of history” at a meeting of Commonwealth heads of government in Antigua.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/03/world/europe/king-charles-speech-uk-slave-trade-antigua.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/videos/cmvg9wwwq7jko?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 03, 22:19 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/live/2026/nov/04/midterm-elections-results-senate-house-michigan-maine-mississippi-latest-updates" target="_blank" rel="noopener">US midterm elections 2026 live updates: Democrats take control of Congress in major setback for Trump</a></h3>
+  <p class="excerpt">Democrats flip seven Senate seats in Kansas, Iowa, Texas, Maine, Ohio, North Carolina and South Carolina; ‘blue wave’ rejects Trump’s agendaTrack live results from all 50 statesFull report: Democrats win control of Congress in ‘blue wave’Tell us: how do you feel about the US midterm election results?Tell us: what do you want to know about the midterm election results?The results of a closely-fought California ballot proposal to impose a one-time tax on billionaires remain too close to call as of Wednesday morning, the Associated Press reported.If it passes, the measure would hit the state’s ul</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/live/2026/nov/04/midterm-elections-results-senate-house-michigan-maine-mississippi-latest-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/nov/03/south-carolina-midterms-annie-andrews" target="_blank" rel="noopener">Democrat Annie Andrews flips South Carolina Senate seat held by Republicans since 1998</a></h3>
+  <p class="excerpt">Andrews ran a campaign on healthcare affordability and beat Darline Graham, sister of Lindsey Graham to winUS midterm elections – live updatesTrack live results from all 50 statesDemocrat Annie Andrews, a pediatrician who campaigned on healthcare affordability, has won the race for US Senate in South Carolina, making her the first Democrat to represent the state in the Senate for over a quarter century.Andrews had faced an uphill battle in what has been seen as a reliably Republican state against Darline Graham, the sister of the late Republican powerbroker Lindsey Graham. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/nov/03/south-carolina-midterms-annie-andrews" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:51 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/nov/04/eu-ukraine-russia-france-germany-us-nato-europe-latest-news" target="_blank" rel="noopener">EU to lead talks on support for Ukraine with US, Nato, partners – Europe live</a></h3>
+  <p class="excerpt">European Commission will hold talks with the US, France, Germany, Britain, Nato, and the World BankMeanwhile, the Kremlin said that ⁠it ​hopes that the ⁠results of the US ⁠midterm ​elections ‌will not impact ‌what it ‌said were president Donald Trump’s “peacemaking efforts&#34; on Ukraine, Reuters said.In comments ‌broadcast by Russian state ​media, Kremlin spokesperson Dmitry Peskov said:“We ⁠are sincerely ​counting on [Trump] ​continuing ​his peacemaking ​efforts.““Governing in the United States will be almost impossible in the coming years given the level of internal division and polarisation. </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/live/2026/nov/04/eu-ukraine-russia-france-germany-us-nato-europe-latest-news" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 04, 12:48 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <footer class="foot">
+    Generated 2026-11-04 13:08 UTC ·
+    Aggregated from reliable sources (NYT, Foreign Affairs, FT, official government sites).
+    Headlines &amp; excerpts link to originals; no paywalled full text is reproduced.
+  </footer>
+</main>
+</body>
+</html>
