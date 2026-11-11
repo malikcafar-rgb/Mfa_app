@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Today's Brief — Wednesday, 11 November 2026</title>
+<style>
+  /* New York Times–inspired: white background, serif headlines, hairline rules,
+     sans-serif labels, minimal color. */
+  :root {
+    --bg: #ffffff;
+    --text: #121212;        /* near-black body */
+    --muted: #666666;       /* bylines / meta */
+    --faint: #999999;
+    --rule: #e2e2e2;        /* hairline dividers */
+    --rule-strong: #121212; /* section top rules */
+    --link: #326891;        /* NYT link blue, used sparingly */
+    --official: #9a6a00;    /* restrained gold-brown */
+    --wire: #326891;
+    --analysis: #6a4c93;
+    --serif: Georgia, "Times New Roman", "Times", serif;
+    --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: var(--serif); line-height: 1.5; -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px 90px; }
+
+  /* Masthead — centered serif wordmark with black rules above/below. */
+  header.masthead { background: var(--bg); border-bottom: 1px solid var(--text);
+    padding: 14px 24px 0; }
+  .masthead-inner { max-width: 960px; margin: 0 auto; }
+  .brand { text-align: center; padding-bottom: 12px; border-bottom: 1px solid var(--text);
+    margin-bottom: 8px; }
+  .brand .kicker { font-family: var(--sans); font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .brand h1 { font-family: var(--serif); font-weight: 700; margin: 4px 0 2px;
+    font-size: 40px; letter-spacing: -.01em; line-height: 1.05; }
+  .brand .date { font-family: var(--sans); color: var(--muted); font-size: 12.5px;
+    letter-spacing: .02em; }
+  .nav { display: flex; gap: 20px; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 12px; text-transform: uppercase; letter-spacing: .08em;
+    padding: 8px 0 10px; }
+  .nav a { color: var(--text); font-weight: 600; }
+  .nav a:hover { color: var(--link); }
+
+  /* Links-only / status banner — quiet, italic serif. */
+  .banner { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    padding: 10px 0; margin: 18px 0 6px; color: var(--muted); font-size: 14px;
+    font-style: italic; }
+
+  /* Executive summary — a boxed "lede" with a sans label. */
+  .exec { border: 1px solid var(--text); padding: 22px 24px; margin: 24px 0 8px; }
+  .exec h2 { font-family: var(--sans); margin: 0 0 10px; font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text); font-weight: 700; }
+  .exec p { margin: 0 0 12px; font-size: 18px; line-height: 1.55; }
+  .exec p:last-child { margin-bottom: 0; }
+  .exec .ir { border-top: 1px solid var(--rule); margin-top: 16px; padding-top: 16px; }
+  .exec .ir h3 { font-family: var(--sans); margin: 0 0 6px; font-size: 11px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--analysis); font-weight: 700; }
+  .exec .ir p { font-size: 16px; }
+
+  /* Section fronts — serif head with a strong black rule above (NYT section style). */
+  section.topic { margin: 34px 0 0; }
+  .section-head { border-top: 2px solid var(--rule-strong); padding-top: 8px; margin-bottom: 6px;
+    display: flex; align-items: baseline; gap: 10px; }
+  .section-head h2 { font-family: var(--serif); margin: 0; font-size: 22px; font-weight: 700;
+    letter-spacing: -.01em; }
+  .section-head .count { font-family: var(--sans); color: var(--faint); font-size: 11px;
+    text-transform: uppercase; letter-spacing: .08em; }
+  .section-brief { font-style: italic; color: #333; padding: 6px 0 2px; margin: 6px 0;
+    font-size: 15px; border-left: 3px solid var(--rule-strong); padding-left: 12px; }
+
+  /* Story cards — serif headline, hairline divider, sans meta. */
+  .card { padding: 15px 0; border-bottom: 1px solid var(--rule); }
+  .card:last-child { border-bottom: none; }
+  .card h3 { font-family: var(--serif); margin: 0 0 5px; font-size: 20px; font-weight: 700;
+    line-height: 1.25; letter-spacing: -.005em; }
+  .card h3 a { color: var(--text); }
+  .card h3 a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+  .card .ai { margin: 4px 0 6px; font-size: 15px; color: #333; line-height: 1.5; }
+  .card .excerpt { margin: 4px 0 6px; font-size: 15px; color: var(--muted); line-height: 1.5; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    font-family: var(--sans); font-size: 12px; margin-top: 5px; color: var(--faint); }
+
+  /* Tier labels — small uppercase sans, a dot of color, no boxes. */
+  .badge { font-family: var(--sans); font-size: 10.5px; letter-spacing: .07em;
+    text-transform: uppercase; font-weight: 700; display: inline-flex; align-items: center; }
+  .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%;
+    display: inline-block; margin-right: 5px; background: currentColor; }
+  .badge.official { color: var(--official); }
+  .badge.wire { color: var(--wire); }
+  .badge.analysis { color: var(--analysis); }
+  .sources { display: flex; flex-wrap: wrap; gap: 6px; font-family: var(--sans); }
+  .sources a { color: var(--muted); }
+  .sources a:hover { color: var(--link); text-decoration: underline; }
+  .sources a::after { content: "·"; margin-left: 6px; color: var(--faint); }
+  .sources a:last-child::after { content: ""; }
+
+  /* Country watch — bordered cards with serif titles. */
+  .country-group { margin-top: 30px; }
+  .country-group > h2 { font-family: var(--sans); font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text); font-weight: 700;
+    border-bottom: 1px solid var(--rule-strong); padding-bottom: 6px; }
+  .country-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 22px; margin-top: 14px; }
+  .country-card { border: 1px solid var(--rule); padding: 14px 16px; }
+  .country-card h3 { font-family: var(--serif); margin: 0 0 8px; font-size: 18px; font-weight: 700; }
+  .country-card ul { margin: 0; padding: 0; list-style: none; }
+  .country-card li { padding: 7px 0; border-top: 1px solid var(--rule); font-size: 15px;
+    line-height: 1.35; }
+  .country-card li:first-child { border-top: none; }
+  .country-card li a { color: var(--text); }
+  .country-card li a:hover { text-decoration: underline; }
+
+  /* Archive + table of contents. */
+  .archive-list { list-style: none; padding: 0; margin: 22px 0; }
+  .archive-list li { padding: 14px 0; border-bottom: 1px solid var(--rule);
+    font-family: var(--serif); font-size: 19px; }
+  .archive-list li a:hover { text-decoration: underline; }
+  .toc { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 16px 0 4px;
+    padding-bottom: 14px; border-bottom: 1px solid var(--rule); font-family: var(--sans); }
+  .toc a { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em;
+    font-weight: 600; }
+  .toc a:hover { color: var(--link); }
+
+  footer.foot { font-family: var(--sans); color: var(--faint); font-size: 11.5px; margin-top: 56px;
+    padding-top: 18px; border-top: 1px solid var(--rule); line-height: 1.6; }
+
+  @media (max-width: 640px) {
+    .brand h1 { font-size: 30px; }
+    .exec p { font-size: 16px; }
+    .card h3 { font-size: 18px; }
+    .country-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="kicker">Diplomat Daily Briefing</span>
+      <h1>Today's Brief</h1>
+      <span class="date">Wednesday, 11 November 2026 · 284 articles across 266 stories</span>
+    </div>
+    <nav class="nav">
+  <a href="../index.html">Dashboard</a>
+  <a href="../archive.html">Archive</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <div class="banner">AI summaries unavailable (authentication_error: Invalid bearer token) — showing links only.</div>
+
+
+  <h2 id="country-watch" style="margin-top:24px;font-size:20px;border-bottom:2px solid var(--rule-strong);padding-bottom:6px;">Country Profiles</h2>
+  <section class="topic" id="ctry-spain">
+  <div class="section-head">
+    <h2>Spain</h2>
+    <span class="count">4 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/d93d41fc-943c-449b-948c-57a4464f564f?syn-25a6b1a6=1" target="_blank" rel="noopener">Spain roiled by first general strike in 14 years</a></h3>
+  <p class="excerpt">Unions stage action over soaring housing costs and low wages ahead of November 29 snap election</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/d93d41fc-943c-449b-948c-57a4464f564f?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://english.elpais.com/spain/2026-11-11/spains-unions-call-the-first-general-strike-in-14-years.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:40 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/videos/cm894wg251pzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Watch: Vinícius Jr&#39;s surprise message to boy who received prosthetic legs after Sudan drone strike</a></h3>
+  <p class="excerpt">Real Madrid player Vinícius Jr sent a surprise message to 13-year-old fan Zaher who lost both his legs after being hit by a drone in Khartoum, in 2024.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cqm26mmpp2p1o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 09:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/ckjwew54yd4wo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Spain&#39;s king and queen attend memorial service for rail crash victims</a></h3>
+  <p class="excerpt">Sixty-nine people died in the collision near Toledo two weeks ago and 28 are still in hospital.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/ckjwew54yd4wo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 20:46 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/spain/2026-11-10/alberto-nunez-feijoo-spains-opposition-leader-whether-a-coalition-government-with-vox-is-formed-does-not-depend-on-me.html" target="_blank" rel="noopener">Alberto Núñez Feijóo, Spain’s opposition leader: ‘Whether a coalition government with Vox is formed does not depend on me’</a></h3>
+  <p class="excerpt">With polls pointing to a People’s Party victory on November 29, the politician is leaving the door open to governing with support from the far-right group</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/spain/2026-11-10/alberto-nunez-feijoo-spains-opposition-leader-whether-a-coalition-government-with-vox-is-formed-does-not-depend-on-me.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 15:16 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-switzerland">
+  <div class="section-head">
+    <h2>Switzerland</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/53rd-universal-periodic-review-of-human-rights-uk-statement-on-ireland" target="_blank" rel="noopener">53rd Universal Periodic Review of human rights: UK Statement on Ireland</a></h3>
+  <p class="excerpt">Statement by the UK&#39;s Human Rights Ambassador, Eleanor Sanders, at Ireland&#39;s Universal Periodic Review at the Human Rights Council in Geneva.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/53rd-universal-periodic-review-of-human-rights-uk-statement-on-ireland" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261111/reader-question-why-is-organic-food-more-expensive-in-switzerland" target="_blank" rel="noopener">READER QUESTION: Why is organic food more expensive in Switzerland?</a></h3>
+  <p class="excerpt">Price differences between organic and ‘regular’ products in Swiss supermarkets are significant. But what explains this disparity - and is it justified?</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261111/reader-question-why-is-organic-food-more-expensive-in-switzerland" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261111/new-swiss-method-makes-it-possible-to-better-detect-date-rape-drug" target="_blank" rel="noopener">New Swiss method makes it possible to better detect &#39;date-rape&#39; drug</a></h3>
+  <p class="excerpt">Researchers at the University of Zurich have identified a new biomarker that makes it possible to detect the presence of GHB—often referred to as the &#34;date-rape drug&#34;—in urine up to 72 hours after consumption, thereby significantly extending the detection window for this substance.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261111/new-swiss-method-makes-it-possible-to-better-detect-date-rape-drug" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:11 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261111/today-in-switzerland-a-roundup-of-the-latest-news-on-wednesday-266" target="_blank" rel="noopener">Today in Switzerland: A roundup of the latest news on Wednesday</a></h3>
+  <p class="excerpt">Swiss government bans production and distribution of certain psychoactive substances; Sunrise launches an unprecedented new subscription plan; and more news in our roundup on Wednesday.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261111/today-in-switzerland-a-roundup-of-the-latest-news-on-wednesday-266" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 08:50 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/10/us/politics/bernie-sanders-chuck-schumer-senate.html" target="_blank" rel="noopener">Bernie Sanders Opposes Schumer as Majority Leader</a></h3>
+  <p class="excerpt">The progressive leader was among a few Democrats who signaled skepticism about Senator Chuck Schumer of New York, though his allies offered support and called for party unity.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/10/us/politics/bernie-sanders-chuck-schumer-senate.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 02:01 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261110/interview-how-close-is-switzerland-to-introducing-an-immigration-tax" target="_blank" rel="noopener">INTERVIEW: How close is Switzerland to introducing an immigration tax?</a></h3>
+  <p class="excerpt">The proposal to impose a multi-thousand-franc fee on foreign nationals is making its way through the Swiss Parliament. An expert tells The Local what the next steps could be and what the chances of implementating these measures are.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261110/interview-how-close-is-switzerland-to-introducing-an-immigration-tax" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 15:54 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261110/whats-the-salary-outlook-for-employees-in-switzerland-in-2027" target="_blank" rel="noopener">What&#39;s the salary outlook for employees in Switzerland in 2027?</a></h3>
+  <p class="excerpt">Though only a modest pay increase is expected in Switzerland next year, some industries - and specialists - will command higher salaries.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261110/whats-the-salary-outlook-for-employees-in-switzerland-in-2027" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 15:02 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261110/floods-and-drought-a-report-calls-for-greater-cooperation-between-france-and-switzerland" target="_blank" rel="noopener">Floods and drought: A report calls for greater cooperation between France and Switzerland</a></h3>
+  <p class="excerpt">Swiss and French authorities must strengthen their collaboration on water management around Geneva, Ain and Haute-Savoie because droughts and floods &#34;don&#39;t care about human borders,&#34; argues an official report presented on Tuesday.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261110/floods-and-drought-a-report-calls-for-greater-cooperation-between-france-and-switzerland" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 13:11 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-united_kingdom">
+  <div class="section-head">
+    <h2>United Kingdom</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/south-sudans-authorities-must-allow-unmiss-to-operate-without-obstruction-uk-statement-at-the-un-security-council" target="_blank" rel="noopener">South Sudan&#39;s authorities must allow UNMISS to operate without obstruction: UK statement at the UN Security Council</a></h3>
+  <p class="excerpt">Statement by Ambassador Kate Foster, UK Deputy Permanent Representative to the UN, at the UN Security Council meeting on South Sudan</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/south-sudans-authorities-must-allow-unmiss-to-operate-without-obstruction-uk-statement-at-the-un-security-council" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+      <a href="https://news.un.org/feed/view/en/story/2026/11/1168774" target="_blank" rel="noopener">UN News</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 17:04 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/53rd-universal-periodic-review-of-human-rights-uk-statement-on-ireland" target="_blank" rel="noopener">53rd Universal Periodic Review of human rights: UK Statement on Ireland</a></h3>
+  <p class="excerpt">Statement by the UK&#39;s Human Rights Ambassador, Eleanor Sanders, at Ireland&#39;s Universal Periodic Review at the Human Rights Council in Geneva.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/53rd-universal-periodic-review-of-human-rights-uk-statement-on-ireland" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/uk-statement-regarding-conviction-of-tanzanian-opposition-leader-tundu-lissu" target="_blank" rel="noopener">UK Statement regarding conviction of Tanzanian Opposition Leader Tundu Lissu</a></h3>
+  <p class="excerpt">UK expresses concern over Tundu Lissu&#39;s conviction, urges Tanzania to uphold fair trial rights, political reconciliation, democracy and rule of law.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/uk-statement-regarding-conviction-of-tanzanian-opposition-leader-tundu-lissu" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 10:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/live/2026/nov/11/andy-burnham-kemi-badenoch-pmqs-cop31-windfarms-europe-brexit-latest-news-updates" target="_blank" rel="noopener">Burnham indicates backing for ‘black English’ and ‘Asian English’ census options – UK politics live</a></h3>
+  <p class="excerpt">PM, in response to Ed Davey, says measures could help address ‘poisonous politics’Here are some more comments on the report for the Casey commission released today looking at how social care is run in England. (See 9.56am.)This is from Natasha Curry, deputy director of research at the Nuffield Trust and one of the report’s authors.Compared to the other countries we looked at, the governance of England’s social care system is confused and complex. Overlapping and unclear roles leave dangerous uncertainty around who is responsible for important decisions, contributing to the inertia around refor</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c3lylyy24xl5o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+      <a href="https://www.theguardian.com/politics/live/2026/nov/11/andy-burnham-kemi-badenoch-pmqs-cop31-windfarms-europe-brexit-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cqde1yddwk17o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Police told Russell Brand to leave Jemima Goldsmith&#39;s house in 2014</a></h3>
+  <p class="excerpt">Police confirm they asked Brand to leave his ex-girlfriend&#39;s house after she reported an alleged assault.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/10/world/europe/jemima-goldsmith-russell-brand-assault.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/cqde1yddwk17o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:26 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/10/world/europe/uk-us-army-arrest-espionage-russia.html" target="_blank" rel="noopener">US Soldier Is Arrested in UK on Suspicion of Spying for Russia</a></h3>
+  <p class="excerpt">The 41-year-old man, who was not named, was in custody pending possible charges after a joint investigation with the F.B.I. and U.S. military intelligence.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/10/world/europe/uk-us-army-arrest-espionage-russia.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c6d7q77xgw0vo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 22:24 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c68j4lez4x4no?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">UK falls silent to mark Armistice Day</a></h3>
+  <p class="excerpt">Services are being held across the UK to mark Armistice Day, commemorating the end of World War One.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c68j4lez4x4no?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:43 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/11/bird-flu-poultry-captive-birds-kept-inside-england-scotland" target="_blank" rel="noopener">Bird flu fears prompt orders for farmers to keep poultry inside in England and Scotland</a></h3>
+  <p class="excerpt">Increased risk of devastating strain means restrictions imposed for second year in a row on those keeping birdsPoultry and captive birds across England and Scotland must be kept inside for the second year in a row due to an increased risk of a devastating strain of bird flu.The British government has issued an England-wide avian influenza prevention zone, meaning individuals with 50 or more poultry or captive birds must house them inside. A similar designation was made across the whole of Scotland on Tuesday. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/nov/11/bird-flu-poultry-captive-birds-kept-inside-england-scotland" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:03 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-united_states">
+  <div class="section-head">
+    <h2>United States</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://news.un.org/feed/view/en/story/2026/11/1168782" target="_blank" rel="noopener">World News in Brief: Ending cholera by 2030 ‘within reach’, Haiti displacement and hunger, US human rights review rescheduled</a></h3>
+  <p class="excerpt">Ending cholera as a public health threat by 2030 is within reach, as every cholera death can be prevented with tools that already exist, the World Health Organization (WHO)&amp;nbsp;said on Tuesday.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://news.un.org/feed/view/en/story/2026/11/1168782" target="_blank" rel="noopener">UN News</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://news.un.org/feed/view/en/story/2026/11/1168772" target="_blank" rel="noopener">When deaths go uncounted: WHO flags dangerous blind spots in Africa’s health data</a></h3>
+  <p class="excerpt">Quality health data can help authorities to identify emerging threats and take lifesaving action, but a new report reveals critical gaps in Africa’s health information systems.&amp;nbsp;</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://news.un.org/feed/view/en/story/2026/11/1168772" target="_blank" rel="noopener">UN News</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/nov/10/thomas-markle-ankle-monitor" target="_blank" rel="noopener">Thomas Markle, Meghan’s father, jailed after cutting off ankle monitor, DoJ says</a></h3>
+  <p class="excerpt">Estranged father of Duchess of Sussex was arrested for keeping child sexual abuse material, authorities sayThe estranged father of Meghan Markle, the Duchess of Sussex, has been jailed after US authorities said he cut an electronic monitoring device off his ankle, days after his arrest for keeping child sexual abuse material in storage units in California.Thomas Markle, 82, was in custody awaiting a hearing in federal court in Tampa, Florida, first assistant US attorney Bill Essayli said. He was arrested shortly after he cut off the ankle bracelet at 1.45am on Tuesday, Essayli said. Continue r</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/10/us/thomas-markle-ankle-monitor-jail.html" target="_blank" rel="noopener">NYT Europe</a>
+      <a href="https://www.bbc.co.uk/news/articles/c9j3433zy4vro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/us-news/2026/nov/10/thomas-markle-ankle-monitor" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 11:29 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/live/2026/nov/11/andy-burnham-kemi-badenoch-pmqs-cop31-windfarms-europe-brexit-latest-news-updates" target="_blank" rel="noopener">Burnham indicates backing for ‘black English’ and ‘Asian English’ census options – UK politics live</a></h3>
+  <p class="excerpt">PM, in response to Ed Davey, says measures could help address ‘poisonous politics’Here are some more comments on the report for the Casey commission released today looking at how social care is run in England. (See 9.56am.)This is from Natasha Curry, deputy director of research at the Nuffield Trust and one of the report’s authors.Compared to the other countries we looked at, the governance of England’s social care system is confused and complex. Overlapping and unclear roles leave dangerous uncertainty around who is responsible for important decisions, contributing to the inertia around refor</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c3lylyy24xl5o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+      <a href="https://www.theguardian.com/politics/live/2026/nov/11/andy-burnham-kemi-badenoch-pmqs-cop31-windfarms-europe-brexit-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/technology/2026/nov/11/nvidia-hires-leading-us-law-firm-to-investigate-jensen-huang-relationship" target="_blank" rel="noopener">Nvidia hires leading US law firm to investigate Jensen Huang’s relationship</a></h3>
+  <p class="excerpt">Move comes as chipmaker reels from reports its CEO was having an affair with an alleged Chinese spyBusiness live – latest updatesNvidia has appointed a leading US law firm to conduct a “thorough and independent” investigation into the relationship between its chief executive, Jensen Huang, and an alleged Chinese spy.The $4.1tn (£3tn) chipmaker has hired New York-based Wachtell, Lipton, Rosen &amp;amp; Katz for the investigation, which will be led by the Wachtell partner Joon Kim. Wachtell’s website describes Kim, a former government prosecutor in New York, as a specialist in areas including intern</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/8d59bf02-960e-4eb1-b5dc-55397e31cea5?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.theguardian.com/technology/2026/nov/11/nvidia-hires-leading-us-law-firm-to-investigate-jensen-huang-relationship" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 11:49 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/10/world/europe/uk-us-army-arrest-espionage-russia.html" target="_blank" rel="noopener">US Soldier Is Arrested in UK on Suspicion of Spying for Russia</a></h3>
+  <p class="excerpt">The 41-year-old man, who was not named, was in custody pending possible charges after a joint investigation with the F.B.I. and U.S. military intelligence.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/10/world/europe/uk-us-army-arrest-espionage-russia.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c6d7q77xgw0vo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 22:24 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/10/business/nvidia-wachtell-lipton-jensen-huang.html" target="_blank" rel="noopener">Nvidia Hires Wachtell Lipton to Investigate CEO Jensen Huang’s Affair With Chinese Executive</a></h3>
+  <p class="excerpt">Wachtell partner Joon H. Kim, a former acting U.S. attorney, is leading the inquiry into the chip maker’s chief executive.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/10/podcasts/hardfork-jensen-huang-spy-affair.html" target="_blank" rel="noopener">NYT Technology</a>
+      <a href="https://www.nytimes.com/2026/11/10/business/nvidia-wachtell-lipton-jensen-huang.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 19:33 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/10/us/politics/trump-china-trip-nvidia.html" target="_blank" rel="noopener">Despite Denial, Trump Was Told on Trip to China About Spying on Nvidia’s Jensen Huang</a></h3>
+  <p class="excerpt">Before Jensen Huang boarded Air Force One en route to Beijing, the president was reminded of intelligence showing that he was in a relationship with a woman believed to be a Chinese spy.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/10/us/politics/trump-china-trip-nvidia.html" target="_blank" rel="noopener">NYT Politics</a>
+      <a href="https://www.nytimes.com/2026/11/08/technology/nvidia-investigation-jensen-huang.html" target="_blank" rel="noopener">NYT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 19:27 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-netherlands">
+  <div class="section-head">
+    <h2>Netherlands</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/nl-and-germany-sign-deal-on-faster-more-frequent-trains/" target="_blank" rel="noopener">NL and Germany sign deal on faster, more frequent trains</a></h3>
+  <p class="excerpt">The Netherlands and Germany have agreed to increase the number of trains running between them and cut travel times, with...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/nl-and-germany-sign-deal-on-faster-more-frequent-trains/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 11:38 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/court-upholds-licence-for-amsterdam-tiktok-sensation-fabel-friet/" target="_blank" rel="noopener">Court upholds licence for Amsterdam TikTok sensation Fabel Friet</a></h3>
+  <p class="excerpt">Amsterdam city council was entitled to extend the licence for a chip shop whose long queues have been blamed by...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/court-upholds-licence-for-amsterdam-tiktok-sensation-fabel-friet/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 11:19 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/johan-cruyffs-grandson-called-up-to-play-for-usa-under-18-team/" target="_blank" rel="noopener">Johan Cruyff’s grandson called up to play for USA under-18 team</a></h3>
+  <p class="excerpt">The most famous name in Dutch football could appear on an international men’s team sheet for the first time in...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/johan-cruyffs-grandson-called-up-to-play-for-usa-under-18-team/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:06 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/sport/swimming/articles/cmx27n60n3wno?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Tearful Smith switches allegiance to Netherlands</a></h3>
+  <p class="excerpt">Tatjana Smith, South Africa&#39;s most decorated Olympian, switches allegiance to the Netherlands.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/sport/swimming/articles/cmx27n60n3wno?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 09:45 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/whats-on-at-idfa-2026-five-documentaries-to-watch/" target="_blank" rel="noopener">What’s on at IDFA 2026: five documentaries to watch</a></h3>
+  <p class="excerpt">The International Documentary Film Festival Amsterdam (IDFA) opens on Thursday for its 39th edition, with 253 films from 80 countries...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/whats-on-at-idfa-2026-five-documentaries-to-watch/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 09:39 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/no-sign-of-breakthrough-as-deadline-looms-on-dutch-tax-plans/" target="_blank" rel="noopener">No sign of breakthrough as deadline looms on Dutch tax plans</a></h3>
+  <p class="excerpt">The Dutch government is running out of time to find a majority in parliament for its tax programme for next...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/no-sign-of-breakthrough-as-deadline-looms-on-dutch-tax-plans/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 08:59 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/unemployment-rising-faster-for-people-with-foreign-roots/" target="_blank" rel="noopener">Unemployment rising faster for people with foreign roots</a></h3>
+  <p class="excerpt">Unemployment is rising faster among people with foreign roots in the Netherlands, according to new figures from national statistics office...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/unemployment-rising-faster-for-people-with-foreign-roots/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 08:06 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/senators-back-plan-to-cultivate-embryos-for-scientific-research/" target="_blank" rel="noopener">Senators back plan to cultivate embryos for scientific research</a></h3>
+  <p class="excerpt">The Dutch senate has approved plans to allow specially grown embryos to be used for research into hereditary illnesses and...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/senators-back-plan-to-cultivate-embryos-for-scientific-research/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 16:04 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <div class="country-group">
+    <h2>Regional neighbors</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>Turkey</h3>
+  <ul>
+    <li>
+      <a href="https://www.ft.com/content/8331f6dd-b015-4288-85bb-b52c0d0f37b1?syn-25a6b1a6=1" target="_blank" rel="noopener">Project linking Cyprus to EU grid to restart with help of French diplomacy</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/environment/2026/nov/11/burnham-offshore-wind-investment-norfolk-climate-summit-cop31-jackdaw-gasfield" target="_blank" rel="noopener">Burnham lauds £12bn offshore wind investment as he prepares for climate summit</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/11/climate/trump-cop31-climate-turkey.html" target="_blank" rel="noopener">The United States Is Skipping COP31 in Turkey</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/environment/2026/nov/10/china-green-energy-john-kerry-cop31" target="_blank" rel="noopener">US and rest of world must follow China’s lead on green energy, says John Kerry</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Russia</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/10/world/europe/uk-us-army-arrest-espionage-russia.html" target="_blank" rel="noopener">US Soldier Is Arrested in UK on Suspicion of Spying for Russia</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/world/live/2026/nov/11/europe-ukraine-russia-us-talks-abu-dhabi-zelenskyy-latest-news-updates" target="_blank" rel="noopener">US envoys to meet Putin and Zelenskyy separately after peace talks see some progress - Europe Live</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/11/world/europe/ukraine-lima-electronic-warefare-gps.html" target="_blank" rel="noopener">They’re in Ukraine. Why Do Their Phones Say They’re in Peru?</a>
+    </li>
+    <li>
+      <a href="https://english.elpais.com/culture/2026-11-11/emmanuel-carrere-writer-there-is-only-one-rule-do-no-harm-and-i-broke-it-with-my-mother-and-girlfriend-at-the-time.html" target="_blank" rel="noopener">Emmanuel Carrère, writer: ‘There is only one rule: do no harm — and I broke it with my mother and girlfriend at the time’</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Iran</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/us-news/live/2026/nov/11/donald-trump-pete-hegseth-impeachment-democrats-republicans-arlington-latest-news-updates" target="_blank" rel="noopener">GOP branded ‘sinking ship’ as Republicans block efforts to impeach Hegseth – US politics live</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/us-news/2026/nov/11/first-thing-pete-hegseth-survives-effort-to-impeach-him" target="_blank" rel="noopener">Pete Hegseth survives effort to impeach him | First Thing</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/11/business/energy-environment/winter-heating-oil-costs.html" target="_blank" rel="noopener">Heating Costs Will Rise 7% on Average This Winter</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/11/world/middleeast/lebanon-economy-crisis-corruption-war.html" target="_blank" rel="noopener">Lebanon Faces Economic ‘Catastrophe’ After War and Years of Mismanagement</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Georgia</h3>
+  <ul>
+    <li>
+      <a href="https://english.elpais.com/culture/2026-11-11/emmanuel-carrere-writer-there-is-only-one-rule-do-no-harm-and-i-broke-it-with-my-mother-and-girlfriend-at-the-time.html" target="_blank" rel="noopener">Emmanuel Carrère, writer: ‘There is only one rule: do no harm — and I broke it with my mother and girlfriend at the time’</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+  <div class="country-group">
+    <h2>Great powers</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>China</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/technology/2026/nov/11/nvidia-hires-leading-us-law-firm-to-investigate-jensen-huang-relationship" target="_blank" rel="noopener">Nvidia hires leading US law firm to investigate Jensen Huang’s relationship</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/10/business/nvidia-wachtell-lipton-jensen-huang.html" target="_blank" rel="noopener">Nvidia Hires Wachtell Lipton to Investigate CEO Jensen Huang’s Affair With Chinese Executive</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/10/us/politics/trump-china-trip-nvidia.html" target="_blank" rel="noopener">Despite Denial, Trump Was Told on Trip to China About Spying on Nvidia’s Jensen Huang</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/11/business/nvidia-megaspeed-christian-lamarco.html" target="_blank" rel="noopener">This Trader Raised Alarm About Nvidia’s China Entanglements Months Ago</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>European Union</h3>
+  <ul>
+    <li>
+      <a href="https://www.ft.com/content/8331f6dd-b015-4288-85bb-b52c0d0f37b1?syn-25a6b1a6=1" target="_blank" rel="noopener">Project linking Cyprus to EU grid to restart with help of French diplomacy</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/121bc0d0-f486-4c4c-a5e9-d4c5dc609fe4?syn-25a6b1a6=1" target="_blank" rel="noopener">Brussels to unveil new Big Tech rules despite vow to slash red tape</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/10/world/europe/meghan-markle-brussels-speech-canceled-prince-harry.html" target="_blank" rel="noopener">Meghan Markle Makes First Public Appearance Since Her Father’s Arrest</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>France</h3>
+  <ul>
+    <li>
+      <a href="https://www.gov.uk/government/news/joint-declaration-following-the-g7-foreign-ministers-meeting-in-paris" target="_blank" rel="noopener">Joint declaration following the G7 Foreign Ministers&#39; Meeting in Paris</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/8331f6dd-b015-4288-85bb-b52c0d0f37b1?syn-25a6b1a6=1" target="_blank" rel="noopener">Project linking Cyprus to EU grid to restart with help of French diplomacy</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/11/world/europe/france-art-wanted-poster.html" target="_blank" rel="noopener">A Museum’s ‘Wanted’ Poster Campaign Brings Looted Painting Back to France</a>
+    </li>
+    <li>
+      <a href="https://english.elpais.com/culture/2026-11-11/emmanuel-carrere-writer-there-is-only-one-rule-do-no-harm-and-i-broke-it-with-my-mother-and-girlfriend-at-the-time.html" target="_blank" rel="noopener">Emmanuel Carrère, writer: ‘There is only one rule: do no harm — and I broke it with my mother and girlfriend at the time’</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Germany</h3>
+  <ul>
+    <li>
+      <a href="https://www.dutchnews.nl/2026/11/nl-and-germany-sign-deal-on-faster-more-frequent-trains/" target="_blank" rel="noopener">NL and Germany sign deal on faster, more frequent trains</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/2316e892-a7c2-42b6-8c21-7003e05f2b5c?syn-25a6b1a6=1" target="_blank" rel="noopener">Helsing unveils European rival to Palantir military targeting system</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/environment/2026/nov/11/burnham-offshore-wind-investment-norfolk-climate-summit-cop31-jackdaw-gasfield" target="_blank" rel="noopener">Burnham lauds £12bn offshore wind investment as he prepares for climate summit</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/65c4793e-343b-4fe7-921a-f7150b080a0c" target="_blank" rel="noopener">‘Treasure trove’ of manufacturing data to power German AI</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+  <div class="country-group">
+    <h2>Middle East</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>Israel</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/film/2026/nov/11/naza-documentary-on-gaza-killings-becomes-one-of-years-most-watched" target="_blank" rel="noopener">NAZA documentary on Gaza killings becomes one of year’s most watched</a>
+    </li>
+    <li>
+      <a href="https://www.dutchnews.nl/2026/11/whats-on-at-idfa-2026-five-documentaries-to-watch/" target="_blank" rel="noopener">What’s on at IDFA 2026: five documentaries to watch</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/11/world/middleeast/lebanon-economy-crisis-corruption-war.html" target="_blank" rel="noopener">Lebanon Faces Economic ‘Catastrophe’ After War and Years of Mismanagement</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/global-development/2026/nov/11/thousands-without-shelter-lethal-cold-storm-gaza-israel-tents-displaced-people-flood" target="_blank" rel="noopener">Thousands without shelter face lethal conditions in storm-hit Gaza as they wait for 150,000 tents</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Saudi Arabia</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/global-development/2026/nov/11/woman-in-saudi-arabia-sentenced-to-100-lashes-for-giving-birth-outside-marriage" target="_blank" rel="noopener">Woman in Saudi Arabia sentenced to 100 lashes for giving birth outside marriage</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/10/world/middleeast/syria-weighs-sending-troops-to-aid-saudi-war-with-houthis.html" target="_blank" rel="noopener">Syria Weighs Sending Troops to Aid Saudi War With Houthis</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Qatar</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/09/business/media/lawsuit-x-strategies.html" target="_blank" rel="noopener">Lawsuit Says Republican Strategist Alex Bruesewitz Took Money From Qatari Interests</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Egypt</h3>
+  <ul>
+    <li>
+      <a href="https://news.un.org/feed/view/en/story/2026/11/1168778" target="_blank" rel="noopener">Egypt: Fact-checking site’s entire newsroom jailed as assault on press freedom widens</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/world/2026/nov/10/lewis-hamilton-egypt-rafah-crossing-gaza-aid-facilities" target="_blank" rel="noopener">Lewis Hamilton visits Egypt’s Rafah crossing and Gaza aid facilities</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+
+  <section class="topic" id="sec-ir_theory">
+  <div class="section-head">
+    <h2>International Relations — Theory &amp; Analysis</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/china/new-kind-foreign-agent" target="_blank" rel="noopener">A New Kind of Foreign Agent</a></h3>
+  <p class="excerpt">How AI is reshaping influence operations in America.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/china/new-kind-foreign-agent" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/north-korea/trump-facing-very-different-north-korea" target="_blank" rel="noopener">Trump Is Facing a Very Different North Korea</a></h3>
+  <p class="excerpt">Donald Trump has Pyongyang on his mind. In recent months, the U.S. president has made comments to the media suggesting he is in communication with North Korean leader Kim Jong Un. In an August 17 Truth Social post, for instance, Trump announced that the United States would scale back joint military drills with South Korea. The decision, he wrote, was “based on my very good relationship with Kim Jong Un,” describing the dictator as “unthreatening and respectful.”</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/north-korea/trump-facing-very-different-north-korea" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/japans-most-dangerous-military-constraint-is-time/" target="_blank" rel="noopener">Japan’s Most Dangerous Military Constraint Is Time</a></h3>
+  <p class="excerpt">During a 2022 wargame I ran, bilateral planners reached a familiar barrier. U.S. forces needed to disperse from concentrated bases before the adversary&amp;#8217;s first missile salvo. Participants believed Japan could grant emergency access to private land only after an attack, which would be too late &amp;#8212; the authority&amp;#8217;s trigger was also its deadline.This appeared to be a hard political constraint: the kind alliance planners record in after-action reports, script into next year&amp;#8217;s exercise, and then carry, untested, into contingency plans, where assumptions harden into fact. But in</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/japans-most-dangerous-military-constraint-is-time/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 08:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/analyzing-the-ethiopian-somaliland-deal-two-years-on/" target="_blank" rel="noopener">Analyzing the Ethiopian-Somaliland Deal, Two Years On</a></h3>
+  <p class="excerpt">In 2024, James Barnett wrote, &amp;#8220;A Port Deal Puts the Horn of Africa on the Brink,&amp;#8221; where he argued that tensions in countries like Ethiopia and Somalia threaten to escalate into a broader regional conflict if not contained. Two years later, with U.S. attention largely diverted to other areas of concern, we asked James to revisit his arguments.Image: Joseph Rullo via DVIDSIn your January 2024 piece, you warned that a memorandum of understanding signed between Ethiopia and Somaliland could actually accelerate al-Shabaab&amp;#8217;s expansion into the two countries, pointing to its 2022 in</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/analyzing-the-ethiopian-somaliland-deal-two-years-on/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 19:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/cogs-of-war/to-implement-acquisition-transformation-empower-military-mavericks/" target="_blank" rel="noopener">To Implement Acquisition Transformation, Empower Military Mavericks</a></h3>
+  <p class="excerpt">&amp;#8220;I wanted disciplined but not regimented thinking. Commanders must encourage intellectual risk-taking to preclude a lethargic environment. Leaders must shelter those challenging nonconformists and mavericks who make institutions uncomfortable; otherwise you wash out innovation.&amp;#8221;&amp;#8212; James Mattis &amp;#38; Bing West, Call Sign ChaosFor the last decade, the Pentagon has had the authorities to buy commercially derived technologies at speed and scale, but not enough people who know how to use those authorities. Successive senior Pentagon leaders, both military and civilian, have asserte</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/cogs-of-war/to-implement-acquisition-transformation-empower-military-mavericks/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 09:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/china/chinas-ai-diplomacy-working" target="_blank" rel="noopener">China’s AI Diplomacy Is Working</a></h3>
+  <p class="excerpt">America should be taking notes.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/china/chinas-ai-diplomacy-working" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/united-states/luxury-children" target="_blank" rel="noopener">The Luxury of Children</a></h3>
+  <p class="excerpt">Why the baby bust is making the world more unequal.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/united-states/luxury-children" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/winning-time-ukraines-unmanned-systems-forces-and-the-new-dimension-of-war/" target="_blank" rel="noopener">Winning Time: Ukraine’s Unmanned Systems Forces and the New Dimension of War</a></h3>
+  <p class="excerpt">In late 2023, Ukraine&amp;#8217;s military leadership faced an institutional choice: establish a dedicated branch of the armed forces for unmanned systems or integrate drones into existing branches. Most senior officers I knew opposed the separate force, and their strongest argument was sound within classical doctrine. Each branch of service corresponds to a distinct domain of war: The army fights on land, the navy at sea, the air force in the air. Unmanned systems operate across all of these domains and possess none of their own. No domain, no branch of service. The advocates were mostly newcomer</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/winning-time-ukraines-unmanned-systems-forces-and-the-new-dimension-of-war/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 08:30 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-conflicts">
+  <div class="section-head">
+    <h2>Conflicts &amp; Security</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cwz0k79pr8z2o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Hundreds of Italian schools hit by threats in suspected bomb hoax</a></h3>
+  <p class="excerpt">Emails containing the false warnings were sent to schools in Rome, Naples, Vicenza, Florence, Pisa, Trieste and other Italian cities, officials say.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/7bbc0a5e-b7e2-4a3f-874f-a63de94e922d?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/cwz0k79pr8z2o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c68j4lez4x4no?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">UK falls silent to mark Armistice Day</a></h3>
+  <p class="excerpt">Services are being held across the UK to mark Armistice Day, commemorating the end of World War One.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c68j4lez4x4no?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:43 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/live/2026/nov/11/donald-trump-pete-hegseth-impeachment-democrats-republicans-arlington-latest-news-updates" target="_blank" rel="noopener">GOP branded ‘sinking ship’ as Republicans block efforts to impeach Hegseth – US politics live</a></h3>
+  <p class="excerpt">Trump hails ‘exoneration of a Great American Patriot’ as moves against his defense secretary fail for nowHouse Republicans block effort to impeach HegsethSign up for the US Breaking News emailThe US Treasury secretary, Scott Bessent, has relocated from his home in the Washington area to a military base after an Iranian threat against his life, the New York Times has reported.Bessent has spearheaded a US push to cripple Iran’s economy since the start of the Middle East war, vowing “economic asphyxiation” of the Islamic republic through a web of sanctions. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/live/2026/nov/11/donald-trump-pete-hegseth-impeachment-democrats-republicans-arlington-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:25 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/11/belgium-ice-style-home-raids-immigration" target="_blank" rel="noopener">Belgian plan for ICE-style immigration raids on homes criticised as ‘law of fear’</a></h3>
+  <p class="excerpt">Rights groups oppose new law that will let police forcibly enter homes to remove refused asylum seekersBelgium could see ICE-style home raids, echoing the US crackdown on immigration, rights campaigners have warned, after MPs approved a law that allows police to forcibly enter properties to remove undocumented people.For months, intense debate has swirled across Belgium over measures introduced by the ruling right-leaning coalition to ramp up expulsions of people who have been denied the right to stay in the country. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/nov/11/belgium-ice-style-home-raids-immigration" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:13 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/nov/11/europe-ukraine-russia-us-talks-abu-dhabi-zelenskyy-latest-news-updates" target="_blank" rel="noopener">US envoys to meet Putin and Zelenskyy separately after peace talks see some progress - Europe Live</a></h3>
+  <p class="excerpt">US negotiators to meet Putin in Moscow, Zelenskyy in Dublin nextSeparately, I am also keeping an eye on Italy, with reports that several schools are being evacuated after receiving bomb threats by emails.According to Rai and Sky TG24, the email was signed by “Mikhail Andropov” – the same name used in several hoax bomb alarms against European flights last week. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/live/2026/nov/11/europe-ukraine-russia-us-talks-abu-dhabi-zelenskyy-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 11:59 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/nov/11/democrats-election-medicaid-costs" target="_blank" rel="noopener">Democrats’ US election sweep brings the price of their promised social contract into focus</a></h3>
+  <p class="excerpt">‘The post-election wish list is about to run into harsh fiscal reality: there is no money’Is this an opportunity for a new America? As the Reagan revolution four decades ago launched US society down the path to low taxes and meager solidarity, perhaps the Republican bloodbath last week could turn US politics toward building a new social contract anchored on an aspiration to equitable prosperity.One can sense the ambition of the bumper new crop of Democrats ushered to power last week, calling for support for programs for children and their parents; emphatically endorsing the long-held dream of </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/nov/11/democrats-election-medicaid-costs" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cmwy9jl18840o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Jonathan Ross &#39;horrified&#39; by Walliams allegations and Brand conviction</a></h3>
+  <p class="excerpt">The TV presenter says he was once &#34;friendly&#34; with David Walliams and Russell Brand, but was &#34;genuinely unaware&#34; of their conduct.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cmwy9jl18840o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:14 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/australia-news/2026/nov/11/one-nation-candidate-apologises-offensive-comments-ntwnfb" target="_blank" rel="noopener">One Nation Victoria candidate apologises for slew of offensive comments about lesbians, Indians and Julia Gillard</a></h3>
+  <p class="excerpt">Exclusive: Chris Moore, running for the party in Greenvale, made derogatory social media comments between 2010 and 2012Get our daily political email, free app or daily news podcastA One Nation candidate in Victoria has apologised for a series of offensive comments including repeated references to Australian-Indians as “curry munchers”, comparing a woman in burqa to a bag of rubbish, and sharing an image calling Julia Gillard a slut.The party’s candidate for Greenvale on Melbourne’s north-western fringe, Chris Moore, also made derogatory comments about lesbians and refugees and once posted that</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/australia-news/2026/nov/11/one-nation-candidate-apologises-offensive-comments-ntwnfb" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:12 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/11/business/energy-environment/winter-heating-oil-costs.html" target="_blank" rel="noopener">Heating Costs Will Rise 7% on Average This Winter</a></h3>
+  <p class="excerpt">People who use heating oil will see increases of around 70 percent because the war in Iran has greatly reduced supply of that fuel.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/11/business/energy-environment/winter-heating-oil-costs.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:04 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/11/business/nvidia-megaspeed-christian-lamarco.html" target="_blank" rel="noopener">This Trader Raised Alarm About Nvidia’s China Entanglements Months Ago</a></h3>
+  <p class="excerpt">Christian Lamarco, a 31-year-old short seller and trader, warned about financial and personal problems at Nvidia in May.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/11/business/nvidia-megaspeed-christian-lamarco.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/11/world/europe/france-art-wanted-poster.html" target="_blank" rel="noopener">A Museum’s ‘Wanted’ Poster Campaign Brings Looted Painting Back to France</a></h3>
+  <p class="excerpt">The Orléans Fine Arts Museum is on a quest to recover hundreds of works stolen during World War II — and the director wants your help.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/11/world/europe/france-art-wanted-poster.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c3702jjkez4ko?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Poundland set for more time to secure a rescue deal as emergency talks continue</a></h3>
+  <p class="excerpt">The BBC understands the discount chain, which has been edging towards administration, will be given more time to find a buyer.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c3702jjkez4ko?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:03 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-intelligence">
+  <div class="section-head">
+    <h2>Intelligence &amp; Espionage</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/live/2026/nov/11/andy-burnham-kemi-badenoch-pmqs-cop31-windfarms-europe-brexit-latest-news-updates" target="_blank" rel="noopener">Burnham indicates backing for ‘black English’ and ‘Asian English’ census options – UK politics live</a></h3>
+  <p class="excerpt">PM, in response to Ed Davey, says measures could help address ‘poisonous politics’Here are some more comments on the report for the Casey commission released today looking at how social care is run in England. (See 9.56am.)This is from Natasha Curry, deputy director of research at the Nuffield Trust and one of the report’s authors.Compared to the other countries we looked at, the governance of England’s social care system is confused and complex. Overlapping and unclear roles leave dangerous uncertainty around who is responsible for important decisions, contributing to the inertia around refor</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c3lylyy24xl5o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+      <a href="https://www.theguardian.com/politics/live/2026/nov/11/andy-burnham-kemi-badenoch-pmqs-cop31-windfarms-europe-brexit-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cwz0k79pr8z2o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Hundreds of Italian schools hit by threats in suspected bomb hoax</a></h3>
+  <p class="excerpt">Emails containing the false warnings were sent to schools in Rome, Naples, Vicenza, Florence, Pisa, Trieste and other Italian cities, officials say.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/7bbc0a5e-b7e2-4a3f-874f-a63de94e922d?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/cwz0k79pr8z2o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/technology/2026/nov/11/nvidia-hires-leading-us-law-firm-to-investigate-jensen-huang-relationship" target="_blank" rel="noopener">Nvidia hires leading US law firm to investigate Jensen Huang’s relationship</a></h3>
+  <p class="excerpt">Move comes as chipmaker reels from reports its CEO was having an affair with an alleged Chinese spyBusiness live – latest updatesNvidia has appointed a leading US law firm to conduct a “thorough and independent” investigation into the relationship between its chief executive, Jensen Huang, and an alleged Chinese spy.The $4.1tn (£3tn) chipmaker has hired New York-based Wachtell, Lipton, Rosen &amp;amp; Katz for the investigation, which will be led by the Wachtell partner Joon Kim. Wachtell’s website describes Kim, a former government prosecutor in New York, as a specialist in areas including intern</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/8d59bf02-960e-4eb1-b5dc-55397e31cea5?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.theguardian.com/technology/2026/nov/11/nvidia-hires-leading-us-law-firm-to-investigate-jensen-huang-relationship" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 11:49 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/10/world/europe/uk-us-army-arrest-espionage-russia.html" target="_blank" rel="noopener">US Soldier Is Arrested in UK on Suspicion of Spying for Russia</a></h3>
+  <p class="excerpt">The 41-year-old man, who was not named, was in custody pending possible charges after a joint investigation with the F.B.I. and U.S. military intelligence.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/10/world/europe/uk-us-army-arrest-espionage-russia.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c6d7q77xgw0vo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 22:24 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/10/business/nvidia-wachtell-lipton-jensen-huang.html" target="_blank" rel="noopener">Nvidia Hires Wachtell Lipton to Investigate CEO Jensen Huang’s Affair With Chinese Executive</a></h3>
+  <p class="excerpt">Wachtell partner Joon H. Kim, a former acting U.S. attorney, is leading the inquiry into the chip maker’s chief executive.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/10/podcasts/hardfork-jensen-huang-spy-affair.html" target="_blank" rel="noopener">NYT Technology</a>
+      <a href="https://www.nytimes.com/2026/11/10/business/nvidia-wachtell-lipton-jensen-huang.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 19:33 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/10/us/politics/trump-china-trip-nvidia.html" target="_blank" rel="noopener">Despite Denial, Trump Was Told on Trip to China About Spying on Nvidia’s Jensen Huang</a></h3>
+  <p class="excerpt">Before Jensen Huang boarded Air Force One en route to Beijing, the president was reminded of intelligence showing that he was in a relationship with a woman believed to be a Chinese spy.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/10/us/politics/trump-china-trip-nvidia.html" target="_blank" rel="noopener">NYT Politics</a>
+      <a href="https://www.nytimes.com/2026/11/08/technology/nvidia-investigation-jensen-huang.html" target="_blank" rel="noopener">NYT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 19:27 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/nov/11/itv-cut-costs-falling-advertising-sales" target="_blank" rel="noopener">ITV to cut costs by £30m amid falling advertising sales</a></h3>
+  <p class="excerpt">Ad revenue slowdown forces company to reduce spending on content by £25m before inquiry into takeover by SkyBusiness live – latest updatesITV plans to cut costs by £30m this year, as the TV sector faces a chill wind of ditched commissions, falling advertising sales and job reductions.The broadcaster, which has agreed to sell its television and streaming business to Sky, expects ad revenues in that division to fall between 5% and 10% in the crucial final quarter of the year, despite the typically busy Christmas season. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/nov/11/itv-cut-costs-falling-advertising-sales" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:13 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/nov/11/first-thing-pete-hegseth-survives-effort-to-impeach-him" target="_blank" rel="noopener">Pete Hegseth survives effort to impeach him | First Thing</a></h3>
+  <p class="excerpt">House Republicans block impeachment resolution that cited US military actions in Iran, Yemen and Venezuela. Plus, SS United States to be sunk to create artificial reefDon’t already get First Thing in your inbox? Sign up hereGood morning. House Republicans have blocked an effort to impeach Pete Hegseth. The defense secretary dismissed the impeachment resolution from a Republican lawmaker as “political spectacle”, saying it was an attempt to set up a “show trial”. Top Democrats announced their support for the resolution, but Republicans moved to kill it by referring it to the judiciary committee</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/nov/11/first-thing-pete-hegseth-survives-effort-to-impeach-him" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:04 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/11/business/fed-interest-rates-inflation.html" target="_blank" rel="noopener">The Fed Has to Raise Rates. How Fast To Go Has Officials Divided.</a></h3>
+  <p class="excerpt">The Federal Reserve’s gradual approach to raising rates is being tested by intensifying price pressures.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/11/business/fed-interest-rates-inflation.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:01 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/nov/11/new-orleans-lawyer-abusive-priest" target="_blank" rel="noopener">New Orleans attorney fined $400,000 after exposing abusive priest says it was ‘worth it’</a></h3>
+  <p class="excerpt">Richard Trahant says accusers have been vindicated after Catholic church officially classifies Paul Hart as sex abuserAn attorney who was fined more than $400,000 after getting an abusive Roman Catholic priest removed as a New Orleans high school’s chaplain says it was “worth it” now that the church has officially classified the cleric as a clergy molester.That remark from Richard Trahant came days after the archdiocese of New Orleans, having waited years, added Paul Hart on 6 November to a list of Catholic priests and deacons faced with credible claims of clergy abuse while serving in the are</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/nov/11/new-orleans-lawyer-abusive-priest" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/nov/11/democrats-election-medicaid-costs" target="_blank" rel="noopener">Democrats’ US election sweep brings the price of their promised social contract into focus</a></h3>
+  <p class="excerpt">‘The post-election wish list is about to run into harsh fiscal reality: there is no money’Is this an opportunity for a new America? As the Reagan revolution four decades ago launched US society down the path to low taxes and meager solidarity, perhaps the Republican bloodbath last week could turn US politics toward building a new social contract anchored on an aspiration to equitable prosperity.One can sense the ambition of the bumper new crop of Democrats ushered to power last week, calling for support for programs for children and their parents; emphatically endorsing the long-held dream of </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/nov/11/democrats-election-medicaid-costs" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/australia-news/2026/nov/11/one-nation-candidate-apologises-offensive-comments-ntwnfb" target="_blank" rel="noopener">One Nation Victoria candidate apologises for slew of offensive comments about lesbians, Indians and Julia Gillard</a></h3>
+  <p class="excerpt">Exclusive: Chris Moore, running for the party in Greenvale, made derogatory social media comments between 2010 and 2012Get our daily political email, free app or daily news podcastA One Nation candidate in Victoria has apologised for a series of offensive comments including repeated references to Australian-Indians as “curry munchers”, comparing a woman in burqa to a bag of rubbish, and sharing an image calling Julia Gillard a slut.The party’s candidate for Greenvale on Melbourne’s north-western fringe, Chris Moore, also made derogatory comments about lesbians and refugees and once posted that</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/australia-news/2026/nov/11/one-nation-candidate-apologises-offensive-comments-ntwnfb" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:12 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-military">
+  <div class="section-head">
+    <h2>Military &amp; Defense</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/10/world/europe/uk-us-army-arrest-espionage-russia.html" target="_blank" rel="noopener">US Soldier Is Arrested in UK on Suspicion of Spying for Russia</a></h3>
+  <p class="excerpt">The 41-year-old man, who was not named, was in custody pending possible charges after a joint investigation with the F.B.I. and U.S. military intelligence.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/10/world/europe/uk-us-army-arrest-espionage-russia.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c6d7q77xgw0vo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 22:24 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/10/us/politics/trump-china-trip-nvidia.html" target="_blank" rel="noopener">Despite Denial, Trump Was Told on Trip to China About Spying on Nvidia’s Jensen Huang</a></h3>
+  <p class="excerpt">Before Jensen Huang boarded Air Force One en route to Beijing, the president was reminded of intelligence showing that he was in a relationship with a woman believed to be a Chinese spy.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/10/us/politics/trump-china-trip-nvidia.html" target="_blank" rel="noopener">NYT Politics</a>
+      <a href="https://www.nytimes.com/2026/11/08/technology/nvidia-investigation-jensen-huang.html" target="_blank" rel="noopener">NYT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 19:27 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/live/2026/nov/11/donald-trump-pete-hegseth-impeachment-democrats-republicans-arlington-latest-news-updates" target="_blank" rel="noopener">GOP branded ‘sinking ship’ as Republicans block efforts to impeach Hegseth – US politics live</a></h3>
+  <p class="excerpt">Trump hails ‘exoneration of a Great American Patriot’ as moves against his defense secretary fail for nowHouse Republicans block effort to impeach HegsethSign up for the US Breaking News emailThe US Treasury secretary, Scott Bessent, has relocated from his home in the Washington area to a military base after an Iranian threat against his life, the New York Times has reported.Bessent has spearheaded a US push to cripple Iran’s economy since the start of the Middle East war, vowing “economic asphyxiation” of the Islamic republic through a web of sanctions. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/live/2026/nov/11/donald-trump-pete-hegseth-impeachment-democrats-republicans-arlington-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:25 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/09/obituaries/lloyd-geering-dead.html" target="_blank" rel="noopener">Lloyd Geering, Pastor Who Disputed Christ’s Resurrection, Dies at 108</a></h3>
+  <p class="excerpt">“It is faith that man needs, not past doctrines,” he said in defense of his views, which became a cause célèbre for many but were condemned by others.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/09/obituaries/lloyd-geering-dead.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:21 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cmvg2xdwnwezo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Haitian PM praises El Salvador after joint strike on alleged home of gang leader</a></h3>
+  <p class="excerpt">The 400 Mawozo gang was targeted by El Salvador&#39;s military, which has deployed thousands of troops to combat Haiti&#39;s gang violence crisis.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cmvg2xdwnwezo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:14 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/nov/11/first-thing-pete-hegseth-survives-effort-to-impeach-him" target="_blank" rel="noopener">Pete Hegseth survives effort to impeach him | First Thing</a></h3>
+  <p class="excerpt">House Republicans block impeachment resolution that cited US military actions in Iran, Yemen and Venezuela. Plus, SS United States to be sunk to create artificial reefDon’t already get First Thing in your inbox? Sign up hereGood morning. House Republicans have blocked an effort to impeach Pete Hegseth. The defense secretary dismissed the impeachment resolution from a Republican lawmaker as “political spectacle”, saying it was an attempt to set up a “show trial”. Top Democrats announced their support for the resolution, but Republicans moved to kill it by referring it to the judiciary committee</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/nov/11/first-thing-pete-hegseth-survives-effort-to-impeach-him" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:04 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cxly4y5jzl0qo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">US House blocks bid to impeach Defence Secretary Pete Hegseth, for now</a></h3>
+  <p class="excerpt">Trump welcomes the outcome, praising Hegseth as a &#34;Great American Patriot&#34;, but Democrats can try again next year.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cxly4y5jzl0qo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 11:47 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/2316e892-a7c2-42b6-8c21-7003e05f2b5c?syn-25a6b1a6=1" target="_blank" rel="noopener">Helsing unveils European rival to Palantir military targeting system</a></h3>
+  <p class="excerpt">German group’s Clarity platform comes as governments search for homegrown alternatives to US defence technology</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/2316e892-a7c2-42b6-8c21-7003e05f2b5c?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/videos/cm894wg251pzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Watch: Vinícius Jr&#39;s surprise message to boy who received prosthetic legs after Sudan drone strike</a></h3>
+  <p class="excerpt">Real Madrid player Vinícius Jr sent a surprise message to 13-year-old fan Zaher who lost both his legs after being hit by a drone in Khartoum, in 2024.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cqm26mmpp2p1o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 09:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/nov/11/us-treasury-chief-scott-bessent-moves-military-base-iran-threats" target="_blank" rel="noopener">US Treasury chief Scott Bessent is reportedly latest Trump official to move to military base</a></h3>
+  <p class="excerpt">Bessent, driving force behind US push to cripple Iran’s economy, relocates over alleged threat to his lifeThe US Treasury secretary, Scott Bessent, has relocated from his home in the Washington area to a military base after an Iranian threat against his life, the New York Times has reported.Bessent has spearheaded a US push to cripple Iran’s economy since the start of the Middle East war, vowing “economic asphyxiation” of the Islamic republic through a web of sanctions. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/nov/11/us-treasury-chief-scott-bessent-moves-military-base-iran-threats" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 09:11 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/crkgv58pknyeo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">US warns Madagascar over growing military ties with Russia</a></h3>
+  <p class="excerpt">US general warns the Sahel model-like security deal with Russia could lead to greater instability in Africa.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/crkgv58pknyeo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 07:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/11/ukraine-indonesian-pow-prisoner-of-war-russia" target="_blank" rel="noopener">Ukraine captures first Indonesian prisoner of war amid surge in Russian recruitment</a></h3>
+  <p class="excerpt">Capture of man from Java follows reports that hundreds are being recruited from the south-east Asian country as Moscow seeks to boost its war effortUkraine says it has captured its first Indonesian prisoner of war, amid what it says is a spike in recruitment by Russia from the south-east Asian nation.The 49-year-old man from Java was taken to Ukraine’s Zaporizhzhia region to take part in a Russian assault, but managed to reach Ukrainian-held territory after the group came under drone attack, according to Ukraine’s state-run I Want to Live project. He was then captured by the Ukrainians. Contin</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/nov/11/ukraine-indonesian-pow-prisoner-of-war-russia" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 05:33 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-technology">
+  <div class="section-head">
+    <h2>Technology</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/technology/2026/nov/11/nvidia-hires-leading-us-law-firm-to-investigate-jensen-huang-relationship" target="_blank" rel="noopener">Nvidia hires leading US law firm to investigate Jensen Huang’s relationship</a></h3>
+  <p class="excerpt">Move comes as chipmaker reels from reports its CEO was having an affair with an alleged Chinese spyBusiness live – latest updatesNvidia has appointed a leading US law firm to conduct a “thorough and independent” investigation into the relationship between its chief executive, Jensen Huang, and an alleged Chinese spy.The $4.1tn (£3tn) chipmaker has hired New York-based Wachtell, Lipton, Rosen &amp;amp; Katz for the investigation, which will be led by the Wachtell partner Joon Kim. Wachtell’s website describes Kim, a former government prosecutor in New York, as a specialist in areas including intern</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/8d59bf02-960e-4eb1-b5dc-55397e31cea5?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.theguardian.com/technology/2026/nov/11/nvidia-hires-leading-us-law-firm-to-investigate-jensen-huang-relationship" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 11:49 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/cb451a27-481d-4106-b40f-4a83e3e361fd?syn-25a6b1a6=1" target="_blank" rel="noopener">FirstFT: Anthropic bankers prepare to increase IPO valuation to $1.5tn</a></h3>
+  <p class="excerpt">Also in today’s newsletter: Hegseth survives impeachment vote and more on Alice Huang’s background</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/cb451a27-481d-4106-b40f-4a83e3e361fd?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.ft.com/content/68bcba57-0575-44ee-80f4-2e5ea23a431e?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 11:08 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/10/business/nvidia-wachtell-lipton-jensen-huang.html" target="_blank" rel="noopener">Nvidia Hires Wachtell Lipton to Investigate CEO Jensen Huang’s Affair With Chinese Executive</a></h3>
+  <p class="excerpt">Wachtell partner Joon H. Kim, a former acting U.S. attorney, is leading the inquiry into the chip maker’s chief executive.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/10/podcasts/hardfork-jensen-huang-spy-affair.html" target="_blank" rel="noopener">NYT Technology</a>
+      <a href="https://www.nytimes.com/2026/11/10/business/nvidia-wachtell-lipton-jensen-huang.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 19:33 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/10/us/politics/trump-china-trip-nvidia.html" target="_blank" rel="noopener">Despite Denial, Trump Was Told on Trip to China About Spying on Nvidia’s Jensen Huang</a></h3>
+  <p class="excerpt">Before Jensen Huang boarded Air Force One en route to Beijing, the president was reminded of intelligence showing that he was in a relationship with a woman believed to be a Chinese spy.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/10/us/politics/trump-china-trip-nvidia.html" target="_blank" rel="noopener">NYT Politics</a>
+      <a href="https://www.nytimes.com/2026/11/08/technology/nvidia-investigation-jensen-huang.html" target="_blank" rel="noopener">NYT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 19:27 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/10/technology/anthropic-ipo-valuation-share-price.html" target="_blank" rel="noopener">Anthropic Targets Valuation of Up to $1.4 Trillion for Blockbuster I.P.O.</a></h3>
+  <p class="excerpt">The A.I. company’s pricing would make it one of the biggest ever public listings. It comes at a volatile moment in markets, with investors questioning the sustainability of the A.I. boom.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/10/technology/anthropic-ipo-valuation-share-price.html" target="_blank" rel="noopener">NYT Technology</a>
+      <a href="https://www.ft.com/content/5654e210-4be3-4550-b975-129c9a2e7fe5?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 17:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/11/ai-datacentres-on-site-gas-fired-power-stations" target="_blank" rel="noopener">AI datacentres plan on-site power stations on huge scale despite climate risks, research reveals</a></h3>
+  <p class="excerpt">181GW of gas-fired capacity proposed for sites in US and Europe because of delays in connecting to national grids, says reportDevelopers of AI datacentres plan to build on-site climate-destroying gas power stations on a huge scale to meet their energy demands, research reveals.Datacentres planned across the US, the UK and mainland Europe have proposals to build fossil fuel plants on-site to create 181GW of gas-fired capacity because of delays to connect to national grids, according to the findings. This is almost four times the total peak electricity demand of Great Britain. Continue reading..</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/nov/11/ai-datacentres-on-site-gas-fired-power-stations" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/court-upholds-licence-for-amsterdam-tiktok-sensation-fabel-friet/" target="_blank" rel="noopener">Court upholds licence for Amsterdam TikTok sensation Fabel Friet</a></h3>
+  <p class="excerpt">Amsterdam city council was entitled to extend the licence for a chip shop whose long queues have been blamed by...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/court-upholds-licence-for-amsterdam-tiktok-sensation-fabel-friet/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 11:19 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/1bf39007-d0c1-441c-8a87-906c5284bd1a?syn-25a6b1a6=1" target="_blank" rel="noopener">‘Fear factor’ sets in as investors question AI energy start-ups</a></h3>
+  <p class="excerpt">Shares continue to slide while companies hoping to power data centres spend heavily</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/1bf39007-d0c1-441c-8a87-906c5284bd1a?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/d338594b-ca66-418a-9884-8f562a175fed" target="_blank" rel="noopener">No employees and prototypes within days: AI supercharges start-ups</a></h3>
+  <p class="excerpt">Founders can now use AI agents to handle almost any role, from marketing to building labs</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/d338594b-ca66-418a-9884-8f562a175fed" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/2316e892-a7c2-42b6-8c21-7003e05f2b5c?syn-25a6b1a6=1" target="_blank" rel="noopener">Helsing unveils European rival to Palantir military targeting system</a></h3>
+  <p class="excerpt">German group’s Clarity platform comes as governments search for homegrown alternatives to US defence technology</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/2316e892-a7c2-42b6-8c21-7003e05f2b5c?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/11/magazine/ai-behavior-incorrigible.html" target="_blank" rel="noopener">Why Is It So Hard to Teach A.I. Agents to Behave? Researchers Have a Theory.</a></h3>
+  <p class="excerpt">The makers of A.I. want to build systems that follow human direction, without resisting or deceiving their operators.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/11/magazine/ai-behavior-incorrigible.html" target="_blank" rel="noopener">NYT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:01 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/economy-and-business/2026-11-11/nvidias-chip-advantage-made-its-ceo-a-target-for-china.html" target="_blank" rel="noopener">Nvidia’s chip advantage made its CEO a target for China</a></h3>
+  <p class="excerpt">Trump says the FBI is investigating allegations linking the tech company’s founder to a suspected Chinese spy: ‘I think he’ll be in good shape’</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/economy-and-business/2026-11-11/nvidias-chip-advantage-made-its-ceo-a-target-for-china.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 09:30 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-economy">
+  <div class="section-head">
+    <h2>Economy &amp; Trade</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/d93d41fc-943c-449b-948c-57a4464f564f?syn-25a6b1a6=1" target="_blank" rel="noopener">Spain roiled by first general strike in 14 years</a></h3>
+  <p class="excerpt">Unions stage action over soaring housing costs and low wages ahead of November 29 snap election</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/d93d41fc-943c-449b-948c-57a4464f564f?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://english.elpais.com/spain/2026-11-11/spains-unions-call-the-first-general-strike-in-14-years.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:40 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/10/technology/anthropic-ipo-valuation-share-price.html" target="_blank" rel="noopener">Anthropic Targets Valuation of Up to $1.4 Trillion for Blockbuster I.P.O.</a></h3>
+  <p class="excerpt">The A.I. company’s pricing would make it one of the biggest ever public listings. It comes at a volatile moment in markets, with investors questioning the sustainability of the A.I. boom.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/10/technology/anthropic-ipo-valuation-share-price.html" target="_blank" rel="noopener">NYT Technology</a>
+      <a href="https://www.ft.com/content/5654e210-4be3-4550-b975-129c9a2e7fe5?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 17:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/live/2026/nov/11/donald-trump-pete-hegseth-impeachment-democrats-republicans-arlington-latest-news-updates" target="_blank" rel="noopener">GOP branded ‘sinking ship’ as Republicans block efforts to impeach Hegseth – US politics live</a></h3>
+  <p class="excerpt">Trump hails ‘exoneration of a Great American Patriot’ as moves against his defense secretary fail for nowHouse Republicans block effort to impeach HegsethSign up for the US Breaking News emailThe US Treasury secretary, Scott Bessent, has relocated from his home in the Washington area to a military base after an Iranian threat against his life, the New York Times has reported.Bessent has spearheaded a US push to cripple Iran’s economy since the start of the Middle East war, vowing “economic asphyxiation” of the Islamic republic through a web of sanctions. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/live/2026/nov/11/donald-trump-pete-hegseth-impeachment-democrats-republicans-arlington-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:25 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/11/ai-datacentres-on-site-gas-fired-power-stations" target="_blank" rel="noopener">AI datacentres plan on-site power stations on huge scale despite climate risks, research reveals</a></h3>
+  <p class="excerpt">181GW of gas-fired capacity proposed for sites in US and Europe because of delays in connecting to national grids, says reportDevelopers of AI datacentres plan to build on-site climate-destroying gas power stations on a huge scale to meet their energy demands, research reveals.Datacentres planned across the US, the UK and mainland Europe have proposals to build fossil fuel plants on-site to create 181GW of gas-fired capacity because of delays to connect to national grids, according to the findings. This is almost four times the total peak electricity demand of Great Britain. Continue reading..</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/nov/11/ai-datacentres-on-site-gas-fired-power-stations" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261111/reader-question-why-is-organic-food-more-expensive-in-switzerland" target="_blank" rel="noopener">READER QUESTION: Why is organic food more expensive in Switzerland?</a></h3>
+  <p class="excerpt">Price differences between organic and ‘regular’ products in Swiss supermarkets are significant. But what explains this disparity - and is it justified?</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261111/reader-question-why-is-organic-food-more-expensive-in-switzerland" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/1bf39007-d0c1-441c-8a87-906c5284bd1a?syn-25a6b1a6=1" target="_blank" rel="noopener">‘Fear factor’ sets in as investors question AI energy start-ups</a></h3>
+  <p class="excerpt">Shares continue to slide while companies hoping to power data centres spend heavily</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/1bf39007-d0c1-441c-8a87-906c5284bd1a?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/d338594b-ca66-418a-9884-8f562a175fed" target="_blank" rel="noopener">No employees and prototypes within days: AI supercharges start-ups</a></h3>
+  <p class="excerpt">Founders can now use AI agents to handle almost any role, from marketing to building labs</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/d338594b-ca66-418a-9884-8f562a175fed" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/26fd23df-830e-481b-a3bc-19bcab48c5f6" target="_blank" rel="noopener">Anthropic’s IPO is too important to fail</a></h3>
+  <p class="excerpt">Huge demand promises a blockbuster debut, but shadow insider sales and circular supply-chain backing may cause after-market indigestion</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/26fd23df-830e-481b-a3bc-19bcab48c5f6" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:23 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/11/business/energy-environment/winter-heating-oil-costs.html" target="_blank" rel="noopener">Heating Costs Will Rise 7% on Average This Winter</a></h3>
+  <p class="excerpt">People who use heating oil will see increases of around 70 percent because the war in Iran has greatly reduced supply of that fuel.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/11/business/energy-environment/winter-heating-oil-costs.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:04 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/11/business/nvidia-megaspeed-christian-lamarco.html" target="_blank" rel="noopener">This Trader Raised Alarm About Nvidia’s China Entanglements Months Ago</a></h3>
+  <p class="excerpt">Christian Lamarco, a 31-year-old short seller and trader, warned about financial and personal problems at Nvidia in May.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/11/business/nvidia-megaspeed-christian-lamarco.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/11/dining/thanksgiving-pies-prices-expensive-dessert.html" target="_blank" rel="noopener">$150 for a Thanksgiving Pie? A Humble Dessert Staple Gets Pricey.</a></h3>
+  <p class="excerpt">This season, bakers are charging three figures for luxury versions that combine elaborate prep and premium ingredients. Not everyone is biting.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/11/dining/thanksgiving-pies-prices-expensive-dessert.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:02 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/11/style/brigade-entertainment-360-acquisition-max-stein.html" target="_blank" rel="noopener">Entertainment 360 Acquires Brigade, a Management Firm Rich in Substackers</a></h3>
+  <p class="excerpt">With the purchase of Brigade, a small talent firm, Substack writers and podcast hosts are now managed by the same company as movie stars.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/11/style/brigade-entertainment-360-acquisition-max-stein.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:01 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-politics">
+  <div class="section-head">
+    <h2>Politics &amp; Diplomacy</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/south-sudans-authorities-must-allow-unmiss-to-operate-without-obstruction-uk-statement-at-the-un-security-council" target="_blank" rel="noopener">South Sudan&#39;s authorities must allow UNMISS to operate without obstruction: UK statement at the UN Security Council</a></h3>
+  <p class="excerpt">Statement by Ambassador Kate Foster, UK Deputy Permanent Representative to the UN, at the UN Security Council meeting on South Sudan</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/south-sudans-authorities-must-allow-unmiss-to-operate-without-obstruction-uk-statement-at-the-un-security-council" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+      <a href="https://news.un.org/feed/view/en/story/2026/11/1168774" target="_blank" rel="noopener">UN News</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 17:04 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/joint-declaration-following-the-g7-foreign-ministers-meeting-in-paris" target="_blank" rel="noopener">Joint declaration following the G7 Foreign Ministers&#39; Meeting in Paris</a></h3>
+  <p class="excerpt">G7 Foreign Ministers&#39; Statement following the G7 Foreign Ministers&#39; Meeting in Paris on 9- 10 November 2026</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/joint-declaration-following-the-g7-foreign-ministers-meeting-in-paris" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:42 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/53rd-universal-periodic-review-of-human-rights-uk-statement-on-ireland" target="_blank" rel="noopener">53rd Universal Periodic Review of human rights: UK Statement on Ireland</a></h3>
+  <p class="excerpt">Statement by the UK&#39;s Human Rights Ambassador, Eleanor Sanders, at Ireland&#39;s Universal Periodic Review at the Human Rights Council in Geneva.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/53rd-universal-periodic-review-of-human-rights-uk-statement-on-ireland" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/uk-statement-regarding-conviction-of-tanzanian-opposition-leader-tundu-lissu" target="_blank" rel="noopener">UK Statement regarding conviction of Tanzanian Opposition Leader Tundu Lissu</a></h3>
+  <p class="excerpt">UK expresses concern over Tundu Lissu&#39;s conviction, urges Tanzania to uphold fair trial rights, political reconciliation, democracy and rule of law.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/uk-statement-regarding-conviction-of-tanzanian-opposition-leader-tundu-lissu" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 10, 10:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/nov/10/thomas-markle-ankle-monitor" target="_blank" rel="noopener">Thomas Markle, Meghan’s father, jailed after cutting off ankle monitor, DoJ says</a></h3>
+  <p class="excerpt">Estranged father of Duchess of Sussex was arrested for keeping child sexual abuse material, authorities sayThe estranged father of Meghan Markle, the Duchess of Sussex, has been jailed after US authorities said he cut an electronic monitoring device off his ankle, days after his arrest for keeping child sexual abuse material in storage units in California.Thomas Markle, 82, was in custody awaiting a hearing in federal court in Tampa, Florida, first assistant US attorney Bill Essayli said. He was arrested shortly after he cut off the ankle bracelet at 1.45am on Tuesday, Essayli said. Continue r</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/10/us/thomas-markle-ankle-monitor-jail.html" target="_blank" rel="noopener">NYT Europe</a>
+      <a href="https://www.bbc.co.uk/news/articles/c9j3433zy4vro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/us-news/2026/nov/10/thomas-markle-ankle-monitor" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 11:29 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cwz0k79pr8z2o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Hundreds of Italian schools hit by threats in suspected bomb hoax</a></h3>
+  <p class="excerpt">Emails containing the false warnings were sent to schools in Rome, Naples, Vicenza, Florence, Pisa, Trieste and other Italian cities, officials say.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/7bbc0a5e-b7e2-4a3f-874f-a63de94e922d?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/cwz0k79pr8z2o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 12:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/technology/2026/nov/11/nvidia-hires-leading-us-law-firm-to-investigate-jensen-huang-relationship" target="_blank" rel="noopener">Nvidia hires leading US law firm to investigate Jensen Huang’s relationship</a></h3>
+  <p class="excerpt">Move comes as chipmaker reels from reports its CEO was having an affair with an alleged Chinese spyBusiness live – latest updatesNvidia has appointed a leading US law firm to conduct a “thorough and independent” investigation into the relationship between its chief executive, Jensen Huang, and an alleged Chinese spy.The $4.1tn (£3tn) chipmaker has hired New York-based Wachtell, Lipton, Rosen &amp;amp; Katz for the investigation, which will be led by the Wachtell partner Joon Kim. Wachtell’s website describes Kim, a former government prosecutor in New York, as a specialist in areas including intern</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/8d59bf02-960e-4eb1-b5dc-55397e31cea5?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.theguardian.com/technology/2026/nov/11/nvidia-hires-leading-us-law-firm-to-investigate-jensen-huang-relationship" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 11:49 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/cb451a27-481d-4106-b40f-4a83e3e361fd?syn-25a6b1a6=1" target="_blank" rel="noopener">FirstFT: Anthropic bankers prepare to increase IPO valuation to $1.5tn</a></h3>
+  <p class="excerpt">Also in today’s newsletter: Hegseth survives impeachment vote and more on Alice Huang’s background</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/cb451a27-481d-4106-b40f-4a83e3e361fd?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.ft.com/content/68bcba57-0575-44ee-80f4-2e5ea23a431e?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 11:08 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/d93d41fc-943c-449b-948c-57a4464f564f?syn-25a6b1a6=1" target="_blank" rel="noopener">Spain roiled by first general strike in 14 years</a></h3>
+  <p class="excerpt">Unions stage action over soaring housing costs and low wages ahead of November 29 snap election</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/d93d41fc-943c-449b-948c-57a4464f564f?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://english.elpais.com/spain/2026-11-11/spains-unions-call-the-first-general-strike-in-14-years.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:40 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cqde1yddwk17o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Police told Russell Brand to leave Jemima Goldsmith&#39;s house in 2014</a></h3>
+  <p class="excerpt">Police confirm they asked Brand to leave his ex-girlfriend&#39;s house after she reported an alleged assault.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/10/world/europe/jemima-goldsmith-russell-brand-assault.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/cqde1yddwk17o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 10:26 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/global-development/2026/nov/11/woman-in-saudi-arabia-sentenced-to-100-lashes-for-giving-birth-outside-marriage" target="_blank" rel="noopener">Woman in Saudi Arabia sentenced to 100 lashes for giving birth outside marriage</a></h3>
+  <p class="excerpt">Rights groups condemn reported punishment of Kenyan migrant worker as an ‘act of violence’A Kenyan mother in Saudi Arabia has reportedly been sentenced to 100 lashes after giving birth outside marriage.Under the Saudi sharia law system, sex outside marriage is a criminal offence. But it is women who are disproportionately targeted, say rights groups, which have condemned the punishment as an “act of violence”. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/10/world/middleeast/saudi-arabia-lashing-sentence-kenyan-woman.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.theguardian.com/global-development/2026/nov/11/woman-in-saudi-arabia-sentenced-to-100-lashes-for-giving-birth-outside-marriage" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 09:15 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cw8dvpmzp2p4o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Kennedys sue to block Trump&#39;s arch, arguing it would cast shadow on JFK&#39;s grave</a></h3>
+  <p class="excerpt">Nine members of the political dynasty say the 250ft structure would cast a shadow on gravesites.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/10/us/politics/kennedy-trump-arch-lawsuit.html" target="_blank" rel="noopener">NYT Politics</a>
+      <a href="https://www.bbc.co.uk/news/articles/cw8dvpmzp2p4o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 11, 03:44 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <footer class="foot">
+    Generated 2026-11-11 12:51 UTC ·
+    Aggregated from reliable sources (NYT, Foreign Affairs, FT, official government sites).
+    Headlines &amp; excerpts link to originals; no paywalled full text is reproduced.
+  </footer>
+</main>
+</body>
+</html>
