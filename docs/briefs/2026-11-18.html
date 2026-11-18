@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Today's Brief — Wednesday, 18 November 2026</title>
+<style>
+  /* New York Times–inspired: white background, serif headlines, hairline rules,
+     sans-serif labels, minimal color. */
+  :root {
+    --bg: #ffffff;
+    --text: #121212;        /* near-black body */
+    --muted: #666666;       /* bylines / meta */
+    --faint: #999999;
+    --rule: #e2e2e2;        /* hairline dividers */
+    --rule-strong: #121212; /* section top rules */
+    --link: #326891;        /* NYT link blue, used sparingly */
+    --official: #9a6a00;    /* restrained gold-brown */
+    --wire: #326891;
+    --analysis: #6a4c93;
+    --serif: Georgia, "Times New Roman", "Times", serif;
+    --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: var(--serif); line-height: 1.5; -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px 90px; }
+
+  /* Masthead — centered serif wordmark with black rules above/below. */
+  header.masthead { background: var(--bg); border-bottom: 1px solid var(--text);
+    padding: 14px 24px 0; }
+  .masthead-inner { max-width: 960px; margin: 0 auto; }
+  .brand { text-align: center; padding-bottom: 12px; border-bottom: 1px solid var(--text);
+    margin-bottom: 8px; }
+  .brand .kicker { font-family: var(--sans); font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .brand h1 { font-family: var(--serif); font-weight: 700; margin: 4px 0 2px;
+    font-size: 40px; letter-spacing: -.01em; line-height: 1.05; }
+  .brand .date { font-family: var(--sans); color: var(--muted); font-size: 12.5px;
+    letter-spacing: .02em; }
+  .nav { display: flex; gap: 20px; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 12px; text-transform: uppercase; letter-spacing: .08em;
+    padding: 8px 0 10px; }
+  .nav a { color: var(--text); font-weight: 600; }
+  .nav a:hover { color: var(--link); }
+
+  /* Links-only / status banner — quiet, italic serif. */
+  .banner { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    padding: 10px 0; margin: 18px 0 6px; color: var(--muted); font-size: 14px;
+    font-style: italic; }
+
+  /* Executive summary — a boxed "lede" with a sans label. */
+  .exec { border: 1px solid var(--text); padding: 22px 24px; margin: 24px 0 8px; }
+  .exec h2 { font-family: var(--sans); margin: 0 0 10px; font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text); font-weight: 700; }
+  .exec p { margin: 0 0 12px; font-size: 18px; line-height: 1.55; }
+  .exec p:last-child { margin-bottom: 0; }
+  .exec .ir { border-top: 1px solid var(--rule); margin-top: 16px; padding-top: 16px; }
+  .exec .ir h3 { font-family: var(--sans); margin: 0 0 6px; font-size: 11px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--analysis); font-weight: 700; }
+  .exec .ir p { font-size: 16px; }
+
+  /* Section fronts — serif head with a strong black rule above (NYT section style). */
+  section.topic { margin: 34px 0 0; }
+  .section-head { border-top: 2px solid var(--rule-strong); padding-top: 8px; margin-bottom: 6px;
+    display: flex; align-items: baseline; gap: 10px; }
+  .section-head h2 { font-family: var(--serif); margin: 0; font-size: 22px; font-weight: 700;
+    letter-spacing: -.01em; }
+  .section-head .count { font-family: var(--sans); color: var(--faint); font-size: 11px;
+    text-transform: uppercase; letter-spacing: .08em; }
+  .section-brief { font-style: italic; color: #333; padding: 6px 0 2px; margin: 6px 0;
+    font-size: 15px; border-left: 3px solid var(--rule-strong); padding-left: 12px; }
+
+  /* Story cards — serif headline, hairline divider, sans meta. */
+  .card { padding: 15px 0; border-bottom: 1px solid var(--rule); }
+  .card:last-child { border-bottom: none; }
+  .card h3 { font-family: var(--serif); margin: 0 0 5px; font-size: 20px; font-weight: 700;
+    line-height: 1.25; letter-spacing: -.005em; }
+  .card h3 a { color: var(--text); }
+  .card h3 a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+  .card .ai { margin: 4px 0 6px; font-size: 15px; color: #333; line-height: 1.5; }
+  .card .excerpt { margin: 4px 0 6px; font-size: 15px; color: var(--muted); line-height: 1.5; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    font-family: var(--sans); font-size: 12px; margin-top: 5px; color: var(--faint); }
+
+  /* Tier labels — small uppercase sans, a dot of color, no boxes. */
+  .badge { font-family: var(--sans); font-size: 10.5px; letter-spacing: .07em;
+    text-transform: uppercase; font-weight: 700; display: inline-flex; align-items: center; }
+  .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%;
+    display: inline-block; margin-right: 5px; background: currentColor; }
+  .badge.official { color: var(--official); }
+  .badge.wire { color: var(--wire); }
+  .badge.analysis { color: var(--analysis); }
+  .sources { display: flex; flex-wrap: wrap; gap: 6px; font-family: var(--sans); }
+  .sources a { color: var(--muted); }
+  .sources a:hover { color: var(--link); text-decoration: underline; }
+  .sources a::after { content: "·"; margin-left: 6px; color: var(--faint); }
+  .sources a:last-child::after { content: ""; }
+
+  /* Country watch — bordered cards with serif titles. */
+  .country-group { margin-top: 30px; }
+  .country-group > h2 { font-family: var(--sans); font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text); font-weight: 700;
+    border-bottom: 1px solid var(--rule-strong); padding-bottom: 6px; }
+  .country-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 22px; margin-top: 14px; }
+  .country-card { border: 1px solid var(--rule); padding: 14px 16px; }
+  .country-card h3 { font-family: var(--serif); margin: 0 0 8px; font-size: 18px; font-weight: 700; }
+  .country-card ul { margin: 0; padding: 0; list-style: none; }
+  .country-card li { padding: 7px 0; border-top: 1px solid var(--rule); font-size: 15px;
+    line-height: 1.35; }
+  .country-card li:first-child { border-top: none; }
+  .country-card li a { color: var(--text); }
+  .country-card li a:hover { text-decoration: underline; }
+
+  /* Archive + table of contents. */
+  .archive-list { list-style: none; padding: 0; margin: 22px 0; }
+  .archive-list li { padding: 14px 0; border-bottom: 1px solid var(--rule);
+    font-family: var(--serif); font-size: 19px; }
+  .archive-list li a:hover { text-decoration: underline; }
+  .toc { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 16px 0 4px;
+    padding-bottom: 14px; border-bottom: 1px solid var(--rule); font-family: var(--sans); }
+  .toc a { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em;
+    font-weight: 600; }
+  .toc a:hover { color: var(--link); }
+
+  footer.foot { font-family: var(--sans); color: var(--faint); font-size: 11.5px; margin-top: 56px;
+    padding-top: 18px; border-top: 1px solid var(--rule); line-height: 1.6; }
+
+  @media (max-width: 640px) {
+    .brand h1 { font-size: 30px; }
+    .exec p { font-size: 16px; }
+    .card h3 { font-size: 18px; }
+    .country-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="kicker">Diplomat Daily Briefing</span>
+      <h1>Today's Brief</h1>
+      <span class="date">Wednesday, 18 November 2026 · 302 articles across 289 stories</span>
+    </div>
+    <nav class="nav">
+  <a href="../index.html">Dashboard</a>
+  <a href="../archive.html">Archive</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <div class="banner">AI summaries unavailable (authentication_error: Invalid bearer token) — showing links only.</div>
+
+
+  <h2 id="country-watch" style="margin-top:24px;font-size:20px;border-bottom:2px solid var(--rule-strong);padding-bottom:6px;">Country Profiles</h2>
+  <section class="topic" id="ctry-spain">
+  <div class="section-head">
+    <h2>Spain</h2>
+    <span class="count">4 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cxr5g4lyp94no?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Who to watch in Spain&#39;s election race</a></h3>
+  <p class="excerpt">Spain votes on 29 November, with the conservatives leading most polls after eight years of Socialist-led rule.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cxr5g4lyp94no?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 11:44 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/travel/madrid-mercados-roundup.html" target="_blank" rel="noopener">6 Markets to Visit on Your Next Trip to Madrid</a></h3>
+  <p class="excerpt">Follow the locals to the city’s mercados, which offer culinary delights, flamenco classes and buzzy bars, all with a side of authenticity. Here are six hot spots.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/travel/madrid-mercados-roundup.html" target="_blank" rel="noopener">NYT Europe</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 10:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/science-tech/2026-11-17/six-studies-by-daniel-balsalobre-spains-number-1-emerging-scientist-are-retracted-due-to-irregularities.html" target="_blank" rel="noopener">Six studies by Daniel Balsalobre, Spain’s ‘number 1’ emerging scientist, are retracted due to irregularities</a></h3>
+  <p class="excerpt">The expert in environmental economics, one of the most highly cited researchers in the world, defends his honesty and attributes the criticism to ‘Spanish envy’</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/science-tech/2026-11-17/six-studies-by-daniel-balsalobre-spains-number-1-emerging-scientist-are-retracted-due-to-irregularities.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 12:34 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/10fd3d24-04b1-40a2-93d3-8b64023cc869?syn-25a6b1a6=1" target="_blank" rel="noopener">Berlin picks ECB board nominee, paving way for Spanish presidency</a></h3>
+  <p class="excerpt">Choice of Markus Brunnermeier will consolidate deal with France in which Spain’s Pablo Hernández de Cos would lead central bank</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/10fd3d24-04b1-40a2-93d3-8b64023cc869?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Global Economy</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 10:48 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-switzerland">
+  <div class="section-head">
+    <h2>Switzerland</h2>
+    <span class="count">7 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261118/could-switzerlands-planned-e-id-eventually-become-compulsory" target="_blank" rel="noopener">Could Switzerland&#39;s planned e-ID eventually become compulsory?</a></h3>
+  <p class="excerpt">A new initiative wants to guarantee that Switzerland’s planned electronic identity scheme stays voluntary, over fears it will eventually become compulsory given it will be necessary for many services.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261118/could-switzerlands-planned-e-id-eventually-become-compulsory" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:32 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261118/forecast-is-switzerland-set-for-an-exceptionally-cold-winter" target="_blank" rel="noopener">Forecast: Is Switzerland set for an exceptionally cold winter?</a></h3>
+  <p class="excerpt">There has been talk of a “winter of the century” coming to Switzerland. But what do forecasters say in their early season predictions?</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261118/forecast-is-switzerland-set-for-an-exceptionally-cold-winter" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 11:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261118/today-in-switzerland-a-roundup-of-the-latest-news-on-wednesday-267" target="_blank" rel="noopener">Today in Switzerland: A roundup of the latest news on Wednesday</a></h3>
+  <p class="excerpt">Opponents of the e-ID scheme seek to enshrine its voluntary use in the constitution; Zurich still retains its top credit rating; and more Swiss news in our Wednesday roundup.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261118/today-in-switzerland-a-roundup-of-the-latest-news-on-wednesday-267" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 09:47 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.politico.com/news/2026/11/18/senate-map-2028-bernie-moreno-01170846" target="_blank" rel="noopener">‘A savagely brutal map’: Senate GOP braces for 2028</a></h3>
+  <p class="excerpt">Sen. Bernie Moreno, the incoming chair of the National Republican Senatorial Committee, is clear-eyed on the challenges ahead as the party reckons with midterm losses.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.politico.com/news/2026/11/18/senate-map-2028-bernie-moreno-01170846" target="_blank" rel="noopener">Politico</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 07:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261117/could-some-non-eu-travellers-soon-avoid-ees-queues-at-swiss-airports" target="_blank" rel="noopener">Could some non-EU travellers soon avoid EES queues at Swiss airports?</a></h3>
+  <p class="excerpt">Switzerland is considering a fast-track border scheme for selected non-EU travellers as authorities look for ways to reduce longer waiting times at airports following the introduction of Europe’s Entry/Exit System (EES).</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261117/could-some-non-eu-travellers-soon-avoid-ees-queues-at-swiss-airports" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 18:38 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261117/swiss-airline-to-launch-new-daily-flight-between-zurich-and-london" target="_blank" rel="noopener">Swiss airline to launch new daily flight between Zurich and London</a></h3>
+  <p class="excerpt">A Swiss airline is adding a new UK destination to its network with flights to begin in spring 2027.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261117/swiss-airline-to-launch-new-daily-flight-between-zurich-and-london" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 13:34 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261117/switzerland-set-to-make-switching-health-insurance-easier" target="_blank" rel="noopener">Switzerland set to make switching health insurance easier</a></h3>
+  <p class="excerpt">Switzerland could soon make it easier to switch basic health insurers, under a proposal that would allow customers to cancel and change providers entirely online.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261117/switzerland-set-to-make-switching-health-insurance-easier" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 13:20 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-united_kingdom">
+  <div class="section-head">
+    <h2>United Kingdom</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/strengthening-secure-and-resilient-economic-connectivity-uk-statement-to-the-osce" target="_blank" rel="noopener">Strengthening secure and resilient economic connectivity: UK statement to the OSCE</a></h3>
+  <p class="excerpt">The UK reaffirms its support for practical OSCE co-operation on secure and resilient economic connectivity, calling for open markets, free trade, good governance and diversified supply chains.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/strengthening-secure-and-resilient-economic-connectivity-uk-statement-to-the-osce" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 10:12 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/uk-cracks-down-on-companies-building-settlements-in-the-west-bank-and-groups-blocking-aid-access-into-gaza" target="_blank" rel="noopener">UK cracks down on companies building settlements in the West Bank and groups blocking aid access into Gaza</a></h3>
+  <p class="excerpt">The UK has imposed new sanctions on companies involved in the expansion of illegal settlements in the West Bank and an activist group responsible for blocking aid to Gaza.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/uk-cracks-down-on-companies-building-settlements-in-the-west-bank-and-groups-blocking-aid-access-into-gaza" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 10:04 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cqrlg377638yo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Palestinian woman, 72, shot dead by Israeli settlers in West Bank, health ministry says</a></h3>
+  <p class="excerpt">Palestinians say there was an attack by settlers in al-Duyuk al-Tahta, while the Israeli military says the settlers fired after being attacked.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cqrlg377638yo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/17/palestinian-woman-shot-dead-israeli-settlers-near-jericho-witnesses-say" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 20:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/environment/2026/nov/18/uk-government-angela-eagle-natural-england-wild-birds-decline-" target="_blank" rel="noopener">UK government ‘breaking the law’ by not stopping decline of wild birds</a></h3>
+  <p class="excerpt">Populations at lowest level on record with 45% of native breeding species in decline, environment regulator saysEnvironment secretary Angela Eagle, her ministers and Natural England are breaking the law by failing to intervene to slow the catastrophic decline of Britain’s wild birds, the UK’s environment regulator has said.New data shows wild bird populations have dropped to their lowest level on record, with almost half – 45% – of 132 native breeding species in decline over a five-year period. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/environment/2026/nov/18/uk-government-angela-eagle-natural-england-wild-birds-decline-" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:07 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/18/israel-construction-contracts-e1-west-bank-settlement-uk-sanctions" target="_blank" rel="noopener">Israel delays building contracts for West Bank settlement after UK sanctions</a></h3>
+  <p class="excerpt">Attorney general says E1 settlement decision should not be taken by caretaker government led by NetanyahuIsrael has postponed issuing contracts for the construction of a large settlement on the West Bank seen as likely to render a two-state solution unviable, days after the UK imposed sanctions against building firms operating in the area.Israeli diplomats insisted the move was not in response to the measures from Downing Street. Gali Baharav-Miara, the attorney general, said any decision on settlement expansion should not be taken by the caretaker government led by Benjamin Netanyahu but by w</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/nov/18/israel-construction-contracts-e1-west-bank-settlement-uk-sanctions" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:05 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/2026/nov/18/labour-drops-foie-gras-import-ban-eu-food-trade-deal" target="_blank" rel="noopener">Ministers to drop foie gras imports ban to help seal EU food trade deal</a></h3>
+  <p class="excerpt">Animal welfare charities criticise ‘backwards step’ on foie gras, production of which has been banned in UK since 2007Ministers will drop plans to ban foie gras imports into the UK in order to smooth a trade deal with the EU that will be announced this week.As first reported by the Financial Times, the proposed ban will be officially dropped on Friday when the government announces its sanitary and phytosanitary (SPS) trade deal with the EU to reduce checks and paperwork on imports and exports of food and drink with the bloc. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/politics/2026/nov/18/labour-drops-foie-gras-import-ban-eu-food-trade-deal" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:47 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/live/2026/nov/18/shabana-mahmood-andy-burnham-kemi-badenoch-pmqs-latest-news-updates" target="_blank" rel="noopener">Burnham and Badenoch clash over welfare cuts for young at PMQs – UK politics live</a></h3>
+  <p class="excerpt">Leader of opposition accuses Labour of being party of welfare as he says the biggest rise in Neets came under the ToriesIn her speech today, Shabana Mahmood, the home secretary, will also announce plans for a new fast-stream police leadership programme for up to 200 recruits a year. Vikram Dodd has the details.The Conservatives and Reform UK do not seem very impressed by Shabana Mahmood’s proposal to meet their concerns about two-tier policing.If you don’t want two-tier justice, stop legislating for it.Stop training people for it.Last year the Home Office believed claims of “two-tier” policing</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/politics/live/2026/nov/18/shabana-mahmood-andy-burnham-kemi-badenoch-pmqs-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:42 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cmy498kdkx3xo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Typical energy bill forecast to go up by £443 a year from January as inflation rate rises again</a></h3>
+  <p class="excerpt">Energy bills are expected to jump by 26% a year for a typical household as UK inflation hits its highest rate for a year.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cmy498kdkx3xo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:17 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-united_states">
+  <div class="section-head">
+    <h2>United States</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://news.un.org/feed/view/en/story/2026/11/1168828" target="_blank" rel="noopener">Ukraine: Civilian casualties in 2026 already far exceed previous years’ tolls</a></h3>
+  <p class="excerpt">This year has seen dramatically higher civilian casualties in Ukraine than any other year since the full-scale invasion of the eastern European country by Russia in February 2022, the UN Human Rights Monitoring Mission in Ukraine (HRMMU) said on Tuesday.&amp;nbsp;</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://news.un.org/feed/view/en/story/2026/11/1168828" target="_blank" rel="noopener">UN News</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://news.un.org/feed/view/en/story/2026/11/1168824" target="_blank" rel="noopener">COP31: The push to protect warming oceans reaches the negotiating table</a></h3>
+  <p class="excerpt">From identifying marine life with a cup of seawater to drawing on Indigenous knowledge to prevent wildfires, scientists and communities showcased both cutting-edge and time-tested ways to protect nature at COP31 on Tuesday. Yet turning innovation into action remains a challenge, with funding gaps persisting and ministers struggling to bridge divisions over fossil fuels and climate finance as negotiations enter their final days.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://news.un.org/feed/view/en/story/2026/11/1168824" target="_blank" rel="noopener">UN News</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://news.un.org/feed/view/en/story/2026/11/1168823" target="_blank" rel="noopener">Haiti: ‘Atrocious abuses’ continue as UN warns anti-gang operations must priortise civilian protection</a></h3>
+  <p class="excerpt">The UN human rights office, OHCHR has urged greater protection for civilians in Haiti amid ongoing “atrocious abuses” committed by gangs and intensified security operations.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://news.un.org/feed/view/en/story/2026/11/1168823" target="_blank" rel="noopener">UN News</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/17/us/politics/rfk-jr-measles-democrats.html" target="_blank" rel="noopener">Democrats Assail RFK Jr. After U.S. Loses Measles Elimination Status</a></h3>
+  <p class="excerpt">Incoming senators and prospective presidential candidates blamed the health secretary’s history of vaccine skepticism for the rise of measles in the country.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/17/us/politics/rfk-jr-measles-democrats.html" target="_blank" rel="noopener">NYT Politics</a>
+      <a href="https://www.bbc.co.uk/news/articles/c977p71jx0xxo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 03:33 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/us/politics/democrats-cast-investigative-net.html" target="_blank" rel="noopener">House Democrats Cast Wide Net as They Prepare Trump Investigations</a></h3>
+  <p class="excerpt">The inquiries would focus on President Trump, his family and top officials in his administration and would include a look at Commerce Secretary Howard Lutnick and policies related to Nvidia.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/us/politics/democrats-cast-investigative-net.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:17 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/17/world/18int-theworld-anthropic-ukraine-nvidia.html" target="_blank" rel="noopener">Big Money, Existential Risks</a></h3>
+  <p class="excerpt">Anthropic’s prospectus for its blockbuster I.P.O. this week reads like dystopian science fiction.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/17/world/18int-theworld-anthropic-ukraine-nvidia.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:09 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/world/europe/man-charged-ireland-shannon-us-military-plane.html" target="_blank" rel="noopener">Irish Man Sabotaged U.S. Military Plane With Ax and Chemicals, Prosecutors Say</a></h3>
+  <p class="excerpt">Daithi O’Corrain sealed himself inside a National Guard C-130 at Ireland’s Shannon Airport in April for hours, causing so much damage that the aircraft was retired from service, prosecutors said.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/world/europe/man-charged-ireland-shannon-us-military-plane.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cmd7159vlr85o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">The seven Anthropic founders who are about to become multi-billionaires</a></h3>
+  <p class="excerpt">The AI company behind Claude is about to sell its shares on the US stock market - making its founders very rich.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cmd7159vlr85o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:55 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-netherlands">
+  <div class="section-head">
+    <h2>Netherlands</h2>
+    <span class="count">5 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/russian-embassy-responds-to-nl-role-in-crimea-bridge-attack/" target="_blank" rel="noopener">Russian embassy responds to NL role in Crimea bridge attack</a></h3>
+  <p class="excerpt">The Russian embassy in the Netherlands has responded to the announcement made by Dutch arms company Destinus that its weapons...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/russian-embassy-responds-to-nl-role-in-crimea-bridge-attack/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 12:37 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/far-right-parties-mentioned-remigration-96-times-in-two-years/" target="_blank" rel="noopener">Far-right parties mentioned “remigration” 96 times in two years</a></h3>
+  <p class="excerpt">Far-right parties such as Forum voor Democratie and PVV used the term “remigration” nearly 100 times in the Dutch parliament...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/far-right-parties-mentioned-remigration-96-times-in-two-years/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/netherlands-has-widest-gender-pay-gap-in-eu-despite-improvements/" target="_blank" rel="noopener">Netherlands has widest gender pay gap in EU despite improvements</a></h3>
+  <p class="excerpt">The Netherlands has the widest gender pay gap in the European Union, with low-paid workers and single parents particularly disadvantaged,...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/netherlands-has-widest-gender-pay-gap-in-eu-despite-improvements/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 10:50 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/dutch-arms-maker-takes-public-credit-for-crimea-bridge-strike/" target="_blank" rel="noopener">Dutch arms maker takes public credit for Crimea bridge strike</a></h3>
+  <p class="excerpt">Dutch arms manufacturer Destinus says its missiles were used in a Ukrainian attack on the bridge between Crimea and Russia....</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/dutch-arms-maker-takes-public-credit-for-crimea-bridge-strike/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 09:47 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/data-centres-now-use-5-of-dutch-electricity-cbs-says/" target="_blank" rel="noopener">Data centres now use 5% of Dutch electricity, CBS says</a></h3>
+  <p class="excerpt">Data centres used 5% of all electricity consumed in the Netherlands last year, up from 1.5% in 2017, according to...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/data-centres-now-use-5-of-dutch-electricity-cbs-says/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 07:33 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <div class="country-group">
+    <h2>Regional neighbors</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>Turkey</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/17/climate/cop31-turkey-electrification.html" target="_blank" rel="noopener">There’s a New Push at COP31 in Turkey: Electrification</a>
+    </li>
+    <li>
+      <a href="https://www.foreignaffairs.com/turkey/fantasy-turkish-middle-east" target="_blank" rel="noopener">The Fantasy of a Turkish Middle East</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Russia</h3>
+  <ul>
+    <li>
+      <a href="https://news.un.org/feed/view/en/story/2026/11/1168828" target="_blank" rel="noopener">Ukraine: Civilian casualties in 2026 already far exceed previous years’ tolls</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/live/2026/11/18/world/trump-china-asia-apec" target="_blank" rel="noopener">Live Updates: Trump, Xi and Putin Shake Hands as Leaders Gather in China</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/live/2026/11/18/world/trump-china-asia-apec/putin-renews-his-warm-bond-with-xi" target="_blank" rel="noopener">Putin renews his warm bond with Xi.</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/65c5684a-f532-4601-9878-8fa2efe8d8f8?syn-25a6b1a6=1" target="_blank" rel="noopener">Ukraine’s ‘flying modems’ helped take down Putin’s bridge</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Iran</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/18/world/middleeast/iran-attacks-bahrain-kuwait-ships-hormuz.html" target="_blank" rel="noopener">Iran Fires Missiles and Drones at Gulf Arab States as Peace Talks Falter</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/cw4gn9jeqjq7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Kuwait says it repelled first Iranian attack in two months after US strikes island</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/8a46c15b-3671-49fc-b367-a7ddd5b1a4f4?syn-25a6b1a6=1" target="_blank" rel="noopener">Iran attacks Bahrain and Kuwait</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/us-news/2026/nov/17/pakistani-man-jailed-trump-murder-plot" target="_blank" rel="noopener">Pakistani man sentenced to 27 years in US prison over Trump murder plot</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+  <div class="country-group">
+    <h2>Great powers</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>China</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/live/2026/11/18/world/trump-china-asia-apec" target="_blank" rel="noopener">Live Updates: Trump, Xi and Putin Shake Hands as Leaders Gather in China</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/17/technology/jensen-huang-nvidia-statement.html" target="_blank" rel="noopener">Jensen Huang Says He Would Return as Nvidia CEO if Asked</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/us-news/live/2026/nov/18/donald-trump-mary-peltola-alaska-hakeem-jeffries-democrats-republicans-congress-house-senate-midterms-latest-news-updates" target="_blank" rel="noopener">Mary Peltola’s Alaska win ‘a gift for all America’, says Schumer – US politics live</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/18/world/asia/xi-jinping-china-sanae-takaichi-japan.html" target="_blank" rel="noopener">Leaders of China and Japan Meet Amid Political Feud</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>European Union</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/politics/2026/nov/18/labour-drops-foie-gras-import-ban-eu-food-trade-deal" target="_blank" rel="noopener">Ministers to drop foie gras imports ban to help seal EU food trade deal</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/cm9q8jx05q3go?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Lammy urges Burnham to take UK back into the EU</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/6b278daf-6fdf-4951-af8a-227f25c4e0b7?syn-25a6b1a6=1" target="_blank" rel="noopener">UK plans to resist EU request to match tariffs on Chinese goods</a>
+    </li>
+    <li>
+      <a href="https://www.dutchnews.nl/2026/11/netherlands-has-widest-gender-pay-gap-in-eu-despite-improvements/" target="_blank" rel="noopener">Netherlands has widest gender pay gap in EU despite improvements</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>France</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/17/world/europe/france-sarre-montangon-protests.html" target="_blank" rel="noopener">They’re Young and Frustrated and Want France to Change. They Disagree on How.</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/10fd3d24-04b1-40a2-93d3-8b64023cc869?syn-25a6b1a6=1" target="_blank" rel="noopener">Berlin picks ECB board nominee, paving way for Spanish presidency</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/ce0f66b9-703d-4e04-b046-bf04a3d9209a?syn-25a6b1a6=1" target="_blank" rel="noopener">Brussels raises Eurozone growth forecasts as AI boom drives exports</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Germany</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/18/world/europe/liepzig-airport-drone-attack-russia-ukraine-war.html" target="_blank" rel="noopener">These Villagers Wonder if They’re on the Front Line of Russia’s Shadow War</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/10fd3d24-04b1-40a2-93d3-8b64023cc869?syn-25a6b1a6=1" target="_blank" rel="noopener">Berlin picks ECB board nominee, paving way for Spanish presidency</a>
+    </li>
+    <li>
+      <a href="https://warontherocks.com/cogs-of-war/spending-isnt-deterrence-fixing-germanys-procurement-machine/" target="_blank" rel="noopener">Spending Isn’t Deterrence: Fixing Germany’s Procurement Machine</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+  <div class="country-group">
+    <h2>Middle East</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>Israel</h3>
+  <ul>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/cqrlg377638yo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Palestinian woman, 72, shot dead by Israeli settlers in West Bank, health ministry says</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/world/2026/nov/18/israel-construction-contracts-e1-west-bank-settlement-uk-sanctions" target="_blank" rel="noopener">Israel delays building contracts for West Bank settlement after UK sanctions</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/us-news/2026/nov/18/first-thing-peltolas-alaska-victory-secures-56th-democratic-seat-in-senate" target="_blank" rel="noopener">Peltola’s Alaska victory secures 56th Democratic seat in Senate | First Thing</a>
+    </li>
+    <li>
+      <a href="https://english.elpais.com/international/2026-11-18/genocide-the-difficulty-of-proving-the-crime-of-crimes.html" target="_blank" rel="noopener">Genocide: The difficulty of proving the crime of crimes</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Saudi Arabia</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/us-news/2026/nov/18/pete-hegseth-iran-war-pentagon" target="_blank" rel="noopener">Key Hegseth adviser faces questions over ties to Israeli defense contractor and Saudi Arabia</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Egypt</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/world/2026/nov/18/european-commission-accused-sugarcoating-figures-egypt-loans" target="_blank" rel="noopener">European Commission accused of sugarcoating figures to release funds to Egypt</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/17/world/middleeast/youssef-ibrahim-correspondent-obituary.html" target="_blank" rel="noopener">Youssef M. Ibrahim, Who Covered Iran’s Revolution for The Times, Dies at 83</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+
+  <section class="topic" id="sec-ir_theory">
+  <div class="section-head">
+    <h2>International Relations — Theory &amp; Analysis</h2>
+    <span class="count">10 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/business/dealbook/dealbook-summit-what-to-watch.html" target="_blank" rel="noopener">Economic and Political Uncertainty Will Be Focus of DealBook Summit</a></h3>
+  <p class="excerpt">The 2026 summit comes amid concerns about the sustainability of the A.I. rally and a midterm election that reset the balance of power in Washington.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/business/dealbook/dealbook-summit-what-to-watch.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/ca8ba515-592b-4c1d-a1d0-d8b2a94ccd30?syn-25a6b1a6=1" target="_blank" rel="noopener">Live US midterm elections results</a></h3>
+  <p class="excerpt">The latest updates on the races that will shape the balance of power in Washington</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/ca8ba515-592b-4c1d-a1d0-d8b2a94ccd30?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 09:46 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/united-states/americas-hidden-ai-advantage" target="_blank" rel="noopener">America’s Hidden AI Advantage</a></h3>
+  <p class="excerpt">The United States—not China—dominates diffusion.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/united-states/americas-hidden-ai-advantage" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/south-korea/model-middle-power" target="_blank" rel="noopener">The Model Middle Power</a></h3>
+  <p class="excerpt">What South Korea gets right about geopolitics.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/south-korea/model-middle-power" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/the-u-s-chinese-russian-summit-and-the-future-of-trilateral-nuclear-talks/" target="_blank" rel="noopener">The U.S.-Chinese-Russian Summit and the Future of Trilateral Nuclear Talks</a></h3>
+  <p class="excerpt">U.S. President Donald Trump, who has sought nuclear arms control with Russia and China since his first term, may finally have his chance. The first-ever U.S.-Chinese-Russian leaders&amp;#8217; summit is set to take place in Shenzhen, with nuclear issues potentially on the agenda. Regardless of whether the summit yields substantive progress, it could make the prospect of trilateral nuclear arms control seem somewhat less remote than before.&amp;#160;For Beijing, however, the summit&amp;#8217;s symbolism matters most: Washington is finally treating its geopolitical and ideological adversaries as equals in a</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/the-u-s-chinese-russian-summit-and-the-future-of-trilateral-nuclear-talks/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 08:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/keeping-america-out-revisiting-chinas-deterrence-strategy-for-taiwan/" target="_blank" rel="noopener">Keeping America Out: Revisiting China’s Deterrence Strategy for Taiwan</a></h3>
+  <p class="excerpt">In 2025, Joel Wuthnow wrote &amp;#8220;How China Could Counter U.S. Intervention in War Over Taiwan,&amp;#8221; arguing that Beijing&amp;#8217;s best option might be to deter Washington from coming to Taiwan&amp;#8217;s aid by raising the risks to the U.S. homeland. A year and a half later, we asked him to revisit that argument.Image: Lance Cpl. Victor GurrolaIn your 2025 article, you argued that debates over a Taiwan conflict focus too heavily on China striking U.S. forces first, when Beijing&amp;#8217;s most attractive option may be keeping the United States out of the fight altogether by threatening the Americ</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/keeping-america-out-revisiting-chinas-deterrence-strategy-for-taiwan/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 18:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/cogs-of-war/spending-isnt-deterrence-fixing-germanys-procurement-machine/" target="_blank" rel="noopener">Spending Isn’t Deterrence: Fixing Germany’s Procurement Machine</a></h3>
+  <p class="excerpt">In 2026, Germany is spending a record &amp;#8364;125 billion on defense, second only to the United States among NATO allies, and its core defense budget is set to reach &amp;#8364;170 billion by 2029. Its military strategy promises Europe&amp;#8217;s strongest conventional army by 2039 with a technologically superior and innovative Bundeswehr, Germany&amp;#8217;s armed forces.German startups and &amp;#8220;neo-primes&amp;#8221; &amp;#8212; venture-backed defense companies built to compete with established primes &amp;#8212; demonstrate, most visibly in Ukraine, that money can become capability quickly and cheaply. Much of th</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/cogs-of-war/spending-isnt-deterrence-fixing-germanys-procurement-machine/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 09:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/united-states/china-misreading-moment" target="_blank" rel="noopener">Is China Misreading the Moment?</a></h3>
+  <p class="excerpt">When U.S. President Donald Trump lands in Shenzhen later this week for the Asia-Pacific Economic Cooperation summit, he will sit down with Chinese leader Xi Jinping for the fourth time amid an unexpected détente between Washington and Beijing. The trade war of 2025 is in abeyance, the two governments have announced a relationship of “constructive strategic stability,” and, to the alarm of American allies, Trump and Xi are planning to meet with Russian President Vladimir Putin. Beneath the surface, however, the détente is beginning to crack.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/united-states/china-misreading-moment" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/turkey/fantasy-turkish-middle-east" target="_blank" rel="noopener">The Fantasy of a Turkish Middle East</a></h3>
+  <p class="excerpt">Ankara’s risky bid to impose regional order.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/turkey/fantasy-turkish-middle-east" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/the-military-strategic-drivers-behind-chinas-nuclear-expansion/" target="_blank" rel="noopener">The Military Strategic Drivers Behind China’s Nuclear Expansion</a></h3>
+  <p class="excerpt">In June 1993, a group of Second Artillery Corps senior leaders gathered at the Jiuquan Satellite Launch Center. The organizers brought Li Xuge, recently retired commander of the Second Artillery, as a special guest for the event. Li had watched the Second Artillery develop from its infancy to this day, when China finally tested a ballistic missile capable of striking anywhere within the United States. However, Li had received significant pushback on the program in the years prior to this launch. &amp;#160;In the early 1990s, China&amp;#8217;s military strategy was shifting to focus on war with Taiwan.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/the-military-strategic-drivers-behind-chinas-nuclear-expansion/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 08:30 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-conflicts">
+  <div class="section-head">
+    <h2>Conflicts &amp; Security</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cqrlg377638yo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Palestinian woman, 72, shot dead by Israeli settlers in West Bank, health ministry says</a></h3>
+  <p class="excerpt">Palestinians say there was an attack by settlers in al-Duyuk al-Tahta, while the Israeli military says the settlers fired after being attacked.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cqrlg377638yo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/17/palestinian-woman-shot-dead-israeli-settlers-near-jericho-witnesses-say" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 20:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/us/politics/democrats-cast-investigative-net.html" target="_blank" rel="noopener">House Democrats Cast Wide Net as They Prepare Trump Investigations</a></h3>
+  <p class="excerpt">The inquiries would focus on President Trump, his family and top officials in his administration and would include a look at Commerce Secretary Howard Lutnick and policies related to Nvidia.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/us/politics/democrats-cast-investigative-net.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:17 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/live/2026/11/18/world/trump-china-asia-apec/putin-renews-his-warm-bond-with-xi" target="_blank" rel="noopener">Putin renews his warm bond with Xi.</a></h3>
+  <p class="excerpt">The Russian leader demonstrated that despite his isolation from many Western nations over the war in Ukraine, he remains on good terms with much of the rest of the world.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/live/2026/11/18/world/trump-china-asia-apec/putin-renews-his-warm-bond-with-xi" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:14 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/world/middleeast/iran-attacks-bahrain-kuwait-ships-hormuz.html" target="_blank" rel="noopener">Iran Fires Missiles and Drones at Gulf Arab States as Peace Talks Falter</a></h3>
+  <p class="excerpt">Kuwait and Bahrain said they were targeted on Wednesday, a sign of how the Middle East is stuck in limbo between peace and full-blown war.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/world/middleeast/iran-attacks-bahrain-kuwait-ships-hormuz.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:01 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/2026/nov/18/labour-drops-foie-gras-import-ban-eu-food-trade-deal" target="_blank" rel="noopener">Ministers to drop foie gras imports ban to help seal EU food trade deal</a></h3>
+  <p class="excerpt">Animal welfare charities criticise ‘backwards step’ on foie gras, production of which has been banned in UK since 2007Ministers will drop plans to ban foie gras imports into the UK in order to smooth a trade deal with the EU that will be announced this week.As first reported by the Financial Times, the proposed ban will be officially dropped on Friday when the government announces its sanitary and phytosanitary (SPS) trade deal with the EU to reduce checks and paperwork on imports and exports of food and drink with the bloc. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/politics/2026/nov/18/labour-drops-foie-gras-import-ban-eu-food-trade-deal" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:47 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/nov/18/big-oil-immunity-bill-climate" target="_blank" rel="noopener">Republicans could expedite bill to make big oil immune to lawsuits, warn experts</a></h3>
+  <p class="excerpt">GOP lawmakers are rushing through high-priority bills before newly elected Democrats are sworn inClimate groups fear lawmakers could pass a bill by the end of the year that would give fossil fuel companies immunity from lawsuits and legislation that aims to hold them accountable for the climate crisis.After the blue wave election, Republican lawmakers are rushing to pass high-priority bills before newly elected Democrats are sworn in. Hundreds of elected leaders and climate groups sent a letter to Democratic leadership urging them to reject any proposal that would shield fossil fuel companies </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/nov/18/big-oil-immunity-bill-climate" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/96c565f1-f229-40b6-91e8-7a849ec4b208?syn-25a6b1a6=1" target="_blank" rel="noopener">US tech outages blamed on rush to fix bugs found by AI</a></h3>
+  <p class="excerpt">Experts say a race to patch software flaws likely created instability in computer systems at Microsoft, JPMorgan, the FAA and others</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/96c565f1-f229-40b6-91e8-7a849ec4b208?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 12:44 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/us/politics/peltola-victory-alaska-senate.html" target="_blank" rel="noopener">How Mary Peltola Triumphed in Alaska’s Senate Race</a></h3>
+  <p class="excerpt">Beleaguered by high fuel costs and wary of overfishing, Alaskans were drawn to the Democrat’s hyperlocal pitch.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/us/politics/peltola-victory-alaska-senate.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 12:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/nov/18/pete-hegseth-iran-war-pentagon" target="_blank" rel="noopener">Key Hegseth adviser faces questions over ties to Israeli defense contractor and Saudi Arabia</a></h3>
+  <p class="excerpt">A government watchdog has also labeled Hegseth’s defense policy appointee a ‘walking conflict of interest’One of defense secretary Pete Hegseth’s key advisers faces questions about potential conflicts of interest over his many roles, including advising the US defense department, Saudi Arabia, and an Israeli defence contractor.Former Republican senator Norm Coleman emerged as an informal yet omnipresent guide for Hegseth in December 2024 as the former Fox News host navigated confirmation hearings for his nomination as defense secretary. Hegseth now finds himself under fire after articles of imp</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/nov/18/pete-hegseth-iran-war-pentagon" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c9n70gd320mpo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Steve Rosenberg: Historic talks with Xi and Trump are a coup for Putin</a></h3>
+  <p class="excerpt">Thursday&#39;s meeting between the leaders of US, China and Russia will give Vladimir Putin a big stage - but it does not bring him closer to winning the war in Ukraine.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c9n70gd320mpo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 10:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/us/politics/trump-putin-ukraine-war.html" target="_blank" rel="noopener">Putin Will Continue Ukraine War Despite Plans to Meet Trump, Intelligence Says</a></h3>
+  <p class="excerpt">President Trump plans to discuss Ukraine with the leaders of Russia and China. He has halted some sanctions on Russia and announced that the United States will buy Russian diesel.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/us/politics/trump-putin-ukraine-war.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 10:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/rainy-week-to-turn-drier-with-chance-of-night-frost/" target="_blank" rel="noopener">Rainy week to turn drier, with chance of night frost</a></h3>
+  <p class="excerpt">After a wet and windy week, the weather will turn colder and drier towards the weekend, with a chance of...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/rainy-week-to-turn-drier-with-chance-of-night-frost/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 08:27 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-intelligence">
+  <div class="section-head">
+    <h2>Intelligence &amp; Espionage</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cm2kl50vkwkdo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Nvidia says it won&#39;t reinstate Huang as it reports soaring sales</a></h3>
+  <p class="excerpt">The AI chip giant reported strong quarterly earnings on Tuesday after the dramatic exit of Jensen Huang.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/3a8881b8-068c-4950-9238-4f8eb1efc870?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.bbc.co.uk/news/articles/cm2kl50vkwkdo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 01:18 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/17/technology/jensen-huang-nvidia-statement.html" target="_blank" rel="noopener">Jensen Huang Says He Would Return as Nvidia CEO if Asked</a></h3>
+  <p class="excerpt">Mr. Huang resigned as chief executive of the company last week after revelations that he had affairs with an employee and a woman linked to Chinese intelligence.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/17/technology/jensen-huang-nvidia-statement.html" target="_blank" rel="noopener">NYT Technology</a>
+      <a href="https://www.ft.com/content/6776c08b-5c36-4f15-8d2f-708fccde555c?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 23:48 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/us/politics/democrats-cast-investigative-net.html" target="_blank" rel="noopener">House Democrats Cast Wide Net as They Prepare Trump Investigations</a></h3>
+  <p class="excerpt">The inquiries would focus on President Trump, his family and top officials in his administration and would include a look at Commerce Secretary Howard Lutnick and policies related to Nvidia.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/us/politics/democrats-cast-investigative-net.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:17 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/world/europe/man-charged-ireland-shannon-us-military-plane.html" target="_blank" rel="noopener">Irish Man Sabotaged U.S. Military Plane With Ax and Chemicals, Prosecutors Say</a></h3>
+  <p class="excerpt">Daithi O’Corrain sealed himself inside a National Guard C-130 at Ireland’s Shannon Airport in April for hours, causing so much damage that the aircraft was retired from service, prosecutors said.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/world/europe/man-charged-ireland-shannon-us-military-plane.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/australia-news/2026/nov/19/bca-policy-energy-companies-members-climate-concerns" target="_blank" rel="noopener">Business Council of Australia more aligned with fossil fuel industry than its members’ values, analysis finds</a></h3>
+  <p class="excerpt">Research by InfluenceMap raises questions about association’s policies and representation, particularly around advocacy for new gas suppliesGet our breaking news email, free app or daily news podcastThe Business Council of Australia is lobbying for gas expansion policies that clash with the climate concerns of the majority of its own members, according to new research that raises questions about the sway of a handful of major companies.The business association also does not publicly disclose who is on its energy and climate committee, prompting transparency concerns among researchers over how </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/australia-news/2026/nov/19/bca-policy-energy-companies-members-climate-concerns" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/live/2026/nov/18/donald-trump-mary-peltola-alaska-hakeem-jeffries-democrats-republicans-congress-house-senate-midterms-latest-news-updates" target="_blank" rel="noopener">Mary Peltola’s Alaska win ‘a gift for all America’, says Schumer – US politics live</a></h3>
+  <p class="excerpt">Senate Democratic leader hails result which will give the party a commanding 56-44 seat majorityTrump in China for Apec summit – follow liveSign up for US breaking News emailCongressman Robert Garcia, the incoming chair of the House oversight committee, has sent 12 letters to members of Donald Trump’s family, current and former officials, and aides urging them to preserve documents ahead of the sweeping inquiries that Democrats are set to launch in the new Congress.The document retention letters, were addressed to vice-president JD Vance, Eric Trump, Donald Trump Jr, Stephen Miller, the White </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/live/2026/nov/18/donald-trump-mary-peltola-alaska-hakeem-jeffries-democrats-republicans-congress-house-senate-midterms-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:50 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/2026/nov/18/labour-drops-foie-gras-import-ban-eu-food-trade-deal" target="_blank" rel="noopener">Ministers to drop foie gras imports ban to help seal EU food trade deal</a></h3>
+  <p class="excerpt">Animal welfare charities criticise ‘backwards step’ on foie gras, production of which has been banned in UK since 2007Ministers will drop plans to ban foie gras imports into the UK in order to smooth a trade deal with the EU that will be announced this week.As first reported by the Financial Times, the proposed ban will be officially dropped on Friday when the government announces its sanitary and phytosanitary (SPS) trade deal with the EU to reduce checks and paperwork on imports and exports of food and drink with the bloc. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/politics/2026/nov/18/labour-drops-foie-gras-import-ban-eu-food-trade-deal" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:47 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/business/hospitals-java-artificial-intelligence.html" target="_blank" rel="noopener">Hospitals Rush to Patch Java Vulnerabilities</a></h3>
+  <p class="excerpt">Artificial intelligence is accelerating the threats facing health systems that have been under attack from hackers for years.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/business/hospitals-java-artificial-intelligence.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:42 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/d6faebd0-2690-4e2b-af7b-35fc7643808d?syn-25a6b1a6=1" target="_blank" rel="noopener">ANC nears deal to block rival Zille as Johannesburg mayor</a></h3>
+  <p class="excerpt">Pact with smaller factions would keep liberation party in power in South Africa’s commercial heart</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/d6faebd0-2690-4e2b-af7b-35fc7643808d?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:04 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/uk-news/2026/nov/18/doctor-whose-evidence-helped-to-convict-lucy-letby-was-barred-from-treating-patients-during-trial" target="_blank" rel="noopener">Doctor whose evidence helped to convict Lucy Letby was barred from treating patients during trial</a></h3>
+  <p class="excerpt">Exclusive: Jury was never told that Prof Peter Hindmarsh was barred from practising over concerns for patients’ safetyA senior doctor whose evidence helped to convict Lucy Letby and who was held up by prosecutors as a pre-eminent expert was barred from treating patients during the trial over fears he posed a risk to their safety.Prof Peter Hindmarsh, a specialist in hormones in children, was crucial to the crown’s argument that Letby had poisoned children by injecting insulin into fluid bags. But a Guardian investigation can reveal he was excluded from clinical practice in March 2023, five mon</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/uk-news/2026/nov/18/doctor-whose-evidence-helped-to-convict-lucy-letby-was-barred-from-treating-patients-during-trial" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 12:45 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/world/europe/russia-rock-music-boris-grebenshchikov.html" target="_blank" rel="noopener">Boris Grebenshchikov, a Russian Rock Musician With a ‘Need to Rebel’</a></h3>
+  <p class="excerpt">In the 1980s, Boris Grebenshchikov led a revered Russian underground band. A rereleased documentary from that era is bringing new attention to his work.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/world/europe/russia-rock-music-boris-grebenshchikov.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 11:51 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cxr5g4lyp94no?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Who to watch in Spain&#39;s election race</a></h3>
+  <p class="excerpt">Spain votes on 29 November, with the conservatives leading most polls after eight years of Socialist-led rule.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cxr5g4lyp94no?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 11:44 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-military">
+  <div class="section-head">
+    <h2>Military &amp; Defense</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/17/us/politics/rfk-jr-measles-democrats.html" target="_blank" rel="noopener">Democrats Assail RFK Jr. After U.S. Loses Measles Elimination Status</a></h3>
+  <p class="excerpt">Incoming senators and prospective presidential candidates blamed the health secretary’s history of vaccine skepticism for the rise of measles in the country.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/17/us/politics/rfk-jr-measles-democrats.html" target="_blank" rel="noopener">NYT Politics</a>
+      <a href="https://www.bbc.co.uk/news/articles/c977p71jx0xxo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 03:33 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cqrlg377638yo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Palestinian woman, 72, shot dead by Israeli settlers in West Bank, health ministry says</a></h3>
+  <p class="excerpt">Palestinians say there was an attack by settlers in al-Duyuk al-Tahta, while the Israeli military says the settlers fired after being attacked.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cqrlg377638yo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/17/palestinian-woman-shot-dead-israeli-settlers-near-jericho-witnesses-say" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 20:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/65c5684a-f532-4601-9878-8fa2efe8d8f8?syn-25a6b1a6=1" target="_blank" rel="noopener">Ukraine’s ‘flying modems’ helped take down Putin’s bridge</a></h3>
+  <p class="excerpt">Kyiv starts using its own communication system for drone strikes after repeated disruptions in the use of Starlink</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/65c5684a-f532-4601-9878-8fa2efe8d8f8?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:12 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/world/middleeast/iran-attacks-bahrain-kuwait-ships-hormuz.html" target="_blank" rel="noopener">Iran Fires Missiles and Drones at Gulf Arab States as Peace Talks Falter</a></h3>
+  <p class="excerpt">Kuwait and Bahrain said they were targeted on Wednesday, a sign of how the Middle East is stuck in limbo between peace and full-blown war.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/world/middleeast/iran-attacks-bahrain-kuwait-ships-hormuz.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:01 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/world/europe/man-charged-ireland-shannon-us-military-plane.html" target="_blank" rel="noopener">Irish Man Sabotaged U.S. Military Plane With Ax and Chemicals, Prosecutors Say</a></h3>
+  <p class="excerpt">Daithi O’Corrain sealed himself inside a National Guard C-130 at Ireland’s Shannon Airport in April for hours, causing so much damage that the aircraft was retired from service, prosecutors said.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/world/europe/man-charged-ireland-shannon-us-military-plane.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/us/politics/amazon-delivery-drones-massachusetts.html" target="_blank" rel="noopener">A Massachusetts Town Revolts Against Amazon’s Delivery Drones</a></h3>
+  <p class="excerpt">Amazon wants to offer fast delivery. Residents want quiet skies. A Massachusetts suburb wages an epic battle over control of its airspace.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/us/politics/amazon-delivery-drones-massachusetts.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:54 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/russian-embassy-responds-to-nl-role-in-crimea-bridge-attack/" target="_blank" rel="noopener">Russian embassy responds to NL role in Crimea bridge attack</a></h3>
+  <p class="excerpt">The Russian embassy in the Netherlands has responded to the announcement made by Dutch arms company Destinus that its weapons...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/russian-embassy-responds-to-nl-role-in-crimea-bridge-attack/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 12:37 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/us/politics/peltola-victory-alaska-senate.html" target="_blank" rel="noopener">How Mary Peltola Triumphed in Alaska’s Senate Race</a></h3>
+  <p class="excerpt">Beleaguered by high fuel costs and wary of overfishing, Alaskans were drawn to the Democrat’s hyperlocal pitch.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/us/politics/peltola-victory-alaska-senate.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 12:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/nov/18/pete-hegseth-iran-war-pentagon" target="_blank" rel="noopener">Key Hegseth adviser faces questions over ties to Israeli defense contractor and Saudi Arabia</a></h3>
+  <p class="excerpt">A government watchdog has also labeled Hegseth’s defense policy appointee a ‘walking conflict of interest’One of defense secretary Pete Hegseth’s key advisers faces questions about potential conflicts of interest over his many roles, including advising the US defense department, Saudi Arabia, and an Israeli defence contractor.Former Republican senator Norm Coleman emerged as an informal yet omnipresent guide for Hegseth in December 2024 as the former Fox News host navigated confirmation hearings for his nomination as defense secretary. Hegseth now finds himself under fire after articles of imp</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/nov/18/pete-hegseth-iran-war-pentagon" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/world/asia/putin-taiwan-japan-korea-vietnam-bombers.html" target="_blank" rel="noopener">Putin Arrives in Asia With a Show of Force: Nuclear Bombers</a></h3>
+  <p class="excerpt">Russian military planes flew through the region, prompting Japan and South Korea to scramble jets in response, and drawing complaints from Taiwan.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/world/asia/putin-taiwan-japan-korea-vietnam-bombers.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 11:08 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/b36bf99b-e7b9-4591-aedb-5aa2b82bdf37?syn-25a6b1a6=1" target="_blank" rel="noopener">GM seeks to double defence revenue</a></h3>
+  <p class="excerpt">Carmakers move to diversify businesses as global defence contractors turn to automotive technology to accelerate weapons production</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/b36bf99b-e7b9-4591-aedb-5aa2b82bdf37?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/1138e74b-c384-42ba-9edd-c17c8beb4546?syn-25a6b1a6=1" target="_blank" rel="noopener">Helsing scales back Plymouth factory after losing out on British navy contract</a></h3>
+  <p class="excerpt">Decision comes amid frustration among start-ups at slow pace of UK defence contracts</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/1138e74b-c384-42ba-9edd-c17c8beb4546?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 10:28 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-technology">
+  <div class="section-head">
+    <h2>Technology</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cm2kl50vkwkdo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Nvidia says it won&#39;t reinstate Huang as it reports soaring sales</a></h3>
+  <p class="excerpt">The AI chip giant reported strong quarterly earnings on Tuesday after the dramatic exit of Jensen Huang.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/3a8881b8-068c-4950-9238-4f8eb1efc870?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.bbc.co.uk/news/articles/cm2kl50vkwkdo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 01:18 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/17/technology/jensen-huang-nvidia-statement.html" target="_blank" rel="noopener">Jensen Huang Says He Would Return as Nvidia CEO if Asked</a></h3>
+  <p class="excerpt">Mr. Huang resigned as chief executive of the company last week after revelations that he had affairs with an employee and a woman linked to Chinese intelligence.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/17/technology/jensen-huang-nvidia-statement.html" target="_blank" rel="noopener">NYT Technology</a>
+      <a href="https://www.ft.com/content/6776c08b-5c36-4f15-8d2f-708fccde555c?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 23:48 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/f085b811-fc20-425f-88d8-9f98e178636a?syn-25a6b1a6=1" target="_blank" rel="noopener">Wall Street set to open higher after Nvidia results reassure investors</a></h3>
+  <p class="excerpt">Chip group raises forecast and new chief says ‘it’s business as usual’ after revelations of Huang’s affairs triggered sell-off</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/f085b811-fc20-425f-88d8-9f98e178636a?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:05 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cmd7159vlr85o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">The seven Anthropic founders who are about to become multi-billionaires</a></h3>
+  <p class="excerpt">The AI company behind Claude is about to sell its shares on the US stock market - making its founders very rich.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cmd7159vlr85o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:55 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/us/politics/amazon-delivery-drones-massachusetts.html" target="_blank" rel="noopener">A Massachusetts Town Revolts Against Amazon’s Delivery Drones</a></h3>
+  <p class="excerpt">Amazon wants to offer fast delivery. Residents want quiet skies. A Massachusetts suburb wages an epic battle over control of its airspace.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/us/politics/amazon-delivery-drones-massachusetts.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:54 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/business/hospitals-java-artificial-intelligence.html" target="_blank" rel="noopener">Hospitals Rush to Patch Java Vulnerabilities</a></h3>
+  <p class="excerpt">Artificial intelligence is accelerating the threats facing health systems that have been under attack from hackers for years.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/business/hospitals-java-artificial-intelligence.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:42 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/96c565f1-f229-40b6-91e8-7a849ec4b208?syn-25a6b1a6=1" target="_blank" rel="noopener">US tech outages blamed on rush to fix bugs found by AI</a></h3>
+  <p class="excerpt">Experts say a race to patch software flaws likely created instability in computer systems at Microsoft, JPMorgan, the FAA and others</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/96c565f1-f229-40b6-91e8-7a849ec4b208?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 12:44 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/b36bf99b-e7b9-4591-aedb-5aa2b82bdf37?syn-25a6b1a6=1" target="_blank" rel="noopener">GM seeks to double defence revenue</a></h3>
+  <p class="excerpt">Carmakers move to diversify businesses as global defence contractors turn to automotive technology to accelerate weapons production</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/b36bf99b-e7b9-4591-aedb-5aa2b82bdf37?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/business/dealbook/dealbook-summit-2026-speaker-lineup.html" target="_blank" rel="noopener">JD Vance, Elon Musk and Sam Altman Are in the DealBook Summit 2026 Lineup</a></h3>
+  <p class="excerpt">Andrew Ross Sorkin will interview some of the most powerful people from Washington, Silicon Valley and Wall Street.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/business/dealbook/dealbook-summit-2026-speaker-lineup.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 10:25 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/usa/2026-11-18/panic-conspiracy-theories-and-distrust-of-government-americans-worry-about-the-accumulation-of-digital-failures.html" target="_blank" rel="noopener">Panic, conspiracy theories and distrust of government: Americans worry about the accumulation of digital failures</a></h3>
+  <p class="excerpt">From Microsoft’s outage to the airspace closure or the banks’ problems, a succession of crises with no proven connection between them has increased the country’s sense of vulnerability</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/usa/2026-11-18/panic-conspiracy-theories-and-distrust-of-government-americans-worry-about-the-accumulation-of-digital-failures.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 10:22 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/business/russia-europe-defense-tytan-leonardo.html" target="_blank" rel="noopener">Europe Is Racing to Make Air Defenses ‘Cheaper Than What We Are Shooting Down’</a></h3>
+  <p class="excerpt">Defense companies are facing calls to increase production, cut costs and keep pace with rapidly evolving technology as the Russian threat intensifies.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/business/russia-europe-defense-tytan-leonardo.html" target="_blank" rel="noopener">NYT Europe</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 10:06 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/8eab26fa-ca90-42b7-9158-7aa5368bc758?syn-25a6b1a6=1" target="_blank" rel="noopener">Space could be the first frontier for European defence mergers</a></h3>
+  <p class="excerpt">There is a logic to the pairing of Iceye and Avio</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/8eab26fa-ca90-42b7-9158-7aa5368bc758?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 10:00 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-economy">
+  <div class="section-head">
+    <h2>Economy &amp; Trade</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/strengthening-secure-and-resilient-economic-connectivity-uk-statement-to-the-osce" target="_blank" rel="noopener">Strengthening secure and resilient economic connectivity: UK statement to the OSCE</a></h3>
+  <p class="excerpt">The UK reaffirms its support for practical OSCE co-operation on secure and resilient economic connectivity, calling for open markets, free trade, good governance and diversified supply chains.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/strengthening-secure-and-resilient-economic-connectivity-uk-statement-to-the-osce" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 10:12 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/uk-cracks-down-on-companies-building-settlements-in-the-west-bank-and-groups-blocking-aid-access-into-gaza" target="_blank" rel="noopener">UK cracks down on companies building settlements in the West Bank and groups blocking aid access into Gaza</a></h3>
+  <p class="excerpt">The UK has imposed new sanctions on companies involved in the expansion of illegal settlements in the West Bank and an activist group responsible for blocking aid to Gaza.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/uk-cracks-down-on-companies-building-settlements-in-the-west-bank-and-groups-blocking-aid-access-into-gaza" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 17, 10:04 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/live/2026/11/18/business/dealbook-summit-news/heres-the-latest-on-the-2026-dealbook-summit" target="_blank" rel="noopener">Here’s the latest on the 2026 DealBook Summit.</a></h3>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/live/2026/11/18/world/trump-china-asia-apec/heres-the-latest" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.nytimes.com/live/2026/11/18/business/dealbook-summit-news/heres-the-latest-on-the-2026-dealbook-summit" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:20 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/culture/2026-11-18/is-james-bond-past-his-prime-robert-pattinson-takes-on-the-alpha-male-in-the-next-007-movie.html" target="_blank" rel="noopener">Is James Bond past his prime? Robert Pattinson takes on the alpha male in the next 007 movie</a></h3>
+  <p class="excerpt">The star of ‘Twilight’ and ‘The Batman’ leads the umpteenth reboot of the franchise, now under the control of Amazon MGM Studios. But the character is more flexible than he seems</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/16/movies/james-bond-robert-pattinson.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://english.elpais.com/culture/2026-11-18/is-james-bond-past-his-prime-robert-pattinson-takes-on-the-alpha-male-in-the-next-007-movie.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:11 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/18/israel-construction-contracts-e1-west-bank-settlement-uk-sanctions" target="_blank" rel="noopener">Israel delays building contracts for West Bank settlement after UK sanctions</a></h3>
+  <p class="excerpt">Attorney general says E1 settlement decision should not be taken by caretaker government led by NetanyahuIsrael has postponed issuing contracts for the construction of a large settlement on the West Bank seen as likely to render a two-state solution unviable, days after the UK imposed sanctions against building firms operating in the area.Israeli diplomats insisted the move was not in response to the measures from Downing Street. Gali Baharav-Miara, the attorney general, said any decision on settlement expansion should not be taken by the caretaker government led by Benjamin Netanyahu but by w</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/nov/18/israel-construction-contracts-e1-west-bank-settlement-uk-sanctions" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:05 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/australia-news/2026/nov/19/bca-policy-energy-companies-members-climate-concerns" target="_blank" rel="noopener">Business Council of Australia more aligned with fossil fuel industry than its members’ values, analysis finds</a></h3>
+  <p class="excerpt">Research by InfluenceMap raises questions about association’s policies and representation, particularly around advocacy for new gas suppliesGet our breaking news email, free app or daily news podcastThe Business Council of Australia is lobbying for gas expansion policies that clash with the climate concerns of the majority of its own members, according to new research that raises questions about the sway of a handful of major companies.The business association also does not publicly disclose who is on its energy and climate committee, prompting transparency concerns among researchers over how </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/australia-news/2026/nov/19/bca-policy-energy-companies-members-climate-concerns" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cmd7159vlr85o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">The seven Anthropic founders who are about to become multi-billionaires</a></h3>
+  <p class="excerpt">The AI company behind Claude is about to sell its shares on the US stock market - making its founders very rich.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cmd7159vlr85o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:55 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/2026/nov/18/labour-drops-foie-gras-import-ban-eu-food-trade-deal" target="_blank" rel="noopener">Ministers to drop foie gras imports ban to help seal EU food trade deal</a></h3>
+  <p class="excerpt">Animal welfare charities criticise ‘backwards step’ on foie gras, production of which has been banned in UK since 2007Ministers will drop plans to ban foie gras imports into the UK in order to smooth a trade deal with the EU that will be announced this week.As first reported by the Financial Times, the proposed ban will be officially dropped on Friday when the government announces its sanitary and phytosanitary (SPS) trade deal with the EU to reduce checks and paperwork on imports and exports of food and drink with the bloc. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/politics/2026/nov/18/labour-drops-foie-gras-import-ban-eu-food-trade-deal" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:47 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/world/canada/trump-carney-meeting-asia-us-canada-trade.html" target="_blank" rel="noopener">Carney and Trump Hold Unscheduled Trade Meeting at Asia Summit</a></h3>
+  <p class="excerpt">The bilateral meeting between the neighbors follows trade gains for Canada’s prime minister this week with China and the Philippines.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/world/canada/trump-carney-meeting-asia-us-canada-trade.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:33 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/business/dealbook/dealbook-summit-what-to-watch.html" target="_blank" rel="noopener">Economic and Political Uncertainty Will Be Focus of DealBook Summit</a></h3>
+  <p class="excerpt">The 2026 summit comes amid concerns about the sustainability of the A.I. rally and a midterm election that reset the balance of power in Washington.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/business/dealbook/dealbook-summit-what-to-watch.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cmy498kdkx3xo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Typical energy bill forecast to go up by £443 a year from January as inflation rate rises again</a></h3>
+  <p class="excerpt">Energy bills are expected to jump by 26% a year for a typical household as UK inflation hits its highest rate for a year.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cmy498kdkx3xo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:17 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/nov/18/big-oil-immunity-bill-climate" target="_blank" rel="noopener">Republicans could expedite bill to make big oil immune to lawsuits, warn experts</a></h3>
+  <p class="excerpt">GOP lawmakers are rushing through high-priority bills before newly elected Democrats are sworn inClimate groups fear lawmakers could pass a bill by the end of the year that would give fossil fuel companies immunity from lawsuits and legislation that aims to hold them accountable for the climate crisis.After the blue wave election, Republican lawmakers are rushing to pass high-priority bills before newly elected Democrats are sworn in. Hundreds of elected leaders and climate groups sent a letter to Democratic leadership urging them to reject any proposal that would shield fossil fuel companies </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/nov/18/big-oil-immunity-bill-climate" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:00 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-politics">
+  <div class="section-head">
+    <h2>Politics &amp; Diplomacy</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/live/2026/11/18/world/trump-china-asia-apec" target="_blank" rel="noopener">Live Updates: Trump, Xi and Putin Shake Hands as Leaders Gather in China</a></h3>
+  <p class="excerpt">China’s leader, Xi Jinping, earlier hugged President Trump on the tarmac as he arrived for a regional summit in Shenzhen. They are expected to hold a trilateral meeting on Thursday with President Vladimir V. Putin of Russia.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/live/2026/11/18/world/trump-china-asia-apec" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/ck9d75x5wwwwo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/live/2026/nov/18/apec-summit-live-updates-xi-putin-trump-world-leaders-gather-in-china" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:14 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/live/2026/11/18/business/dealbook-summit-news/heres-the-latest-on-the-2026-dealbook-summit" target="_blank" rel="noopener">Here’s the latest on the 2026 DealBook Summit.</a></h3>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/live/2026/11/18/world/trump-china-asia-apec/heres-the-latest" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.nytimes.com/live/2026/11/18/business/dealbook-summit-news/heres-the-latest-on-the-2026-dealbook-summit" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:20 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/17/us/politics/rfk-jr-measles-democrats.html" target="_blank" rel="noopener">Democrats Assail RFK Jr. After U.S. Loses Measles Elimination Status</a></h3>
+  <p class="excerpt">Incoming senators and prospective presidential candidates blamed the health secretary’s history of vaccine skepticism for the rise of measles in the country.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/17/us/politics/rfk-jr-measles-democrats.html" target="_blank" rel="noopener">NYT Politics</a>
+      <a href="https://www.bbc.co.uk/news/articles/c977p71jx0xxo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 03:33 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/us/politics/democrats-cast-investigative-net.html" target="_blank" rel="noopener">House Democrats Cast Wide Net as They Prepare Trump Investigations</a></h3>
+  <p class="excerpt">The inquiries would focus on President Trump, his family and top officials in his administration and would include a look at Commerce Secretary Howard Lutnick and policies related to Nvidia.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/us/politics/democrats-cast-investigative-net.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:17 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/world/europe/autocrats-psychology-support.html" target="_blank" rel="noopener">Voters Are Punishing Autocrats. But Many Still Embrace Them. Why?</a></h3>
+  <p class="excerpt">An emerging field of psychology suggests that it’s probably not what you think — and that there might be reason for optimism.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/world/europe/autocrats-psychology-support.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:16 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/17/world/18int-theworld-anthropic-ukraine-nvidia.html" target="_blank" rel="noopener">Big Money, Existential Risks</a></h3>
+  <p class="excerpt">Anthropic’s prospectus for its blockbuster I.P.O. this week reads like dystopian science fiction.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/17/world/18int-theworld-anthropic-ukraine-nvidia.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:09 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/environment/2026/nov/18/uk-government-angela-eagle-natural-england-wild-birds-decline-" target="_blank" rel="noopener">UK government ‘breaking the law’ by not stopping decline of wild birds</a></h3>
+  <p class="excerpt">Populations at lowest level on record with 45% of native breeding species in decline, environment regulator saysEnvironment secretary Angela Eagle, her ministers and Natural England are breaking the law by failing to intervene to slow the catastrophic decline of Britain’s wild birds, the UK’s environment regulator has said.New data shows wild bird populations have dropped to their lowest level on record, with almost half – 45% – of 132 native breeding species in decline over a five-year period. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/environment/2026/nov/18/uk-government-angela-eagle-natural-england-wild-birds-decline-" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:07 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/18/israel-construction-contracts-e1-west-bank-settlement-uk-sanctions" target="_blank" rel="noopener">Israel delays building contracts for West Bank settlement after UK sanctions</a></h3>
+  <p class="excerpt">Attorney general says E1 settlement decision should not be taken by caretaker government led by NetanyahuIsrael has postponed issuing contracts for the construction of a large settlement on the West Bank seen as likely to render a two-state solution unviable, days after the UK imposed sanctions against building firms operating in the area.Israeli diplomats insisted the move was not in response to the measures from Downing Street. Gali Baharav-Miara, the attorney general, said any decision on settlement expansion should not be taken by the caretaker government led by Benjamin Netanyahu but by w</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/nov/18/israel-construction-contracts-e1-west-bank-settlement-uk-sanctions" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 14:05 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/live/2026/nov/18/donald-trump-mary-peltola-alaska-hakeem-jeffries-democrats-republicans-congress-house-senate-midterms-latest-news-updates" target="_blank" rel="noopener">Mary Peltola’s Alaska win ‘a gift for all America’, says Schumer – US politics live</a></h3>
+  <p class="excerpt">Senate Democratic leader hails result which will give the party a commanding 56-44 seat majorityTrump in China for Apec summit – follow liveSign up for US breaking News emailCongressman Robert Garcia, the incoming chair of the House oversight committee, has sent 12 letters to members of Donald Trump’s family, current and former officials, and aides urging them to preserve documents ahead of the sweeping inquiries that Democrats are set to launch in the new Congress.The document retention letters, were addressed to vice-president JD Vance, Eric Trump, Donald Trump Jr, Stephen Miller, the White </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/live/2026/nov/18/donald-trump-mary-peltola-alaska-hakeem-jeffries-democrats-republicans-congress-house-senate-midterms-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:50 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/2026/nov/18/labour-drops-foie-gras-import-ban-eu-food-trade-deal" target="_blank" rel="noopener">Ministers to drop foie gras imports ban to help seal EU food trade deal</a></h3>
+  <p class="excerpt">Animal welfare charities criticise ‘backwards step’ on foie gras, production of which has been banned in UK since 2007Ministers will drop plans to ban foie gras imports into the UK in order to smooth a trade deal with the EU that will be announced this week.As first reported by the Financial Times, the proposed ban will be officially dropped on Friday when the government announces its sanitary and phytosanitary (SPS) trade deal with the EU to reduce checks and paperwork on imports and exports of food and drink with the bloc. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/politics/2026/nov/18/labour-drops-foie-gras-import-ban-eu-food-trade-deal" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:47 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/world/asia/xi-jinping-china-sanae-takaichi-japan.html" target="_blank" rel="noopener">Leaders of China and Japan Meet Amid Political Feud</a></h3>
+  <p class="excerpt">Xi Jinping, China’s leader, greeted Sanae Takaichi, Japan’s prime minister, in Shenzhen a year after China began punishing Japan over her comments on Taiwan.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/world/asia/xi-jinping-china-sanae-takaichi-japan.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:46 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/18/world/canada/trump-carney-meeting-asia-us-canada-trade.html" target="_blank" rel="noopener">Carney and Trump Hold Unscheduled Trade Meeting at Asia Summit</a></h3>
+  <p class="excerpt">The bilateral meeting between the neighbors follows trade gains for Canada’s prime minister this week with China and the Philippines.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/world/canada/trump-carney-meeting-asia-us-canada-trade.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 18, 13:33 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <footer class="foot">
+    Generated 2026-11-18 14:22 UTC ·
+    Aggregated from reliable sources (NYT, Foreign Affairs, FT, official government sites).
+    Headlines &amp; excerpts link to originals; no paywalled full text is reproduced.
+  </footer>
+</main>
+</body>
+</html>
