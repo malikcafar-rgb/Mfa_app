@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Today's Brief — Friday, 20 November 2026</title>
+<style>
+  /* New York Times–inspired: white background, serif headlines, hairline rules,
+     sans-serif labels, minimal color. */
+  :root {
+    --bg: #ffffff;
+    --text: #121212;        /* near-black body */
+    --muted: #666666;       /* bylines / meta */
+    --faint: #999999;
+    --rule: #e2e2e2;        /* hairline dividers */
+    --rule-strong: #121212; /* section top rules */
+    --link: #326891;        /* NYT link blue, used sparingly */
+    --official: #9a6a00;    /* restrained gold-brown */
+    --wire: #326891;
+    --analysis: #6a4c93;
+    --serif: Georgia, "Times New Roman", "Times", serif;
+    --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: var(--serif); line-height: 1.5; -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px 90px; }
+
+  /* Masthead — centered serif wordmark with black rules above/below. */
+  header.masthead { background: var(--bg); border-bottom: 1px solid var(--text);
+    padding: 14px 24px 0; }
+  .masthead-inner { max-width: 960px; margin: 0 auto; }
+  .brand { text-align: center; padding-bottom: 12px; border-bottom: 1px solid var(--text);
+    margin-bottom: 8px; }
+  .brand .kicker { font-family: var(--sans); font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .brand h1 { font-family: var(--serif); font-weight: 700; margin: 4px 0 2px;
+    font-size: 40px; letter-spacing: -.01em; line-height: 1.05; }
+  .brand .date { font-family: var(--sans); color: var(--muted); font-size: 12.5px;
+    letter-spacing: .02em; }
+  .nav { display: flex; gap: 20px; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 12px; text-transform: uppercase; letter-spacing: .08em;
+    padding: 8px 0 10px; }
+  .nav a { color: var(--text); font-weight: 600; }
+  .nav a:hover { color: var(--link); }
+
+  /* Links-only / status banner — quiet, italic serif. */
+  .banner { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    padding: 10px 0; margin: 18px 0 6px; color: var(--muted); font-size: 14px;
+    font-style: italic; }
+
+  /* Executive summary — a boxed "lede" with a sans label. */
+  .exec { border: 1px solid var(--text); padding: 22px 24px; margin: 24px 0 8px; }
+  .exec h2 { font-family: var(--sans); margin: 0 0 10px; font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text); font-weight: 700; }
+  .exec p { margin: 0 0 12px; font-size: 18px; line-height: 1.55; }
+  .exec p:last-child { margin-bottom: 0; }
+  .exec .ir { border-top: 1px solid var(--rule); margin-top: 16px; padding-top: 16px; }
+  .exec .ir h3 { font-family: var(--sans); margin: 0 0 6px; font-size: 11px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--analysis); font-weight: 700; }
+  .exec .ir p { font-size: 16px; }
+
+  /* Section fronts — serif head with a strong black rule above (NYT section style). */
+  section.topic { margin: 34px 0 0; }
+  .section-head { border-top: 2px solid var(--rule-strong); padding-top: 8px; margin-bottom: 6px;
+    display: flex; align-items: baseline; gap: 10px; }
+  .section-head h2 { font-family: var(--serif); margin: 0; font-size: 22px; font-weight: 700;
+    letter-spacing: -.01em; }
+  .section-head .count { font-family: var(--sans); color: var(--faint); font-size: 11px;
+    text-transform: uppercase; letter-spacing: .08em; }
+  .section-brief { font-style: italic; color: #333; padding: 6px 0 2px; margin: 6px 0;
+    font-size: 15px; border-left: 3px solid var(--rule-strong); padding-left: 12px; }
+
+  /* Story cards — serif headline, hairline divider, sans meta. */
+  .card { padding: 15px 0; border-bottom: 1px solid var(--rule); }
+  .card:last-child { border-bottom: none; }
+  .card h3 { font-family: var(--serif); margin: 0 0 5px; font-size: 20px; font-weight: 700;
+    line-height: 1.25; letter-spacing: -.005em; }
+  .card h3 a { color: var(--text); }
+  .card h3 a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+  .card .ai { margin: 4px 0 6px; font-size: 15px; color: #333; line-height: 1.5; }
+  .card .excerpt { margin: 4px 0 6px; font-size: 15px; color: var(--muted); line-height: 1.5; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    font-family: var(--sans); font-size: 12px; margin-top: 5px; color: var(--faint); }
+
+  /* Tier labels — small uppercase sans, a dot of color, no boxes. */
+  .badge { font-family: var(--sans); font-size: 10.5px; letter-spacing: .07em;
+    text-transform: uppercase; font-weight: 700; display: inline-flex; align-items: center; }
+  .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%;
+    display: inline-block; margin-right: 5px; background: currentColor; }
+  .badge.official { color: var(--official); }
+  .badge.wire { color: var(--wire); }
+  .badge.analysis { color: var(--analysis); }
+  .sources { display: flex; flex-wrap: wrap; gap: 6px; font-family: var(--sans); }
+  .sources a { color: var(--muted); }
+  .sources a:hover { color: var(--link); text-decoration: underline; }
+  .sources a::after { content: "·"; margin-left: 6px; color: var(--faint); }
+  .sources a:last-child::after { content: ""; }
+
+  /* Country watch — bordered cards with serif titles. */
+  .country-group { margin-top: 30px; }
+  .country-group > h2 { font-family: var(--sans); font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text); font-weight: 700;
+    border-bottom: 1px solid var(--rule-strong); padding-bottom: 6px; }
+  .country-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 22px; margin-top: 14px; }
+  .country-card { border: 1px solid var(--rule); padding: 14px 16px; }
+  .country-card h3 { font-family: var(--serif); margin: 0 0 8px; font-size: 18px; font-weight: 700; }
+  .country-card ul { margin: 0; padding: 0; list-style: none; }
+  .country-card li { padding: 7px 0; border-top: 1px solid var(--rule); font-size: 15px;
+    line-height: 1.35; }
+  .country-card li:first-child { border-top: none; }
+  .country-card li a { color: var(--text); }
+  .country-card li a:hover { text-decoration: underline; }
+
+  /* Archive + table of contents. */
+  .archive-list { list-style: none; padding: 0; margin: 22px 0; }
+  .archive-list li { padding: 14px 0; border-bottom: 1px solid var(--rule);
+    font-family: var(--serif); font-size: 19px; }
+  .archive-list li a:hover { text-decoration: underline; }
+  .toc { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 16px 0 4px;
+    padding-bottom: 14px; border-bottom: 1px solid var(--rule); font-family: var(--sans); }
+  .toc a { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em;
+    font-weight: 600; }
+  .toc a:hover { color: var(--link); }
+
+  footer.foot { font-family: var(--sans); color: var(--faint); font-size: 11.5px; margin-top: 56px;
+    padding-top: 18px; border-top: 1px solid var(--rule); line-height: 1.6; }
+
+  @media (max-width: 640px) {
+    .brand h1 { font-size: 30px; }
+    .exec p { font-size: 16px; }
+    .card h3 { font-size: 18px; }
+    .country-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="kicker">Diplomat Daily Briefing</span>
+      <h1>Today's Brief</h1>
+      <span class="date">Friday, 20 November 2026 · 330 articles across 306 stories</span>
+    </div>
+    <nav class="nav">
+  <a href="../index.html">Dashboard</a>
+  <a href="../archive.html">Archive</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <div class="banner">AI summaries unavailable (authentication_error: Invalid bearer token) — showing links only.</div>
+
+
+  <h2 id="country-watch" style="margin-top:24px;font-size:20px;border-bottom:2px solid var(--rule-strong);padding-bottom:6px;">Country Profiles</h2>
+  <section class="topic" id="ctry-spain">
+  <div class="section-head">
+    <h2>Spain</h2>
+    <span class="count">2 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/sport/football/articles/cmlye2n7p7d9o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">England fined for fans&#39; anti-Catholic chants in Spain</a></h3>
+  <p class="excerpt">England are punished by Uefa following anti-Catholic chanting from the away fans during their Nations League victory in Spain.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/sport/football/articles/cmlye2n7p7d9o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 19:11 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/19/world/europe/spain-trains-infrastructure.html" target="_blank" rel="noopener">After Deadly Train Crash, Spain Asks: Did It Grow Too Much, Too Quickly?</a></h3>
+  <p class="excerpt">As an election nears, a railway disaster in Spain has set off debate over whether maintenance of its infrastructure kept pace with its booming population.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/19/world/europe/spain-trains-infrastructure.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 16:56 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-switzerland">
+  <div class="section-head">
+    <h2>Switzerland</h2>
+    <span class="count">7 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261120/high-danger-parts-of-swiss-alps-placed-on-avalanche-alert" target="_blank" rel="noopener">&#39;High danger&#39;: Parts of Swiss Alps placed on avalanche alert</a></h3>
+  <p class="excerpt">Switzerland&#39;s government has issued a danger level of 4 - the second-highest. - for certain mountain areas, starting on November 20th.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261120/high-danger-parts-of-swiss-alps-placed-on-avalanche-alert" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:54 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261120/everything-that-changes-about-life-in-switzerland-in-december-2026" target="_blank" rel="noopener">Everything that changes about life in Switzerland in December 2026</a></h3>
+  <p class="excerpt">From an additional pension payment to new international travel routes, this is what&#39;s on the agenda in Switzerland in December 2026.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261120/everything-that-changes-about-life-in-switzerland-in-december-2026" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 11:36 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261120/today-in-switzerland-a-roundup-of-the-latest-news-on-friday-269" target="_blank" rel="noopener">Today in Switzerland: A roundup of the latest news on Friday</a></h3>
+  <p class="excerpt">Youth demonstrations will take place across Switzerland today; an initiative to reduce health insurance premiums is launched; plus other news in our roundup this Friday.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261120/today-in-switzerland-a-roundup-of-the-latest-news-on-friday-269" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 08:31 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/22c052bf-a9dc-49f3-a18b-02b5dc490635?syn-25a6b1a6=1" target="_blank" rel="noopener">Rejoining the EU would boost UK economy twice as much as Swiss-style deal</a></h3>
+  <p class="excerpt">Much of the benefit would come from a rebound in business investment, which was damaged by Brexit-related uncertainty</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/22c052bf-a9dc-49f3-a18b-02b5dc490635?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Global Economy</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 05:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261119/swiss-lag-far-behind-germans-and-austrians-for-english-ability" target="_blank" rel="noopener">Swiss lag far behind Germans and Austrians for English ability</a></h3>
+  <p class="excerpt">Though English is widely spoken in Switzerland&#39;s business and social circles, the proficiency in this language has fallen among the population as a whole, a new study reveals. Meanwhile some its neighbours are near the top of the class.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261119/swiss-lag-far-behind-germans-and-austrians-for-english-ability" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 15:47 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261119/whats-considered-a-good-salary-in-geneva-in-autumn-2026" target="_blank" rel="noopener">What&#39;s considered a good salary in Geneva in autumn 2026?</a></h3>
+  <p class="excerpt">A comfortable life in Geneva, one of Switzerland’s most expensive cities, requires above-average income. How much is that, exactly?</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261119/whats-considered-a-good-salary-in-geneva-in-autumn-2026" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 14:43 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261119/foreign-residents-to-be-asked-to-show-original-id-documents-to-swiss-authorities" target="_blank" rel="noopener">Swiss authorities to demand foreign residents show original ID documents</a></h3>
+  <p class="excerpt">Foreign nationals will soon no longer be allowed to present copies of their identity documents when registering in Switzerland, but required to show originals instead.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261119/foreign-residents-to-be-asked-to-show-original-id-documents-to-swiss-authorities" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 14:39 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-united_kingdom">
+  <div class="section-head">
+    <h2>United Kingdom</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/damage-to-diplomatic-premises-during-russian-attacks-on-ukraine-uk-statement-to-the-osce" target="_blank" rel="noopener">Damage to diplomatic premises during Russian attacks on Ukraine: UK statement to the OSCE</a></h3>
+  <p class="excerpt">Ambassador Holland condemns Russia’s latest attacks across Ukraine, which killed and injured civilians and damaged diplomatic premises.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/damage-to-diplomatic-premises-during-russian-attacks-on-ukraine-uk-statement-to-the-osce" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+      <a href="https://www.theguardian.com/world/2026/nov/20/russian-missiles-drone-poland-attacks-ukraine" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 12:22 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/reinforced-permanent-council-on-future-chairpersonships-of-the-osce-uk-statement" target="_blank" rel="noopener">Reinforced Permanent Council on future Chairpersonships of the OSCE: UK statement</a></h3>
+  <p class="excerpt">The United Kingdom underlines the importance of a swift resolution to agree a package of OSCE Chairs-in-Office beyond 2026.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/reinforced-permanent-council-on-future-chairpersonships-of-the-osce-uk-statement" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 09:52 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/crimea-is-ukraine-uk-statement-at-the-un-third-committee--2" target="_blank" rel="noopener">Crimea is Ukraine: UK statement at the UN Third Committee</a></h3>
+  <p class="excerpt">Explanation of vote delivered by Ambassador Archie Young, UK Deputy Permanent Representative to the UN, at the UN Third Committee on Crimea.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/crimea-is-ukraine-uk-statement-at-the-un-third-committee--2" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 20:20 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/quad-statement-to-iaea-board-of-governors-november-2026" target="_blank" rel="noopener">Quad statement to IAEA Board of Governors, November 2026</a></h3>
+  <p class="excerpt">Statement by France, Germany, the United Kingdom and the United States on the implementation of Iran&#39;s Nuclear Non-Proliferation Treaty (NPT) Safeguards Agreement and relevant provisions of the United Nations Security Co…</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/quad-statement-to-iaea-board-of-governors-november-2026" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 14:26 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/report-by-the-head-of-the-osce-presence-in-albania-uk-statement-november-2026" target="_blank" rel="noopener">Report by the Head of the OSCE Presence in Albania: UK statement, November 2026</a></h3>
+  <p class="excerpt">Ambassador Holland welcomes the OSCE Presence&#39;s impartial expertise and practical support to Albania, and encourages Albania to match progress in reforms with sustained implementation, strong institutions and public conf…</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/report-by-the-head-of-the-osce-presence-in-albania-uk-statement-november-2026" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 12:43 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/20/rush-stockpile-emergency-supplies-sends-british-retail-sales-soaring" target="_blank" rel="noopener">Household rush to stockpile emergency supplies sends British retail sales soaring</a></h3>
+  <p class="excerpt">Surge fuelled by ‘preppers’ heeding Be Ready campaign’s call for households to have three days of food and water for emergenciesBusiness live – latest updatesRetail sales in Great Britain surged last month as the public rushed to buy products including tinned food and long-life milk, after the government issued a warning to stock up in case of a disaster.The Office for National Statistics (ONS) said the volume of goods sold jumped by 0.7% month on month in October, defying economists’ consensus expectations of flat sales, as “preppers” took heed of the government’s Be Ready campaign to hold su</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/1e7855e5-fe9c-4e9c-ba8d-68c70159a1f1?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/20/rush-stockpile-emergency-supplies-sends-british-retail-sales-soaring" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 12:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/20/world/europe/uk-eu-summit-brexit.html" target="_blank" rel="noopener">Britain Announces Brexit Reset Deal at E.U. Summit: What to Know</a></h3>
+  <p class="excerpt">Prime Minister Andy Burnham and European leaders announced a deal to remove some barriers introduced by Brexit, a decade after Britain left the European Union.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/20/world/europe/uk-eu-summit-brexit.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:55 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/nov/20/uk-eu-european-union-brexit-deal-andy-burnham-latest-news-updates" target="_blank" rel="noopener">EU wants ‘closest possible relationship’ with UK after agreeing Brexit reset deal – live</a></h3>
+  <p class="excerpt">President of European Council says EU ‘remains open to have the closest possible relationship’ with the UKSenior correspondent Making today’s reset deal contingent on a further agreement on the level of tuition fees for EU citizens is designed to neutralise the leverage London gets in the next six months, EU sources have said. Senior diplomats had already confirmed this week that the EU would defer the deal on the level of tuition fees for another six months, a move designed to give the UK leverage in parallel negotiations to have the UK included in Made in Europe legislation designed to prote</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/live/2026/nov/20/uk-eu-european-union-brexit-deal-andy-burnham-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:53 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-united_states">
+  <div class="section-head">
+    <h2>United States</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://news.un.org/feed/view/en/story/2026/11/1168836" target="_blank" rel="noopener">World’s top court finds Myanmar guilty of genocide against Rohingya</a></h3>
+  <p class="excerpt">The International Court of Justice, the principal judicial organ of the UN, delivered its judgment on Thursday in the case of The Gambia v. Myanmar on the application of the Genocide Convention, finding Myanmar responsible for the crime against the country’s ethnic Rohingya, the first such ruling against a State.&amp;nbsp;</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://news.un.org/feed/view/en/story/2026/11/1168836" target="_blank" rel="noopener">UN News</a>
+      <a href="https://www.nytimes.com/2026/11/19/world/europe/myanmar-genocide-icj-decision-.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c804wzp20ddvo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/global-development/2026/nov/19/everyone-struggled-for-this-justice-tears-in-court-as-rohingya-vindicated-in-myanmar-genocide-ruling" target="_blank" rel="noopener">The Guardian (World)</a>
+      <a href="https://www.dutchnews.nl/2026/11/un-court-in-the-hague-finds-myanmar-guilty-of-genocide/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/change-of-his-majestys-ambassador-to-mali" target="_blank" rel="noopener">Change of His Majesty’s Ambassador to Mali</a></h3>
+  <p class="excerpt">Ms Catherine Mary Inglehearn OBE has been appointed His Majesty’s Ambassador to the Republic of Mali in succession to Mr Angus Philip McKee OBE, who will be transferring to another Diplomatic Service appointment.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/change-of-his-majestys-ambassador-to-mali" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 11:10 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/quad-statement-to-iaea-board-of-governors-november-2026" target="_blank" rel="noopener">Quad statement to IAEA Board of Governors, November 2026</a></h3>
+  <p class="excerpt">Statement by France, Germany, the United Kingdom and the United States on the implementation of Iran&#39;s Nuclear Non-Proliferation Treaty (NPT) Safeguards Agreement and relevant provisions of the United Nations Security Co…</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/quad-statement-to-iaea-board-of-governors-november-2026" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 14:26 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://news.un.org/feed/view/en/story/2026/11/1168839" target="_blank" rel="noopener">COP31: Ambition goes missing as fossil fuel language drops from draft deal</a></h3>
+  <p class="excerpt">A cat named Ambition went missing again at COP31 on Thursday. While activists delivered the message with humour, it reflected a serious concern: explicit references to moving away from fossil fuels had disappeared from the latest draft climate agreement. On the eve of the summit&#39;s scheduled close, ministers and the Presidency were still trying to bridge sharp differences as civil society groups pressed for stronger action.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://news.un.org/feed/view/en/story/2026/11/1168839" target="_blank" rel="noopener">UN News</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cwz0k3nn5p5mo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">White House removes cyber-security chief after series of tech outages</a></h3>
+  <p class="excerpt">CBS is reporting he has been fired after losing the confidence of White House chief of staff Stephen Miller.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/6333f2e6-98da-4491-bd2e-30237d7bfbf5?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/cwz0k3nn5p5mo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/20/rush-stockpile-emergency-supplies-sends-british-retail-sales-soaring" target="_blank" rel="noopener">Household rush to stockpile emergency supplies sends British retail sales soaring</a></h3>
+  <p class="excerpt">Surge fuelled by ‘preppers’ heeding Be Ready campaign’s call for households to have three days of food and water for emergenciesBusiness live – latest updatesRetail sales in Great Britain surged last month as the public rushed to buy products including tinned food and long-life milk, after the government issued a warning to stock up in case of a disaster.The Office for National Statistics (ONS) said the volume of goods sold jumped by 0.7% month on month in October, defying economists’ consensus expectations of flat sales, as “preppers” took heed of the government’s Be Ready campaign to hold su</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/1e7855e5-fe9c-4e9c-ba8d-68c70159a1f1?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/20/rush-stockpile-emergency-supplies-sends-british-retail-sales-soaring" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 12:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/law/2026/nov/20/us-eu-reaction-myanmar-rohingya-genocide-icj-ruling-trump-international-law" target="_blank" rel="noopener">US reacts cautiously to Myanmar genocide ruling as EU praises ‘critical’ role of UN’s top court</a></h3>
+  <p class="excerpt">Reactions to ICJ ruling underline global divisions over court with China raising concerns about judicial overreachThe US has greeted with caution the world’s highest court’s ruling that Myanmar committed genocide against its Rohingya minority, while China has raised concerns of judicial overreach.Reactions to Thursday’s historic ruling underlined deep international division over the role of the court and similar institutions. The international court of justice (ICJ) had never previously found a state responsible for genocide and the decision could set a precedent for future genocide claims, no</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/19/world/asia/icj-myanmar-gaza.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.theguardian.com/law/2026/nov/19/myanmar-ruling-new-relevance-genocide-convention-messages-israel" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 11:57 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/technology/2026/nov/20/california-investigates-nvidia-over-whether-chip-exports-ended-up-in-china" target="_blank" rel="noopener">California investigates Nvidia over whether chip exports ended up in China</a></h3>
+  <p class="excerpt">State attorney says scandal ‘raises bright red flags’ and aims to find out if company misled investorsCalifornia has served an investigative subpoena on Nvidia after a scandal that prompted the departure of co-founder and longtime chief executive Jensen Huang.Rob Bonta, the US state’s attorney general, issued the subpoena as part of an investigation into whether exports of the California-based company’s advanced semiconductor chips ended up in China, contravening US restrictions. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cqn70vxp5p4no?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/technology/2026/nov/20/california-investigates-nvidia-over-whether-chip-exports-ended-up-in-china" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 09:18 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-netherlands">
+  <div class="section-head">
+    <h2>Netherlands</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://news.un.org/feed/view/en/story/2026/11/1168836" target="_blank" rel="noopener">World’s top court finds Myanmar guilty of genocide against Rohingya</a></h3>
+  <p class="excerpt">The International Court of Justice, the principal judicial organ of the UN, delivered its judgment on Thursday in the case of The Gambia v. Myanmar on the application of the Genocide Convention, finding Myanmar responsible for the crime against the country’s ethnic Rohingya, the first such ruling against a State.&amp;nbsp;</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://news.un.org/feed/view/en/story/2026/11/1168836" target="_blank" rel="noopener">UN News</a>
+      <a href="https://www.nytimes.com/2026/11/19/world/europe/myanmar-genocide-icj-decision-.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c804wzp20ddvo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/global-development/2026/nov/19/everyone-struggled-for-this-justice-tears-in-court-as-rohingya-vindicated-in-myanmar-genocide-ruling" target="_blank" rel="noopener">The Guardian (World)</a>
+      <a href="https://www.dutchnews.nl/2026/11/un-court-in-the-hague-finds-myanmar-guilty-of-genocide/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/damage-to-diplomatic-premises-during-russian-attacks-on-ukraine-uk-statement-to-the-osce" target="_blank" rel="noopener">Damage to diplomatic premises during Russian attacks on Ukraine: UK statement to the OSCE</a></h3>
+  <p class="excerpt">Ambassador Holland condemns Russia’s latest attacks across Ukraine, which killed and injured civilians and damaged diplomatic premises.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/damage-to-diplomatic-premises-during-russian-attacks-on-ukraine-uk-statement-to-the-osce" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+      <a href="https://www.theguardian.com/world/2026/nov/20/russian-missiles-drone-poland-attacks-ukraine" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 12:22 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/report-by-the-head-of-the-osce-presence-in-albania-uk-statement-november-2026" target="_blank" rel="noopener">Report by the Head of the OSCE Presence in Albania: UK statement, November 2026</a></h3>
+  <p class="excerpt">Ambassador Holland welcomes the OSCE Presence&#39;s impartial expertise and practical support to Albania, and encourages Albania to match progress in reforms with sustained implementation, strong institutions and public conf…</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/report-by-the-head-of-the-osce-presence-in-albania-uk-statement-november-2026" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 12:43 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/law/2026/nov/20/us-eu-reaction-myanmar-rohingya-genocide-icj-ruling-trump-international-law" target="_blank" rel="noopener">US reacts cautiously to Myanmar genocide ruling as EU praises ‘critical’ role of UN’s top court</a></h3>
+  <p class="excerpt">Reactions to ICJ ruling underline global divisions over court with China raising concerns about judicial overreachThe US has greeted with caution the world’s highest court’s ruling that Myanmar committed genocide against its Rohingya minority, while China has raised concerns of judicial overreach.Reactions to Thursday’s historic ruling underlined deep international division over the role of the court and similar institutions. The international court of justice (ICJ) had never previously found a state responsible for genocide and the decision could set a precedent for future genocide claims, no</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/19/world/asia/icj-myanmar-gaza.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.theguardian.com/law/2026/nov/19/myanmar-ruling-new-relevance-genocide-convention-messages-israel" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 11:57 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/dutch-embassy-hit-in-kyiv-as-putin-vows-crimea-bridge-revenge/" target="_blank" rel="noopener">Dutch embassy hit in Kyiv as Putin vows Crimea bridge revenge</a></h3>
+  <p class="excerpt">The Dutch embassy in Kyiv was hit during drone strikes on Thursday afternoon, damaging the building and surrounding area, though...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/world/europe/russia-kerch-strait-crimean-bridge.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.dutchnews.nl/2026/11/dutch-embassy-hit-in-kyiv-as-putin-vows-crimea-bridge-revenge/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 15:48 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/podcast-the-you-had-one-job-rob-jetten-edition/" target="_blank" rel="noopener">Podcast: The You Had One Job, Rob Jetten Edition</a></h3>
+  <p class="excerpt">Want to support the Dutch News podcast so we don’t have to sell our children at a far-right cage fight?...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/podcast-the-you-had-one-job-rob-jetten-edition/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:19 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/tata-steel-goes-on-trial-accused-of-deliberate-air-pollution/" target="_blank" rel="noopener">Tata Steel goes on trial accused of deliberate air pollution</a></h3>
+  <p class="excerpt">The criminal case against Tata Steel over alleged deliberate air pollution around its IJmuiden plant began at Amsterdam district court...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/tata-steel-goes-on-trial-accused-of-deliberate-air-pollution/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 10:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/jetten-wont-be-intimidated-by-russian-threats-and-embassy-hit/" target="_blank" rel="noopener">Jetten “won’t be intimidated” by Russian threats and embassy hit</a></h3>
+  <p class="excerpt">Prime minister Rob Jetten has said he will not take “too seriously” a Russian warning that employees of Dutch arms...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/jetten-wont-be-intimidated-by-russian-threats-and-embassy-hit/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 09:16 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <div class="country-group">
+    <h2>Regional neighbors</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>Turkey</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/20/climate/van-cats-turkey.html" target="_blank" rel="noopener">Turkey’s Van Cats Contend With Rising Temperatures</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/c6074k5jjrzko?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">More climate money for Africa? Europe says use what&#39;s already pledged</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/19/climate/cop31-turkey-event-scene.html" target="_blank" rel="noopener">Inside COP31: Part Trade Show, Part Climate Therapy Session</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Russia</h3>
+  <ul>
+    <li>
+      <a href="https://www.gov.uk/government/speeches/damage-to-diplomatic-premises-during-russian-attacks-on-ukraine-uk-statement-to-the-osce" target="_blank" rel="noopener">Damage to diplomatic premises during Russian attacks on Ukraine: UK statement to the OSCE</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/c623j4ln97x7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Trump, Putin and Xi release &#39;peace declaration&#39; after historic meeting</a>
+    </li>
+    <li>
+      <a href="https://www.dutchnews.nl/2026/11/dutch-embassy-hit-in-kyiv-as-putin-vows-crimea-bridge-revenge/" target="_blank" rel="noopener">Dutch embassy hit in Kyiv as Putin vows Crimea bridge revenge</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/20/world/europe/putin-trump-xi-summit-apec.html" target="_blank" rel="noopener">Putin Exits Summit With Symbolic Win, Saying He and Trump Share ‘Values’</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Iran</h3>
+  <ul>
+    <li>
+      <a href="https://www.gov.uk/government/speeches/quad-statement-to-iaea-board-of-governors-november-2026" target="_blank" rel="noopener">Quad statement to IAEA Board of Governors, November 2026</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/19/climate/iea-energy-transition-electric-cars.html" target="_blank" rel="noopener">Unexpected Fallout From the Iran War</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/19/us/politics/senate-iran-war-powers-trump.html" target="_blank" rel="noopener">Senate Republicans Block Bid to Rein in Trump on Iran War</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/19/world/asia/russia-china-united-states-oil-joint-statement.html" target="_blank" rel="noopener">At APEC Summit, U.S., China and Russia Vow to Increase Oil Supply Amid Global Energy Transition</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Georgia</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/us-news/2026/nov/20/allies-email-trump-pardon-election-deniers" target="_blank" rel="noopener">Emails reveal how Trump allies pushed pardons for election deniers</a>
+    </li>
+    <li>
+      <a href="https://www.politico.com/news/2026/11/19/keisha-lance-bottoms-democrats-campaigns-south-01177147" target="_blank" rel="noopener">Keisha Lance Bottoms says Democrats better spend big on the South</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/environment/2026/nov/19/baobab-five-trees-south-africa-dug-up-export-blocked-georgia-aoe" target="_blank" rel="noopener">Race to replant five South African baobabs after export blocked</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+  <div class="country-group">
+    <h2>Great powers</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>China</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/law/2026/nov/20/us-eu-reaction-myanmar-rohingya-genocide-icj-ruling-trump-international-law" target="_blank" rel="noopener">US reacts cautiously to Myanmar genocide ruling as EU praises ‘critical’ role of UN’s top court</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/technology/2026/nov/20/california-investigates-nvidia-over-whether-chip-exports-ended-up-in-china" target="_blank" rel="noopener">California investigates Nvidia over whether chip exports ended up in China</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/19/business/economy/nvidia-chips-commerce-china-huang.html" target="_blank" rel="noopener">Nvidia Asked to Sell Chips to Companies Tied to Chinese Military and Megaspeed</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/20/world/europe/putin-trump-xi-summit-apec.html" target="_blank" rel="noopener">Putin Exits Summit With Symbolic Win, Saying He and Trump Share ‘Values’</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>European Union</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/law/2026/nov/20/us-eu-reaction-myanmar-rohingya-genocide-icj-ruling-trump-international-law" target="_blank" rel="noopener">US reacts cautiously to Myanmar genocide ruling as EU praises ‘critical’ role of UN’s top court</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/20/world/europe/uk-eu-summit-brexit.html" target="_blank" rel="noopener">Britain Announces Brexit Reset Deal at E.U. Summit: What to Know</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/world/live/2026/nov/20/uk-eu-european-union-brexit-deal-andy-burnham-latest-news-updates" target="_blank" rel="noopener">EU wants ‘closest possible relationship’ with UK after agreeing Brexit reset deal – live</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/cm4gn9xw1v99o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">New EU-UK deal should reduce &#39;Irish Sea border&#39; impact</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>France</h3>
+  <ul>
+    <li>
+      <a href="https://www.gov.uk/government/speeches/quad-statement-to-iaea-board-of-governors-november-2026" target="_blank" rel="noopener">Quad statement to IAEA Board of Governors, November 2026</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/b9b16f2f-f88e-454e-aa85-c131256310fe?syn-25a6b1a6=1" target="_blank" rel="noopener">Why Britons can feel smugger than the French</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/912a7730-2428-4d4c-8dde-9c41a99ab562?syn-25a6b1a6=1" target="_blank" rel="noopener">UK and EU poised to finalise deal to ‘reset’ relations</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/53091ded-e5c8-4c29-a3f9-48c0ea871ab9?syn-25a6b1a6=1" target="_blank" rel="noopener">France and UK at loggerheads ahead of key EU summit</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Germany</h3>
+  <ul>
+    <li>
+      <a href="https://www.gov.uk/government/speeches/quad-statement-to-iaea-board-of-governors-november-2026" target="_blank" rel="noopener">Quad statement to IAEA Board of Governors, November 2026</a>
+    </li>
+    <li>
+      <a href="https://english.elpais.com/international/2026-11-20/nationalism-and-sword-duels-the-student-fraternities-that-serve-as-afds-recruitment-pool.html" target="_blank" rel="noopener">Nationalism and sword duels: The student fraternities that serve as AfD’s recruitment pool</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/ckzd9nln5e6go?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Europe ready for talks with Russia on ending war in Ukraine, leaders say</a>
+    </li>
+    <li>
+      <a href="https://www.thelocal.ch/20261119/swiss-lag-far-behind-germans-and-austrians-for-english-ability" target="_blank" rel="noopener">Swiss lag far behind Germans and Austrians for English ability</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+  <div class="country-group">
+    <h2>Middle East</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>Israel</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/law/2026/nov/20/us-eu-reaction-myanmar-rohingya-genocide-icj-ruling-trump-international-law" target="_blank" rel="noopener">US reacts cautiously to Myanmar genocide ruling as EU praises ‘critical’ role of UN’s top court</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/cw8r7510degno?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Israeli military completes ground operation in Gaza beyond Yellow Line</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/us-news/2026/nov/20/el-sayed-trump-israel-aid" target="_blank" rel="noopener">‘I agree with the president’: incoming senator Abdul El-Sayed seeks to help Trump end military aid to Israel</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/19/theater/birthright-broadway-israel.html" target="_blank" rel="noopener">‘Birthright,’ a Play About Jewish Divisions Over Israel, Is Broadway Bound</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Saudi Arabia</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/us-news/2026/nov/20/el-sayed-trump-israel-aid" target="_blank" rel="noopener">‘I agree with the president’: incoming senator Abdul El-Sayed seeks to help Trump end military aid to Israel</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/19/world/middleeast/saudi-pif-riyadh-tower-houthis-attack.html" target="_blank" rel="noopener">Saudi Sovereign Wealth Fund Tower Damaged as Houthis Attack Riyadh</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Egypt</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/us-news/2026/nov/20/el-sayed-trump-israel-aid" target="_blank" rel="noopener">‘I agree with the president’: incoming senator Abdul El-Sayed seeks to help Trump end military aid to Israel</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+
+  <section class="topic" id="sec-ir_theory">
+  <div class="section-head">
+    <h2>International Relations — Theory &amp; Analysis</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/venezuela/americas-bad-bargain-venezuela" target="_blank" rel="noopener">America’s Bad Bargain in Venezuela</a></h3>
+  <p class="excerpt">Washington’s dealmaking is strengthening the Chavista regime.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/venezuela/americas-bad-bargain-venezuela" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/united-states/congress-and-coming-crises" target="_blank" rel="noopener">Congress and the Coming Crises</a></h3>
+  <p class="excerpt">How to defuse looming threats to U.S. national security.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/united-states/congress-and-coming-crises" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/why-the-next-bioterrorists-may-not-make-the-same-mistakes-as-aum-shinrikyo/" target="_blank" rel="noopener">Why the Next Bioterrorists May Not Make the Same Mistakes as Aum Shinrikyo</a></h3>
+  <p class="excerpt">In conversations with law enforcement and security professionals, one view has repeatedly emerged: Aum Shinrikyo&amp;#8217;s failed biological weapons program in the early 1990s shows that the risk of bioterrorism is overstated, despite warnings about AI-assisted bioterrorism and calls for enhanced preparedness from experts, philanthropists, and CEOs of AI companies. The Japanese doomsday cult responsible for the 1995 Tokyo sarin attack had money, facilities, scientifically educated members, and a leadership willing to cause mass harm. If any terrorist organization was well positioned to develop a</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/why-the-next-bioterrorists-may-not-make-the-same-mistakes-as-aum-shinrikyo/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 08:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/handshakes-without-headway/" target="_blank" rel="noopener">Handshakes Without Headway</a></h3>
+  <p class="excerpt">Welcome to The Adversarial.&amp;#160;Every other week, we&amp;#8217;ll provide you with expert analysis on America&amp;#8217;s greatest challengers: China, Russia, Iran, North Korea, and jihadists. Read more below.***Iran Washington and Tehran are stuck in a loop, with no indication that they are engaged in talks &amp;#8212; although Iran has continued meeting with mediators. Following a G7 meeting, Secretary of State Marco Rubio said that the U.S. economic pressure campaign &amp;#8212; including sanctions, an ongoing naval blockade, and newer efforts to block Iran from transporting weapons and sanctioned items b</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/handshakes-without-headway/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 20:17 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/israel/only-way-end-netanyahu-era" target="_blank" rel="noopener">The Only Way to End the Netanyahu Era</a></h3>
+  <p class="excerpt">Arab citizens of Israel can bring change, but they can’t do it alone.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/israel/only-way-end-netanyahu-era" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/united-states/paradox-american-credibility" target="_blank" rel="noopener">The Paradox of American Credibility</a></h3>
+  <p class="excerpt">How fighting weakens Washington’s reputation—and backing down may strengthen it.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/united-states/paradox-american-credibility" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/colombia/avoiding-colombias-escalation-trap" target="_blank" rel="noopener">Avoiding Colombia’s Escalation Trap</a></h3>
+  <p class="excerpt">Why a U.S.-backed offensive against armed groups could backfire.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/colombia/avoiding-colombias-escalation-trap" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/the-ground-beneath-the-cloud-dispersion-and-dependency-in-the-digital-age/" target="_blank" rel="noopener">The Ground Beneath the Cloud: Dispersion and Dependency in the Digital Age</a></h3>
+  <p class="excerpt">Commercial cloud architecture has made digital infrastructure more resilient to localized disruption. Geographic dispersion, workload migration, and failover have allowed providers to preserve access in instances of degradation or even destruction. Yet, underpinning this resiliency are interlocking dependencies on access to energy, supply chains, and governing bodies that extend well beyond the data centers hosting the commercial cloud. The United States is building digital capacity &amp;#8212; data centers and the underlying systems supporting them &amp;#8212; faster than the governance frameworks ne</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/the-ground-beneath-the-cloud-dispersion-and-dependency-in-the-digital-age/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 08:30 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-conflicts">
+  <div class="section-head">
+    <h2>Conflicts &amp; Security</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/damage-to-diplomatic-premises-during-russian-attacks-on-ukraine-uk-statement-to-the-osce" target="_blank" rel="noopener">Damage to diplomatic premises during Russian attacks on Ukraine: UK statement to the OSCE</a></h3>
+  <p class="excerpt">Ambassador Holland condemns Russia’s latest attacks across Ukraine, which killed and injured civilians and damaged diplomatic premises.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/damage-to-diplomatic-premises-during-russian-attacks-on-ukraine-uk-statement-to-the-osce" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+      <a href="https://www.theguardian.com/world/2026/nov/20/russian-missiles-drone-poland-attacks-ukraine" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 12:22 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/20/rush-stockpile-emergency-supplies-sends-british-retail-sales-soaring" target="_blank" rel="noopener">Household rush to stockpile emergency supplies sends British retail sales soaring</a></h3>
+  <p class="excerpt">Surge fuelled by ‘preppers’ heeding Be Ready campaign’s call for households to have three days of food and water for emergenciesBusiness live – latest updatesRetail sales in Great Britain surged last month as the public rushed to buy products including tinned food and long-life milk, after the government issued a warning to stock up in case of a disaster.The Office for National Statistics (ONS) said the volume of goods sold jumped by 0.7% month on month in October, defying economists’ consensus expectations of flat sales, as “preppers” took heed of the government’s Be Ready campaign to hold su</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/1e7855e5-fe9c-4e9c-ba8d-68c70159a1f1?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/20/rush-stockpile-emergency-supplies-sends-british-retail-sales-soaring" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 12:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cw8r7510degno?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Israeli military completes ground operation in Gaza beyond Yellow Line</a></h3>
+  <p class="excerpt">Hamas condemned the incursion, which the Israeli military said was to dismantle a &#34;terror tunnel&#34;, as a &#34;flagrant&#34; ceasefire violation.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cw8r7510degno?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/18/israeli-tanks-cross-yellow-line-boundary-into-hamas-controlled-central-gaza" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 17:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cqx2x9dklxnro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Russian missile hits Poland as Ukraine&#39;s allies hold military exercise, says Tusk</a></h3>
+  <p class="excerpt">Nobody was hurt and no damage has been reported, but Warsaw described the incident as a &#34;provocation&#34; from Moscow.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cqx2x9dklxnro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:52 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/society/2026/nov/20/ahabana-mahmood-housing-provision-vulnerable-people-birmingham-supported-exempt-accommodation" target="_blank" rel="noopener">Mahmood ‘smells a rat’ over housing provision for vulnerable people in Birmingham</a></h3>
+  <p class="excerpt">Warnings over exploitation risks come amid push for investigation into supported exempt accommodation sectorThe home secretary has launched an attack on providers of housing for vulnerable residents in her Birmingham constituency, saying she “smells a rat” after warnings over spiralling costs and risks of exploitation.A push for an independent investigation into the supported exempt accommodation (SEA) sector in Birmingham, one of the largest in the country, is under way. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/society/2026/nov/20/ahabana-mahmood-housing-provision-vulnerable-people-birmingham-supported-exempt-accommodation" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:43 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/20/world/europe/ukraine-wildlife-war.html" target="_blank" rel="noopener">The War Is Ravaging Ukraine’s Wildlife, Too</a></h3>
+  <p class="excerpt">The war in Ukraine has had untold consequences for dolphins, moose, storks and a huge range of other wildlife whose habitats are now rife with anti-drone netting, minefields or in the direct line of fire.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/20/world/europe/ukraine-wildlife-war.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:36 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/2026/nov/20/nigel-farage-leadership-reform-uk-party" target="_blank" rel="noopener">No one else in Reform is suitable to lead the party, Nigel Farage says</a></h3>
+  <p class="excerpt">Farage issues warning to potential rivals and says he will fight next election as leader if ‘still here and fit and healthy’Nigel Farage has said he does not see another person who could do his job as leader of Reform UK, in a warning shot to potential rivals who might seek to replace him.The Reform UK leader delivered a message that he was going nowhere despite his worries over his personal safety in the wake of the killing of the Reform politician Ann Widdecombe. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/politics/2026/nov/20/nigel-farage-leadership-reform-uk-party" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:23 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/uk-news/2026/nov/20/friday-cold-weather-uk" target="_blank" rel="noopener">Friday night will be ‘coldest of the autumn so far’, UK forecasters say</a></h3>
+  <p class="excerpt">Lows will be ‘severe’ in the north, down to -9C, with some sub-zero temperatures farther southFriday night will be the coldest night of the autumn so far, forecasters have said, surpassing the previous chilliest: Thursday.A low of -8.4C was recorded at Tulloch Bridge in the Scottish Highlands overnight, according to the Met Office. Sub-zero temperatures were also recorded in Northern Ireland. More southerly areas stayed substantially warmer overnight on Thursday. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/uk-news/2026/nov/20/friday-cold-weather-uk" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:18 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c3qj5d25jprpo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Teacher misses sentencing for indecent assault on pupils</a></h3>
+  <p class="excerpt">A warrant is issued for the arrest of Sally-Anne Bowen, who was granted bail after a guilty verdict.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c3qj5d25jprpo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 12:20 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/20/podcasts/the-daily/trump-putin-xi-summit-ai.html" target="_blank" rel="noopener">What Trump, Putin and Xi Left on the Table</a></h3>
+  <p class="excerpt">A summit among the leaders of the United States, China and Russia produced no treaties on war or nuclear weapons — and the A.I. race wasn’t even on the agenda.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/20/podcasts/the-daily/trump-putin-xi-summit-ai.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/20/podcasts/hardfork-gta6-nvidia-anthropic.html" target="_blank" rel="noopener">G.T.A. VI Is a Monumental Human Achievement</a></h3>
+  <p class="excerpt">Anthropic goes public, Jensen Huang wants back in at Nvidia, and software patches seem to be breaking everything. But first, let’s talk about G.T.A.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/20/podcasts/hardfork-gta6-nvidia-anthropic.html" target="_blank" rel="noopener">NYT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/20/technology/jensen-huang-nvidia-culture.html" target="_blank" rel="noopener">How Jensen Huang Made Humiliation Routine at Nvidia</a></h3>
+  <p class="excerpt">The Nvidia co-founder’s belittling behavior toward employees goes back decades. It once led to a confidential settlement agreement with an executive who said Mr. Huang “terrorized” staff.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/20/technology/jensen-huang-nvidia-culture.html" target="_blank" rel="noopener">NYT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 10:03 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-intelligence">
+  <div class="section-head">
+    <h2>Intelligence &amp; Espionage</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cwz0k3nn5p5mo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">White House removes cyber-security chief after series of tech outages</a></h3>
+  <p class="excerpt">CBS is reporting he has been fired after losing the confidence of White House chief of staff Stephen Miller.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/6333f2e6-98da-4491-bd2e-30237d7bfbf5?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/cwz0k3nn5p5mo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/law/2026/nov/20/us-eu-reaction-myanmar-rohingya-genocide-icj-ruling-trump-international-law" target="_blank" rel="noopener">US reacts cautiously to Myanmar genocide ruling as EU praises ‘critical’ role of UN’s top court</a></h3>
+  <p class="excerpt">Reactions to ICJ ruling underline global divisions over court with China raising concerns about judicial overreachThe US has greeted with caution the world’s highest court’s ruling that Myanmar committed genocide against its Rohingya minority, while China has raised concerns of judicial overreach.Reactions to Thursday’s historic ruling underlined deep international division over the role of the court and similar institutions. The international court of justice (ICJ) had never previously found a state responsible for genocide and the decision could set a precedent for future genocide claims, no</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/19/world/asia/icj-myanmar-gaza.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.theguardian.com/law/2026/nov/19/myanmar-ruling-new-relevance-genocide-convention-messages-israel" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 11:57 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/19/business/economy/nvidia-chips-commerce-china-huang.html" target="_blank" rel="noopener">Nvidia Asked to Sell Chips to Companies Tied to Chinese Military and Megaspeed</a></h3>
+  <p class="excerpt">Lawmakers released confidential information showing the Commerce Department had approved sales of more than 800,000 A.I. chips to Chinese companies, some with military ties.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/19/business/economy/nvidia-chips-commerce-china-huang.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.ft.com/content/76342072-2781-4b16-ba3b-816a25214483?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 01:13 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/dutch-embassy-hit-in-kyiv-as-putin-vows-crimea-bridge-revenge/" target="_blank" rel="noopener">Dutch embassy hit in Kyiv as Putin vows Crimea bridge revenge</a></h3>
+  <p class="excerpt">The Dutch embassy in Kyiv was hit during drone strikes on Thursday afternoon, damaging the building and surrounding area, though...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/world/europe/russia-kerch-strait-crimean-bridge.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.dutchnews.nl/2026/11/dutch-embassy-hit-in-kyiv-as-putin-vows-crimea-bridge-revenge/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 15:48 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/nov/20/ice-rearrest-judge-mockery-court-orders" target="_blank" rel="noopener">Judge says ICE ‘made a mockery of court orders’ with instant re-arrest policy</a></h3>
+  <p class="excerpt">Federal judge in Colorado finds immigration officials in contempt but takes no more action after they end practiceA federal judge said that the US Immigration and Customs ⁠Enforcement agency (ICE) “made a mockery of court orders” in Colorado and that the court found government officials in contempt ⁠for instantly re-arresting a ⁠man whom ​the judge had ordered released.US district judge Charlotte Sweeney declined to take any further action because she ⁠said the officials had “cured the contempt by ceasing the practice at issue” as sworn by an official in court. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/nov/20/ice-rearrest-judge-mockery-court-orders" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:26 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/2026/nov/20/nigel-farage-leadership-reform-uk-party" target="_blank" rel="noopener">No one else in Reform is suitable to lead the party, Nigel Farage says</a></h3>
+  <p class="excerpt">Farage issues warning to potential rivals and says he will fight next election as leader if ‘still here and fit and healthy’Nigel Farage has said he does not see another person who could do his job as leader of Reform UK, in a warning shot to potential rivals who might seek to replace him.The Reform UK leader delivered a message that he was going nowhere despite his worries over his personal safety in the wake of the killing of the Reform politician Ann Widdecombe. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/politics/2026/nov/20/nigel-farage-leadership-reform-uk-party" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:23 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/20/business/dealbook/anthropic-ipo-ai-rally.html" target="_blank" rel="noopener">Can Anthropic Revive the A.I. Trade?</a></h3>
+  <p class="excerpt">Shares in the artificial intelligence giant jumped in their debut. But that didn’t lift the technology sector, as investors worry about the future of the A.I. boom.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/20/business/dealbook/anthropic-ipo-ai-rally.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:07 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/international/2026-11-20/nationalism-and-sword-duels-the-student-fraternities-that-serve-as-afds-recruitment-pool.html" target="_blank" rel="noopener">Nationalism and sword duels: The student fraternities that serve as AfD’s recruitment pool</a></h3>
+  <p class="excerpt">Dozens of far-right German politicians come from the ‘burschenschaften.’ Intelligence services monitor some of these organizations and their members for their radical ideology</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/international/2026-11-20/nationalism-and-sword-duels-the-student-fraternities-that-serve-as-afds-recruitment-pool.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 11:18 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/video/business/100000011293737/how-the-us-economy-is-tied-to-ai.html" target="_blank" rel="noopener">How the U.S. Economy Is Tied to A.I.</a></h3>
+  <p class="excerpt">Artificial intelligence has become a huge piece of the U.S. economy. Ben Casselman, the chief economics correspondent for The New York Times, explains why that is and how it might be risky.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/video/business/100000011293737/how-the-us-economy-is-tied-to-ai.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 11:01 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/nov/20/allies-email-trump-pardon-election-deniers" target="_blank" rel="noopener">Emails reveal how Trump allies pushed pardons for election deniers</a></h3>
+  <p class="excerpt">Former Trump lawyer urged justice department officials to seek pardons for those falsely claiming he won the 2020 presidential election in their statesIn the fall of 2025, Cleta Mitchell, a key lawyer in Donald Trump’s efforts to overturn the 2020 presidential election, contacted a justice department official with an urgent request.Criminal cases against people who signed certificates falsely claiming that Trump won the presidential election in their state – known widely as fake electors – were pending in Georgia, Michigan, Arizona, Nevada and Wisconsin. She knew the official, pardon attorney </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/nov/20/allies-email-trump-pardon-election-deniers" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 11:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c69vwyjp0339o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Nearly 600 women killed in South Africa within three months</a></h3>
+  <p class="excerpt">Police officials called for &#34;greater efforts to prevent... violence&#34; against women and children.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c69vwyjp0339o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 10:56 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/20/business/nvidia-ceo-stock-succession-jensen-huang.html" target="_blank" rel="noopener">Stocks Often Prosper After an Abrupt C.E.O. Exit. Is Nvidia Different?</a></h3>
+  <p class="excerpt">The stock value of a top executive is often less important than it initially seems. But Nvidia’s entanglement in U.S.-Chinese relations poses special problems.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/20/business/nvidia-ceo-stock-succession-jensen-huang.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 10:02 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-military">
+  <div class="section-head">
+    <h2>Military &amp; Defense</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://news.un.org/feed/view/en/story/2026/11/1168836" target="_blank" rel="noopener">World’s top court finds Myanmar guilty of genocide against Rohingya</a></h3>
+  <p class="excerpt">The International Court of Justice, the principal judicial organ of the UN, delivered its judgment on Thursday in the case of The Gambia v. Myanmar on the application of the Genocide Convention, finding Myanmar responsible for the crime against the country’s ethnic Rohingya, the first such ruling against a State.&amp;nbsp;</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://news.un.org/feed/view/en/story/2026/11/1168836" target="_blank" rel="noopener">UN News</a>
+      <a href="https://www.nytimes.com/2026/11/19/world/europe/myanmar-genocide-icj-decision-.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c804wzp20ddvo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/global-development/2026/nov/19/everyone-struggled-for-this-justice-tears-in-court-as-rohingya-vindicated-in-myanmar-genocide-ruling" target="_blank" rel="noopener">The Guardian (World)</a>
+      <a href="https://www.dutchnews.nl/2026/11/un-court-in-the-hague-finds-myanmar-guilty-of-genocide/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/damage-to-diplomatic-premises-during-russian-attacks-on-ukraine-uk-statement-to-the-osce" target="_blank" rel="noopener">Damage to diplomatic premises during Russian attacks on Ukraine: UK statement to the OSCE</a></h3>
+  <p class="excerpt">Ambassador Holland condemns Russia’s latest attacks across Ukraine, which killed and injured civilians and damaged diplomatic premises.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/damage-to-diplomatic-premises-during-russian-attacks-on-ukraine-uk-statement-to-the-osce" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+      <a href="https://www.theguardian.com/world/2026/nov/20/russian-missiles-drone-poland-attacks-ukraine" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 12:22 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/quad-statement-to-iaea-board-of-governors-november-2026" target="_blank" rel="noopener">Quad statement to IAEA Board of Governors, November 2026</a></h3>
+  <p class="excerpt">Statement by France, Germany, the United Kingdom and the United States on the implementation of Iran&#39;s Nuclear Non-Proliferation Treaty (NPT) Safeguards Agreement and relevant provisions of the United Nations Security Co…</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/quad-statement-to-iaea-board-of-governors-november-2026" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 14:26 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/report-by-the-head-of-the-osce-presence-in-albania-uk-statement-november-2026" target="_blank" rel="noopener">Report by the Head of the OSCE Presence in Albania: UK statement, November 2026</a></h3>
+  <p class="excerpt">Ambassador Holland welcomes the OSCE Presence&#39;s impartial expertise and practical support to Albania, and encourages Albania to match progress in reforms with sustained implementation, strong institutions and public conf…</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/report-by-the-head-of-the-osce-presence-in-albania-uk-statement-november-2026" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 12:43 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/19/business/economy/nvidia-chips-commerce-china-huang.html" target="_blank" rel="noopener">Nvidia Asked to Sell Chips to Companies Tied to Chinese Military and Megaspeed</a></h3>
+  <p class="excerpt">Lawmakers released confidential information showing the Commerce Department had approved sales of more than 800,000 A.I. chips to Chinese companies, some with military ties.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/19/business/economy/nvidia-chips-commerce-china-huang.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.ft.com/content/76342072-2781-4b16-ba3b-816a25214483?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 01:13 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cw8r7510degno?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Israeli military completes ground operation in Gaza beyond Yellow Line</a></h3>
+  <p class="excerpt">Hamas condemned the incursion, which the Israeli military said was to dismantle a &#34;terror tunnel&#34;, as a &#34;flagrant&#34; ceasefire violation.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cw8r7510degno?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/18/israeli-tanks-cross-yellow-line-boundary-into-hamas-controlled-central-gaza" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 17:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/dutch-embassy-hit-in-kyiv-as-putin-vows-crimea-bridge-revenge/" target="_blank" rel="noopener">Dutch embassy hit in Kyiv as Putin vows Crimea bridge revenge</a></h3>
+  <p class="excerpt">The Dutch embassy in Kyiv was hit during drone strikes on Thursday afternoon, damaging the building and surrounding area, though...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/world/europe/russia-kerch-strait-crimean-bridge.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.dutchnews.nl/2026/11/dutch-embassy-hit-in-kyiv-as-putin-vows-crimea-bridge-revenge/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 15:48 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cqy4jvprxyrdo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Calls for consent defence change after Joanne Young rape case</a></h3>
+  <p class="excerpt">Joanne Young&#39;s daughter joins her mother in calling for a change to the law on consent.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cqy4jvprxyrdo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:52 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cqx2x9dklxnro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Russian missile hits Poland as Ukraine&#39;s allies hold military exercise, says Tusk</a></h3>
+  <p class="excerpt">Nobody was hurt and no damage has been reported, but Warsaw described the incident as a &#34;provocation&#34; from Moscow.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cqx2x9dklxnro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:52 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/20/world/europe/ukraine-wildlife-war.html" target="_blank" rel="noopener">The War Is Ravaging Ukraine’s Wildlife, Too</a></h3>
+  <p class="excerpt">The war in Ukraine has had untold consequences for dolphins, moose, storks and a huge range of other wildlife whose habitats are now rife with anti-drone netting, minefields or in the direct line of fire.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/20/world/europe/ukraine-wildlife-war.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:36 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/19/us/politics/justice-department-gives-up-on-alaska-senate-lawsuit.html" target="_blank" rel="noopener">Justice Department Gives Up on Alaska Senate Lawsuit</a></h3>
+  <p class="excerpt">The Trump administration had sought to block certification of election results if Senator Dan Sullivan, a Republican, lost narrowly in his bid for re-election. Critics had called the suit meritless.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/19/us/politics/justice-department-gives-up-on-alaska-senate-lawsuit.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 12:54 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cmwy9dg89w20o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Man arrested after &#39;knives and other weapons&#39; seized from train</a></h3>
+  <p class="excerpt">Army bomb disposal experts were called out following reports of a man &#39;acting suspiciously&#39; on the train.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cmwy9dg89w20o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 11:47 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-technology">
+  <div class="section-head">
+    <h2>Technology</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cwz0k3nn5p5mo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">White House removes cyber-security chief after series of tech outages</a></h3>
+  <p class="excerpt">CBS is reporting he has been fired after losing the confidence of White House chief of staff Stephen Miller.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/6333f2e6-98da-4491-bd2e-30237d7bfbf5?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/cwz0k3nn5p5mo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/technology/2026/nov/20/california-investigates-nvidia-over-whether-chip-exports-ended-up-in-china" target="_blank" rel="noopener">California investigates Nvidia over whether chip exports ended up in China</a></h3>
+  <p class="excerpt">State attorney says scandal ‘raises bright red flags’ and aims to find out if company misled investorsCalifornia has served an investigative subpoena on Nvidia after a scandal that prompted the departure of co-founder and longtime chief executive Jensen Huang.Rob Bonta, the US state’s attorney general, issued the subpoena as part of an investigation into whether exports of the California-based company’s advanced semiconductor chips ended up in China, contravening US restrictions. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cqn70vxp5p4no?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/technology/2026/nov/20/california-investigates-nvidia-over-whether-chip-exports-ended-up-in-china" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 09:18 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/economy-and-business/2026-11-19/anthropic-debuts-with-sharp-gains-in-the-largest-ipo-in-history.html" target="_blank" rel="noopener">Anthropic registers 17% gain and a market value of nearly $1.8 trillion on stock market debut</a></h3>
+  <p class="excerpt">The AI company makes history with the largest initial public offering ever. Shares of the developer of Claude closed the first trading session at $97.17</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c3x29ggenz12o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://english.elpais.com/economy-and-business/2026-11-19/anthropic-debuts-with-sharp-gains-in-the-largest-ipo-in-history.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 08:42 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/19/business/economy/nvidia-chips-commerce-china-huang.html" target="_blank" rel="noopener">Nvidia Asked to Sell Chips to Companies Tied to Chinese Military and Megaspeed</a></h3>
+  <p class="excerpt">Lawmakers released confidential information showing the Commerce Department had approved sales of more than 800,000 A.I. chips to Chinese companies, some with military ties.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/19/business/economy/nvidia-chips-commerce-china-huang.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.ft.com/content/76342072-2781-4b16-ba3b-816a25214483?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 01:13 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c623j4ln97x7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Trump, Putin and Xi release &#39;peace declaration&#39; after historic meeting</a></h3>
+  <p class="excerpt">While the presidents have previously met for one-on-one meetings, this is their first trilateral discussion.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/3ab490ea-825a-4ef4-9239-a2905d7f7f3c?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.bbc.co.uk/news/articles/c623j4ln97x7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 17:38 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off" target="_blank" rel="noopener">Global stock markets slump as Anthropic’s record IPO fails to stem AI sell-off</a></h3>
+  <p class="excerpt">Asian markets record their worst week since 2020, with European and US stocks also way downBusiness live – latest updatesGlobal stock markets have slumped as Anthropic’s record-breaking IPO failed to stem a sell-off in AI-linked companies.Asian stock markets recorded their worst week since 2020, as shares in big chip companies fell on Friday. In Taiwan, stocks dropped 6.7% to hit their lowest point since mid-April, with the chip maker TSMC down about 6%. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/20/business/anthropic-ai-stocks-sp500.html" target="_blank" rel="noopener">Anthropic Shares Slip as AI and Tech Stock Sell-Off Continues</a></h3>
+  <p class="excerpt">The S&amp;amp;P 500 and Nasdaq were on course for their worst weekly performances in over a year. Anthropic’s shares tumbled, part of a tech sell-off.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/20/business/anthropic-ai-stocks-sp500.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:48 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/c7ad2e0c-efd1-40c2-a5a8-819ced8acf5b?syn-25a6b1a6=1" target="_blank" rel="noopener">Anthropic shares slide 13% as fears over AI boom dominate</a></h3>
+  <p class="excerpt">Blockbuster debut from developer of Claude fails to ease concerns over historic AI capex spending</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/c7ad2e0c-efd1-40c2-a5a8-819ced8acf5b?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:29 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/20/business/dealbook/anthropic-ipo-ai-rally.html" target="_blank" rel="noopener">Can Anthropic Revive the A.I. Trade?</a></h3>
+  <p class="excerpt">Shares in the artificial intelligence giant jumped in their debut. But that didn’t lift the technology sector, as investors worry about the future of the A.I. boom.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/20/business/dealbook/anthropic-ipo-ai-rally.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:07 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/nov/20/first-thing-blockbuster-anthropic-ipo-fails-to-halt-global-slide-in-ai-stocks" target="_blank" rel="noopener">First Thing: Blockbuster Anthropic IPO fails to halt global slide in AI stocks</a></h3>
+  <p class="excerpt">Record-breaking IPO for company behind Claude comes amid tumbling prices for other AI stocks. Plus why the humble potato could be vital for future space missionsGood morning. Global stock markets have slumped as Anthropic’s record-breaking IPO failed to stem a sell-off in AI-linked companies. The sell-off followed losses on Wall Street on Thursday, where the main indices all fell by over 2% on a day dominated by Anthropic’s IPO.The blockbuster debut easily places Anthropic’s IPO as the biggest in history, with the 980m shares sold raising $81bn, surpassing the previous record. According to rep</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/nov/20/first-thing-blockbuster-anthropic-ipo-fails-to-halt-global-slide-in-ai-stocks" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 12:26 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/149d497e-0567-4467-bcfb-269b8b8eb157?syn-25a6b1a6=1" target="_blank" rel="noopener">‘A necessary evil’: how Anthropic pulled off its IPO</a></h3>
+  <p class="excerpt">Fears about the AI trade did not damp enthusiasm for shares. But can the low-key company preserve its idiosyncratic culture in the glare of public markets?</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/149d497e-0567-4467-bcfb-269b8b8eb157?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 12:02 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/usa/2026-11-20/apocalyptic-fears-string-of-technology-failures-triggers-rush-for-emergency-supplies-in-the-united-states.html" target="_blank" rel="noopener">‘Apocalyptic fears’: String of technology failures triggers rush for emergency supplies in the United States</a></h3>
+  <p class="excerpt">Major retailers, including Costco and Walmart, have reported a surge in sales of generators and canned food</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/usa/2026-11-20/apocalyptic-fears-string-of-technology-failures-triggers-rush-for-emergency-supplies-in-the-united-states.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 11:19 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-economy">
+  <div class="section-head">
+    <h2>Economy &amp; Trade</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/damage-to-diplomatic-premises-during-russian-attacks-on-ukraine-uk-statement-to-the-osce" target="_blank" rel="noopener">Damage to diplomatic premises during Russian attacks on Ukraine: UK statement to the OSCE</a></h3>
+  <p class="excerpt">Ambassador Holland condemns Russia’s latest attacks across Ukraine, which killed and injured civilians and damaged diplomatic premises.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/damage-to-diplomatic-premises-during-russian-attacks-on-ukraine-uk-statement-to-the-osce" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+      <a href="https://www.theguardian.com/world/2026/nov/20/russian-missiles-drone-poland-attacks-ukraine" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 12:22 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/report-by-the-head-of-the-osce-presence-in-albania-uk-statement-november-2026" target="_blank" rel="noopener">Report by the Head of the OSCE Presence in Albania: UK statement, November 2026</a></h3>
+  <p class="excerpt">Ambassador Holland welcomes the OSCE Presence&#39;s impartial expertise and practical support to Albania, and encourages Albania to match progress in reforms with sustained implementation, strong institutions and public conf…</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/report-by-the-head-of-the-osce-presence-in-albania-uk-statement-november-2026" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 12:43 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/economy-and-business/2026-11-19/anthropic-debuts-with-sharp-gains-in-the-largest-ipo-in-history.html" target="_blank" rel="noopener">Anthropic registers 17% gain and a market value of nearly $1.8 trillion on stock market debut</a></h3>
+  <p class="excerpt">The AI company makes history with the largest initial public offering ever. Shares of the developer of Claude closed the first trading session at $97.17</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c3x29ggenz12o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://english.elpais.com/economy-and-business/2026-11-19/anthropic-debuts-with-sharp-gains-in-the-largest-ipo-in-history.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 08:42 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/19/business/economy/nvidia-chips-commerce-china-huang.html" target="_blank" rel="noopener">Nvidia Asked to Sell Chips to Companies Tied to Chinese Military and Megaspeed</a></h3>
+  <p class="excerpt">Lawmakers released confidential information showing the Commerce Department had approved sales of more than 800,000 A.I. chips to Chinese companies, some with military ties.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/19/business/economy/nvidia-chips-commerce-china-huang.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.ft.com/content/76342072-2781-4b16-ba3b-816a25214483?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 01:13 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/live/2026/11/19/technology/anthropic-ipo-ai/heres-the-latest" target="_blank" rel="noopener">Here’s the latest.</a></h3>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/live/2026/11/19/world/myanmar-icj-ruling-genocide/heres-the-latest" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.nytimes.com/live/2026/11/19/technology/anthropic-ipo-ai/heres-the-latest" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 21:48 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/20/your-money/us-savings-bonds.html" target="_blank" rel="noopener">Savings Bonds Offer Enticing Rates. You Need to Prove Your Identity First.</a></h3>
+  <p class="excerpt">The Treasury Department is working with a private service, ID.me, to grant access to the TreasuryDirect website. Some users reported trouble getting in.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/20/your-money/us-savings-bonds.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 14:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off" target="_blank" rel="noopener">Global stock markets slump as Anthropic’s record IPO fails to stem AI sell-off</a></h3>
+  <p class="excerpt">Asian markets record their worst week since 2020, with European and US stocks also way downBusiness live – latest updatesGlobal stock markets have slumped as Anthropic’s record-breaking IPO failed to stem a sell-off in AI-linked companies.Asian stock markets recorded their worst week since 2020, as shares in big chip companies fell on Friday. In Taiwan, stocks dropped 6.7% to hit their lowest point since mid-April, with the chip maker TSMC down about 6%. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/20/business/dealbook/anthropic-ipo-ai-rally.html" target="_blank" rel="noopener">Can Anthropic Revive the A.I. Trade?</a></h3>
+  <p class="excerpt">Shares in the artificial intelligence giant jumped in their debut. But that didn’t lift the technology sector, as investors worry about the future of the A.I. boom.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/20/business/dealbook/anthropic-ipo-ai-rally.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 13:07 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/nov/20/first-thing-blockbuster-anthropic-ipo-fails-to-halt-global-slide-in-ai-stocks" target="_blank" rel="noopener">First Thing: Blockbuster Anthropic IPO fails to halt global slide in AI stocks</a></h3>
+  <p class="excerpt">Record-breaking IPO for company behind Claude comes amid tumbling prices for other AI stocks. Plus why the humble potato could be vital for future space missionsGood morning. Global stock markets have slumped as Anthropic’s record-breaking IPO failed to stem a sell-off in AI-linked companies. The sell-off followed losses on Wall Street on Thursday, where the main indices all fell by over 2% on a day dominated by Anthropic’s IPO.The blockbuster debut easily places Anthropic’s IPO as the biggest in history, with the 980m shares sold raising $81bn, surpassing the previous record. According to rep</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/nov/20/first-thing-blockbuster-anthropic-ipo-fails-to-halt-global-slide-in-ai-stocks" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 12:26 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/149d497e-0567-4467-bcfb-269b8b8eb157?syn-25a6b1a6=1" target="_blank" rel="noopener">‘A necessary evil’: how Anthropic pulled off its IPO</a></h3>
+  <p class="excerpt">Fears about the AI trade did not damp enthusiasm for shares. But can the low-key company preserve its idiosyncratic culture in the glare of public markets?</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/149d497e-0567-4467-bcfb-269b8b8eb157?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 12:02 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/video/business/100000011293737/how-the-us-economy-is-tied-to-ai.html" target="_blank" rel="noopener">How the U.S. Economy Is Tied to A.I.</a></h3>
+  <p class="excerpt">Artificial intelligence has become a huge piece of the U.S. economy. Ben Casselman, the chief economics correspondent for The New York Times, explains why that is and how it might be risky.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/video/business/100000011293737/how-the-us-economy-is-tied-to-ai.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 11:01 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/20/dining/leaven-lab-grown-sourdough-starter.html" target="_blank" rel="noopener">Is an ‘A.I. Agent’ Coming for Our Sourdough Starter?</a></h3>
+  <p class="excerpt">A lab-grown shortcut named Leaven is wooing many high-end bakers and pizza makers who’ve prided themselves on their painstaking use of live cultures.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/20/dining/leaven-lab-grown-sourdough-starter.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 10:02 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-politics">
+  <div class="section-head">
+    <h2>Politics &amp; Diplomacy</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://news.un.org/feed/view/en/story/2026/11/1168836" target="_blank" rel="noopener">World’s top court finds Myanmar guilty of genocide against Rohingya</a></h3>
+  <p class="excerpt">The International Court of Justice, the principal judicial organ of the UN, delivered its judgment on Thursday in the case of The Gambia v. Myanmar on the application of the Genocide Convention, finding Myanmar responsible for the crime against the country’s ethnic Rohingya, the first such ruling against a State.&amp;nbsp;</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://news.un.org/feed/view/en/story/2026/11/1168836" target="_blank" rel="noopener">UN News</a>
+      <a href="https://www.nytimes.com/2026/11/19/world/europe/myanmar-genocide-icj-decision-.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/c804wzp20ddvo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/global-development/2026/nov/19/everyone-struggled-for-this-justice-tears-in-court-as-rohingya-vindicated-in-myanmar-genocide-ruling" target="_blank" rel="noopener">The Guardian (World)</a>
+      <a href="https://www.dutchnews.nl/2026/11/un-court-in-the-hague-finds-myanmar-guilty-of-genocide/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 12:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/damage-to-diplomatic-premises-during-russian-attacks-on-ukraine-uk-statement-to-the-osce" target="_blank" rel="noopener">Damage to diplomatic premises during Russian attacks on Ukraine: UK statement to the OSCE</a></h3>
+  <p class="excerpt">Ambassador Holland condemns Russia’s latest attacks across Ukraine, which killed and injured civilians and damaged diplomatic premises.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/damage-to-diplomatic-premises-during-russian-attacks-on-ukraine-uk-statement-to-the-osce" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+      <a href="https://www.theguardian.com/world/2026/nov/20/russian-missiles-drone-poland-attacks-ukraine" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 12:22 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/change-of-his-majestys-ambassador-to-mali" target="_blank" rel="noopener">Change of His Majesty’s Ambassador to Mali</a></h3>
+  <p class="excerpt">Ms Catherine Mary Inglehearn OBE has been appointed His Majesty’s Ambassador to the Republic of Mali in succession to Mr Angus Philip McKee OBE, who will be transferring to another Diplomatic Service appointment.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/change-of-his-majestys-ambassador-to-mali" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 11:10 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/reinforced-permanent-council-on-future-chairpersonships-of-the-osce-uk-statement" target="_blank" rel="noopener">Reinforced Permanent Council on future Chairpersonships of the OSCE: UK statement</a></h3>
+  <p class="excerpt">The United Kingdom underlines the importance of a swift resolution to agree a package of OSCE Chairs-in-Office beyond 2026.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/reinforced-permanent-council-on-future-chairpersonships-of-the-osce-uk-statement" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 09:52 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/crimea-is-ukraine-uk-statement-at-the-un-third-committee--2" target="_blank" rel="noopener">Crimea is Ukraine: UK statement at the UN Third Committee</a></h3>
+  <p class="excerpt">Explanation of vote delivered by Ambassador Archie Young, UK Deputy Permanent Representative to the UN, at the UN Third Committee on Crimea.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/crimea-is-ukraine-uk-statement-at-the-un-third-committee--2" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 20:20 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/quad-statement-to-iaea-board-of-governors-november-2026" target="_blank" rel="noopener">Quad statement to IAEA Board of Governors, November 2026</a></h3>
+  <p class="excerpt">Statement by France, Germany, the United Kingdom and the United States on the implementation of Iran&#39;s Nuclear Non-Proliferation Treaty (NPT) Safeguards Agreement and relevant provisions of the United Nations Security Co…</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/quad-statement-to-iaea-board-of-governors-november-2026" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 14:26 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/foreign-secretary-statement-on-international-court-of-justice-myanmar-judgement-19-november" target="_blank" rel="noopener">Foreign Secretary statement on International Court of Justice Myanmar judgment: 19 November</a></h3>
+  <p class="excerpt">Statement from the Foreign Secretary on International Court of Justice Myanmar judgment</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/foreign-secretary-statement-on-international-court-of-justice-myanmar-judgement-19-november" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 13:11 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/report-by-the-head-of-the-osce-presence-in-albania-uk-statement-november-2026" target="_blank" rel="noopener">Report by the Head of the OSCE Presence in Albania: UK statement, November 2026</a></h3>
+  <p class="excerpt">Ambassador Holland welcomes the OSCE Presence&#39;s impartial expertise and practical support to Albania, and encourages Albania to match progress in reforms with sustained implementation, strong institutions and public conf…</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/report-by-the-head-of-the-osce-presence-in-albania-uk-statement-november-2026" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 12:43 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/20/rush-stockpile-emergency-supplies-sends-british-retail-sales-soaring" target="_blank" rel="noopener">Household rush to stockpile emergency supplies sends British retail sales soaring</a></h3>
+  <p class="excerpt">Surge fuelled by ‘preppers’ heeding Be Ready campaign’s call for households to have three days of food and water for emergenciesBusiness live – latest updatesRetail sales in Great Britain surged last month as the public rushed to buy products including tinned food and long-life milk, after the government issued a warning to stock up in case of a disaster.The Office for National Statistics (ONS) said the volume of goods sold jumped by 0.7% month on month in October, defying economists’ consensus expectations of flat sales, as “preppers” took heed of the government’s Be Ready campaign to hold su</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/1e7855e5-fe9c-4e9c-ba8d-68c70159a1f1?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/20/rush-stockpile-emergency-supplies-sends-british-retail-sales-soaring" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 12:28 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/law/2026/nov/20/us-eu-reaction-myanmar-rohingya-genocide-icj-ruling-trump-international-law" target="_blank" rel="noopener">US reacts cautiously to Myanmar genocide ruling as EU praises ‘critical’ role of UN’s top court</a></h3>
+  <p class="excerpt">Reactions to ICJ ruling underline global divisions over court with China raising concerns about judicial overreachThe US has greeted with caution the world’s highest court’s ruling that Myanmar committed genocide against its Rohingya minority, while China has raised concerns of judicial overreach.Reactions to Thursday’s historic ruling underlined deep international division over the role of the court and similar institutions. The international court of justice (ICJ) had never previously found a state responsible for genocide and the decision could set a precedent for future genocide claims, no</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/19/world/asia/icj-myanmar-gaza.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.theguardian.com/law/2026/nov/19/myanmar-ruling-new-relevance-genocide-convention-messages-israel" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 11:57 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cm3vgw1xevvwo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">South Korea catches 111 students with new measures against exam cheating</a></h3>
+  <p class="excerpt">The students were caught with banned smart devices while taking the high-stakes Suneung exam.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/18/world/asia/south-korea-cheating-college-exam-suneung.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/cm3vgw1xevvwo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 20, 10:16 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/live/2026/11/19/technology/anthropic-ipo-ai/heres-the-latest" target="_blank" rel="noopener">Here’s the latest.</a></h3>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/live/2026/11/19/world/myanmar-icj-ruling-genocide/heres-the-latest" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.nytimes.com/live/2026/11/19/technology/anthropic-ipo-ai/heres-the-latest" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 19, 21:48 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <footer class="foot">
+    Generated 2026-11-20 14:12 UTC ·
+    Aggregated from reliable sources (NYT, Foreign Affairs, FT, official government sites).
+    Headlines &amp; excerpts link to originals; no paywalled full text is reproduced.
+  </footer>
+</main>
+</body>
+</html>
