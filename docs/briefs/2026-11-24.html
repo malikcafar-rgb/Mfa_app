@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Today's Brief — Tuesday, 24 November 2026</title>
+<style>
+  /* New York Times–inspired: white background, serif headlines, hairline rules,
+     sans-serif labels, minimal color. */
+  :root {
+    --bg: #ffffff;
+    --text: #121212;        /* near-black body */
+    --muted: #666666;       /* bylines / meta */
+    --faint: #999999;
+    --rule: #e2e2e2;        /* hairline dividers */
+    --rule-strong: #121212; /* section top rules */
+    --link: #326891;        /* NYT link blue, used sparingly */
+    --official: #9a6a00;    /* restrained gold-brown */
+    --wire: #326891;
+    --analysis: #6a4c93;
+    --serif: Georgia, "Times New Roman", "Times", serif;
+    --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: var(--serif); line-height: 1.5; -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px 90px; }
+
+  /* Masthead — centered serif wordmark with black rules above/below. */
+  header.masthead { background: var(--bg); border-bottom: 1px solid var(--text);
+    padding: 14px 24px 0; }
+  .masthead-inner { max-width: 960px; margin: 0 auto; }
+  .brand { text-align: center; padding-bottom: 12px; border-bottom: 1px solid var(--text);
+    margin-bottom: 8px; }
+  .brand .kicker { font-family: var(--sans); font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .brand h1 { font-family: var(--serif); font-weight: 700; margin: 4px 0 2px;
+    font-size: 40px; letter-spacing: -.01em; line-height: 1.05; }
+  .brand .date { font-family: var(--sans); color: var(--muted); font-size: 12.5px;
+    letter-spacing: .02em; }
+  .nav { display: flex; gap: 20px; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 12px; text-transform: uppercase; letter-spacing: .08em;
+    padding: 8px 0 10px; }
+  .nav a { color: var(--text); font-weight: 600; }
+  .nav a:hover { color: var(--link); }
+
+  /* Links-only / status banner — quiet, italic serif. */
+  .banner { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    padding: 10px 0; margin: 18px 0 6px; color: var(--muted); font-size: 14px;
+    font-style: italic; }
+
+  /* Executive summary — a boxed "lede" with a sans label. */
+  .exec { border: 1px solid var(--text); padding: 22px 24px; margin: 24px 0 8px; }
+  .exec h2 { font-family: var(--sans); margin: 0 0 10px; font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text); font-weight: 700; }
+  .exec p { margin: 0 0 12px; font-size: 18px; line-height: 1.55; }
+  .exec p:last-child { margin-bottom: 0; }
+  .exec .ir { border-top: 1px solid var(--rule); margin-top: 16px; padding-top: 16px; }
+  .exec .ir h3 { font-family: var(--sans); margin: 0 0 6px; font-size: 11px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--analysis); font-weight: 700; }
+  .exec .ir p { font-size: 16px; }
+
+  /* Section fronts — serif head with a strong black rule above (NYT section style). */
+  section.topic { margin: 34px 0 0; }
+  .section-head { border-top: 2px solid var(--rule-strong); padding-top: 8px; margin-bottom: 6px;
+    display: flex; align-items: baseline; gap: 10px; }
+  .section-head h2 { font-family: var(--serif); margin: 0; font-size: 22px; font-weight: 700;
+    letter-spacing: -.01em; }
+  .section-head .count { font-family: var(--sans); color: var(--faint); font-size: 11px;
+    text-transform: uppercase; letter-spacing: .08em; }
+  .section-brief { font-style: italic; color: #333; padding: 6px 0 2px; margin: 6px 0;
+    font-size: 15px; border-left: 3px solid var(--rule-strong); padding-left: 12px; }
+
+  /* Story cards — serif headline, hairline divider, sans meta. */
+  .card { padding: 15px 0; border-bottom: 1px solid var(--rule); }
+  .card:last-child { border-bottom: none; }
+  .card h3 { font-family: var(--serif); margin: 0 0 5px; font-size: 20px; font-weight: 700;
+    line-height: 1.25; letter-spacing: -.005em; }
+  .card h3 a { color: var(--text); }
+  .card h3 a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+  .card .ai { margin: 4px 0 6px; font-size: 15px; color: #333; line-height: 1.5; }
+  .card .excerpt { margin: 4px 0 6px; font-size: 15px; color: var(--muted); line-height: 1.5; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    font-family: var(--sans); font-size: 12px; margin-top: 5px; color: var(--faint); }
+
+  /* Tier labels — small uppercase sans, a dot of color, no boxes. */
+  .badge { font-family: var(--sans); font-size: 10.5px; letter-spacing: .07em;
+    text-transform: uppercase; font-weight: 700; display: inline-flex; align-items: center; }
+  .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%;
+    display: inline-block; margin-right: 5px; background: currentColor; }
+  .badge.official { color: var(--official); }
+  .badge.wire { color: var(--wire); }
+  .badge.analysis { color: var(--analysis); }
+  .sources { display: flex; flex-wrap: wrap; gap: 6px; font-family: var(--sans); }
+  .sources a { color: var(--muted); }
+  .sources a:hover { color: var(--link); text-decoration: underline; }
+  .sources a::after { content: "·"; margin-left: 6px; color: var(--faint); }
+  .sources a:last-child::after { content: ""; }
+
+  /* Country watch — bordered cards with serif titles. */
+  .country-group { margin-top: 30px; }
+  .country-group > h2 { font-family: var(--sans); font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text); font-weight: 700;
+    border-bottom: 1px solid var(--rule-strong); padding-bottom: 6px; }
+  .country-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 22px; margin-top: 14px; }
+  .country-card { border: 1px solid var(--rule); padding: 14px 16px; }
+  .country-card h3 { font-family: var(--serif); margin: 0 0 8px; font-size: 18px; font-weight: 700; }
+  .country-card ul { margin: 0; padding: 0; list-style: none; }
+  .country-card li { padding: 7px 0; border-top: 1px solid var(--rule); font-size: 15px;
+    line-height: 1.35; }
+  .country-card li:first-child { border-top: none; }
+  .country-card li a { color: var(--text); }
+  .country-card li a:hover { text-decoration: underline; }
+
+  /* Archive + table of contents. */
+  .archive-list { list-style: none; padding: 0; margin: 22px 0; }
+  .archive-list li { padding: 14px 0; border-bottom: 1px solid var(--rule);
+    font-family: var(--serif); font-size: 19px; }
+  .archive-list li a:hover { text-decoration: underline; }
+  .toc { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 16px 0 4px;
+    padding-bottom: 14px; border-bottom: 1px solid var(--rule); font-family: var(--sans); }
+  .toc a { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em;
+    font-weight: 600; }
+  .toc a:hover { color: var(--link); }
+
+  footer.foot { font-family: var(--sans); color: var(--faint); font-size: 11.5px; margin-top: 56px;
+    padding-top: 18px; border-top: 1px solid var(--rule); line-height: 1.6; }
+
+  @media (max-width: 640px) {
+    .brand h1 { font-size: 30px; }
+    .exec p { font-size: 16px; }
+    .card h3 { font-size: 18px; }
+    .country-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="kicker">Diplomat Daily Briefing</span>
+      <h1>Today's Brief</h1>
+      <span class="date">Tuesday, 24 November 2026 · 281 articles across 253 stories</span>
+    </div>
+    <nav class="nav">
+  <a href="../index.html">Dashboard</a>
+  <a href="../archive.html">Archive</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <div class="banner">AI summaries unavailable (authentication_error: Invalid bearer token) — showing links only.</div>
+
+
+  <h2 id="country-watch" style="margin-top:24px;font-size:20px;border-bottom:2px solid var(--rule-strong);padding-bottom:6px;">Country Profiles</h2>
+  <section class="topic" id="ctry-spain">
+  <div class="section-head">
+    <h2>Spain</h2>
+    <span class="count">5 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/joint-statement-on-the-international-court-of-justice-decision-on-myanmar" target="_blank" rel="noopener">Joint Statement on the International Court of Justice decision on Myanmar</a></h3>
+  <p class="excerpt">Joint statement from the Foreign Ministers of Australia, Belgium, Canada, Cyprus, Czech Republic, Estonia, Iceland, Latvia, Luxembourg, New Zealand, Portugal, Spain, The Gambia, United Kingdom</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/joint-statement-on-the-international-court-of-justice-decision-on-myanmar" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 14:43 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/nov/24/russia-ukraine-poland-drone-patriots-latest-news-updates" target="_blank" rel="noopener">Italy expresses concern to Ukraine over Libya ship attacks – Europe live</a></h3>
+  <p class="excerpt">Ukraine earlier confirmed that it deployed naval drones in strikes on Russian vessels off the coast of LibyaThe leader of Spain’s leftwing Broad Front coalition has called for a drastic rethink of the country’s entire housing rental system, and described the eviction of an 87-year-old woman – the spark for nationwide protests that in turn triggered Sunday’s snap general election – as “the last straw” for desperate tenants.“We’re not interested in small changes,” Ada Colau, the former Barcelona mayor, told the Guardian in an interview. “We want to reform the entire rental sector.” Continue read</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/live/2026/nov/24/russia-ukraine-poland-drone-patriots-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:52 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/spain/2026-11-24/what-do-the-latest-polls-show-ahead-of-spains-general-election.html" target="_blank" rel="noopener">What do the latest polls show ahead of Spain’s general election?</a></h3>
+  <p class="excerpt">This is the final update of the EL PAÍS polling average before election day. Readers can also use our interactive tool to calculate their own</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/spain/2026-11-24/what-do-the-latest-polls-show-ahead-of-spains-general-election.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 12:39 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/24/spain-election-ada-colau-broad-front-far-right" target="_blank" rel="noopener">Leftwing coalition leader calls for rental revolution as Spain heads for snap election</a></h3>
+  <p class="excerpt">Exclusive: Ada Colau hopes public anger over housing will transfer into support for her Broad Front coalition in Sunday’s voteThe leader of Spain’s leftwing Broad Front coalition has called for a drastic rethink of the country’s entire housing rental system, and described the eviction of an 87-year-old woman – the spark for nationwide protests that in turn triggered Sunday’s snap general election – as “the last straw” for desperate tenants.“We’re not interested in small changes,” Ada Colau, the former Barcelona mayor, told the Guardian in an interview. “We want to reform the entire rental sect</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/nov/24/spain-election-ada-colau-broad-front-far-right" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 12:22 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/culture/2026-11-24/a-house-a-few-thousand-pesetas-and-a-final-wish-gaudis-will-revealed-a-century-after-his-death.html" target="_blank" rel="noopener">A house, a few thousand pesetas and a final wish: Gaudí’s will revealed a century after his death</a></h3>
+  <p class="excerpt">The College of Notaries of Catalonia has made public the architect’s estate, revealing how he left everything he owned to ensure construction of the Sagrada Familia would continue</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://english.elpais.com/culture/2026-11-24/a-house-a-few-thousand-pesetas-and-a-final-wish-gaudis-will-revealed-a-century-after-his-death.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 08:48 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-switzerland">
+  <div class="section-head">
+    <h2>Switzerland</h2>
+    <span class="count">7 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261124/how-you-can-money-to-buy-a-bike-from-your-local-swiss-community" target="_blank" rel="noopener">How you can get money to buy a bike from your local Swiss community</a></h3>
+  <p class="excerpt">Municipalities throughout Switzerland have been trying to encourage biking to support sustainable mobility and ease traffic congestion. Many are offering their residents a financial incentive to achieve this goal.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261124/how-you-can-money-to-buy-a-bike-from-your-local-swiss-community" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 16:01 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261124/in-which-swiss-cantons-are-you-most-likely-to-be-a-victim-of-burglary" target="_blank" rel="noopener">The Swiss cantons where you are most likely to be burgled</a></h3>
+  <p class="excerpt">New statistics show that the number of burglaries has been rising in Switzerland in the past years – more in some cantons than in others.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261124/in-which-swiss-cantons-are-you-most-likely-to-be-a-victim-of-burglary" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 14:05 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261124/why-shoppers-in-switzerland-should-be-wary-of-black-friday-deals" target="_blank" rel="noopener">Why shoppers in Switzerland should be wary of Black Friday deals</a></h3>
+  <p class="excerpt">Though they may sound like great money-savers, experts say consumers should be cautious of many Black Friday offers from Swiss retailers.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261124/why-shoppers-in-switzerland-should-be-wary-of-black-friday-deals" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 13:59 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261124/today-in-switzerland-a-roundup-of-the-latest-news-on-tuesday-271" target="_blank" rel="noopener">Today in Switzerland: A roundup of the latest news on Tuesday</a></h3>
+  <p class="excerpt">Experts call for psychological tests before gun purchases; Parliament to discuss further the return of Geneva–Lugano flights; and more Swiss news in our Tuesday roundup.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261124/today-in-switzerland-a-roundup-of-the-latest-news-on-tuesday-271" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 08:46 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261123/the-10-unmissable-events-in-switzerland-in-december-2026" target="_blank" rel="noopener">The 10 unmissable events in Switzerland in December 2026</a></h3>
+  <p class="excerpt">December is all about Christmas celebrations. This is what you can expect in all corners of Switzerland throughout the month.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261123/the-10-unmissable-events-in-switzerland-in-december-2026" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 15:07 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261123/what-problems-arise-if-a-c-permit-holder-moves-from-one-swiss-linguistic-region-to-another" target="_blank" rel="noopener">What problems arise if a C permit holder moves from one Swiss linguistic region to another?</a></h3>
+  <p class="excerpt">Switzerland requires foreigners to have a certain level of proficiency in the language of their region. What does this mean for permanent residents changing cantons?</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261123/what-problems-arise-if-a-c-permit-holder-moves-from-one-swiss-linguistic-region-to-another" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 15:04 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.thelocal.ch/20261123/revealed-how-foreign-residents-integrate-quickly-into-swiss-job-market" target="_blank" rel="noopener">REVEALED: How foreign residents integrate quickly into Swiss job market</a></h3>
+  <p class="excerpt">The majority of immigrants coming to Switzerland already had a job lined up before their arrival in the country, a new study reveals.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.thelocal.ch/20261123/revealed-how-foreign-residents-integrate-quickly-into-swiss-job-market" target="_blank" rel="noopener">The Local - Switzerland</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 11:24 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-united_kingdom">
+  <div class="section-head">
+    <h2>United Kingdom</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/uk-steps-up-response-to-renewed-houthi-aggression" target="_blank" rel="noopener">UK steps up response to renewed Houthi aggression</a></h3>
+  <p class="excerpt">The UK government has announced sanctions against the Houthis and their top officials, following renewed aggression inside Yemen and against Saudi Arabia.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/uk-steps-up-response-to-renewed-houthi-aggression" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 11:13 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/statement-to-the-31st-session-of-the-conference-of-the-states-parties-of-the-opcw" target="_blank" rel="noopener">Statement to the 31st Session of the Conference of the States Parties of the OPCW</a></h3>
+  <p class="excerpt">Statement by United Kingdom of Great Britain and Northern Ireland at the 31st Conference of the States Parties of the OPCW</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/statement-to-the-31st-session-of-the-conference-of-the-states-parties-of-the-opcw" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 11:09 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/uk-leads-global-action-with-major-new-measures-against-myanmar-military-following-landmark-genocide-judgment" target="_blank" rel="noopener">UK leads global action with major new measures against Myanmar military following landmark genocide judgment</a></h3>
+  <p class="excerpt">The UK has today (23 November) formally recognised the genocide committed against the Rohingya and announced a major package of measures against the Myanmar Military</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/uk-leads-global-action-with-major-new-measures-against-myanmar-military-following-landmark-genocide-judgment" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 18:31 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/unable-to-achieve-his-objectives-on-the-battlefield-president-putin-is-seeking-to-weaponise-food-and-energy-uk-statement-at-the-un-security-council" target="_blank" rel="noopener">Unable to achieve his objectives on the battlefield, President Putin is seeking to weaponise food and energy: UK statement at the UN Security Council</a></h3>
+  <p class="excerpt">Statement by Ambassador Sarah MacIntosh, UK Permanent Representative to the UN, at the UN Security Council meeting on Ukraine.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/unable-to-achieve-his-objectives-on-the-battlefield-president-putin-is-seeking-to-weaponise-food-and-energy-uk-statement-at-the-un-security-council" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 17:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/joint-statement-on-the-international-court-of-justice-decision-on-myanmar" target="_blank" rel="noopener">Joint Statement on the International Court of Justice decision on Myanmar</a></h3>
+  <p class="excerpt">Joint statement from the Foreign Ministers of Australia, Belgium, Canada, Cyprus, Czech Republic, Estonia, Iceland, Latvia, Luxembourg, New Zealand, Portugal, Spain, The Gambia, United Kingdom</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/joint-statement-on-the-international-court-of-justice-decision-on-myanmar" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 14:43 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/24/leader-india-coackroach-movement-says-stopped-from-boarding-flight-to-uk" target="_blank" rel="noopener">Leader of India’s Cockroach movement says he was stopped from boarding flight to UK</a></h3>
+  <p class="excerpt">Saurav Das was due to give talks at UK universities on protest movement but says ‘coward government’ prevented him flyingA leader of India’s youth-led Cockroach movement has said he was prevented from leaving Delhi to fly to the UK to give talks on the viral group’s protests.Saurav Das, 27, has been at the forefront of the Cockroach Janta party (CJP), which has amassed millions of social media followers since its launch in May. Das, who was due to fly out early on Tuesday, said immigration officials told him at the airport that his passport had been flagged. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cm5y1ezx2gqyo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/24/leader-india-coackroach-movement-says-stopped-from-boarding-flight-to-uk" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 08:24 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/nov/24/uk-eu-made-in-europe-trade-cars-tariffs" target="_blank" rel="noopener">Irish plan could let UK join EU’s Made in Europe without trade alignment</a></h3>
+  <p class="excerpt">Irish presidency of EU proposes giving UK ‘partner’ status on assembly of cars in possible boost to reset of relationsBusiness live – latest updatesThe UK will not have to follow the EU and apply tariffs on Chinese car imports under an Irish proposal that could prove another breakthrough for Andy Burnham in his reset of relations with the bloc.Ireland, which holds the rotating EU presidency and plays a chief role in progressing legislation, has come up with a compromise under which the UK would be included in the bloc’s new “Made in Europe” legislation without having to align with the EU’s tra</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/nov/24/uk-eu-made-in-europe-trade-cars-tariffs" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/live/2026/nov/24/pip-review-stephen-timms-andy-burnham-disability-welfare-brexit-latest-news-updates" target="_blank" rel="noopener">Proposals in Timms review for changes to Pip would lead to higher welfare bill, IFS says – UK politics live</a></h3>
+  <p class="excerpt">Social security minister has been overseeing review designed to ‘rehumanise’ the system but Tories say it will lead to higher spending and fewer checksMinisters approve fast-track disability payments in England and WalesQ: [From Ali Fortescue from Sky News] We have done an interview with Rishi Sunak who says he is very concerned about the rise of ethnonationalism, and particularly with the suggestion from Suella Braverman, Reform UK’s education spokesperson, that people of Asian heritage can’t be English. Do you agree with him about that, and are you going to do anything about it?Farage replie</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/politics/live/2026/nov/24/pip-review-stephen-timms-andy-burnham-disability-welfare-brexit-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:51 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-united_states">
+  <div class="section-head">
+    <h2>United States</h2>
+    <span class="count">8 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/23/technology/jensen-huang-nvidia-board-trump.html" target="_blank" rel="noopener">With Jensen Huang’s Return as C.E.O., Trump Effectively Overrode Nvidia’s Board</a></h3>
+  <p class="excerpt">Nvidia’s board said Mr. Huang would not be back. But President Trump, who pushed for Mr. Huang’s reinstatement, effectively overrode the board, governance experts said.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/24/world/asia/jensen-huang-nvidia-china.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.nytimes.com/2026/11/23/technology/jensen-huang-nvidia-board-trump.html" target="_blank" rel="noopener">NYT Technology</a>
+      <a href="https://www.nytimes.com/2026/11/23/business/dealbook/jensen-huang-nvidia.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.bbc.co.uk/news/articles/c63rgpy50x98o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://english.elpais.com/usa/2026-11-24/jensen-huangs-return-to-nvidia-in-seven-acts-from-trumps-pressure-to-family-support.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:40 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/live/2026/nov/24/donald-trump-nvidia-jensen-huang-republicans-democrats-china-latest-news-updates" target="_blank" rel="noopener">Democrats hit out at Nvidia and Trump over Huang’s return – US politics live</a></h3>
+  <p class="excerpt">Possible presidential hopeful Ruben Gallego warns of a ‘bad lesson for corporate America’ while Ro Khanna says ‘rules should apply to everyone’Congress to grill Huang over ties with China and Trump’s interventionSign up for the Breaking News US emailEarlier we mentioned Donald Trump is participating in a Medal of Freedom ceremony in the Oval Office at 11am ET. He will be awarding the nation’s highest civilian honor to former New York mayor and Trump’s onetime personal lawyer Rudy Giuliani.Trump said last year he would award the medal to Giuliani, two days after his longtime political ally was </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/98ec6911-bb0c-42c1-8c5e-5eebf40dc918?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.ft.com/content/67b0a070-c2a9-4229-885a-383cca657763?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.theguardian.com/us-news/live/2026/nov/24/donald-trump-nvidia-jensen-huang-republicans-democrats-china-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:45 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/24/business/nvidia-alice-huang-china.html" target="_blank" rel="noopener">From Chinese Factory Town to the Nvidia Scandal: The Rise of Alice Huang</a></h3>
+  <p class="excerpt">The woman whose role has become a focus of the Nvidia spying saga grew up in a small town built around a weapons factory. Her jump to finance and the tech world paralleled China’s own.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/24/business/nvidia-alice-huang-china.html" target="_blank" rel="noopener">NYT Asia Pacific</a>
+      <a href="https://www.foreignaffairs.com/china/real-nvidia-scandal-kilcrease-chilukuri" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 10:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/74408261-9cb4-41ae-8d4f-3a1a9ce72930?syn-25a6b1a6=1" target="_blank" rel="noopener">The Jensen put</a></h3>
+  <p class="excerpt">Plus, Capex or die trying</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/74408261-9cb4-41ae-8d4f-3a1a9ce72930?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.bbc.co.uk/news/articles/cmze750zg0jeo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 06:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/23/technology/openai-engineer-secret-recordings.html" target="_blank" rel="noopener">OpenAI Engineer Secretly Recorded Dozens of Meetings, Prosecutors Say</a></h3>
+  <p class="excerpt">A court filing said the engineer captured meetings on customers, A.I. safety and a foreign government briefing. Federal prosecutors are investigating what he did with the recordings.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/23/technology/openai-engineer-secret-recordings.html" target="_blank" rel="noopener">NYT Technology</a>
+      <a href="https://www.ft.com/content/f860152a-6bd6-43f7-8ba1-4a6ae94d6565?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 01:36 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/23/canada-trump-impersonator-press-dinner" target="_blank" rel="noopener">Butt of the joke: Trump impersonator mocks president at Canada press dinner</a></h3>
+  <p class="excerpt">Carney watches on as comedian lampoons US leader and his interest in men’s backsides at correspondents’ event OttawaCanada’s prime minister, Mark Carney, was joined on stage in Ottawa by a Donald Trump impersonator who mocked the US president to raucous laughter from a crowd of politicians and journalists at a parliamentary press gallery dinner on Saturday.With coiffed hair and an ill-fitting suit, comedian Mark Critch – who portrays the president on the sketch show This Hour Has 22 Minutes – danced on to the stage and lampooned the trade war Trump started as well as the president’s threats to</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cr930y92dyx4o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/23/canada-trump-impersonator-press-dinner" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 22:41 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/24/business/economy/trump-nvidia-national-security-us-economics.html" target="_blank" rel="noopener">Trump’s Nvidia Push Shows Companies’ Importance in Global Economic War</a></h3>
+  <p class="excerpt">Presidents before him have bailed out companies in times of national crisis. Mr. Trump went further: He staked the fortunes of the United States on those of a favored chief executive.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/24/business/economy/trump-nvidia-national-security-us-economics.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:59 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/sport/live/2026/nov/24/chess-world-championship-gukesh-sindarov-game-1-updates" target="_blank" rel="noopener">World Chess Championship 2026 Game 1: Gukesh Dommaraju v Javokhir Sindarov – live</a></h3>
+  <p class="excerpt">Youngest title match in chess history starts TuesdaySindarov and Gukesh open Game 1 with Berlin defenseExplainer: all your pre-match questions, answeredPreview: Gukesh vows to win title ‘all over again’Sindarov interview: ‘I can’t play games just for fun’Play through 22 famous world championship gamesBluesky Bryan at @BryanAGraham or email himThe players have shaken hands and we’re off! We have a Berlin defense of the Ruy Lopez (1 e4 e5 2 Nf3 Nc6 3 Bb5 Nf6), one of the most thoroughly analyzed openings in modern chess.The Berlin famously helped Vladimir Kramnik dethrone Garry Kasparov in their</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/sport/live/2026/nov/24/chess-world-championship-gukesh-sindarov-game-1-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:53 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="ctry-netherlands">
+  <div class="section-head">
+    <h2>Netherlands</h2>
+    <span class="count">7 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/appeal-court-rejects-state-bid-to-pause-bonaire-climate-ruling/" target="_blank" rel="noopener">Appeal court rejects state bid to pause Bonaire climate ruling</a></h3>
+  <p class="excerpt">The Netherlands has to draft binding national targets, the Court of Appeal in The Hague has ruled, after the state...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/appeal-court-rejects-state-bid-to-pause-bonaire-climate-ruling/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:07 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/juice-and-milk-bottles-to-join-deposit-scheme-in-2027/" target="_blank" rel="noopener">Juice and milk bottles to join deposit scheme in 2027</a></h3>
+  <p class="excerpt">Dutch packaging trade association Verpact has announced it will begin a deposit return system for plastic juice and dairy bottles...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/juice-and-milk-bottles-to-join-deposit-scheme-in-2027/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 14:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/cold-comfort-dutch-skater-smashes-one-hour-natural-ice-record/" target="_blank" rel="noopener">Cold comfort: Dutch skater smashes one-hour natural ice record</a></h3>
+  <p class="excerpt">Marathon skater Judith Krabbenborg has taken advantage of the early cold snap to smash the world one-hour record for skating...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/cold-comfort-dutch-skater-smashes-one-hour-natural-ice-record/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 11:18 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/dutch-police-seek-witnesses-to-suriname-massacre-40-years-on/" target="_blank" rel="noopener">Dutch police seek witnesses to Suriname massacre, 40 years on</a></h3>
+  <p class="excerpt">The Dutch police unit for war crimes, TIM, is helping prosecutors in Suriname search for witnesses of the notorious 1986...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/dutch-police-seek-witnesses-to-suriname-massacre-40-years-on/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 10:46 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/new-hpv-vaccine-could-save-nearly-13000-cancer-diagnoses-a-year/" target="_blank" rel="noopener">New HPV vaccine could save nearly 13,000 cancer diagnoses a year</a></h3>
+  <p class="excerpt">Nearly 13,000 people could avoid a cancer diagnosis later in life if the Netherlands raises its HPV vaccination rate, new...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/new-hpv-vaccine-could-save-nearly-13000-cancer-diagnoses-a-year/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 10:39 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/russia-lodges-formal-request-over-destinus-staff-in-ukraine-war/" target="_blank" rel="noopener">Russia lodges formal request over Destinus staff in Ukraine war</a></h3>
+  <p class="excerpt">The Russian embassy in The Hague says it has lodged an official request for clarification over the alleged involvement of...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/russia-lodges-formal-request-over-destinus-staff-in-ukraine-war/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 08:24 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/24/ebikes-screens-and-failing-manners-pose-challenge-for-dutch-cycling-culture" target="_blank" rel="noopener">Ebikes, screens and failing manners pose challenge for Dutch cycling culture</a></h3>
+  <p class="excerpt">Awareness campaign reminds public ‘traffic is a team sport’ amid less civility and more collisions on roadsFor decades the Netherlands has been famed for its proud cycling culture, with a network of 23,000 miles of bike paths used by everyone from children under eight to adults over 80.In recent years, however, like so many countries around the world, it has seen a dramatic change in the type of vehicles using those lanes: no longer the preserve of pedal bikes, they are used by all manner of two-wheeled vehicles including electric cargo bikes, thick-tyred “fatbikes”, speed pedelecs, electric s</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/2026/nov/24/ebikes-screens-and-failing-manners-pose-challenge-for-dutch-cycling-culture" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 05:00 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <div class="country-group">
+    <h2>Regional neighbors</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>Turkey</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/business/2026/nov/24/eu-cap-chinese-hybrid-ev-imports-tariff-uk" target="_blank" rel="noopener">EU to impose cap on Chinese hybrid EV imports next month</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/c9gkldn06l87o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Andrew received £750,000 from Turkish millionaire, court told</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/22/climate/cop31-climate-summit-ends-climate.html" target="_blank" rel="noopener">COP31 Talks Collapse in Turkey in a Clash Over Fossil Fuels</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Russia</h3>
+  <ul>
+    <li>
+      <a href="https://www.gov.uk/government/speeches/unable-to-achieve-his-objectives-on-the-battlefield-president-putin-is-seeking-to-weaponise-food-and-energy-uk-statement-at-the-un-security-council" target="_blank" rel="noopener">Unable to achieve his objectives on the battlefield, President Putin is seeking to weaponise food and energy: UK statement at the UN Security Council</a>
+    </li>
+    <li>
+      <a href="https://news.un.org/feed/view/en/story/2026/11/1168859" target="_blank" rel="noopener">Security Council LIVE: Winter attacks on Ukraine&#39;s power grid and Black Sea shipping threaten lives and global food supplies</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/23/world/europe/ukraine-libya-russian-ships.html" target="_blank" rel="noopener">Ukraine Attack Off Coast of Libya Shows Reach of Its Naval Drones</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/world/live/2026/nov/24/russia-ukraine-poland-drone-patriots-latest-news-updates" target="_blank" rel="noopener">Italy expresses concern to Ukraine over Libya ship attacks – Europe live</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Iran</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/24/world/middleeast/iran-singer-parastoo-ahmadi-flogging-lashes.html" target="_blank" rel="noopener">Iranian Singer Receives 74 Lashes for Performing With No Hijab</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/d4902274-2e3d-447a-83b8-312cf7306d56?syn-25a6b1a6=1" target="_blank" rel="noopener">Iran flogs singer who performed without hijab</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/5b03bc34-79a5-4c90-8b92-17b27b19098e?syn-25a6b1a6=1" target="_blank" rel="noopener">Iraqi government to take control of Kurdish-held oilfields</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/technology/2026/nov/24/nvidia-trump-huang-intelligence" target="_blank" rel="noopener">The Nvidia case is just the latest episode of Trump disregarding intelligence</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+  <div class="country-group">
+    <h2>Great powers</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>China</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/23/technology/jensen-huang-nvidia-board-trump.html" target="_blank" rel="noopener">With Jensen Huang’s Return as C.E.O., Trump Effectively Overrode Nvidia’s Board</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/us-news/live/2026/nov/24/donald-trump-nvidia-jensen-huang-republicans-democrats-china-latest-news-updates" target="_blank" rel="noopener">Democrats hit out at Nvidia and Trump over Huang’s return – US politics live</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/24/business/nvidia-alice-huang-china.html" target="_blank" rel="noopener">From Chinese Factory Town to the Nvidia Scandal: The Rise of Alice Huang</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/02240d42-ccd8-4b4d-b0e3-49a04c950eea?syn-25a6b1a6=1" target="_blank" rel="noopener">Shanghai’s powerful Communist Party boss toppled as Xi escalates purge</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>European Union</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/business/2026/nov/24/uk-eu-made-in-europe-trade-cars-tariffs" target="_blank" rel="noopener">Irish plan could let UK join EU’s Made in Europe without trade alignment</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/b37579ba-a811-436b-bc00-95f5bfbb7fd9?syn-25a6b1a6=1" target="_blank" rel="noopener">EU edges towards Made in Europe deal for UK cars</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/business/2026/nov/24/eu-cap-chinese-hybrid-ev-imports-tariff-uk" target="_blank" rel="noopener">EU to impose cap on Chinese hybrid EV imports next month</a>
+    </li>
+    <li>
+      <a href="https://www.dutchnews.nl/2026/11/erkens-claims-wolves-can-be-culled-despite-eu-protected-status/" target="_blank" rel="noopener">Erkens claims wolves can be culled despite EU protected status</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>France</h3>
+  <ul>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/24/world/europe/france-nahel-merzouk.html" target="_blank" rel="noopener">Murder Charge Reinstated for French Police Officer in Teen’s Shooting</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/94e3ca43-cf90-4566-90df-86dd6a1554b2?syn-25a6b1a6=1" target="_blank" rel="noopener">Sanofi strikes $41bn deal as patent cliff looms</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/cw074km48myeo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">&#39;I want to destroy capitalism, not France&#39;: On the streets with the French ultra left</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Germany</h3>
+  <ul>
+    <li>
+      <a href="https://www.theguardian.com/sport/live/2026/nov/24/chess-world-championship-gukesh-sindarov-game-1-updates" target="_blank" rel="noopener">World Chess Championship 2026 Game 1: Gukesh Dommaraju v Javokhir Sindarov – live</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/24/world/europe/france-nahel-merzouk.html" target="_blank" rel="noopener">Murder Charge Reinstated for French Police Officer in Teen’s Shooting</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/c9x2er1ry2mzo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Nato chief vows defence against space threat after Russian nuclear satellite reports</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/bfcb8ee8-97cc-4ef0-8234-3a8da0d3a814?syn-25a6b1a6=1" target="_blank" rel="noopener">German industrial giants launch trading house for rare earths</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+  <div class="country-group">
+    <h2>Middle East</h2>
+    <div class="country-grid">
+      <div class="country-card">
+  <h3>Israel</h3>
+  <ul>
+    <li>
+      <a href="https://news.un.org/feed/view/en/story/2026/11/1168862" target="_blank" rel="noopener">Gaza war has undone 77 years of human development, UN warns</a>
+    </li>
+    <li>
+      <a href="https://www.bbc.co.uk/news/articles/c6rrg7ggq190o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Israeli air strike kills Hamas internal security chief in Gaza</a>
+    </li>
+    <li>
+      <a href="https://english.elpais.com/international/2026-11-24/palestinian-ambulances-become-direct-targets-in-the-west-bank.html" target="_blank" rel="noopener">Palestinian ambulances become ‘direct targets’ in the West Bank</a>
+    </li>
+    <li>
+      <a href="https://www.theguardian.com/news/audio/2026/nov/24/myanmar-found-guilty-genocide-should-israel-be-worried-podcast" target="_blank" rel="noopener">Myanmar has been found guilty of genocide. Should Israel be worried? – podcast</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>Saudi Arabia</h3>
+  <ul>
+    <li>
+      <a href="https://www.gov.uk/government/news/uk-steps-up-response-to-renewed-houthi-aggression" target="_blank" rel="noopener">UK steps up response to renewed Houthi aggression</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/23/technology/openai-engineer-secret-recordings.html" target="_blank" rel="noopener">OpenAI Engineer Secretly Recorded Dozens of Meetings, Prosecutors Say</a>
+    </li>
+    <li>
+      <a href="https://www.ft.com/content/ecdf59b6-c78b-4703-bc26-8d085d7b9d24?syn-25a6b1a6=1" target="_blank" rel="noopener">Houthi attack on Saudi sovereign wealth fund HQ injures 11</a>
+    </li>
+    <li>
+      <a href="https://www.nytimes.com/2026/11/22/climate/cop31-climate-summit-ends-climate.html" target="_blank" rel="noopener">COP31 Talks Collapse in Turkey in a Clash Over Fossil Fuels</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="country-card">
+  <h3>United Arab Emirates</h3>
+  <ul>
+    <li>
+      <a href="https://www.ft.com/content/60e00f06-c3ac-43d5-a90c-e1b2be5a1d2b?syn-25a6b1a6=1" target="_blank" rel="noopener">UAE’s hopes for top UN job could rest with Ed Miliband</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+
+  <section class="topic" id="sec-ir_theory">
+  <div class="section-head">
+    <h2>International Relations — Theory &amp; Analysis</h2>
+    <span class="count">6 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/24/business/nvidia-alice-huang-china.html" target="_blank" rel="noopener">From Chinese Factory Town to the Nvidia Scandal: The Rise of Alice Huang</a></h3>
+  <p class="excerpt">The woman whose role has become a focus of the Nvidia spying saga grew up in a small town built around a weapons factory. Her jump to finance and the tech world paralleled China’s own.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/24/business/nvidia-alice-huang-china.html" target="_blank" rel="noopener">NYT Asia Pacific</a>
+      <a href="https://www.foreignaffairs.com/china/real-nvidia-scandal-kilcrease-chilukuri" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 10:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/c96c40c5-6b07-4433-b65f-19105e9ccb44?syn-25a6b1a6=1" target="_blank" rel="noopener">Big Tech’s blind spot</a></h3>
+  <p class="excerpt">AI groups are now at the heart of geopolitics. Some are not ready</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/c96c40c5-6b07-4433-b65f-19105e9ccb44?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 05:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/cogs-of-war/battlefield-power-is-running-short/" target="_blank" rel="noopener">Battlefield Power Is Running Short</a></h3>
+  <p class="excerpt">Drones, counter-drone systems, electronic warfare, and edge computing all run on power. Soldiers need more of it, in more places, farther from their supply lines than ever before. How will the Army get it to them? Alex Miller (U.S. Army), Ben Kesling (Chariot Defense), Julie Bush (Valinor Enterprises), and Joel Dillon (Booz Allen) join the show. They discuss moving power to the edge, managing the signatures it creates, and the push for common power standards across the services. They also explore how software can help commanders manage energy like ammunition, and what a well-run battalion&amp;#821</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/cogs-of-war/battlefield-power-is-running-short/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 09:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.foreignaffairs.com/iran/paradox-iranian-power-sadjadpour" target="_blank" rel="noopener">The Paradox of Iranian Power</a></h3>
+  <p class="excerpt">Why the Islamic Republic can’t make peace.</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://www.foreignaffairs.com/iran/paradox-iranian-power-sadjadpour" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 04:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/the-game-is-the-easy-part-measuring-military-strategic-judgment/" target="_blank" rel="noopener">The Game Is the Easy Part: Measuring Military Strategic Judgment</a></h3>
+  <p class="excerpt">If a colonel and a Navy captain made the same decisions for the same reasons in a graded wargame, would they get the same score?&amp;#160;This question stopped being an academic thought experiment on Nov. 9, 2026. Speaking at the Naval War College, Secretary of Defense Pete Hegseth announced that &amp;#8220;competitive [AI] assisted wargaming and high-stress decision forcing scenarios&amp;#8221; would become the &amp;#8220;centerpiece of senior officer evaluation.&amp;#8221; Further, &amp;#8220;these exercises [would] feed directly&amp;#8221; into the newly established joint warfighter evaluations: the new assessments fo</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/the-game-is-the-easy-part-measuring-military-strategic-judgment/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 08:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://warontherocks.com/while-shenzhen-talked-berlin-pulled-up-a-chair-europes-generational-bet-on-itself-and-ukraine/" target="_blank" rel="noopener">While Shenzhen Talked, Berlin Pulled Up a Chair: Europe’s Generational Bet on Itself and Ukraine</a></h3>
+  <p class="excerpt">Welcome to The Ukraine Compass, a weekly digest of Ukrainian commentary and analysis from across the political spectrum, only for War on the Rocks members. Each week, we bring you a curated selection of articles from Ukrainian media offering insight into how Ukrainians themselves debate the issues shaping their country.Western coverage often narrows the view to the battlefield &amp;#8212; these pieces widen it, revealing the texture of daily life, politics, and public argument in a nation at war. The perspectives gathered here are varied, candid, and often surprising, together forming a more compl</p>
+  <div class="meta">
+    <span class="badge analysis">Analysis</span>
+
+    <span class="sources">
+      <a href="https://warontherocks.com/while-shenzhen-talked-berlin-pulled-up-a-chair-europes-generational-bet-on-itself-and-ukraine/" target="_blank" rel="noopener">War on the Rocks</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 19:20 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-conflicts">
+  <div class="section-head">
+    <h2>Conflicts &amp; Security</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cq5y1k8ez407o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Trump faces backlash after saying he &#39;convinced&#39; Nvidia to reinstate CEO Jensen Huang</a></h3>
+  <p class="excerpt">Nvidia had come under pressure from President Trump to reappoint Huang, whose comeback helped add $1tn to the company&#39;s stock value.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/23/us/politics/trump-nvidia-huang-congress-criticism.html" target="_blank" rel="noopener">NYT Politics</a>
+      <a href="https://www.nytimes.com/2026/11/23/podcasts/why-trump-put-jensen-huang-back-in-charge-at-nvidia.html" target="_blank" rel="noopener">NYT Technology</a>
+      <a href="https://www.nytimes.com/2026/11/23/business/trump-jensen-huang-nvidia.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.ft.com/content/20d2ebe3-e945-4659-a122-31bf85a4e4e5?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.bbc.co.uk/news/articles/cq5y1k8ez407o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 10:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/live/2026/nov/24/donald-trump-nvidia-jensen-huang-republicans-democrats-china-latest-news-updates" target="_blank" rel="noopener">Democrats hit out at Nvidia and Trump over Huang’s return – US politics live</a></h3>
+  <p class="excerpt">Possible presidential hopeful Ruben Gallego warns of a ‘bad lesson for corporate America’ while Ro Khanna says ‘rules should apply to everyone’Congress to grill Huang over ties with China and Trump’s interventionSign up for the Breaking News US emailEarlier we mentioned Donald Trump is participating in a Medal of Freedom ceremony in the Oval Office at 11am ET. He will be awarding the nation’s highest civilian honor to former New York mayor and Trump’s onetime personal lawyer Rudy Giuliani.Trump said last year he would award the medal to Giuliani, two days after his longtime political ally was </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/98ec6911-bb0c-42c1-8c5e-5eebf40dc918?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.ft.com/content/67b0a070-c2a9-4229-885a-383cca657763?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.theguardian.com/us-news/live/2026/nov/24/donald-trump-nvidia-jensen-huang-republicans-democrats-china-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:45 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/international/2026-11-24/colombia-marks-10-years-since-farc-peace-deal-as-de-la-espriella-threatens-its-future.html" target="_blank" rel="noopener">Colombia marks 10 years since FARC peace deal as De la Espriella threatens its future</a></h3>
+  <p class="excerpt">A decade after it was signed, victims and former combatants are still waiting for the agreement to be fully implemented</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/23/world/americas/colombia-farc-peace-deal.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://english.elpais.com/international/2026-11-24/colombia-marks-10-years-since-farc-peace-deal-as-de-la-espriella-threatens-its-future.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 13:19 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/24/leader-india-coackroach-movement-says-stopped-from-boarding-flight-to-uk" target="_blank" rel="noopener">Leader of India’s Cockroach movement says he was stopped from boarding flight to UK</a></h3>
+  <p class="excerpt">Saurav Das was due to give talks at UK universities on protest movement but says ‘coward government’ prevented him flyingA leader of India’s youth-led Cockroach movement has said he was prevented from leaving Delhi to fly to the UK to give talks on the viral group’s protests.Saurav Das, 27, has been at the forefront of the Cockroach Janta party (CJP), which has amassed millions of social media followers since its launch in May. Das, who was due to fly out early on Tuesday, said immigration officials told him at the airport that his passport had been flagged. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cm5y1ezx2gqyo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/24/leader-india-coackroach-movement-says-stopped-from-boarding-flight-to-uk" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 08:24 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/74408261-9cb4-41ae-8d4f-3a1a9ce72930?syn-25a6b1a6=1" target="_blank" rel="noopener">The Jensen put</a></h3>
+  <p class="excerpt">Plus, Capex or die trying</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/74408261-9cb4-41ae-8d4f-3a1a9ce72930?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.bbc.co.uk/news/articles/cmze750zg0jeo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 06:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/23/canada-trump-impersonator-press-dinner" target="_blank" rel="noopener">Butt of the joke: Trump impersonator mocks president at Canada press dinner</a></h3>
+  <p class="excerpt">Carney watches on as comedian lampoons US leader and his interest in men’s backsides at correspondents’ event OttawaCanada’s prime minister, Mark Carney, was joined on stage in Ottawa by a Donald Trump impersonator who mocked the US president to raucous laughter from a crowd of politicians and journalists at a parliamentary press gallery dinner on Saturday.With coiffed hair and an ill-fitting suit, comedian Mark Critch – who portrays the president on the sketch show This Hour Has 22 Minutes – danced on to the stage and lampooned the trade war Trump started as well as the president’s threats to</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cr930y92dyx4o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/23/canada-trump-impersonator-press-dinner" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 22:41 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/23/world/europe/ukraine-libya-russian-ships.html" target="_blank" rel="noopener">Ukraine Attack Off Coast of Libya Shows Reach of Its Naval Drones</a></h3>
+  <p class="excerpt">President Volodymyr Zelensky said that Ukrainian drones had sunk a corvette and hit a dry cargo vessel, in attacks that involved special operations forces.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/23/world/europe/ukraine-libya-russian-ships.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/23/ukraine-naval-drones-strike-russian-warship-libya" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 18:09 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/ecdf59b6-c78b-4703-bc26-8d085d7b9d24?syn-25a6b1a6=1" target="_blank" rel="noopener">Houthi attack on Saudi sovereign wealth fund HQ injures 11</a></h3>
+  <p class="excerpt">Strike on Riyadh’s PIF Tower came as kingdom unveiled first budget since conflict restarted</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/ecdf59b6-c78b-4703-bc26-8d085d7b9d24?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:59 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/24/business/economy/trump-nvidia-national-security-us-economics.html" target="_blank" rel="noopener">Trump’s Nvidia Push Shows Companies’ Importance in Global Economic War</a></h3>
+  <p class="excerpt">Presidents before him have bailed out companies in times of national crisis. Mr. Trump went further: He staked the fortunes of the United States on those of a favored chief executive.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/24/business/economy/trump-nvidia-national-security-us-economics.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:59 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/24/world/europe/ukraine-russia-psyops-radio-izium.html" target="_blank" rel="noopener">Radio Offers Russian Troops Classic Rock, Nostalgia — and Pleas to Surrender</a></h3>
+  <p class="excerpt">What seem like frontline Russian radio stations are actually a Ukrainian psychological operation, hoping to sow despair among the Kremlin’s soldiers.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/24/world/europe/ukraine-russia-psyops-radio-izium.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:22 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/c893rl37ywdgo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Land mine casualties soar in Syria, two years after war</a></h3>
+  <p class="excerpt">Nearly 1,000 children are among those killed or injured by explosives left over from the conflict, figures show.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/c893rl37ywdgo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:17 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/23/us/politics/walter-willett-trump-harvard.html" target="_blank" rel="noopener">How a Scientist Behind the Mediterranean Diet Got Caught in Trump’s War on Harvard</a></h3>
+  <p class="excerpt">Walter Willett studies the link between diet and health, a high priority for Health Secretary Robert F. Kennedy Jr. His grants were frozen anyway.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/23/us/politics/walter-willett-trump-harvard.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:04 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-intelligence">
+  <div class="section-head">
+    <h2>Intelligence &amp; Espionage</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/uk-steps-up-response-to-renewed-houthi-aggression" target="_blank" rel="noopener">UK steps up response to renewed Houthi aggression</a></h3>
+  <p class="excerpt">The UK government has announced sanctions against the Houthis and their top officials, following renewed aggression inside Yemen and against Saudi Arabia.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/uk-steps-up-response-to-renewed-houthi-aggression" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 11:13 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cq5y1k8ez407o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Trump faces backlash after saying he &#39;convinced&#39; Nvidia to reinstate CEO Jensen Huang</a></h3>
+  <p class="excerpt">Nvidia had come under pressure from President Trump to reappoint Huang, whose comeback helped add $1tn to the company&#39;s stock value.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/23/us/politics/trump-nvidia-huang-congress-criticism.html" target="_blank" rel="noopener">NYT Politics</a>
+      <a href="https://www.nytimes.com/2026/11/23/podcasts/why-trump-put-jensen-huang-back-in-charge-at-nvidia.html" target="_blank" rel="noopener">NYT Technology</a>
+      <a href="https://www.nytimes.com/2026/11/23/business/trump-jensen-huang-nvidia.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.ft.com/content/20d2ebe3-e945-4659-a122-31bf85a4e4e5?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.bbc.co.uk/news/articles/cq5y1k8ez407o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 10:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/live/2026/nov/24/donald-trump-nvidia-jensen-huang-republicans-democrats-china-latest-news-updates" target="_blank" rel="noopener">Democrats hit out at Nvidia and Trump over Huang’s return – US politics live</a></h3>
+  <p class="excerpt">Possible presidential hopeful Ruben Gallego warns of a ‘bad lesson for corporate America’ while Ro Khanna says ‘rules should apply to everyone’Congress to grill Huang over ties with China and Trump’s interventionSign up for the Breaking News US emailEarlier we mentioned Donald Trump is participating in a Medal of Freedom ceremony in the Oval Office at 11am ET. He will be awarding the nation’s highest civilian honor to former New York mayor and Trump’s onetime personal lawyer Rudy Giuliani.Trump said last year he would award the medal to Giuliani, two days after his longtime political ally was </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/98ec6911-bb0c-42c1-8c5e-5eebf40dc918?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.ft.com/content/67b0a070-c2a9-4229-885a-383cca657763?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.theguardian.com/us-news/live/2026/nov/24/donald-trump-nvidia-jensen-huang-republicans-democrats-china-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:45 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/d4902274-2e3d-447a-83b8-312cf7306d56?syn-25a6b1a6=1" target="_blank" rel="noopener">Iran flogs singer who performed without hijab</a></h3>
+  <p class="excerpt">Sentence of 74 lashes carried out on female performer Parastoo Ahmadi and male members of her band</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/d4902274-2e3d-447a-83b8-312cf7306d56?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/cq1j6585l5g6o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 11:59 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/24/business/nvidia-alice-huang-china.html" target="_blank" rel="noopener">From Chinese Factory Town to the Nvidia Scandal: The Rise of Alice Huang</a></h3>
+  <p class="excerpt">The woman whose role has become a focus of the Nvidia spying saga grew up in a small town built around a weapons factory. Her jump to finance and the tech world paralleled China’s own.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/24/business/nvidia-alice-huang-china.html" target="_blank" rel="noopener">NYT Asia Pacific</a>
+      <a href="https://www.foreignaffairs.com/china/real-nvidia-scandal-kilcrease-chilukuri" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 10:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/24/leader-india-coackroach-movement-says-stopped-from-boarding-flight-to-uk" target="_blank" rel="noopener">Leader of India’s Cockroach movement says he was stopped from boarding flight to UK</a></h3>
+  <p class="excerpt">Saurav Das was due to give talks at UK universities on protest movement but says ‘coward government’ prevented him flyingA leader of India’s youth-led Cockroach movement has said he was prevented from leaving Delhi to fly to the UK to give talks on the viral group’s protests.Saurav Das, 27, has been at the forefront of the Cockroach Janta party (CJP), which has amassed millions of social media followers since its launch in May. Das, who was due to fly out early on Tuesday, said immigration officials told him at the airport that his passport had been flagged. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cm5y1ezx2gqyo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/24/leader-india-coackroach-movement-says-stopped-from-boarding-flight-to-uk" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 08:24 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/23/canada-trump-impersonator-press-dinner" target="_blank" rel="noopener">Butt of the joke: Trump impersonator mocks president at Canada press dinner</a></h3>
+  <p class="excerpt">Carney watches on as comedian lampoons US leader and his interest in men’s backsides at correspondents’ event OttawaCanada’s prime minister, Mark Carney, was joined on stage in Ottawa by a Donald Trump impersonator who mocked the US president to raucous laughter from a crowd of politicians and journalists at a parliamentary press gallery dinner on Saturday.With coiffed hair and an ill-fitting suit, comedian Mark Critch – who portrays the president on the sketch show This Hour Has 22 Minutes – danced on to the stage and lampooned the trade war Trump started as well as the president’s threats to</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cr930y92dyx4o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/23/canada-trump-impersonator-press-dinner" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 22:41 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/23/world/europe/ukraine-libya-russian-ships.html" target="_blank" rel="noopener">Ukraine Attack Off Coast of Libya Shows Reach of Its Naval Drones</a></h3>
+  <p class="excerpt">President Volodymyr Zelensky said that Ukrainian drones had sunk a corvette and hit a dry cargo vessel, in attacks that involved special operations forces.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/23/world/europe/ukraine-libya-russian-ships.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/23/ukraine-naval-drones-strike-russian-warship-libya" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 18:09 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/23/us/politics/fbi-raia-retiring.html" target="_blank" rel="noopener">No. 2 Official at F.B.I. Is Said to Be Retiring Before End of Year</a></h3>
+  <p class="excerpt">The departure of Christopher G. Raia, a veteran agent, comes a few months after another deputy left the F.B.I.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/23/us/politics/fbi-raia-retiring.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:56 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/politics/live/2026/nov/24/pip-review-stephen-timms-andy-burnham-disability-welfare-brexit-latest-news-updates" target="_blank" rel="noopener">Proposals in Timms review for changes to Pip would lead to higher welfare bill, IFS says – UK politics live</a></h3>
+  <p class="excerpt">Social security minister has been overseeing review designed to ‘rehumanise’ the system but Tories say it will lead to higher spending and fewer checksMinisters approve fast-track disability payments in England and WalesQ: [From Ali Fortescue from Sky News] We have done an interview with Rishi Sunak who says he is very concerned about the rise of ethnonationalism, and particularly with the suggestion from Suella Braverman, Reform UK’s education spokesperson, that people of Asian heritage can’t be English. Do you agree with him about that, and are you going to do anything about it?Farage replie</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/politics/live/2026/nov/24/pip-review-stephen-timms-andy-burnham-disability-welfare-brexit-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:51 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/live/2026/nov/24/jensen-huang-nvidia-stock-markets-ai-trade-us-political-backlash-donald-trump-latest-news-updates" target="_blank" rel="noopener">Tech sell-off resumes as Nvidia shares drop 5% and Anthropic tumbles below IPO price – as it happened</a></h3>
+  <p class="excerpt">Republicans and Democrats object over Trump’s role in Jensen Huang’s return as Nvidia CEO, following an affair with an alleged Chinese spyDemocrats hit out at Nvidia and Trump over Huang’s return – US politics liveHave you downloaded Meta’s AI assistant Muse or do you plan to?The AI doomsday threat: Distinguishing facts from fearJensen Huang’s return to Nvidia, despite concerns over his conduct and the supply of AI chips to China, may show that AI – and Huang himself – are ‘too big to fail’.That phrase was on everyone’s lips almost 20 years ago when the Global Financial Crisis struck, and seve</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/live/2026/nov/24/jensen-huang-nvidia-stock-markets-ai-trade-us-political-backlash-donald-trump-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:36 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cv0l3nlgl80ro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Tories accuse Burnham of turning No 10 into &#39;joke&#39; after influencer video row</a></h3>
+  <p class="excerpt">Social media influencer Max Balegde has deleted a video filmed outside the door of Number 10, which was posted on TikTok, in which he mimed along to explicit lyrics.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cv0l3nlgl80ro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:29 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-military">
+  <div class="section-head">
+    <h2>Military &amp; Defense</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/uk-leads-global-action-with-major-new-measures-against-myanmar-military-following-landmark-genocide-judgment" target="_blank" rel="noopener">UK leads global action with major new measures against Myanmar military following landmark genocide judgment</a></h3>
+  <p class="excerpt">The UK has today (23 November) formally recognised the genocide committed against the Rohingya and announced a major package of measures against the Myanmar Military</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/uk-leads-global-action-with-major-new-measures-against-myanmar-military-following-landmark-genocide-judgment" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 18:31 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/24/business/nvidia-alice-huang-china.html" target="_blank" rel="noopener">From Chinese Factory Town to the Nvidia Scandal: The Rise of Alice Huang</a></h3>
+  <p class="excerpt">The woman whose role has become a focus of the Nvidia spying saga grew up in a small town built around a weapons factory. Her jump to finance and the tech world paralleled China’s own.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/24/business/nvidia-alice-huang-china.html" target="_blank" rel="noopener">NYT Asia Pacific</a>
+      <a href="https://www.foreignaffairs.com/china/real-nvidia-scandal-kilcrease-chilukuri" target="_blank" rel="noopener">Foreign Affairs</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 10:03 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/23/canada-trump-impersonator-press-dinner" target="_blank" rel="noopener">Butt of the joke: Trump impersonator mocks president at Canada press dinner</a></h3>
+  <p class="excerpt">Carney watches on as comedian lampoons US leader and his interest in men’s backsides at correspondents’ event OttawaCanada’s prime minister, Mark Carney, was joined on stage in Ottawa by a Donald Trump impersonator who mocked the US president to raucous laughter from a crowd of politicians and journalists at a parliamentary press gallery dinner on Saturday.With coiffed hair and an ill-fitting suit, comedian Mark Critch – who portrays the president on the sketch show This Hour Has 22 Minutes – danced on to the stage and lampooned the trade war Trump started as well as the president’s threats to</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cr930y92dyx4o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/23/canada-trump-impersonator-press-dinner" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 22:41 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/23/world/europe/ukraine-libya-russian-ships.html" target="_blank" rel="noopener">Ukraine Attack Off Coast of Libya Shows Reach of Its Naval Drones</a></h3>
+  <p class="excerpt">President Volodymyr Zelensky said that Ukrainian drones had sunk a corvette and hit a dry cargo vessel, in attacks that involved special operations forces.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/23/world/europe/ukraine-libya-russian-ships.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/23/ukraine-naval-drones-strike-russian-warship-libya" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 18:09 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/sport/live/2026/nov/24/chess-world-championship-gukesh-sindarov-game-1-updates" target="_blank" rel="noopener">World Chess Championship 2026 Game 1: Gukesh Dommaraju v Javokhir Sindarov – live</a></h3>
+  <p class="excerpt">Youngest title match in chess history starts TuesdaySindarov and Gukesh open Game 1 with Berlin defenseExplainer: all your pre-match questions, answeredPreview: Gukesh vows to win title ‘all over again’Sindarov interview: ‘I can’t play games just for fun’Play through 22 famous world championship gamesBluesky Bryan at @BryanAGraham or email himThe players have shaken hands and we’re off! We have a Berlin defense of the Ruy Lopez (1 e4 e5 2 Nf3 Nc6 3 Bb5 Nf6), one of the most thoroughly analyzed openings in modern chess.The Berlin famously helped Vladimir Kramnik dethrone Garry Kasparov in their</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/sport/live/2026/nov/24/chess-world-championship-gukesh-sindarov-game-1-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/live/2026/nov/24/russia-ukraine-poland-drone-patriots-latest-news-updates" target="_blank" rel="noopener">Italy expresses concern to Ukraine over Libya ship attacks – Europe live</a></h3>
+  <p class="excerpt">Ukraine earlier confirmed that it deployed naval drones in strikes on Russian vessels off the coast of LibyaThe leader of Spain’s leftwing Broad Front coalition has called for a drastic rethink of the country’s entire housing rental system, and described the eviction of an 87-year-old woman – the spark for nationwide protests that in turn triggered Sunday’s snap general election – as “the last straw” for desperate tenants.“We’re not interested in small changes,” Ada Colau, the former Barcelona mayor, told the Guardian in an interview. “We want to reform the entire rental sector.” Continue read</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/world/live/2026/nov/24/russia-ukraine-poland-drone-patriots-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:52 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/24/style/us-navy-pea-coat-retired.html" target="_blank" rel="noopener">The Navy Waves Goodbye to the Peacoat</a></h3>
+  <p class="excerpt">But don’t worry, fashion will keep it afloat.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/24/style/us-navy-pea-coat-retired.html" target="_blank" rel="noopener">NYT Politics</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:40 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/24/world/europe/ukraine-russia-psyops-radio-izium.html" target="_blank" rel="noopener">Radio Offers Russian Troops Classic Rock, Nostalgia — and Pleas to Surrender</a></h3>
+  <p class="excerpt">What seem like frontline Russian radio stations are actually a Ukrainian psychological operation, hoping to sow despair among the Kremlin’s soldiers.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/24/world/europe/ukraine-russia-psyops-radio-izium.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:22 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/crjeq7ek1qwwo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Pat Finucane a victim of state-sponsored murder, inquiry hears</a></h3>
+  <p class="excerpt">The 39-year-old solicitor was shot at his home in north Belfast by the Ulster Defence Association, in front of his wife and children, in 1989.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/crjeq7ek1qwwo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC UK</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:22 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/d9f17145-cdc0-424a-bace-7147a971d0ab?syn-25a6b1a6=1" target="_blank" rel="noopener">MI5 warns UK companies supplying Ukraine military about Russian sabotage risk</a></h3>
+  <p class="excerpt">Acts could include arson attacks carried out by proxy agents, say security chiefs</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/d9f17145-cdc0-424a-bace-7147a971d0ab?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 14:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/b5873050-2b90-4889-bbf6-902234e51e9f?syn-25a6b1a6=1" target="_blank" rel="noopener">Britain bought fake C4 explosives for Ukraine</a></h3>
+  <p class="excerpt">Flagship UK procurement unit paid a part-time US police officer for tonnes of plastic explosives with no detectable RDX, the main ingredient in military C4</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/b5873050-2b90-4889-bbf6-902234e51e9f?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 13:04 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/ef3cfa29-4613-426c-9b87-dd76664e6859?syn-25a6b1a6=1" target="_blank" rel="noopener">Russian navy licks its wounds as another warship is sunk</a></h3>
+  <p class="excerpt">Ukrainian drones have struck Moscow’s warships and freighters in the Black Sea, Baltic and Mediterranean</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/ef3cfa29-4613-426c-9b87-dd76664e6859?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 11:51 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-technology">
+  <div class="section-head">
+    <h2>Technology</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/23/technology/jensen-huang-nvidia-board-trump.html" target="_blank" rel="noopener">With Jensen Huang’s Return as C.E.O., Trump Effectively Overrode Nvidia’s Board</a></h3>
+  <p class="excerpt">Nvidia’s board said Mr. Huang would not be back. But President Trump, who pushed for Mr. Huang’s reinstatement, effectively overrode the board, governance experts said.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/24/world/asia/jensen-huang-nvidia-china.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.nytimes.com/2026/11/23/technology/jensen-huang-nvidia-board-trump.html" target="_blank" rel="noopener">NYT Technology</a>
+      <a href="https://www.nytimes.com/2026/11/23/business/dealbook/jensen-huang-nvidia.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.bbc.co.uk/news/articles/c63rgpy50x98o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://english.elpais.com/usa/2026-11-24/jensen-huangs-return-to-nvidia-in-seven-acts-from-trumps-pressure-to-family-support.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:40 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cq5y1k8ez407o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Trump faces backlash after saying he &#39;convinced&#39; Nvidia to reinstate CEO Jensen Huang</a></h3>
+  <p class="excerpt">Nvidia had come under pressure from President Trump to reappoint Huang, whose comeback helped add $1tn to the company&#39;s stock value.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/23/us/politics/trump-nvidia-huang-congress-criticism.html" target="_blank" rel="noopener">NYT Politics</a>
+      <a href="https://www.nytimes.com/2026/11/23/podcasts/why-trump-put-jensen-huang-back-in-charge-at-nvidia.html" target="_blank" rel="noopener">NYT Technology</a>
+      <a href="https://www.nytimes.com/2026/11/23/business/trump-jensen-huang-nvidia.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.ft.com/content/20d2ebe3-e945-4659-a122-31bf85a4e4e5?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.bbc.co.uk/news/articles/cq5y1k8ez407o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 10:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/live/2026/nov/24/donald-trump-nvidia-jensen-huang-republicans-democrats-china-latest-news-updates" target="_blank" rel="noopener">Democrats hit out at Nvidia and Trump over Huang’s return – US politics live</a></h3>
+  <p class="excerpt">Possible presidential hopeful Ruben Gallego warns of a ‘bad lesson for corporate America’ while Ro Khanna says ‘rules should apply to everyone’Congress to grill Huang over ties with China and Trump’s interventionSign up for the Breaking News US emailEarlier we mentioned Donald Trump is participating in a Medal of Freedom ceremony in the Oval Office at 11am ET. He will be awarding the nation’s highest civilian honor to former New York mayor and Trump’s onetime personal lawyer Rudy Giuliani.Trump said last year he would award the medal to Giuliani, two days after his longtime political ally was </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/98ec6911-bb0c-42c1-8c5e-5eebf40dc918?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.ft.com/content/67b0a070-c2a9-4229-885a-383cca657763?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.theguardian.com/us-news/live/2026/nov/24/donald-trump-nvidia-jensen-huang-republicans-democrats-china-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:45 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/74408261-9cb4-41ae-8d4f-3a1a9ce72930?syn-25a6b1a6=1" target="_blank" rel="noopener">The Jensen put</a></h3>
+  <p class="excerpt">Plus, Capex or die trying</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/74408261-9cb4-41ae-8d4f-3a1a9ce72930?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.bbc.co.uk/news/articles/cmze750zg0jeo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 06:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/23/technology/openai-engineer-secret-recordings.html" target="_blank" rel="noopener">OpenAI Engineer Secretly Recorded Dozens of Meetings, Prosecutors Say</a></h3>
+  <p class="excerpt">A court filing said the engineer captured meetings on customers, A.I. safety and a foreign government briefing. Federal prosecutors are investigating what he did with the recordings.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/23/technology/openai-engineer-secret-recordings.html" target="_blank" rel="noopener">NYT Technology</a>
+      <a href="https://www.ft.com/content/f860152a-6bd6-43f7-8ba1-4a6ae94d6565?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 01:36 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/24/business/luxury-water-fiji-evian-voss.html" target="_blank" rel="noopener">Luxury Water Is Luring Drinkers Who Have Lost Their Thirst for Alcohol</a></h3>
+  <p class="excerpt">A host of newcomers are pushing into the high-end water space, which has long been occupied by brands like Fiji, Evian and Voss.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/24/business/luxury-water-fiji-evian-voss.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:46 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/live/2026/nov/24/jensen-huang-nvidia-stock-markets-ai-trade-us-political-backlash-donald-trump-latest-news-updates" target="_blank" rel="noopener">Tech sell-off resumes as Nvidia shares drop 5% and Anthropic tumbles below IPO price – as it happened</a></h3>
+  <p class="excerpt">Republicans and Democrats object over Trump’s role in Jensen Huang’s return as Nvidia CEO, following an affair with an alleged Chinese spyDemocrats hit out at Nvidia and Trump over Huang’s return – US politics liveHave you downloaded Meta’s AI assistant Muse or do you plan to?The AI doomsday threat: Distinguishing facts from fearJensen Huang’s return to Nvidia, despite concerns over his conduct and the supply of AI chips to China, may show that AI – and Huang himself – are ‘too big to fail’.That phrase was on everyone’s lips almost 20 years ago when the Global Financial Crisis struck, and seve</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/live/2026/nov/24/jensen-huang-nvidia-stock-markets-ai-trade-us-political-backlash-donald-trump-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:36 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/technology/2026/nov/24/meta-launches-muse-uk-ai-agent-do-christmas-shopping" target="_blank" rel="noopener">Meta launches Muse in UK – the AI agent that can do your Christmas shopping</a></h3>
+  <p class="excerpt">Users can give agents tasks such as booking travel or buying presents, but glitches have been reportedHave you downloaded Meta’s AI assistant Muse or do you plan to?Want to avoid the Christmas shopping hordes? Then let your AI agent do the shopping for you. Mark Zuckerberg’s Meta is launching its Muse AI assistant in the UK and is encouraging users to let it loose on your apps – and the high street.Muse has been a hit in the US and is ranked first and second respectively on Google and Apple’s free app stores, having been downloaded millions of times. However, UK regulators have said they are k</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/technology/2026/nov/24/meta-launches-muse-uk-ai-agent-do-christmas-shopping" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 14:36 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/nov/24/mamdani-nvidia-stock-market-ai" target="_blank" rel="noopener">Mamdani says Nvidia drama shows stock market is overly dependent on AI</a></h3>
+  <p class="excerpt">New York City mayor notes ‘massive impact’ on working Americans’ lives when Jensen Huang stepped down as CEOZohran Mamdani, New York City’s mayor, on Monday weighed in on the corporate turbulence surrounding Nvidia and the chipmaker’s chief executive officer, Jensen Huang, saying he does not think working Americans “signed up for their pensions being tied to the question of … Huang’s fidelity to his marriage”.The mayor said Huang “had a massive impact”, with Nvidia’s share price dropping dramatically when Huang stepped down as the company’s CEO on 12 November after a reported extramarital rela</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/nov/24/mamdani-nvidia-stock-market-ai" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 14:22 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/australia-news/2026/nov/25/guardian-essential-poll-anthony-albaneses-ai-datacentres-labor-one-nation-coalition" target="_blank" rel="noopener">Guardian Essential poll: Albanese’s disapproval rating hits highest level as problems mount for Labor</a></h3>
+  <p class="excerpt">Australians also turn against AI datacentres, with nearly half saying they don’t want one near their homeGet our daily political email, free app or daily news podcastAnthony Albanese’s approval ratings have nosedived in the latest Guardian Essential poll, with the prime minister reaching his highest level of disapproval after his net popularity plummeted 10 points in just a month.Australians have also turned strongly against AI datacentres, with nearly half of the country saying they don’t want one near their home. Women, older people and One Nation and Greens supporters are among the most lik</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/australia-news/2026/nov/25/guardian-essential-poll-anthony-albaneses-ai-datacentres-labor-one-nation-coalition" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 14:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/24/world/europe/norway-svalbard-arctic-last-coal-mine.html" target="_blank" rel="noopener">Norway Has Closed Its Last Coal Mine, Ending a Way of Life in the Arctic</a></h3>
+  <p class="excerpt">Svalbard has a mining history that goes back over a century. But this icy archipelago is now a cruise ship destination and a geopolitical hot spot.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/24/world/europe/norway-svalbard-arctic-last-coal-mine.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 13:56 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/55a32e72-2cee-4a7f-874f-0936e2581a8a" target="_blank" rel="noopener">Jensen Huang’s return should not stop tighter US chip controls</a></h3>
+  <p class="excerpt">Nvidia was wrong to think Chinese competitors would remain inside the company’s ecosystem</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/55a32e72-2cee-4a7f-874f-0936e2581a8a" target="_blank" rel="noopener">FT Technology</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 12:54 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-economy">
+  <div class="section-head">
+    <h2>Economy &amp; Trade</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/uk-steps-up-response-to-renewed-houthi-aggression" target="_blank" rel="noopener">UK steps up response to renewed Houthi aggression</a></h3>
+  <p class="excerpt">The UK government has announced sanctions against the Houthis and their top officials, following renewed aggression inside Yemen and against Saudi Arabia.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/uk-steps-up-response-to-renewed-houthi-aggression" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 11:13 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/unable-to-achieve-his-objectives-on-the-battlefield-president-putin-is-seeking-to-weaponise-food-and-energy-uk-statement-at-the-un-security-council" target="_blank" rel="noopener">Unable to achieve his objectives on the battlefield, President Putin is seeking to weaponise food and energy: UK statement at the UN Security Council</a></h3>
+  <p class="excerpt">Statement by Ambassador Sarah MacIntosh, UK Permanent Representative to the UN, at the UN Security Council meeting on Ukraine.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/unable-to-achieve-his-objectives-on-the-battlefield-president-putin-is-seeking-to-weaponise-food-and-energy-uk-statement-at-the-un-security-council" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 17:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/23/technology/jensen-huang-nvidia-board-trump.html" target="_blank" rel="noopener">With Jensen Huang’s Return as C.E.O., Trump Effectively Overrode Nvidia’s Board</a></h3>
+  <p class="excerpt">Nvidia’s board said Mr. Huang would not be back. But President Trump, who pushed for Mr. Huang’s reinstatement, effectively overrode the board, governance experts said.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/24/world/asia/jensen-huang-nvidia-china.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.nytimes.com/2026/11/23/technology/jensen-huang-nvidia-board-trump.html" target="_blank" rel="noopener">NYT Technology</a>
+      <a href="https://www.nytimes.com/2026/11/23/business/dealbook/jensen-huang-nvidia.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.bbc.co.uk/news/articles/c63rgpy50x98o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://english.elpais.com/usa/2026-11-24/jensen-huangs-return-to-nvidia-in-seven-acts-from-trumps-pressure-to-family-support.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:40 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cq5y1k8ez407o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Trump faces backlash after saying he &#39;convinced&#39; Nvidia to reinstate CEO Jensen Huang</a></h3>
+  <p class="excerpt">Nvidia had come under pressure from President Trump to reappoint Huang, whose comeback helped add $1tn to the company&#39;s stock value.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/23/us/politics/trump-nvidia-huang-congress-criticism.html" target="_blank" rel="noopener">NYT Politics</a>
+      <a href="https://www.nytimes.com/2026/11/23/podcasts/why-trump-put-jensen-huang-back-in-charge-at-nvidia.html" target="_blank" rel="noopener">NYT Technology</a>
+      <a href="https://www.nytimes.com/2026/11/23/business/trump-jensen-huang-nvidia.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.ft.com/content/20d2ebe3-e945-4659-a122-31bf85a4e4e5?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.bbc.co.uk/news/articles/cq5y1k8ez407o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 10:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/23/canada-trump-impersonator-press-dinner" target="_blank" rel="noopener">Butt of the joke: Trump impersonator mocks president at Canada press dinner</a></h3>
+  <p class="excerpt">Carney watches on as comedian lampoons US leader and his interest in men’s backsides at correspondents’ event OttawaCanada’s prime minister, Mark Carney, was joined on stage in Ottawa by a Donald Trump impersonator who mocked the US president to raucous laughter from a crowd of politicians and journalists at a parliamentary press gallery dinner on Saturday.With coiffed hair and an ill-fitting suit, comedian Mark Critch – who portrays the president on the sketch show This Hour Has 22 Minutes – danced on to the stage and lampooned the trade war Trump started as well as the president’s threats to</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cr930y92dyx4o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/23/canada-trump-impersonator-press-dinner" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 22:41 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/24/business/economy/trump-nvidia-national-security-us-economics.html" target="_blank" rel="noopener">Trump’s Nvidia Push Shows Companies’ Importance in Global Economic War</a></h3>
+  <p class="excerpt">Presidents before him have bailed out companies in times of national crisis. Mr. Trump went further: He staked the fortunes of the United States on those of a favored chief executive.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/24/business/economy/trump-nvidia-national-security-us-economics.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:59 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/business/2026/nov/24/uk-eu-made-in-europe-trade-cars-tariffs" target="_blank" rel="noopener">Irish plan could let UK join EU’s Made in Europe without trade alignment</a></h3>
+  <p class="excerpt">Irish presidency of EU proposes giving UK ‘partner’ status on assembly of cars in possible boost to reset of relationsBusiness live – latest updatesThe UK will not have to follow the EU and apply tariffs on Chinese car imports under an Irish proposal that could prove another breakthrough for Andy Burnham in his reset of relations with the bloc.Ireland, which holds the rotating EU presidency and plays a chief role in progressing legislation, has come up with a compromise under which the UK would be included in the bloc’s new “Made in Europe” legislation without having to align with the EU’s tra</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/business/2026/nov/24/uk-eu-made-in-europe-trade-cars-tariffs" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/5b03bc34-79a5-4c90-8b92-17b27b19098e?syn-25a6b1a6=1" target="_blank" rel="noopener">Iraqi government to take control of Kurdish-held oilfields</a></h3>
+  <p class="excerpt">Move comes as PM works to assert power over the semi-autonomous Kurdish region and Iran-backed Shia militant groups</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/5b03bc34-79a5-4c90-8b92-17b27b19098e?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:47 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/24/business/american-airlines-delta-united.html" target="_blank" rel="noopener">Pressure Builds at American Airlines as It Lags Delta and United</a></h3>
+  <p class="excerpt">American flies more travelers than any other U.S. carrier, but debt, fuel costs and mistakes have left it losing money while other big airlines report billions in profits.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/24/business/american-airlines-delta-united.html" target="_blank" rel="noopener">NYT Business</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:11 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/24/business/stocks-sp500-huang-nvidia.html" target="_blank" rel="noopener">Stock Markets Slip as Nvidia and A.I. Stocks Erase Some of Monday’s Rally</a></h3>
+  <p class="excerpt">Shares have veered wildly for days, pushed and pulled by the drama at Nvidia and the rise and fall of Anthropic’s stock after its blockbuster public offering.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/24/business/stocks-sp500-huang-nvidia.html" target="_blank" rel="noopener">NYT World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:01 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.dutchnews.nl/2026/11/juice-and-milk-bottles-to-join-deposit-scheme-in-2027/" target="_blank" rel="noopener">Juice and milk bottles to join deposit scheme in 2027</a></h3>
+  <p class="excerpt">Dutch packaging trade association Verpact has announced it will begin a deposit return system for plastic juice and dairy bottles...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.dutchnews.nl/2026/11/juice-and-milk-bottles-to-join-deposit-scheme-in-2027/" target="_blank" rel="noopener">DutchNews.nl</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 14:30 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/2026/nov/24/mamdani-nvidia-stock-market-ai" target="_blank" rel="noopener">Mamdani says Nvidia drama shows stock market is overly dependent on AI</a></h3>
+  <p class="excerpt">New York City mayor notes ‘massive impact’ on working Americans’ lives when Jensen Huang stepped down as CEOZohran Mamdani, New York City’s mayor, on Monday weighed in on the corporate turbulence surrounding Nvidia and the chipmaker’s chief executive officer, Jensen Huang, saying he does not think working Americans “signed up for their pensions being tied to the question of … Huang’s fidelity to his marriage”.The mayor said Huang “had a massive impact”, with Nvidia’s share price dropping dramatically when Huang stepped down as the company’s CEO on 12 November after a reported extramarital rela</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.theguardian.com/us-news/2026/nov/24/mamdani-nvidia-stock-market-ai" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 14:22 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <section class="topic" id="sec-politics">
+  <div class="section-head">
+    <h2>Politics &amp; Diplomacy</h2>
+    <span class="count">12 stories</span>
+  </div>
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/uk-steps-up-response-to-renewed-houthi-aggression" target="_blank" rel="noopener">UK steps up response to renewed Houthi aggression</a></h3>
+  <p class="excerpt">The UK government has announced sanctions against the Houthis and their top officials, following renewed aggression inside Yemen and against Saudi Arabia.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/uk-steps-up-response-to-renewed-houthi-aggression" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 11:13 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/statement-to-the-31st-session-of-the-conference-of-the-states-parties-of-the-opcw" target="_blank" rel="noopener">Statement to the 31st Session of the Conference of the States Parties of the OPCW</a></h3>
+  <p class="excerpt">Statement by United Kingdom of Great Britain and Northern Ireland at the 31st Conference of the States Parties of the OPCW</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/statement-to-the-31st-session-of-the-conference-of-the-states-parties-of-the-opcw" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 11:09 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/foreign-secretary-statement-to-the-house-of-commons-23-november-2026" target="_blank" rel="noopener">Foreign Secretary Statement to the House of Commons: 23 November 2026</a></h3>
+  <p class="excerpt">Foreign Secretary statement on Myanmar.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/foreign-secretary-statement-to-the-house-of-commons-23-november-2026" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 22:18 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/speeches/unable-to-achieve-his-objectives-on-the-battlefield-president-putin-is-seeking-to-weaponise-food-and-energy-uk-statement-at-the-un-security-council" target="_blank" rel="noopener">Unable to achieve his objectives on the battlefield, President Putin is seeking to weaponise food and energy: UK statement at the UN Security Council</a></h3>
+  <p class="excerpt">Statement by Ambassador Sarah MacIntosh, UK Permanent Representative to the UN, at the UN Security Council meeting on Ukraine.</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/speeches/unable-to-achieve-his-objectives-on-the-battlefield-president-putin-is-seeking-to-weaponise-food-and-energy-uk-statement-at-the-un-security-council" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 17:00 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.gov.uk/government/news/joint-statement-on-the-international-court-of-justice-decision-on-myanmar" target="_blank" rel="noopener">Joint Statement on the International Court of Justice decision on Myanmar</a></h3>
+  <p class="excerpt">Joint statement from the Foreign Ministers of Australia, Belgium, Canada, Cyprus, Czech Republic, Estonia, Iceland, Latvia, Luxembourg, New Zealand, Portugal, Spain, The Gambia, United Kingdom</p>
+  <div class="meta">
+    <span class="badge official">Official</span>
+
+    <span class="sources">
+      <a href="https://www.gov.uk/government/news/joint-statement-on-the-international-court-of-justice-decision-on-myanmar" target="_blank" rel="noopener">UK FCDO (gov.uk)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 23, 14:43 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/23/technology/jensen-huang-nvidia-board-trump.html" target="_blank" rel="noopener">With Jensen Huang’s Return as C.E.O., Trump Effectively Overrode Nvidia’s Board</a></h3>
+  <p class="excerpt">Nvidia’s board said Mr. Huang would not be back. But President Trump, who pushed for Mr. Huang’s reinstatement, effectively overrode the board, governance experts said.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/24/world/asia/jensen-huang-nvidia-china.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.nytimes.com/2026/11/23/technology/jensen-huang-nvidia-board-trump.html" target="_blank" rel="noopener">NYT Technology</a>
+      <a href="https://www.nytimes.com/2026/11/23/business/dealbook/jensen-huang-nvidia.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.bbc.co.uk/news/articles/c63rgpy50x98o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://english.elpais.com/usa/2026-11-24/jensen-huangs-return-to-nvidia-in-seven-acts-from-trumps-pressure-to-family-support.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:40 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.bbc.co.uk/news/articles/cq5y1k8ez407o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Trump faces backlash after saying he &#39;convinced&#39; Nvidia to reinstate CEO Jensen Huang</a></h3>
+  <p class="excerpt">Nvidia had come under pressure from President Trump to reappoint Huang, whose comeback helped add $1tn to the company&#39;s stock value.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/23/us/politics/trump-nvidia-huang-congress-criticism.html" target="_blank" rel="noopener">NYT Politics</a>
+      <a href="https://www.nytimes.com/2026/11/23/podcasts/why-trump-put-jensen-huang-back-in-charge-at-nvidia.html" target="_blank" rel="noopener">NYT Technology</a>
+      <a href="https://www.nytimes.com/2026/11/23/business/trump-jensen-huang-nvidia.html" target="_blank" rel="noopener">NYT Business</a>
+      <a href="https://www.ft.com/content/20d2ebe3-e945-4659-a122-31bf85a4e4e5?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.bbc.co.uk/news/articles/cq5y1k8ez407o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 10:53 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/us-news/live/2026/nov/24/donald-trump-nvidia-jensen-huang-republicans-democrats-china-latest-news-updates" target="_blank" rel="noopener">Democrats hit out at Nvidia and Trump over Huang’s return – US politics live</a></h3>
+  <p class="excerpt">Possible presidential hopeful Ruben Gallego warns of a ‘bad lesson for corporate America’ while Ro Khanna says ‘rules should apply to everyone’Congress to grill Huang over ties with China and Trump’s interventionSign up for the Breaking News US emailEarlier we mentioned Donald Trump is participating in a Medal of Freedom ceremony in the Oval Office at 11am ET. He will be awarding the nation’s highest civilian honor to former New York mayor and Trump’s onetime personal lawyer Rudy Giuliani.Trump said last year he would award the medal to Giuliani, two days after his longtime political ally was </p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/98ec6911-bb0c-42c1-8c5e-5eebf40dc918?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.ft.com/content/67b0a070-c2a9-4229-885a-383cca657763?syn-25a6b1a6=1" target="_blank" rel="noopener">FT Technology</a>
+      <a href="https://www.theguardian.com/us-news/live/2026/nov/24/donald-trump-nvidia-jensen-huang-republicans-democrats-china-latest-news-updates" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 15:45 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://english.elpais.com/international/2026-11-24/colombia-marks-10-years-since-farc-peace-deal-as-de-la-espriella-threatens-its-future.html" target="_blank" rel="noopener">Colombia marks 10 years since FARC peace deal as De la Espriella threatens its future</a></h3>
+  <p class="excerpt">A decade after it was signed, victims and former combatants are still waiting for the agreement to be fully implemented</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/23/world/americas/colombia-farc-peace-deal.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://english.elpais.com/international/2026-11-24/colombia-marks-10-years-since-farc-peace-deal-as-de-la-espriella-threatens-its-future.html" target="_blank" rel="noopener">El País (English)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 13:19 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.nytimes.com/2026/11/24/world/middleeast/iran-singer-parastoo-ahmadi-flogging-lashes.html" target="_blank" rel="noopener">Iranian Singer Receives 74 Lashes for Performing With No Hijab</a></h3>
+  <p class="excerpt">Parastoo Ahmadi sang without wearing the mandatory veil in a virtual concert in 2024 that spread quickly online and drew the ire of the Islamic republic authorities.</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.nytimes.com/2026/11/24/world/middleeast/iran-singer-parastoo-ahmadi-flogging-lashes.html" target="_blank" rel="noopener">NYT World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/23/iranian-singer-lashes-performing-without-hijab" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 12:34 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.ft.com/content/d4902274-2e3d-447a-83b8-312cf7306d56?syn-25a6b1a6=1" target="_blank" rel="noopener">Iran flogs singer who performed without hijab</a></h3>
+  <p class="excerpt">Sentence of 74 lashes carried out on female performer Parastoo Ahmadi and male members of her band</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.ft.com/content/d4902274-2e3d-447a-83b8-312cf7306d56?syn-25a6b1a6=1" target="_blank" rel="noopener">FT World</a>
+      <a href="https://www.bbc.co.uk/news/articles/cq1j6585l5g6o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 11:59 UTC</span>
+  </div>
+</article>
+
+  <article class="card">
+  <h3><a href="https://www.theguardian.com/world/2026/nov/24/leader-india-coackroach-movement-says-stopped-from-boarding-flight-to-uk" target="_blank" rel="noopener">Leader of India’s Cockroach movement says he was stopped from boarding flight to UK</a></h3>
+  <p class="excerpt">Saurav Das was due to give talks at UK universities on protest movement but says ‘coward government’ prevented him flyingA leader of India’s youth-led Cockroach movement has said he was prevented from leaving Delhi to fly to the UK to give talks on the viral group’s protests.Saurav Das, 27, has been at the forefront of the Cockroach Janta party (CJP), which has amassed millions of social media followers since its launch in May. Das, who was due to fly out early on Tuesday, said immigration officials told him at the airport that his passport had been flagged. Continue reading...</p>
+  <div class="meta">
+    <span class="badge wire">Wire</span>
+    <span class="sources">
+      <a href="https://www.bbc.co.uk/news/articles/cm5y1ezx2gqyo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC World</a>
+      <a href="https://www.theguardian.com/world/2026/nov/24/leader-india-coackroach-movement-says-stopped-from-boarding-flight-to-uk" target="_blank" rel="noopener">The Guardian (World)</a>
+    </span>
+    <span style="color:var(--muted)">· Nov 24, 08:24 UTC</span>
+  </div>
+</article>
+
+</section>
+
+  <footer class="foot">
+    Generated 2026-11-24 16:02 UTC ·
+    Aggregated from reliable sources (NYT, Foreign Affairs, FT, official government sites).
+    Headlines &amp; excerpts link to originals; no paywalled full text is reproduced.
+  </footer>
+</main>
+</body>
+</html>
